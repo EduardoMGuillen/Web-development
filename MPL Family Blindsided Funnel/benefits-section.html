@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits Section - Family Blindsided</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #204074;
+            --light: #f8fafc;
+            --dark: #1a2a4f;
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 2rem;
+            background: var(--light);
+            position: relative;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--white), transparent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(32,64,116,0.15);
+        }
+
+        .benefit-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why This Guide Will Transform Your Future</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Clarity and Peace of Mind</h3>
+                    <p>Estate planning isn't just for the wealthy or elderly. Get clear guidance on protecting your family regardless of your age or financial status.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Proactive Planning</h3>
+                    <p>Ensure your family avoids unnecessary legal and financial hurdles during challenging times with proper preparation.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Adapting to Life's Changes</h3>
+                    <p>Your circumstances evolve. Starting early gives you flexibility to adjust your plans as life happens.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Protect Your Loved Ones</h3>
+                    <p>Learn how to safeguard your assets and ensure your legacy is preserved for the people you care about most.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Simple, Relatable Terms</h3>
+                    <p>Complex legal concepts broken down into easy-to-understand advice that anyone can follow and implement.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Expert Guidance</h3>
+                    <p>Written by Trisha Morales Padia, providing comprehensive guidance from an experienced estate planning attorney.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Scroll Animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run on page load
+
+        // Add hover effects to benefit cards
+        document.querySelectorAll('.benefit-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html> 
