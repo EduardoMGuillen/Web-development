@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #234374;
+            --secondary: #639BE3;
+            --accent: #4475B5;
+            --light: #F8FAFC;
+            --dark: #4475B5;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: transparent;
+            color: var(--dark);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .section {
+            padding: 80px 0;
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 90%;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .resources-grid {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .resource-card {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            flex: 1 1 300px;
+            max-width: 350px;
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(68, 117, 181, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(30, 58, 138, 0.15);
+            border-color: var(--accent);
+        }
+        
+        .resource-card:hover::before {
+            left: 100%;
+        }
+        
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .resource-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .resource-desc {
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .resource-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #4475B5 100%);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(68, 117, 181, 0.3);
+        }
+        
+        .resource-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(68, 117, 181, 0.4);
+            background: linear-gradient(135deg, #639BE3 0%, var(--accent) 100%);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .section {
+                width: 95%;
+                padding: 64px 0 32px 0;
+            }
+            
+            .resources-grid {
+                gap: 20px;
+            }
+            
+            .resource-card {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section {
+                width: 98%;
+                padding: 0 0.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 2rem;
+            }
+            
+            .resource-card {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h2 class="section-title">Free Legal Resources & Books</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">📚</div>
+                <div class="resource-title">Family Blindsided</div>
+                <div class="resource-desc">A comprehensive guide to estate planning that ensures your family avoids unnecessary legal and financial hurdles during challenging times.</div>
+                <a href="https://moralespadialaw.com/family-blindsided" class="resource-btn" target="_blank">Read More</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">⚖️</div>
+                <div class="resource-title">Divorce Guide</div>
+                <div class="resource-desc">Navigate the complex process of divorce with expert guidance and practical steps to protect your interests and your family's future.</div>
+                <a href="https://moralespadialaw.com/divorce-book" class="resource-btn" target="_blank">Read More</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">📋</div>
+                <div class="resource-title">Estate Planning Guide</div>
+                <div class="resource-desc">Learn the essential strategies to protect your assets, minimize taxes, and ensure your legacy is preserved for future generations.</div>
+                <a href="https://moralespadialaw.com/estate-planning-ebook" class="resource-btn" target="_blank">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

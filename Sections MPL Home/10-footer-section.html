@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1a2a4f;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: transparent;
+            color: var(--dark);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 50%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 60px 0 30px 0;
+            margin-top: 0;
+            border-top-left-radius: 60px 30px;
+            border-top-right-radius: 60px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-section {
+            flex: 1 1 250px;
+            min-width: 200px;
+        }
+        
+        .footer-section h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent);
+            position: relative;
+        }
+        
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+        
+        .footer-section a {
+            color: #e2e8f0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            padding: 4px 0;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .footer-section p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            color: #94a3b8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+                padding: 0 1rem;
+            }
+            
+            .footer-section {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 0 20px 0;
+            }
+            
+            .footer-content {
+                gap: 25px;
+            }
+            
+            .footer-section h4 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            footer {
+                padding: 30px 0 15px 0;
+            }
+            
+            .footer-content {
+                padding: 0 0.5rem;
+                gap: 20px;
+            }
+            
+            .footer-section h4 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+            
+            .footer-section a {
+                margin-bottom: 6px;
+            }
+            
+            .footer-bottom {
+                margin-top: 30px;
+                padding-top: 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Morales Padia Law<br>
+                14603 Huebner Rd, Bldg 40, Ste 102<br>
+                San Antonio, TX 78230<br>
+                <a href="tel:7262044044">(726) 204-4044</a><br>
+                <a href="mailto:info@moralespadialaw.com">info@moralespadialaw.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#about">About Us</a>
+                <a href="#practice">Practice Areas</a>
+                <a href="#team">Team</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#resources">Resources</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Morales Padia Law. All Rights Reserved. | Powered by Grow Law Firm Marketing Agency
+        </div>
+    </footer>
+</body>
+</html> 

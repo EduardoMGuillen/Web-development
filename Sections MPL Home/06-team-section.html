@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #234374;
+            --secondary: #639BE3;
+            --accent: #4475B5;
+            --light: #F8FAFC;
+            --dark: #4475B5;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: transparent;
+            color: var(--dark);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .section {
+            padding: 40px 0;
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 90%;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        /* New Team Layout */
+        .team-grid-new {
+            margin-top: 2rem;
+        }
+        
+        .main-attorneys {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .attorney-card {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.08);
+            border: 1px solid rgba(68, 117, 181, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .attorney-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(30, 58, 138, 0.15);
+            border-color: rgba(68, 117, 181, 0.3);
+        }
+        
+        .attorney-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 3px solid rgba(68, 117, 181, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .attorney-card:hover img {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .attorney-info {
+            flex: 1;
+        }
+        
+        .attorney-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .attorney-title {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .attorney-credentials {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .attorney-credentials li {
+            font-size: 0.95rem;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .attorney-credentials li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Support Team Grid */
+        .support-team {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .team-member-small {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 15px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.06);
+            border: 1px solid rgba(68, 117, 181, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member-small:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.1);
+            border-color: rgba(68, 117, 181, 0.2);
+        }
+        
+        .team-member-small img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid rgba(68, 117, 181, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member-small:hover img {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .team-member-small h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member-small p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 0;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .section {
+                width: 95%;
+                padding: 64px 0 32px 0;
+            }
+            
+            .main-attorneys {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .attorney-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            
+            .attorney-card img {
+                width: 100px;
+                height: 100px;
+                align-self: center;
+            }
+            
+            .support-team {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .team-member-small {
+                min-width: 180px;
+                padding: 20px 15px;
+            }
+            
+            .team-member-small img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section {
+                width: 98%;
+                padding: 0 0.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 2rem;
+            }
+            
+            .team-member-small {
+                min-width: 160px;
+                padding: 15px 10px;
+            }
+            
+            .team-member-small img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .support-team {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="team-grid-new">
+            <!-- Main Attorneys Row -->
+            <div class="main-attorneys">
+                <div class="attorney-card large">
+                    <a href="https://www.moralespadialaw.com/trisha-morales-padia" style="display: flex; gap: 1.5rem; align-items: flex-start; text-decoration: none; color: inherit;">
+                        <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/677722d9ed46eb18adfb4430.webp" alt="Trisha Morales Padia">
+                        <div class="attorney-info">
+                            <h3>Trisha Morales Padia</h3>
+                            <p class="attorney-title">Founder & CEO</p>
+                            <ul class="attorney-credentials">
+                                <li>Licensed in Texas</li>
+                                <li>Specialized in Family Law & Estate Planning</li>
+                                <li>Award-Winning Legal Excellence</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <div class="attorney-card large">
+                    <a href="https://www.moralespadialaw.com/aiden-gamble" style="display: flex; gap: 1.5rem; align-items: flex-start; text-decoration: none; color: inherit;">
+                        <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/6822f7df4ad1fbb046e6eb9a.jpeg" alt="Aiden Gamble">
+                        <div class="attorney-info">
+                            <h3>Aiden Gamble</h3>
+                            <p class="attorney-title">Associate Attorney</p>
+                            <ul class="attorney-credentials">
+                                <li>Licensed in Texas</li>
+                                <li>Specialized in Criminal Defense & Family Law</li>
+                                <li>Strategic Advocacy in Complex Legal Matters</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Support Team Row -->
+            <div class="support-team">
+                <a href="https://www.moralespadialaw.com/dorothy-dominguez" class="team-member-small" style="text-decoration: none; color: inherit;">
+                    <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/677722d9d4ebc41783c56d84.webp" alt="Dorothy Dominguez">
+                    <h4>Dorothy Dominguez</h4>
+                    <p>Senior Paralegal</p>
+                </a>
+                <a href="https://www.moralespadialaw.com/allyson-gilmore" class="team-member-small" style="text-decoration: none; color: inherit;">
+                    <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/677722d9d64d3d5edf86e14c.webp" alt="Allyson Gilmore">
+                    <h4>Allyson Gilmore</h4>
+                    <p>Family Law Paralegal</p>
+                </a>
+                <a href="https://www.moralespadialaw.com/veronica-ruvalcaba" class="team-member-small" style="text-decoration: none; color: inherit;">
+                    <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/677722d9ed46ebeaaefb4431.webp" alt="Veronica Ruvalcaba">
+                    <h4>Veronica Ruvalcaba</h4>
+                    <p>Legal Assistant</p>
+                </a>
+                <a href="https://www.moralespadialaw.com/elena-galaviz" class="team-member-small" style="text-decoration: none; color: inherit;">
+                    <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/677722d910dd0dc5338deb97.webp" alt="Elena Galaviz">
+                    <h4>Elena Galaviz</h4>
+                    <p>Estate Planning Paralegal</p>
+                </a>
+                <a href="https://www.moralespadialaw.com/cameron-ozuna" class="team-member-small" style="text-decoration: none; color: inherit;">
+                    <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/677722d9d4ebc42c96c56d83.webp" alt="Cameron Ozuna">
+                    <h4>Cameron Ozuna</h4>
+                    <p>Paralegal</p>
+                </a>
+                <a href="https://www.moralespadialaw.com/alexandra-johnson" class="team-member-small" style="text-decoration: none; color: inherit;">
+                    <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/677722d937a11da6fcfb7122.webp" alt="Alexandra Johnson">
+                    <h4>Alexandra Johnson</h4>
+                    <p>Client Services Director</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

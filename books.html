@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Morales Padia Law</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            padding: 60px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .header-section h1 {
+            font-size: 3.5rem;
+            color: #1a365d;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .header-section p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2b6cb0, #3182ce);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2b6cb0, #3182ce);
+            border-radius: 16px;
+            margin: 0 auto 25px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .book-card:hover .book-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+        }
+
+        .book-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .book-description {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .book-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #e6fffa, #b2f5ea);
+            color: #234e52;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #2b6cb0, #3182ce);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .book-card:hover .cta-button {
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .book-card:nth-child(1) {
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .book-card:nth-child(2) {
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .book-card:nth-child(3) {
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        @media (max-width: 768px) {
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                overflow-x: hidden;
+            }
+            
+            body {
+                padding: 40px 0;
+            }
+            
+            .container {
+                padding: 0 15px;
+                margin: 0;
+                width: 100%;
+                max-width: none;
+            }
+            
+            .header-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                width: 100%;
+            }
+            
+            .book-card {
+                padding: 30px 25px;
+                margin: 0;
+                width: 100%;
+            }
+        }
+
+        .pulse-effect {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <h1>Legal Resources & Books</h1>
+            <p>Comprehensive guides to help you navigate complex legal matters with confidence and clarity</p>
+        </div>
+
+        <div class="books-grid">
+            <a href="https://moralespadialaw.com/family-blindsided" class="book-card" data-book="estate">
+                <div class="book-category">Estate Planning</div>
+                <div class="book-icon">📚</div>
+                <h3 class="book-title">Family Blindsided</h3>
+                <p class="book-description">Don't let your loved ones suffer. A comprehensive guide to estate planning that ensures your family avoids unnecessary legal and financial hurdles during challenging times.</p>
+                <button class="cta-button">Read More</button>
+            </a>
+
+            <a href="https://moralespadialaw.com/divorce-book" class="book-card" data-book="divorce">
+                <div class="book-category">Family Law</div>
+                <div class="book-icon">⚖️</div>
+                <h3 class="book-title">Divorce Guide</h3>
+                <p class="book-description">What to do next when facing divorce. Navigate the complex process of divorce with expert guidance and practical steps to protect your interests and your family's future.</p>
+                <button class="cta-button">Read More</button>
+            </a>
+
+            <a href="https://moralespadialaw.com/estate-planning-ebook" class="book-card" data-book="planning">
+                <div class="book-category">Estate Planning</div>
+                <div class="book-icon">📋</div>
+                <h3 class="book-title">Estate Planning Guide</h3>
+                <p class="book-description">A comprehensive guide to estate planning. Learn the essential strategies to protect your assets, minimize taxes, and ensure your legacy is preserved for future generations.</p>
+                <button class="cta-button">Read More</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive hover effects
+        document.querySelectorAll('.book-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('.book-icon').classList.add('pulse-effect');
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('.book-icon').classList.remove('pulse-effect');
+            });
+        });
+
+        // Smooth scroll animation on load
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add click analytics (optional)
+        document.querySelectorAll('.book-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const bookType = this.getAttribute('data-book');
+                console.log(`Book clicked: ${bookType}`);
+                // You can add analytics tracking here if needed
+            });
+        });
+    </script>
+</body>
+</html> 

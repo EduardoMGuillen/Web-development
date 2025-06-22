@@ -1,0 +1,2402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morales Padia Law | San Antonio Family & Probate Lawyers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1a2a4f;
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
+        }
+            html, body {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      scroll-behavior: smooth;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+        body { opacity: 0; transition: opacity 0.7s; }
+        body.loaded { opacity: 1; }
+            /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(30, 58, 138, 0.3);
+      border-bottom-left-radius: 60px 30px;
+      border-bottom-right-radius: 60px 30px;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+      opacity: 0.08;
+      z-index: 0;
+    }
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .particle {
+      position: absolute;
+      background: rgba(255, 215, 0, 0.6);
+      border-radius: 50%;
+      animation: float 8s infinite ease-in-out;
+    }
+    .particle:nth-child(1) {
+      width: 6px; height: 6px;
+      left: 10%; top: 20%;
+      animation-delay: 0s;
+      animation-duration: 6s;
+    }
+    .particle:nth-child(2) {
+      width: 4px; height: 4px;
+      left: 20%; top: 80%;
+      animation-delay: 1s;
+      animation-duration: 8s;
+    }
+    .particle:nth-child(3) {
+      width: 8px; height: 8px;
+      left: 80%; top: 30%;
+      animation-delay: 2s;
+      animation-duration: 7s;
+    }
+    .particle:nth-child(4) {
+      width: 5px; height: 5px;
+      left: 70%; top: 70%;
+      animation-delay: 3s;
+      animation-duration: 9s;
+    }
+    .particle:nth-child(5) {
+      width: 7px; height: 7px;
+      left: 30%; top: 50%;
+      animation-delay: 4s;
+      animation-duration: 6s;
+    }
+    .particle:nth-child(6) {
+      width: 3px; height: 3px;
+      left: 90%; top: 60%;
+      animation-delay: 5s;
+      animation-duration: 8s;
+    }
+    .particle:nth-child(7) {
+      width: 6px; height: 6px;
+      left: 50%; top: 10%;
+      animation-delay: 6s;
+      animation-duration: 7s;
+    }
+    .particle:nth-child(8) {
+      width: 4px; height: 4px;
+      left: 60%; top: 90%;
+      animation-delay: 7s;
+      animation-duration: 9s;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+      }
+    }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .section {
+            padding: 80px 0;
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 90%;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            padding: 1.5rem 2rem 0.5rem 2rem;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin: 1rem auto 0 auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            gap: 2rem;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-nav-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        .mobile-nav-toggle.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .mobile-nav-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-nav-toggle.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            border-radius: 2px;
+        }
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        @media (min-width: 969px) {
+            .mobile-nav-toggle {
+                display: none !important;
+            }
+            
+            nav {
+                display: flex !important;
+                position: static !important;
+                background: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                margin-top: 0 !important;
+                backdrop-filter: none !important;
+                border: none !important;
+                flex-direction: row !important;
+                gap: 30px !important;
+            }
+            
+            nav a {
+                padding: 8px 16px !important;
+                border-radius: 8px !important;
+                text-align: left !important;
+                background: transparent !important;
+            }
+            
+            nav a:hover {
+                background: rgba(255, 255, 255, 0.1) !important;
+                transform: translateY(-2px) !important;
+            }
+            
+            .cta-btn {
+                margin-left: 20px !important;
+                margin-top: 0 !important;
+            }
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        nav a:hover {
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        nav a:hover::before {
+            width: 80%;
+        }
+        .cta-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%);
+            color: var(--primary);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 20px;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+        .cta-btn:hover {
+            background: linear-gradient(135deg, #ffd700 0%, var(--accent) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+        }
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0 40px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 480px;
+        }
+
+        .hero-text {
+            flex: 1 1 420px;
+            max-width: 600px;
+            z-index: 1;
+            animation: fadeInUp 1.2s;
+        }
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.9rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            animation: fadeInUp 1.2s;
+        }
+        .hero-text .typewriter {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 2.1rem;
+            display: inline-block;
+            border-right: 2px solid var(--accent);
+            padding-right: 6px;
+            margin-bottom: 10px;
+            min-height: 2.2rem;
+            animation: blink-caret 0.8s step-end infinite;
+        }
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+            color: #e3e8f0;
+            line-height: 1.6;
+            animation: fadeInUp 1.5s;
+        }
+        .hero-text ul {
+            margin: 0 0 18px 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.08rem;
+        }
+        .hero-img {
+            flex: 1 1 320px;
+            text-align: right;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .hero-img img {
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.25);
+            filter: contrast(1.1) brightness(1.05);
+            animation: fadeIn 1.5s, float 6s ease-in-out infinite;
+            position: relative;
+            top: 30px;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* SVG Wave Divider */
+        .wave {
+            display: block;
+            width: 100%;
+            height: 80px;
+            margin-bottom: -2px;
+        }
+        /* Animated Stats - contained background */
+        .stats-flow {
+            background: transparent;
+            color: var(--white);
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            z-index: 2;
+            position: relative;
+            padding: 60px 0;
+        }
+        
+        .stats-container {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 50%, var(--secondary) 100%);
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 60px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.25);
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: fit-content;
+        }
+        
+        .stats-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        .stat {
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .stat strong {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+        .stat:hover {
+            transform: translateY(-8px) scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+        }
+        /* Practice Areas - flowing, no boxes */
+        .practice-flow {
+            background: linear-gradient(120deg, #f8fafc 60%, #e6f0fa 100%);
+            padding: 64px 0 32px 0;
+            position: relative;
+        }
+        .practice-areas {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .practice-area {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 40px 28px;
+            min-width: 280px;
+            max-width: 320px;
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        .practice-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        .practice-area:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(30, 58, 138, 0.15);
+            border-color: var(--accent);
+        }
+        .practice-area:hover::before {
+            left: 100%;
+        }
+        .practice-area i {
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .practice-area:hover i {
+            transform: scale(1.15) rotate(5deg);
+            color: #ffd700 !important;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        .practice-area h3 {
+            font-size: 1.13rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        .practice-area p {
+            font-size: 0.98rem;
+            color: #374151;
+        }
+        
+        /* We Are Here to Help Section */
+        .help-section {
+            background: transparent;
+            color: var(--white);
+            padding: 60px 0;
+            margin: 0;
+            position: relative;
+        }
+        
+        .help-container {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 50%, var(--secondary) 100%);
+            border-radius: 25px;
+            padding: 50px 60px;
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.25);
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+        
+        .help-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        .help-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        .help-text {
+            flex: 1;
+        }
+        .help-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        .help-text em {
+            color: var(--accent);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+        .help-text p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+        }
+        .help-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%);
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .help-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+        .help-btn:hover {
+            background: linear-gradient(135deg, #ffd700 0%, var(--accent) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        }
+        .help-btn:hover::before {
+            left: 100%;
+        }
+        .help-contact {
+            flex: 0 0 auto;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            background: rgba(255, 215, 0, 0.2);
+            padding: 12px;
+            border-radius: 50%;
+        }
+        .contact-item div {
+            display: flex;
+            flex-direction: column;
+        }
+        .location {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 2px;
+        }
+        .phone {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        /* About/Why Choose/Team - blended */
+        .about-flow {
+            background: linear-gradient(120deg, #e6f0fa 60%, #f8fafc 100%);
+            padding: 64px 0 32px 0;
+            position: relative;
+        }
+        .about-flow .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-align: center;
+            color: var(--primary);
+        }
+        .why-choose {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        .why-card {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 18px;
+            padding: 32px 24px;
+            min-width: 240px;
+            max-width: 280px;
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.06);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.08);
+        }
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.08), transparent);
+            transition: left 0.5s;
+        }
+        .why-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(30, 58, 138, 0.12);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+        .why-card:hover::before {
+            left: 100%;
+        }
+        .why-card i {
+            transition: all 0.3s ease;
+        }
+        .why-card:hover i {
+            transform: scale(1.1) rotate(-5deg);
+            color: #ffd700 !important;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+        .why-card img {
+            width: 38px;
+            margin-bottom: 10px;
+        }
+        .why-card h4 {
+            font-size: 1.08rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .why-card p {
+            font-size: 0.97rem;
+            color: #374151;
+        }
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        .team-member {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 16px;
+            padding: 24px 20px;
+            max-width: 200px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(59, 130, 246, 0.06);
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.1);
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            background: #e6f0fa;
+            border: 3px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .team-member:hover img {
+            transform: scale(1.05);
+            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+        .team-member h5 {
+            font-size: 1.01rem;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            color: var(--primary);
+        }
+        .team-member p {
+            font-size: 0.93rem;
+            color: #374151;
+            margin: 0;
+        }
+        /* Testimonials - flowing */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 50%, var(--secondary) 100%);
+            color: var(--white);
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        .testimonials-section .section {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonials-section .section-title {
+            color: var(--white);
+        }
+        .testimonial-slide {
+            display: none;
+            background: rgba(255,255,255,0.98);
+            color: var(--primary);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px 35px;
+            text-align: left;
+            min-height: 200px;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            animation: fadeIn 0.7s;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        .testimonial-slide.active {
+            display: block;
+            position: relative;
+        }
+        .testimonial-stars {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        .testimonial-role {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            font-style: italic;
+        }
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e0e7ef;
+            cursor: pointer;
+            border: 2px solid var(--accent);
+            transition: background 0.2s, border 0.2s;
+        }
+        .testimonial-dot.active {
+            background: var(--accent);
+            border: 2px solid var(--secondary);
+        }
+        /* Resources/Books - flowing */
+        .resources-section {
+            background: linear-gradient(120deg, #f8fafc 60%, #e6f0fa 100%);
+            border-radius: 0;
+            margin: 0;
+            padding: 64px 0 32px 0;
+        }
+        .resources-grid {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .resource-card {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            flex: 1 1 300px;
+            max-width: 350px;
+        }
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        .resource-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(30, 58, 138, 0.15);
+            border-color: var(--accent);
+        }
+        .resource-card:hover::before {
+            left: 100%;
+        }
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .resource-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .resource-desc {
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .resource-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%);
+            color: var(--primary);
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        .resource-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #ffd700 0%, var(--accent) 100%);
+        }
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(120deg, #f8fafc 60%, #e6f0fa 100%);
+            padding: 0;
+            margin: 0;
+        }
+        .contact-section .section {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .contact-info {
+            flex: 1 1 400px;
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        .contact-form {
+            flex: 1 1 400px;
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        .contact-info h4, .contact-form h4 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+        }
+        .contact-info h4::after, .contact-form h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+        .contact-info p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #374151;
+        }
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .contact-info a:hover {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px 18px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: none;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+        .contact-form textarea {
+            min-height: 120px;
+        }
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 50%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 60px 0 30px 0;
+            margin-top: 0;
+            border-top-left-radius: 60px 30px;
+            border-top-right-radius: 60px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-section {
+            flex: 1 1 250px;
+            min-width: 200px;
+        }
+        .footer-section h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent);
+            position: relative;
+        }
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+        .footer-section a {
+            color: #e2e8f0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            padding: 4px 0;
+        }
+        .footer-section a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        .footer-section p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            color: #94a3b8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 1200px) {
+            .container, .section {
+                width: 95%;
+                padding: 0 1rem;
+            }
+            .top-bar {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            .nav-container {
+                gap: 1rem;
+            }
+            nav {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .nav-container {
+                position: relative;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+                border-radius: 15px;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+                z-index: 1000;
+                margin-top: 15px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            nav.active {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav a {
+                padding: 12px 16px;
+                border-radius: 8px;
+                text-align: center;
+                background: rgba(255, 255, 255, 0.05);
+                transition: all 0.3s ease;
+            }
+            
+            nav a:hover {
+                background: rgba(255, 255, 255, 0.15);
+                transform: translateX(0);
+            }
+            
+            .cta-btn {
+                margin-left: 0;
+                padding: 10px 24px;
+                font-size: 0.9rem;
+                margin-top: 10px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0;
+            }
+            .hero-text {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .hero-text .typewriter {
+                font-size: 1.8rem;
+            }
+            .hero-img {
+                text-align: center;
+            }
+            .hero-img img {
+                max-width: 300px;
+                top: 0;
+            }
+            .stats-flow {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px 0;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px 40px;
+                margin: 0 1rem;
+            }
+            .practice-areas, .why-choose, .team-grid, .resources-grid {
+                gap: 20px;
+            }
+            .practice-area, .why-card, .team-member, .resource-card {
+                min-width: 280px;
+                max-width: 100%;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .contact-section .section {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .contact-info, .contact-form {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 1rem 0.5rem;
+                margin: 0.5rem;
+            }
+            .logo {
+                font-size: 1.8rem;
+            }
+            nav a {
+                font-size: 0.95rem;
+                padding: 12px 16px;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 25px 20px;
+                margin: 0 0.5rem;
+            }
+            
+            .help-container {
+                padding: 25px 15px;
+                margin: 0 0.5rem;
+            }
+            .hero-text h1 {
+                font-size: 1.9rem;
+            }
+            .hero-text .typewriter {
+                font-size: 1.5rem;
+            }
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+            .hero-text ul {
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .practice-area, .why-card {
+                padding: 30px 20px;
+                min-width: 260px;
+            }
+            .team-member {
+                min-width: 180px;
+                padding: 20px 15px;
+            }
+            .team-member img {
+                width: 70px;
+                height: 70px;
+            }
+            .testimonials-slider {
+                max-width: 90%;
+            }
+            .testimonial-slide {
+                padding: 25px 20px;
+                min-height: 150px;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+            .footer-section {
+                min-width: 100%;
+            }
+            
+            /* Service Tabs Mobile */
+            .service-tabs {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 12px;
+            }
+            .service-tab {
+                flex: 1;
+                min-width: calc(50% - 4px);
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+            .service-layout {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+            }
+            .service-image {
+                flex: none;
+            }
+            .service-image img {
+                height: 200px;
+            }
+            .service-info h3 {
+                font-size: 1.6rem;
+            }
+            .service-info p {
+                font-size: 1rem;
+            }
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container, .section {
+                width: 98%;
+                padding: 0 0.5rem;
+            }
+            .top-bar {
+                padding: 0.8rem 0.3rem;
+                margin: 0.3rem;
+            }
+            .logo {
+                font-size: 1.6rem;
+            }
+            nav {
+                gap: 10px;
+            }
+            nav a {
+                font-size: 0.9rem;
+                padding: 4px 8px;
+            }
+            .cta-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+            .hero-text h1 {
+                font-size: 1.7rem;
+            }
+            .hero-text .typewriter {
+                font-size: 1.3rem;
+            }
+            .hero-text p {
+                font-size: 1rem;
+            }
+            .hero-img img {
+                max-width: 250px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 2rem;
+            }
+            .practice-area, .why-card {
+                padding: 25px 15px;
+                min-width: 240px;
+            }
+            .practice-area i, .why-card i {
+                font-size: 2.5rem !important;
+            }
+            .team-member {
+                min-width: 160px;
+                padding: 15px 10px;
+            }
+            .team-member img {
+                width: 60px;
+                height: 60px;
+            }
+            .testimonial-slide {
+                padding: 20px 15px;
+                font-size: 0.95rem;
+            }
+            .resource-card {
+                padding: 20px 15px;
+            }
+            .contact-info, .contact-form {
+                padding: 20px 15px;
+            }
+            .contact-form input, .contact-form textarea {
+                padding: 8px 10px;
+                font-size: 0.95rem;
+            }
+                         .contact-form button {
+                 padding: 12px 25px;
+                 font-size: 1rem;
+             }
+             
+             .stats-container {
+                 flex-direction: column;
+                 gap: 12px;
+                 padding: 20px 15px;
+                 margin: 0 0.3rem;
+             }
+             
+             .help-container {
+                 padding: 20px 10px;
+                 margin: 0 0.3rem;
+             }
+             .help-content {
+                 flex-direction: column;
+                 gap: 2rem;
+                 text-align: center;
+             }
+             .help-text h2 {
+                 font-size: 2.2rem;
+             }
+             .help-text p {
+                 font-size: 1.1rem;
+             }
+             .help-container {
+                 padding: 30px 20px;
+                 margin: 0 1rem;
+             }
+             .achievements-stats {
+                 grid-template-columns: repeat(2, 1fr);
+                 gap: 1.5rem;
+                 padding: 2rem 1rem;
+             }
+             .main-attorneys {
+                 grid-template-columns: 1fr;
+                 gap: 2rem;
+             }
+             .attorney-card {
+                 flex-direction: column;
+                 text-align: center;
+                 padding: 1.5rem;
+             }
+             .attorney-card img {
+                 width: 100px;
+                 height: 100px;
+                 align-self: center;
+             }
+             .support-team {
+                 grid-template-columns: repeat(3, 1fr);
+                 gap: 1rem;
+             }
+             
+             /* Service Tabs Mobile Small */
+             .service-tabs {
+                 flex-direction: column;
+                 gap: 8px;
+             }
+             .service-tab {
+                 min-width: 100%;
+                 padding: 10px 15px;
+                 font-size: 0.85rem;
+             }
+             .service-layout {
+                 padding: 1.5rem 1rem;
+                 gap: 1.5rem;
+             }
+             .service-image img {
+                 height: 180px;
+             }
+             .service-info h3 {
+                 font-size: 1.4rem;
+             }
+             .service-info p {
+                 font-size: 0.95rem;
+             }
+             .service-list li {
+                 padding: 10px 12px;
+                 font-size: 0.9rem;
+             }
+         }
+        /* Professional Achievements Section */
+        .achievements-section {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .achievements-intro {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .achievements-desc {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .achievements-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        .achievement-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        .achievement-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .achievement-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        
+        /* New Team Layout - HagEstad Style */
+        .team-grid-new {
+            margin-top: 2rem;
+        }
+        .main-attorneys {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        .attorney-card {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .attorney-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(30, 58, 138, 0.15);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+        .attorney-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 3px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .attorney-card:hover img {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+        .attorney-info {
+            flex: 1;
+        }
+        .attorney-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .attorney-title {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .attorney-credentials {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .attorney-credentials li {
+            font-size: 0.95rem;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .attorney-credentials li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Support Team Grid */
+        .support-team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+        .team-member-small {
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 15px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.06);
+            border: 1px solid rgba(59, 130, 246, 0.08);
+            transition: all 0.3s ease;
+        }
+        .team-member-small:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.1);
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+        .team-member-small img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .team-member-small:hover img {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+        .team-member-small h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .team-member-small p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 0;
+        }
+        
+        /* Service Tabs - HagEstad Style */
+        .section-title em {
+            color: var(--accent);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 3rem;
+            background: #f1f5f9;
+            border-radius: 15px;
+            padding: 8px;
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.08);
+        }
+        
+        .service-tab {
+            background: transparent;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            flex: 1;
+            max-width: 200px;
+        }
+        
+        .service-tab:hover {
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .service-tab.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.2);
+        }
+        
+        .service-content {
+            position: relative;
+            min-height: 500px;
+        }
+        
+        .service-panel {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .service-panel.active {
+            display: block;
+        }
+        
+        .service-layout {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .service-image {
+            flex: 0 0 300px;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15);
+        }
+        
+        .service-info {
+            flex: 1;
+        }
+        
+        .service-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-info p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 2rem;
+        }
+        
+        .service-info h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .service-info h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.8rem;
+        }
+        
+        .service-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 15px;
+            background: rgba(59, 130, 246, 0.05);
+            border-radius: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+        }
+        
+        .service-list li:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-left-color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .service-list li i {
+            color: var(--accent);
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .service-list li:hover i {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="container top-bar">
+                            <div class="nav-container">
+                <div class="logo">Morales Padia Law</div>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav id="nav-menu">
+                    <a href="#about" onclick="closeNav()">About</a>
+                    <a href="#practice" onclick="closeNav()">Practice Areas</a>
+                    <a href="#team" onclick="closeNav()">Team</a>
+                    <a href="#testimonials" onclick="closeNav()">Testimonials</a>
+                    <a href="#resources" onclick="closeNav()">Resources</a>
+                    <a href="#contact" onclick="closeNav()">Contact</a>
+                    <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); closeNav();">Free Consultation</button>
+                </nav>
+            </div>
+        </div>
+        <div class="container hero">
+            <div class="hero-text">
+                <h1>Protecting <span class="typewriter" id="typewriter"></span></h1>
+                <p>Whether you're facing a family law challenge, planning your estate, or navigating probate or criminal law matters, Morales Padia Law is here to provide compassionate, expert legal guidance. Our award-winning, women-led, bilingual team is dedicated to protecting your rights and achieving the best possible outcome for your case.</p>
+                <ul>
+                    <li>Family Law</li>
+                    <li>Estate Planning</li>
+                    <li>Probate Law</li>
+                    <li>Criminal Law</li>
+                </ul>
+                <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Free Consultation</button>
+            </div>
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=500&q=80" alt="Professional Legal Team - Morales Padia Law">
+            </div>
+        </div>
+    </header>
+    <svg class="wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#3b82f6" fill-opacity="0.12" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"></path></svg>
+    <div class="stats-flow">
+        <div class="stats-container">
+            <div class="stat"><strong id="stat-years">0</strong>Years Practicing</div>
+            <div class="stat"><strong id="stat-cases">0</strong>Cases Served</div>
+            <div class="stat"><strong id="stat-awards">0</strong>Awards & Honors</div>
+        </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#e6f0fa" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"></path></svg>
+    <div class="practice-flow" id="practice">
+                <div class="section">
+            <h2 class="section-title">Legal Services <em>We Provide</em></h2>
+            
+            <!-- Service Tabs -->
+            <div class="service-tabs">
+                <button class="service-tab active" data-service="family">Family Law</button>
+                <button class="service-tab" data-service="estate">Estate & Probate Law</button>
+                <button class="service-tab" data-service="criminal">Criminal Law</button>
+                <button class="service-tab" data-service="business">Business Law</button>
+            </div>
+            
+            <!-- Service Content -->
+            <div class="service-content">
+                <!-- Family Law Content -->
+                <div class="service-panel active" id="family">
+                    <div class="service-layout">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=500&q=80" alt="Family Law Services">
+                        </div>
+                        <div class="service-info">
+                            <h3>Family Law</h3>
+                            <p>When family matters arise, it's important to have an experienced family law team on your side. At Morales Padia Law, we are committed to protecting your rights and interests in a variety of family law matters, including divorce, child custody, child support, adoption, and much more. Our attorneys have a proven track record of success and will fight tirelessly to ensure the best possible outcome for your case.</p>
+                            
+                            <h4>in San Antonio</h4>
+                            <ul class="service-list">
+                                <li>Divorce & Legal Separation <i class="fas fa-arrow-right"></i></li>
+                                <li>Child Custody & Support <i class="fas fa-arrow-right"></i></li>
+                                <li>Property Division <i class="fas fa-arrow-right"></i></li>
+                                <li>Adoption Services <i class="fas fa-arrow-right"></i></li>
+                                <li>Domestic Violence Protection <i class="fas fa-arrow-right"></i></li>
+                                <li>All Texas Family Law Services <i class="fas fa-arrow-right"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Estate & Probate Law Content -->
+                <div class="service-panel" id="estate">
+                    <div class="service-layout">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Estate Planning Services">
+                        </div>
+                        <div class="service-info">
+                            <h3>Estate & Probate Law</h3>
+                            <p>At Morales Padia Law, we understand that your legacy is important to you. That's why we offer comprehensive estate and probate law services to ensure that your assets and loved ones are protected. Our experienced attorneys will guide you through every step of the estate planning process, from drafting wills and trusts to establishing powers of attorney and healthcare directives.</p>
+                            
+                            <h4>in San Antonio</h4>
+                            <ul class="service-list">
+                                <li>Estate Planning <i class="fas fa-arrow-right"></i></li>
+                                <li>Probate & Estate Administration <i class="fas fa-arrow-right"></i></li>
+                                <li>Trust Administration <i class="fas fa-arrow-right"></i></li>
+                                <li>Wills & Testament <i class="fas fa-arrow-right"></i></li>
+                                <li>Power of Attorney <i class="fas fa-arrow-right"></i></li>
+                                <li>All Texas Estate & Probate Law Services <i class="fas fa-arrow-right"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Criminal Law Content -->
+                <div class="service-panel" id="criminal">
+                    <div class="service-layout">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=80" alt="Criminal Defense Services">
+                        </div>
+                        <div class="service-info">
+                            <h3>Criminal Law</h3>
+                            <p>When facing criminal charges, you need aggressive and experienced representation. At Morales Padia Law, we are committed to protecting your rights and freedom in a variety of criminal defense matters, including DWI, drug offenses, domestic violence, and much more. Our attorneys will work tirelessly to build a strong defense strategy for your case.</p>
+                            
+                            <h4>in San Antonio</h4>
+                            <ul class="service-list">
+                                <li>DWI Defense <i class="fas fa-arrow-right"></i></li>
+                                <li>Drug Offense Defense <i class="fas fa-arrow-right"></i></li>
+                                <li>Domestic Violence Defense <i class="fas fa-arrow-right"></i></li>
+                                <li>Assault & Battery Defense <i class="fas fa-arrow-right"></i></li>
+                                <li>Theft & Property Crimes <i class="fas fa-arrow-right"></i></li>
+                                <li>All Texas Criminal Defense Services <i class="fas fa-arrow-right"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Business Law Content -->
+                <div class="service-panel" id="business">
+                    <div class="service-layout">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Business Law Services">
+                        </div>
+                        <div class="service-info">
+                            <h3>Business Law</h3>
+                            <p>As a business owner, you face a variety of legal challenges in the corporate world. At Morales Padia Law, we are committed to providing expert legal guidance tailored to your specific business needs. Our team has extensive experience in business law, including entity formation, contract drafting and negotiation, and business disputes.</p>
+                            
+                            <h4>in San Antonio</h4>
+                            <ul class="service-list">
+                                <li>Business Formation <i class="fas fa-arrow-right"></i></li>
+                                <li>Contract Drafting & Review <i class="fas fa-arrow-right"></i></li>
+                                <li>Business Litigation <i class="fas fa-arrow-right"></i></li>
+                                <li>Employment Law <i class="fas fa-arrow-right"></i></li>
+                                <li>Intellectual Property <i class="fas fa-arrow-right"></i></li>
+                                <li>All Texas Business Law Services <i class="fas fa-arrow-right"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- We Are Here to Help Section -->
+    <div class="help-section">
+        <div class="section">
+            <div class="help-container">
+                <div class="help-content">
+                    <div class="help-text">
+                        <h2>We Are Here <em>to Help</em></h2>
+                        <p>Ready to discuss your legal needs? Let's get started!</p>
+                        <button class="help-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Free Consultation</button>
+                    </div>
+                    <div class="help-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span class="location">San Antonio</span>
+                                <span class="phone">(726) 204-4044</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <svg class="wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#e6f0fa" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"></path></svg>
+    <div class="about-flow" id="about">
+        <div class="section">
+            <h2 class="section-title">Why Choose Morales Padia Law?</h2>
+        <div class="why-choose">
+            <div class="why-card">
+                <i class="fas fa-award" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                <h4>Award-Winning Excellence</h4>
+                <p>Recognized for outstanding legal service and client satisfaction in San Antonio and beyond.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-users" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                <h4>Women-Led & Bilingual</h4>
+                <p>Proudly women-owned with fluent Spanish services to serve our diverse community.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-comments" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                <h4>Transparent Communication</h4>
+                <p>Clear, open communication throughout your legal process with regular updates.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                <h4>Aggressive Representation</h4>
+                <p>We leave no stone unturned to build a compelling case on your behalf.</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fas fa-star" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                <h4>Proven Track Record</h4>
+                <p>Thousands of successful cases with outstanding client satisfaction and results.</p>
+            </div>
+                </div>
+            <!-- Professional Achievements Section -->
+            <div class="achievements-section">
+                <h2 class="section-title">Expertise In Action: Meet The Morales Padia Law Attorneys</h2>
+                <p class="achievements-intro">At Morales Padia Law, our skilled attorneys are dedicated to delivering exceptional legal services, utilizing the latest technology to offer efficient and cost-effective solutions tailored to your unique needs.</p>
+                <p class="achievements-desc">Our proven track record of success, no-nonsense approach, and focus on achieving results ensure the best possible outcome. With a strong network of professional relationships, we are well-equipped to serve you. Communication and transparency are paramount, keeping you informed and engaged throughout the legal process.</p>
+                
+                <div class="achievements-stats">
+                    <div class="achievement-item">
+                        <div class="achievement-number">Thousands</div>
+                        <div class="achievement-label">of client's cases handled</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">Extensive Track Record</div>
+                        <div class="achievement-label">of Achieving Client Goals</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">1000+</div>
+                        <div class="achievement-label">Clients Served</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">15+</div>
+                        <div class="achievement-label">Years of Combined Experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title" id="team" style="margin-top:48px;">Meet Our Team</h2>
+            <div class="team-grid-new">
+                <!-- Main Attorneys Row -->
+                <div class="main-attorneys">
+                    <div class="attorney-card large">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?auto=format&fit=crop&w=400&q=80" alt="Trisha Morales Padia">
+                        <div class="attorney-info">
+                            <h3>Trisha Morales Padia</h3>
+                            <p class="attorney-title">Managing Attorney & Founder</p>
+                            <ul class="attorney-credentials">
+                                <li>Licensed in Texas</li>
+                                <li>Specialized in Family Law & Estate Planning</li>
+                                <li>Award-Winning Legal Excellence</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="attorney-card large">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Veronica Ruvalcaba">
+                        <div class="attorney-info">
+                            <h3>Veronica Ruvalcaba</h3>
+                            <p class="attorney-title">Senior Attorney</p>
+                            <ul class="attorney-credentials">
+                                <li>Licensed in Texas</li>
+                                <li>Specialized in Criminal Defense & Family Law</li>
+                                <li>Bilingual Legal Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Support Team Row -->
+                <div class="support-team">
+                    <div class="team-member-small">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80" alt="Dorothy Dominguez">
+                        <h4>Dorothy Dominguez</h4>
+                        <p>Senior Paralegal</p>
+                    </div>
+                    <div class="team-member-small">
+                        <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=200&q=80" alt="Allyson Gilmore">
+                        <h4>Allyson Gilmore</h4>
+                        <p>Family Law Paralegal</p>
+                    </div>
+                    <div class="team-member-small">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Aiden Gamble">
+                        <h4>Aiden Gamble</h4>
+                        <p>Legal Research Assistant</p>
+                    </div>
+                    <div class="team-member-small">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616c9c0e8e0?auto=format&fit=crop&w=200&q=80" alt="Elena Galaviz">
+                        <h4>Elena Galaviz</h4>
+                        <p>Estate Planning Paralegal</p>
+                    </div>
+                    <div class="team-member-small">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Cameron Ozuna">
+                        <h4>Cameron Ozuna</h4>
+                        <p>Criminal Defense Assistant</p>
+                    </div>
+                    <div class="team-member-small">
+                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=200&q=80" alt="Alexandra Johnson">
+                        <h4>Alexandra Johnson</h4>
+                        <p>Associate Attorney</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#204074" fill-opacity="0.10" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"></path></svg>
+    <section class="testimonials-section" id="testimonials">
+        <div class="section">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-slider" id="testimonials-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div>"Morales Law firm definitely met and exceeded our expectations. All our questions and concerns were answered to our satisfaction. The staff were all courteous and professional from the start of our appointment to the end of the whole process. Thank you Trisha and staff for making us feel like family! 🎂 😋"</div>
+                    <div class="testimonial-author">Anna Espinoza</div>
+                    <div class="testimonial-role">Family Law Client</div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div>"Masterful law practice. I would not have survived the last 2 years without them. They are absolute sharks for their clients. And when you're dealing with a shark like I was, you need a shark. I felt seen, heard, respected, & believed for the first time in years. I am a DA/DV survivor & after years of abuse, dismissal, & manipulation, having the lawyers at MPL behind me, in my corner, validating my trauma, especially right at first when everything hit the fan, was a massive step in my healing. I am the man & father I am today because of their work. They helped bring order to my life when I was in the lowest, darkest, & most chaotic season I've ever been in. I will always be thankful for them."</div>
+                    <div class="testimonial-author">Klaus Weinelt</div>
+                    <div class="testimonial-role">Family Law Client</div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div>"They handled everything I wanted and needed to complete my court needs. I truly appreciated there help and support. I highly recommend working with them."</div>
+                    <div class="testimonial-author">Garret Hatchel</div>
+                    <div class="testimonial-role">Criminal Defense Client</div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div>"Morales Padia Law absolutely saved the day when I needed quick and last minute legal assistance. Elena Galaviz was my paralegal and walked me through every step to completion. I was kept informed through the entire process and felt secure knowing my legal needs were handled efficiently and effectively. I highly recommend their services to anyone who needs legal representation. Thank you Elena and Attorney Morales Padia!"</div>
+                    <div class="testimonial-author">A. B.</div>
+                    <div class="testimonial-role">Paralegal Client</div>
+                </div>
+            </div>
+            <div class="testimonial-nav" id="testimonial-nav"></div>
+        </div>
+    </section>
+    <svg class="wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#e6f0fa" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"></path></svg>
+    <div class="resources-section" id="resources">
+        <div class="section">
+            <h2 class="section-title">Free Legal Resources & Books</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <div class="resource-title">Family Blindsided</div>
+                    <div class="resource-desc">A comprehensive guide to estate planning that ensures your family avoids unnecessary legal and financial hurdles during challenging times.</div>
+                    <a href="https://moralespadialaw.com/family-blindsided" class="resource-btn" target="_blank">Read More</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">⚖️</div>
+                    <div class="resource-title">Divorce Guide</div>
+                    <div class="resource-desc">Navigate the complex process of divorce with expert guidance and practical steps to protect your interests and your family's future.</div>
+                    <a href="https://moralespadialaw.com/divorce-book" class="resource-btn" target="_blank">Read More</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">📋</div>
+                    <div class="resource-title">Estate Planning Guide</div>
+                    <div class="resource-desc">Learn the essential strategies to protect your assets, minimize taxes, and ensure your legacy is preserved for future generations.</div>
+                    <a href="https://moralespadialaw.com/estate-planning-ebook" class="resource-btn" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#204074" fill-opacity="0.10" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"></path></svg>
+    <div class="contact-section" id="contact">
+        <div class="section">
+            <div class="contact-info">
+                <h4>Contact Us</h4>
+                <p>Morales Padia Law<br>
+                14603 Huebner Rd, Bldg 40, Ste 102<br>
+                San Antonio, TX 78230</p>
+                <a href="tel:7262044044">(726) 204-4044</a><br>
+                <a href="mailto:info@moralespadialaw.com">info@moralespadialaw.com</a>
+                <p style="margin-top:18px;">Follow us:<br>
+                <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
+                </p>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you! We will contact you soon.');this.reset();">
+                <h4>Request a Free Consultation</h4>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <textarea name="message" placeholder="How can we help you?" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Morales Padia Law<br>
+                14603 Huebner Rd, Bldg 40, Ste 102<br>
+                San Antonio, TX 78230<br>
+                <a href="tel:7262044044">(726) 204-4044</a><br>
+                <a href="mailto:info@moralespadialaw.com">info@moralespadialaw.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#about">About Us</a>
+                <a href="#practice">Practice Areas</a>
+                <a href="#team">Team</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#resources">Resources</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Morales Padia Law. All Rights Reserved. | Powered by Grow Law Firm Marketing Agency
+        </div>
+    </footer>
+    <script>
+        // Fade in body on load
+        window.addEventListener('DOMContentLoaded',()=>{document.body.classList.add('loaded');});
+        // Typewriter effect
+        const words = [
+            'Your Family',
+            'Your Legacy',
+            'Your Rights',
+            'Your Future',
+            'San Antonio Families'
+        ];
+        let twIndex = 0, charIndex = 0, isDeleting = false;
+        const twElem = document.getElementById('typewriter');
+        function typeWriter() {
+            const word = words[twIndex];
+            twElem.textContent = word.substring(0, charIndex) + (charIndex%2===0?'|':'');
+            if (!isDeleting && charIndex < word.length) {
+                charIndex++;
+                setTimeout(typeWriter, 90);
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                setTimeout(typeWriter, 40);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) twIndex = (twIndex+1)%words.length;
+                setTimeout(typeWriter, isDeleting?700:1200);
+            }
+        }
+        setTimeout(typeWriter, 800);
+        // Animated stats
+        function animateStat(id, target, duration=1200) {
+            const el = document.getElementById(id);
+            let start = 0, startTime = null;
+            function animate(ts) {
+                if (!startTime) startTime = ts;
+                const progress = Math.min((ts-startTime)/duration,1);
+                el.textContent = Math.floor(progress*target);
+                if (progress<1) requestAnimationFrame(animate);
+                else el.textContent = target;
+            }
+            requestAnimationFrame(animate);
+        }
+        animateStat('stat-years', 10);
+        animateStat('stat-cases', 1000);
+        animateStat('stat-awards', 3);
+        // Testimonials slider
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const nav = document.getElementById('testimonial-nav');
+        let current = 0;
+        function showSlide(idx) {
+            slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+            Array.from(nav.children).forEach((d,i)=>d.classList.toggle('active',i===idx));
+            current = idx;
+        }
+        slides.forEach((_,i)=>{
+            const dot = document.createElement('div');
+            dot.className = 'testimonial-dot'+(i===0?' active':'');
+            dot.onclick=()=>showSlide(i);
+            nav.appendChild(dot);
+        });
+        setInterval(()=>showSlide((current+1)%slides.length), 7000);
+        
+        // Service Tab Functionality
+        document.querySelectorAll('.service-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                
+                // Remove active class from all tabs and panels
+                document.querySelectorAll('.service-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding panel
+                this.classList.add('active');
+                document.getElementById(service).classList.add('active');
+            });
+        });
+        
+        // Mobile Navigation Toggle
+        function toggleNav() {
+            const nav = document.getElementById('nav-menu');
+            const toggle = document.getElementById('mobile-nav-toggle');
+            nav.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+        
+        function closeNav() {
+            const nav = document.getElementById('nav-menu');
+            const toggle = document.getElementById('mobile-nav-toggle');
+            nav.classList.remove('active');
+            toggle.classList.remove('active');
+        }
+        
+        document.getElementById('mobile-nav-toggle').addEventListener('click', toggleNav);
+        
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('nav-menu');
+            const toggle = document.getElementById('mobile-nav-toggle');
+            const navContainer = document.querySelector('.nav-container');
+            
+            if (!navContainer.contains(event.target) && nav.classList.contains('active')) {
+                closeNav();
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Preview Section - Morales Padia Law</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #204074;
+            --light: #f8fafc;
+            --dark: #1a2a4f;
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        /* Book Preview Section */
+        .book-preview {
+            padding: 6rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .book-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--light), transparent);
+        }
+
+        .book-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .book-cover {
+            flex: 0 0 400px;
+            position: relative;
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover img {
+            transform: translateY(-10px);
+        }
+
+        .book-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(32, 64, 116, 0.1));
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .book-info {
+            flex: 1;
+            animation: slideInRight 1s ease-out 0.7s both;
+        }
+
+        .book-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .book-info .author {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .book-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .book-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .book-features li i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+        @media (max-width: 768px) {
+            .book-container {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .book-cover {
+                flex: none;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Book Preview Section -->
+    <section class="book-preview">
+        <div class="container">
+            <div class="book-container">
+                <div class="book-cover">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=80" alt="Estate Planning Guide Book Cover">
+                </div>
+                <div class="book-info">
+                    <h2>Your Legacy Secured: The Complete Estate Planning Guide</h2>
+                    <p class="author">By Morales Padia Law Team</p>
+                    <ul class="book-features">
+                        <li><i class="fas fa-check-circle"></i> Comprehensive will and trust planning</li>
+                        <li><i class="fas fa-check-circle"></i> Asset protection strategies</li>
+                        <li><i class="fas fa-check-circle"></i> Tax minimization techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Healthcare directives and powers of attorney</li>
+                        <li><i class="fas fa-check-circle"></i> Guardianship planning for minors</li>
+                        <li><i class="fas fa-check-circle"></i> Business succession planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

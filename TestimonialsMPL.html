@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials - Morales Padia Law</title>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(-10px) rotate(-0.5deg); }
+        }
+        
+        @keyframes drift {
+            0% { transform: translateX(-100px) translateY(0px); }
+            50% { transform: translateX(100px) translateY(-30px); }
+            100% { transform: translateX(-100px) translateY(0px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        
+        @keyframes cardFlip {
+            0% { transform: rotateY(0deg) scale(1); }
+            25% { transform: rotateY(-90deg) scale(0.8); }
+            75% { transform: rotateY(90deg) scale(0.8); }
+            100% { transform: rotateY(0deg) scale(1); }
+        }
+        
+        .floating-shape {
+            position: absolute;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-shape:nth-child(1) {
+            width: 60px; height: 60px;
+            top: 15%; left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .floating-shape:nth-child(2) {
+            width: 80px; height: 80px;
+            top: 65%; right: 8%;
+            animation-delay: -2s;
+        }
+        
+        .floating-shape:nth-child(3) {
+            width: 40px; height: 40px;
+            top: 25%; right: 20%;
+            animation-delay: -4s;
+        }
+        
+        .drifting-particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: rgba(30, 58, 138, 0.8);
+            border-radius: 50%;
+            animation: drift 15s linear infinite;
+        }
+        
+        .drifting-particle:nth-child(4) {
+            top: 25%;
+            animation-delay: 0s;
+        }
+        
+        .drifting-particle:nth-child(5) {
+            top: 45%;
+            animation-delay: -5s;
+        }
+        
+        .drifting-particle:nth-child(6) {
+            top: 65%;
+            animation-delay: -10s;
+        }
+        
+        .card-stack {
+            perspective: 800px;
+            transform-style: preserve-3d;
+        }
+        
+        .testimonial-card {
+            backface-visibility: hidden;
+            transform-origin: center center;
+        }
+        
+        .testimonial-card.flipping {
+            animation: cardFlip 1.2s ease-in-out;
+        }
+        
+        .testimonial-card:not(.active) {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            pointer-events: none;
+        }
+        
+        .testimonial-card.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        
+        .pulse-ring {
+            position: absolute;
+            border: 2px solid rgba(59, 130, 246, 0.4);
+            border-radius: 50%;
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        .pulse-ring:nth-child(7) {
+            width: 120px; height: 120px;
+            top: 10%; left: 2%;
+            animation-delay: 0s;
+        }
+        
+        .pulse-ring:nth-child(8) {
+            width: 100px; height: 100px;
+            bottom: 15%; right: 5%;
+            animation-delay: -1.5s;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .floating-shape:nth-child(1) {
+                width: 40px; height: 40px;
+                top: 10%; left: 3%;
+            }
+            
+            .floating-shape:nth-child(2) {
+                width: 50px; height: 50px;
+                top: 70%; right: 5%;
+            }
+            
+            .floating-shape:nth-child(3) {
+                width: 30px; height: 30px;
+                top: 20%; right: 15%;
+            }
+            
+            .pulse-ring:nth-child(7) {
+                width: 80px; height: 80px;
+                top: 5%; left: 1%;
+            }
+            
+            .pulse-ring:nth-child(8) {
+                width: 60px; height: 60px;
+                bottom: 10%; right: 3%;
+            }
+            
+            .drifting-particle {
+                width: 2px; height: 2px;
+            }
+
+            section {
+                padding: 1rem 0.5rem;
+                min-height: auto;
+            }
+
+            .card-stack {
+                min-height: 300px;
+                margin-top: 1rem;
+            }
+
+            .testimonial-card {
+                padding: 1.25rem !important;
+                margin: 0 0.5rem;
+            }
+
+            .testimonial-card p {
+                font-size: 0.95rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .floating-shape:nth-child(2) {
+                display: none;
+            }
+            
+            .pulse-ring:nth-child(8) {
+                display: none;
+            }
+
+            section {
+                padding: 0.75rem 0.25rem;
+            }
+
+            .card-stack {
+                min-height: 250px;
+            }
+
+            .testimonial-card {
+                padding: 1rem !important;
+            }
+
+            .testimonial-card p {
+                font-size: 0.9rem !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc;">
+    
+    <section style="padding: 2rem 1rem; background: transparent; position: relative; overflow: hidden; display: flex; align-items: center;">
+        
+        <!-- Animated Background Elements -->
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="drifting-particle"></div>
+        <div class="drifting-particle"></div>
+        <div class="drifting-particle"></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring"></div>
+        
+        <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 2; width: 100%; padding: 5px;">
+            
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 700; color: #1f2937; margin: 0 0 1rem 0; text-shadow: none; line-height: 1.2;">
+                    What Our Clients Say
+                </h2>
+                <p style="font-size: clamp(1rem, 3vw, 1.1rem); color: #4b5563; margin: 0; text-shadow: none; line-height: 1.5; padding: 0 1rem;">
+                    Real stories from families we've helped navigate their legal challenges.
+                </p>
+            </div>
+
+            <!-- Testimonials Container -->
+            <div class="card-stack" style="position: relative; min-height: 350px; display: flex; align-items: center; justify-content: center;">
+                
+                <div class="testimonial-card active" data-index="0" style="position: absolute; width: 100%; max-width: 600px; background: white; border-radius: 20px; padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 0 0 1px rgba(59, 130, 246, 0.1); transition: all 0.4s ease-out;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem; gap: 1rem;">
+                        <div style="width: clamp(50px, 12vw, 60px); height: clamp(50px, 12vw, 60px); border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #1d4ed8); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);">
+                            <span style="color: white; font-weight: 700; font-size: clamp(1rem, 3vw, 1.2rem);">AE</span>
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <h4 style="margin: 0 0 0.25rem 0; font-weight: 700; color: #1f2937; font-size: clamp(1rem, 3.5vw, 1.2rem); line-height: 1.3;">Anna Espinoza</h4>
+                            <p style="margin: 0; color: #6b7280; font-size: clamp(0.85rem, 2.5vw, 0.95rem); font-weight: 500;">Family Law Client</p>
+                        </div>
+                        <div style="color: #fbbf24; font-size: clamp(1rem, 3vw, 1.3rem); flex-shrink: 0; line-height: 1;">★★★★★</div>
+                    </div>
+                    <p style="margin: 0; color: #374151; line-height: 1.7; font-size: clamp(1rem, 3vw, 1.1rem); font-style: italic;">
+                        "Morales Law firm definitely met and exceeded our expectations. All our questions and concerns were answered to our satisfaction. The staff were all courteous and professional from the start of our appointment to the end of the whole process. Thank you Trisha and staff for making us feel like family! 🎂 😋"
+                    </p>
+                </div>
+
+                <div class="testimonial-card" data-index="1" style="position: absolute; width: 100%; max-width: 600px; background: white; border-radius: 20px; padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 0 0 1px rgba(59, 130, 246, 0.1); transition: all 0.4s ease-out;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem; gap: 1rem;">
+                        <div style="width: clamp(50px, 12vw, 60px); height: clamp(50px, 12vw, 60px); border-radius: 50%; background: linear-gradient(135deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">
+                            <span style="color: white; font-weight: 700; font-size: clamp(1rem, 3vw, 1.2rem);">KW</span>
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <h4 style="margin: 0 0 0.25rem 0; font-weight: 700; color: #1f2937; font-size: clamp(1rem, 3.5vw, 1.2rem); line-height: 1.3;">Klaus Weinelt</h4>
+                            <p style="margin: 0; color: #6b7280; font-size: clamp(0.85rem, 2.5vw, 0.95rem); font-weight: 500;">Family Law Client</p>
+                        </div>
+                        <div style="color: #fbbf24; font-size: clamp(1rem, 3vw, 1.3rem); flex-shrink: 0; line-height: 1;">★★★★★</div>
+                    </div>
+                    <p style="margin: 0; color: #374151; line-height: 1.7; font-size: clamp(1rem, 3vw, 1.1rem); font-style: italic;">
+                        "Masterful law practice. I would not have survived the last 2 years without them. And when you're dealing with a shark like I was, you need a shark. I felt seen, heard, respected, & believed for the first time in years. I am a DA/DV survivor & after years of abuse, dismissal, & manipulation, having the lawyers at MPL behind me, in my corner, validating my trauma, especially right at first when everything hit the fan, was a massive step in my healing. I am the man & father I am today because of their work. They helped bring order to my life when I was in the lowest, darkest, & most chaotic season I've ever been in. I will always be thankful for them."
+                    </p>
+                </div>
+
+                <div class="testimonial-card" data-index="2" style="position: absolute; width: 100%; max-width: 600px; background: white; border-radius: 20px; padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 0 0 1px rgba(59, 130, 246, 0.1); transition: all 0.4s ease-out;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem; gap: 1rem;">
+                        <div style="width: clamp(50px, 12vw, 60px); height: clamp(50px, 12vw, 60px); border-radius: 50%; background: linear-gradient(135deg, #8b5cf6, #7c3aed); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);">
+                            <span style="color: white; font-weight: 700; font-size: clamp(1rem, 3vw, 1.2rem);">GH</span>
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <h4 style="margin: 0 0 0.25rem 0; font-weight: 700; color: #1f2937; font-size: clamp(1rem, 3.5vw, 1.2rem); line-height: 1.3;">Garret Hatchel</h4>
+                            <p style="margin: 0; color: #6b7280; font-size: clamp(0.85rem, 2.5vw, 0.95rem); font-weight: 500;">Criminal Defense Client</p>
+                        </div>
+                        <div style="color: #fbbf24; font-size: clamp(1rem, 3vw, 1.3rem); flex-shrink: 0; line-height: 1;">★★★★★</div>
+                    </div>
+                    <p style="margin: 0; color: #374151; line-height: 1.7; font-size: clamp(1rem, 3vw, 1.1rem); font-style: italic;">
+                        "They handled everything I wanted and needed to complete my court needs. I truly appreciated there help and support. I highly recommend working with them."
+                    </p>
+                </div>
+
+                <div class="testimonial-card" data-index="3" style="position: absolute; width: 100%; max-width: 600px; background: white; border-radius: 20px; padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 0 0 1px rgba(59, 130, 246, 0.1); transition: all 0.4s ease-out;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem; gap: 1rem;">
+                        <div style="width: clamp(50px, 12vw, 60px); height: clamp(50px, 12vw, 60px); border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #d97706); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
+                            <span style="color: white; font-weight: 700; font-size: clamp(1rem, 3vw, 1.2rem);">AB</span>
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <h4 style="margin: 0 0 0.25rem 0; font-weight: 700; color: #1f2937; font-size: clamp(1rem, 3.5vw, 1.2rem); line-height: 1.3;">A. B.</h4>
+                            <p style="margin: 0; color: #6b7280; font-size: clamp(0.85rem, 2.5vw, 0.95rem); font-weight: 500;">Paralegal Client</p>
+                        </div>
+                        <div style="color: #fbbf24; font-size: clamp(1rem, 3vw, 1.3rem); flex-shrink: 0; line-height: 1;">★★★★★</div>
+                    </div>
+                    <p style="margin: 0; color: #374151; line-height: 1.7; font-size: clamp(1rem, 3vw, 1.1rem); font-style: italic;">
+                        "Morales Padia Law absolutely saved the day when I needed quick and last minute legal assistance. Elena Galaviz was my paralegal and walked me through every step to completion. I was kept informed through the entire process and felt secure knowing my legal needs were handled efficiently and effectively. I highly recommend their services to anyone who needs legal representation. Thank you Elena and Attorney Morales Padia!"
+                    </p>
+                </div>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                <div style="display: flex; gap: 0.75rem;">
+                    <span class="dot active" data-index="0" style="width: clamp(10px, 3vw, 12px); height: clamp(10px, 3vw, 12px); border-radius: 50%; background: #204074; transition: all 0.3s; box-shadow: 0 2px 8px rgba(32, 64, 116, 0.3); cursor: pointer;"></span>
+                    <span class="dot" data-index="1" style="width: clamp(10px, 3vw, 12px); height: clamp(10px, 3vw, 12px); border-radius: 50%; background: rgba(32, 64, 116, 0.4); transition: all 0.3s; cursor: pointer;"></span>
+                    <span class="dot" data-index="2" style="width: clamp(10px, 3vw, 12px); height: clamp(10px, 3vw, 12px); border-radius: 50%; background: rgba(32, 64, 116, 0.4); transition: all 0.3s; cursor: pointer;"></span>
+                    <span class="dot" data-index="3" style="width: clamp(10px, 3vw, 12px); height: clamp(10px, 3vw, 12px); border-radius: 50%; background: rgba(32, 64, 116, 0.4); transition: all 0.3s; cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const dots = document.querySelectorAll('.dot');
+        let interval;
+        let startX = 0;
+        let startY = 0;
+        let isSwipe = false;
+        
+        function showTestimonial(index) {
+            // Immediately hide all cards
+            testimonials.forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Show the target card with a slight delay for smooth transition
+            setTimeout(() => {
+                testimonials[index].classList.add('active');
+            }, 50);
+            
+            // Update dots
+            dots[currentIndex].style.background = 'rgba(32, 64, 116, 0.4)';
+            dots[currentIndex].style.boxShadow = 'none';
+            dots[index].style.background = '#204074';
+            dots[index].style.boxShadow = '0 2px 8px rgba(32, 64, 116, 0.3)';
+            
+            currentIndex = index;
+        }
+        
+        function nextTestimonial() {
+            const next = (currentIndex + 1) % testimonials.length;
+            showTestimonial(next);
+        }
+        
+        function prevTestimonial() {
+            const prev = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(prev);
+        }
+        
+        function startAutoRotate() {
+            interval = setInterval(nextTestimonial, 6000);
+        }
+        
+        // Touch events for mobile swiping
+        const cardContainer = document.querySelector('.card-stack');
+        
+        cardContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isSwipe = false;
+            clearInterval(interval);
+        }, { passive: true });
+        
+        cardContainer.addEventListener('touchmove', (e) => {
+            if (!startX || !startY) return;
+            
+            const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
+            
+            const diffX = startX - currentX;
+            const diffY = startY - currentY;
+            
+            // Check if it's a horizontal swipe (more horizontal than vertical)
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+                isSwipe = true;
+                e.preventDefault(); // Prevent scrolling while swiping
+            }
+        }, { passive: false });
+        
+        cardContainer.addEventListener('touchend', (e) => {
+            if (!startX || !startY) return;
+            
+            const currentX = e.changedTouches[0].clientX;
+            const diffX = startX - currentX;
+            
+            if (isSwipe && Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    // Swipe left - next testimonial
+                    nextTestimonial();
+                } else {
+                    // Swipe right - previous testimonial
+                    prevTestimonial();
+                }
+            }
+            
+            startX = 0;
+            startY = 0;
+            isSwipe = false;
+            startAutoRotate();
+        }, { passive: true });
+        
+        // Initialize
+        startAutoRotate();
+        
+        // Pause on hover/touch
+        const section = document.querySelector('section');
+        section.addEventListener('mouseenter', () => clearInterval(interval));
+        section.addEventListener('mouseleave', startAutoRotate);
+        
+        // Click dots to navigate
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(interval);
+                showTestimonial(index);
+                startAutoRotate();
+            });
+            
+            // Add touch events for dots on mobile
+            dot.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                clearInterval(interval);
+                showTestimonial(index);
+                startAutoRotate();
+            });
+        });
+        
+        // Prevent context menu on long press (mobile)
+        cardContainer.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>

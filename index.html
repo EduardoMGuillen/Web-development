@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Design Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .testimonials {
+            padding: 100px 20px;
+            background-color: #fff;
+        }
+        
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        .testimonial-card {
+            background-color: #f5f5f5;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(0,0,0,0.1);
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 500;
+            color: #000;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; color: #333;">
+    <!-- Hero Section -->
+    <section style="height: 100vh; background-color: #000; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;">
+        <h1 style="font-size: 4rem; font-weight: 300; margin-bottom: 20px; letter-spacing: 2px;">DESIGNED TO CAPTIVATE</h1>
+        <p style="font-size: 1.5rem; font-weight: 300; max-width: 600px; line-height: 1.6;">Crafted to Endure</p>
+        <button style="margin-top: 40px; padding: 15px 40px; background-color: transparent; border: 1px solid #fff; color: #fff; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;">Book a Consultation</button>
+    </section>
+
+    <!-- About Section -->
+    <section style="padding: 100px 20px; background-color: #fff;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 30px;">Where Design Inspires Living</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #666; max-width: 800px; margin: 0 auto;">
+                We create award-winning spaces where beauty and purpose come together in perfect harmony. Every element is carefully considered to create an inviting atmosphere that enriches your home and lifestyle.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section style="padding: 100px 20px; background-color: #f5f5f5;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 40px;">Our Services</h2>
+            <p style="font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 40px;">
+                Discover our comprehensive range of outdoor design and construction services
+            </p>
+            <a href="services.html" style="display: inline-block; padding: 15px 40px; background-color: #000; color: #fff; text-decoration: none; font-size: 1rem; transition: all 0.3s ease;">View All Services</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 20px;">Client Testimonials</h2>
+            <p style="font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 40px;">
+                Read what our satisfied clients have to say about their experience
+            </p>
+            <a href="testimonials.html" style="display: inline-block; padding: 15px 40px; background-color: #000; color: #fff; text-decoration: none; font-size: 1rem; transition: all 0.3s ease;">View All Testimonials</a>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The team exceeded our expectations. Their attention to detail and professionalism made our renovation project seamless and enjoyable."</p>
+                <div class="testimonial-author">John Smith</div>
+                <div class="testimonial-role">Homeowner</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"From start to finish, the team was reliable and completed the work right on schedule. Their expertise in outdoor design is unmatched."</p>
+                <div class="testimonial-author">Sarah Johnson</div>
+                <div class="testimonial-role">Property Developer</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"They kept us in the loop throughout the entire process. It was reassuring to work with such a transparent and honest company."</p>
+                <div class="testimonial-author">Michael Brown</div>
+                <div class="testimonial-role">Business Owner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section style="padding: 100px 20px; background-color: #000; color: #fff;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 40px;">Let's Transform Your Space</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; color: #ccc;">Connect with our team to begin your journey</p>
+            <a href="contact.html" style="display: inline-block; padding: 15px 40px; background-color: #fff; color: #000; text-decoration: none; font-size: 1rem; transition: all 0.3s ease;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 60px 20px; background-color: #111; color: #fff;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h3 style="font-size: 1.8rem; font-weight: 300; margin-bottom: 20px;">DESIGN STUDIO</h3>
+            <p style="color: #999; margin-bottom: 30px;">Luxury Design & Construction</p>
+            <p style="color: #999;">© 2024 All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html> 

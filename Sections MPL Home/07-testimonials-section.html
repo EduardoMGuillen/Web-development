@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1a2a4f;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: transparent;
+            color: var(--dark);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        /* Testimonials - flowing */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 50%, var(--secondary) 100%);
+            color: var(--white);
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .section {
+            padding: 80px 0;
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 90%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .testimonials-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-slide {
+            display: none;
+            background: rgba(255,255,255,0.98);
+            color: var(--primary);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px 35px;
+            text-align: left;
+            min-height: 200px;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            animation: fadeIn 0.7s;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+            position: relative;
+        }
+        
+        .testimonial-stars {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #374151;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-role {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            font-style: italic;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e0e7ef;
+            cursor: pointer;
+            border: 2px solid var(--accent);
+            transition: background 0.2s, border 0.2s;
+        }
+        
+        .testimonial-dot.active {
+            background: var(--accent);
+            border: 2px solid var(--secondary);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .section {
+                width: 95%;
+                padding: 64px 0 32px 0;
+            }
+            
+            .testimonials-slider {
+                max-width: 90%;
+            }
+            
+            .testimonial-slide {
+                padding: 25px 20px;
+                min-height: 150px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .testimonial-slide {
+                padding: 25px 20px;
+                min-height: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section {
+                width: 98%;
+                padding: 0 0.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 2rem;
+            }
+            
+            .testimonial-slide {
+                padding: 20px 15px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="testimonials-section">
+        <div class="section">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-slider" id="testimonials-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"Morales Law firm definitely met and exceeded our expectations. All our questions and concerns were answered to our satisfaction. The staff were all courteous and professional from the start of our appointment to the end of the whole process. Thank you Trisha and staff for making us feel like family! 🎂 😋"</div>
+                    <div class="testimonial-author">Anna Espinoza</div>
+                    <div class="testimonial-role">Family Law Client</div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"Masterful law practice. I would not have survived the last 2 years without them. They are absolute sharks for their clients. And when you're dealing with a shark like I was, you need a shark. I felt seen, heard, respected, & believed for the first time in years. I am a DA/DV survivor & after years of abuse, dismissal, & manipulation, having the lawyers at MPL behind me, in my corner, validating my trauma, especially right at first when everything hit the fan, was a massive step in my healing. I am the man & father I am today because of their work. They helped bring order to my life when I was in the lowest, darkest, & most chaotic season I've ever been in. I will always be thankful for them."</div>
+                    <div class="testimonial-author">Klaus Weinelt</div>
+                    <div class="testimonial-role">Family Law Client</div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"They handled everything I wanted and needed to complete my court needs. I truly appreciated there help and support. I highly recommend working with them."</div>
+                    <div class="testimonial-author">Garret Hatchel</div>
+                    <div class="testimonial-role">Criminal Defense Client</div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-text">"Morales Padia Law absolutely saved the day when I needed quick and last minute legal assistance. Elena Galaviz was my paralegal and walked me through every step to completion. I was kept informed through the entire process and felt secure knowing my legal needs were handled efficiently and effectively. I highly recommend their services to anyone who needs legal representation. Thank you Elena and Attorney Morales Padia!"</div>
+                    <div class="testimonial-author">A. B.</div>
+                    <div class="testimonial-role">Paralegal Client</div>
+                </div>
+            </div>
+            <div class="testimonial-nav" id="testimonial-nav"></div>
+        </div>
+    </section>
+    
+    <script>
+        // Testimonials slider
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const nav = document.getElementById('testimonial-nav');
+        let current = 0;
+        
+        function showSlide(idx) {
+            slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+            Array.from(nav.children).forEach((d, i) => d.classList.toggle('active', i === idx));
+            current = idx;
+        }
+        
+        // Create navigation dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => showSlide(i);
+            nav.appendChild(dot);
+        });
+        
+        // Auto-advance slides
+        setInterval(() => showSlide((current + 1) % slides.length), 7000);
+    </script>
+</body>
+</html> 

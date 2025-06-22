@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Sections - Morales Padia Law</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #204074;
+            --light: #f8fafc;
+            --dark: #1a2a4f;
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: transparent; /* Set body background to transparent */
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Book Preview Section */
+        .book-preview {
+            padding: 6rem 2rem;
+            background: transparent; /* Set section background to transparent */
+            position: relative;
+        }
+
+        .book-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .book-cover {
+            flex: 0 0 400px;
+            position: relative;
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover img {
+            transform: translateY(-10px);
+        }
+
+        .book-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(32, 64, 116, 0.1));
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .book-info {
+            flex: 1;
+            animation: slideInRight 1s ease-out 0.7s both;
+        }
+
+        .book-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .book-info .author {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .book-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .book-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .book-features li i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 2rem;
+            background: transparent; /* Set section background to transparent */
+            position: relative;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(32,64,116,0.15);
+        }
+
+        .benefit-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: transparent; /* Set section background to transparent */
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .book-container {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .book-cover {
+                flex: none;
+                max-width: 300px;
+            }
+
+            .benefits-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Book Preview Section -->
+    <section class="book-preview">
+        <div class="container">
+            <div class="book-container">
+                <div class="book-cover">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&q=80" alt="Divorce Guide Book Cover">
+                </div>
+                <div class="book-info">
+                    <h2>Family Blindsided: Your Roadmap to a Better Future</h2>
+                    <p class="author">By Morales Padia Law Team</p>
+                    <ul class="book-features">
+                        <li><i class="fas fa-check-circle"></i> Step-by-step divorce process guide</li>
+                        <li><i class="fas fa-check-circle"></i> Understanding your legal rights</li>
+                        <li><i class="fas fa-check-circle"></i> Financial planning and asset division</li>
+                        <li><i class="fas fa-check-circle"></i> Child custody and support information</li>
+                        <li><i class="fas fa-check-circle"></i> Real case studies and examples</li>
+                        <li><i class="fas fa-check-circle"></i> Expert legal advice and tips</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why This Guide Will Help You</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Expert Legal Knowledge</h3>
+                    <p>Written by experienced family law attorneys with decades of combined experience in divorce cases.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Protect Your Rights</h3>
+                    <p>Learn how to safeguard your interests and ensure fair treatment throughout the divorce process.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Financial Guidance</h3>
+                    <p>Understand property division, alimony, and financial planning to secure your future.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-heart"></i>
+                    <h3>Child-Focused Approach</h3>
+                    <p>Navigate child custody and support with your children's best interests in mind.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-clock"></i>
+                    <h3>Save Time & Money</h3>
+                    <p>Get the information you need quickly and avoid costly mistakes in your divorce proceedings.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Support</h3>
+                    <p>Join thousands of others who have successfully navigated their divorce with our guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Readers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">"This guide gave me the confidence I needed to face my divorce. The step-by-step approach made everything so much clearer."</p>
+                    <p class="testimonial-author">- Sarah M., San Antonio</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">"Finally, a resource that explains the legal process in plain English. I felt prepared and informed throughout my case."</p>
+                    <p class="testimonial-author">- Michael R., Austin</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">"The financial planning section alone was worth the download. It helped me make smart decisions about my future."</p>
+                    <p class="testimonial-author">- Jennifer L., Houston</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll Animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run on page load
+
+        // Add hover effects to benefit cards
+        document.querySelectorAll('.benefit-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html> 

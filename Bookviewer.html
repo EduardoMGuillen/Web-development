@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Blindsided - Book Viewer</title>
+    <style>
+        :root {
+            --primary-color: #204074;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: #f8fafc;
+        }
+
+        .book-showcase {
+            padding: 4rem 1rem;
+            background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .book-container {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-top: 3rem;
+            perspective: 2000px;
+            position: relative;
+        }
+
+        .book-page {
+            width: 300px;
+            height: 450px;
+            background: var(--white);
+            border-radius: 2px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 2rem;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            transform-origin: left center;
+            cursor: zoom-in;
+            overflow: hidden;
+        }
+
+        .book-page.left {
+            border-right: 1px solid rgba(0,0,0,0.1);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .book-page.right {
+            border-left: 1px solid rgba(0,0,0,0.1);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .book-spine {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+            z-index: -1;
+            border-radius: 2px;
+        }
+
+        .book-controls {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.95);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .control-button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            min-width: auto;
+        }
+
+        .control-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .control-button:active {
+            transform: translateY(0);
+        }
+
+        .zoom-controls {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .book-showcase {
+                padding: 1rem 0;
+                overflow-x: auto;
+            }
+            .container {
+                padding: 0;
+                max-width: none;
+            }
+            #pdf-book-viewer {
+                padding: 0;
+                margin: 0;
+            }
+            #book-pages {
+                width: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                margin-bottom: 120px;
+                min-height: calc(100vh - 200px);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .pdf-canvas {
+                max-width: none;
+                height: auto;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+                margin: 0 auto;
+                display: block;
+                border-radius: 8px;
+                background: white;
+            }
+            .book-controls {
+                position: fixed;
+                bottom: 1rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(255,255,255,0.98);
+                padding: 0.6rem 0.8rem;
+                border-radius: 50px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                display: flex;
+                gap: 0.6rem;
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.2);
+                max-width: calc(100vw - 2rem);
+                overflow-x: auto;
+            }
+            .control-button {
+                padding: 0.5rem 0.75rem;
+                font-size: 11px;
+                font-weight: 600;
+                min-width: 55px;
+                white-space: nowrap;
+                border-radius: 25px;
+                line-height: 1.2;
+                flex-shrink: 0;
+            }
+            .zoom-controls {
+                display: flex;
+                gap: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="book-showcase">
+        <div class="container">
+            <div id="pdf-book-viewer" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <div id="book-pages" style="display: flex; gap: 0; position: relative;"></div>
+                <div class="book-controls">
+                    <button class="control-button" id="prevPageBtn"><span>←</span> Prev</button>
+                    <div class="zoom-controls">
+                        <button class="control-button" id="zoomInBtn"><span>＋</span></button>
+                        <button class="control-button" id="zoomOutBtn"><span>－</span></button>
+                    </div>
+                    <button class="control-button" id="nextPageBtn">Next <span>→</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+    const PDF_URL = 'https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/684557a73dbcce7a71742033.pdf';
+    const container = document.getElementById('book-pages');
+    let pdfDoc = null;
+    let currentPage = 1;
+    let scale = window.innerWidth <= 768 ? 1.7 : 1.1;
+    let isMobile = () => window.innerWidth <= 768;
+
+    async function renderPage(pageNum, canvas) {
+        const page = await pdfDoc.getPage(pageNum);
+        const viewport = page.getViewport({ scale });
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext('2d');
+        await page.render({ canvasContext: ctx, viewport }).promise;
+    }
+
+    function clearPages() {
+        while (container.firstChild) container.removeChild(container.firstChild);
+    }
+
+    async function renderBook() {
+        clearPages();
+        if (isMobile()) {
+            // Mobile: HD rendering with side cropping for smaller size
+            const canvas = document.createElement('canvas');
+            canvas.className = 'pdf-canvas';
+            const page = await pdfDoc.getPage(currentPage);
+            
+            // HD rendering setup
+            const devicePixelRatio = window.devicePixelRatio || 1;
+            const baseViewport = page.getViewport({ scale: 1 });
+            
+            // Crop sides: remove 8% from each side (16% total width reduction)
+            const cropSides = 0.08;
+            const contentWidth = baseViewport.width * (1 - 2 * cropSides);
+            const contentHeight = baseViewport.height;
+            
+            // Calculate scale for the cropped content to fit screen with zoom
+            const containerWidth = window.innerWidth - 40;
+            const finalScale = (containerWidth / contentWidth) * 1.1; // 10% zoom on cropped content
+            
+            // Render at HD quality
+            const renderScale = finalScale * devicePixelRatio;
+            const fullViewport = page.getViewport({ scale: renderScale });
+            
+            // Create full-size canvas for rendering
+            const fullCanvas = document.createElement('canvas');
+            fullCanvas.width = fullViewport.width;
+            fullCanvas.height = fullViewport.height;
+            const fullCtx = fullCanvas.getContext('2d');
+            
+            // Enable HD rendering
+            fullCtx.imageSmoothingEnabled = true;
+            fullCtx.imageSmoothingQuality = 'high';
+            
+            await page.render({ canvasContext: fullCtx, viewport: fullViewport }).promise;
+            
+            // Create display canvas with cropped content
+            const croppedWidth = contentWidth * finalScale;
+            const croppedHeight = contentHeight * finalScale;
+            canvas.width = croppedWidth * devicePixelRatio;
+            canvas.height = croppedHeight * devicePixelRatio;
+            
+            // Set display size
+            canvas.style.width = croppedWidth + 'px';
+            canvas.style.height = croppedHeight + 'px';
+            
+            // Draw cropped content to display canvas
+            const ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            
+            const cropX = baseViewport.width * cropSides * renderScale;
+            const cropWidth = contentWidth * renderScale;
+            const cropHeight = contentHeight * renderScale;
+            
+            ctx.drawImage(
+                fullCanvas,
+                cropX, 0, cropWidth, cropHeight, // source: cropped area
+                0, 0, canvas.width, canvas.height // destination: full canvas
+            );
+            
+            container.appendChild(canvas);
+            
+            // Touch swipe navigation
+            let startX = 0;
+            canvas.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+            canvas.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].clientX;
+                if (startX - endX > 50) {
+                    document.getElementById('nextPageBtn').click();
+                } else if (endX - startX > 50) {
+                    document.getElementById('prevPageBtn').click();
+                }
+            });
+        } else {
+            // Desktop: Two page view
+            const leftPageNum = currentPage;
+            const rightPageNum = currentPage + 1 <= pdfDoc.numPages ? currentPage + 1 : null;
+            const leftCanvas = document.createElement('canvas');
+            leftCanvas.className = 'pdf-canvas';
+            await renderPage(leftPageNum, leftCanvas);
+            container.appendChild(leftCanvas);
+            if (rightPageNum) {
+                const rightCanvas = document.createElement('canvas');
+                rightCanvas.className = 'pdf-canvas';
+                await renderPage(rightPageNum, rightCanvas);
+                container.appendChild(rightCanvas);
+            }
+        }
+    }
+
+    document.getElementById('prevPageBtn').onclick = async () => {
+        if (currentPage > 1) {
+            currentPage -= isMobile() ? 1 : 2;
+            if (currentPage < 1) currentPage = 1;
+            await renderBook();
+        }
+    };
+    document.getElementById('nextPageBtn').onclick = async () => {
+        if (currentPage < pdfDoc.numPages) {
+            currentPage += isMobile() ? 1 : 2;
+            if (currentPage > pdfDoc.numPages) currentPage = pdfDoc.numPages;
+            await renderBook();
+        }
+    };
+    document.getElementById('zoomInBtn').onclick = async () => {
+        scale = Math.min(scale + 0.2, 2.5);
+        await renderBook();
+    };
+    document.getElementById('zoomOutBtn').onclick = async () => {
+        scale = Math.max(scale - 0.2, 0.6);
+        await renderBook();
+    };
+
+    document.addEventListener('keydown', async (e) => {
+        if (e.key === 'ArrowRight') document.getElementById('nextPageBtn').click();
+        if (e.key === 'ArrowLeft') document.getElementById('prevPageBtn').click();
+        if (e.key === '+') document.getElementById('zoomInBtn').click();
+        if (e.key === '-') document.getElementById('zoomOutBtn').click();
+    });
+
+    window.addEventListener('resize', renderBook);
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    pdfjsLib.getDocument(PDF_URL).promise.then(async function(pdf) {
+        pdfDoc = pdf;
+        await renderBook();
+    }).catch(err => {
+        container.innerHTML = '<div style="color:#204074;font-size:1.2rem;">Failed to load PDF.</div>';
+        console.error('PDF load error:', err);
+    });
+    </script>
+</body>
+</html> 

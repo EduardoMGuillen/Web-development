@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials - Modern Design Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .testimonials {
+            padding: 100px 20px;
+            background-color: #fff;
+        }
+        
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        .testimonial-card {
+            background-color: #f5f5f5;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(0,0,0,0.1);
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 500;
+            color: #000;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back to Home</a>
+
+    <section class="testimonials">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 20px;">Client Testimonials</h2>
+            <p style="font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 40px;">
+                Read what our satisfied clients have to say about their experience
+            </p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The team exceeded our expectations. Their attention to detail and professionalism made our renovation project seamless and enjoyable."</p>
+                <div class="testimonial-author">John Smith</div>
+                <div class="testimonial-role">Homeowner</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"From start to finish, the team was reliable and completed the work right on schedule. Their expertise in outdoor design is unmatched."</p>
+                <div class="testimonial-author">Sarah Johnson</div>
+                <div class="testimonial-role">Property Developer</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"They kept us in the loop throughout the entire process. It was reassuring to work with such a transparent and honest company."</p>
+                <div class="testimonial-author">Michael Brown</div>
+                <div class="testimonial-role">Business Owner</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The attention to detail in our custom deck and pergola project was impressive. They transformed our backyard into an outdoor living space we use year-round."</p>
+                <div class="testimonial-author">Emily Davis</div>
+                <div class="testimonial-role">Homeowner</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Their irrigation system design has saved us both water and maintenance time. The smart technology they implemented is exactly what we needed for our large property."</p>
+                <div class="testimonial-author">Robert Wilson</div>
+                <div class="testimonial-role">Property Manager</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The xeriscape design they created for our property is not only beautiful but also environmentally conscious. We've received numerous compliments from our neighbors."</p>
+                <div class="testimonial-author">Lisa Anderson</div>
+                <div class="testimonial-role">Environmental Consultant</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
