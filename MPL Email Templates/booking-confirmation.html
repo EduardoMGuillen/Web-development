@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - Morales Padia Law</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Times+New+Roman&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #234374;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #234374 0%, #4475B5 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.95;
+            margin-top: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .greeting {
+            font-size: 32px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .message {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .appointment-details {
+            background-color: #ffffff;
+            border: 2px solid #639BE3;
+            border-radius: 12px;
+            padding: 35px;
+            margin: 35px 0;
+            box-shadow: 0 4px 20px rgba(99, 155, 227, 0.1);
+        }
+        
+        .appointment-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .appointment-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .appointment-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .appointment-label {
+            font-weight: 600;
+            color: #234374;
+            font-size: 16px;
+        }
+        
+        .appointment-value {
+            font-weight: 700;
+            color: #4475B5;
+            font-size: 18px;
+        }
+        
+        .highlight-box {
+            background-color: #639BE3;
+            color: white;
+            padding: 25px;
+            margin: 35px 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .highlight-text {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #639BE3 0%, #4475B5 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(68, 117, 181, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(68, 117, 181, 0.4);
+        }
+        
+        .preparation-tips {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 35px 0;
+            border-left: 5px solid #234374;
+        }
+        
+        .preparation-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .preparation-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .preparation-list li {
+            margin-bottom: 12px;
+            font-size: 16px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .preparation-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #639BE3;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 35px 0;
+            border-left: 5px solid #639BE3;
+        }
+        
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .contact-item strong {
+            color: #234374;
+        }
+        
+        .footer {
+            background-color: #234374;
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+            font-size: 15px;
+        }
+        
+        .footer a {
+            color: #639BE3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #ffffff;
+        }
+        
+        .social-links {
+            margin: 25px 0;
+        }
+        
+        .social-links a {
+            color: #639BE3;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #ffffff;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .content {
+                padding: 30px 25px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+            
+            .greeting {
+                font-size: 26px;
+            }
+            
+            .message {
+                font-size: 16px;
+            }
+            
+            .appointment-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .appointment-value {
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="../Sections MPL Home/mpl new logo (1).png" alt="Morales Padia Law" class="logo">
+            </div>
+            <div class="tagline">Your lawyer for life.</div>
+        </div>
+        
+        <div class="content">
+            <h1 class="greeting">Appointment Confirmed!</h1>
+            
+            <p class="message">
+                We're excited to confirm your upcoming consultation with Morales Padia Law. Our team is looking forward to meeting with you and discussing your legal needs.
+            </p>
+            
+            <div class="appointment-details">
+                <div class="appointment-title">📅 Your Appointment Details</div>
+                <div class="appointment-item">
+                    <span class="appointment-label">Service Type:</span>
+                    <span class="appointment-value">Legal Consultation</span>
+                </div>
+                <div class="appointment-item">
+                    <span class="appointment-label">Duration:</span>
+                    <span class="appointment-value">45 Minutes</span>
+                </div>
+                <div class="appointment-item">
+                    <span class="appointment-label">Meeting Type:</span>
+                    <span class="appointment-value">In-Person/Virtual</span>
+                </div>
+                <div class="appointment-item">
+                    <span class="appointment-label">Location:</span>
+                    <span class="appointment-value">San Antonio Office</span>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-text">
+                    Please save this confirmation for your records. We'll send you a reminder 24 hours before your appointment.
+                </div>
+            </div>
+            
+            <div class="preparation-tips">
+                <div class="preparation-title">How to Prepare for Your Consultation:</div>
+                <ul class="preparation-list">
+                    <li>Bring any relevant documents related to your case</li>
+                    <li>Prepare a list of questions you'd like to discuss</li>
+                    <li>Arrive 10 minutes early (or log in early for virtual meetings)</li>
+                    <li>Bring a valid ID for in-person appointments</li>
+                    <li>Consider bringing a notebook to take notes</li>
+                </ul>
+            </div>
+            
+            <p class="message">
+                Our award-winning, women-led team is dedicated to providing you with compassionate, expert legal guidance. We understand that legal matters can be stressful, and we're here to make this process as smooth as possible for you.
+            </p>
+            
+            <div style="text-align: center;">
+                <a href="https://www.moralespadialaw.com/schedule" class="cta-button">Reschedule if Needed</a>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-title">Need to Contact Us?</div>
+                <div class="contact-item"><strong>Phone:</strong> (726) 204-4044</div>
+                <div class="contact-item"><strong>Email:</strong> info@moralespadialaw.com</div>
+                <div class="contact-item"><strong>Office:</strong> San Antonio, Texas</div>
+                <div class="contact-item"><strong>Emergency:</strong> Call our main line</div>
+            </div>
+            
+            <p class="message">
+                We look forward to meeting with you and helping you achieve the best possible outcome for your legal matter.
+            </p>
+            
+            <p class="message">
+                Best regards,<br>
+                <strong>The Morales Padia Law Team</strong>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <div class="social-links">
+                <a href="#">Instagram</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">YouTube</a> | 
+                <a href="#">LinkedIn</a> | 
+                <a href="#">TikTok</a>
+            </div>
+            <p>&copy; 2025 Morales Padia Law. All Rights Reserved.</p>
+            <p>
+                <a href="https://moralespadialaw.com">Visit Our Website</a> | 
+                <a href="#">Terms of Use</a> | 
+                <a href="#">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Call - Morales Padia Law</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Times+New+Roman&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #234374;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #234374 0%, #4475B5 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.95;
+            margin-top: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .greeting {
+            font-size: 32px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .message {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 2px solid #639BE3;
+            padding: 30px;
+            margin: 35px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(99, 155, 227, 0.1);
+        }
+        
+        .highlight-text {
+            font-weight: 600;
+            color: #234374;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        
+        .highlight-subtext {
+            font-size: 18px;
+            color: #4475B5;
+            text-align: center;
+        }
+        
+        .services-section {
+            background-color: #f8f9fa;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 35px 0;
+        }
+        
+        .services-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .service-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #639BE3;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-icon {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .service-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #234374;
+            margin-bottom: 12px;
+        }
+        
+        .service-description {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #639BE3 10%, #4475B5 90%);
+            border-radius: 16px;
+            color: white;
+        }
+        
+        .cta-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .cta-subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #234374;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            margin: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cta-button-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            margin: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-secondary:hover {
+            background-color: white;
+            color: #234374;
+        }
+        
+        .consultation-info {
+            background-color: #ffffff;
+            border: 2px solid #639BE3;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 35px 0;
+            box-shadow: 0 4px 20px rgba(99, 155, 227, 0.1);
+        }
+        
+        .consultation-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .consultation-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .consultation-list li {
+            margin-bottom: 12px;
+            font-size: 16px;
+            position: relative;
+            padding-left: 30px;
+            line-height: 1.6;
+        }
+        
+        .consultation-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #639BE3;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 35px 0;
+            border-left: 5px solid #639BE3;
+        }
+        
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .contact-item strong {
+            color: #234374;
+        }
+        
+        .footer {
+            background-color: #234374;
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+            font-size: 15px;
+        }
+        
+        .footer a {
+            color: #639BE3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #ffffff;
+        }
+        
+        .social-links {
+            margin: 25px 0;
+        }
+        
+        .social-links a {
+            color: #639BE3;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #ffffff;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .content {
+                padding: 30px 25px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+            
+            .greeting {
+                font-size: 26px;
+            }
+            
+            .message {
+                font-size: 16px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button, .cta-button-secondary {
+                display: block;
+                margin: 12px 0;
+            }
+            
+            .cta-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="../Sections MPL Home/mpl new logo (1).png" alt="Morales Padia Law" class="logo">
+            </div>
+            <div class="tagline">Your lawyer for life.</div>
+        </div>
+        
+        <div class="content">
+            <h1 class="greeting">Let's Discuss Your Legal Needs</h1>
+            
+            <p class="message">
+                Thank you for your interest in Morales Padia Law. We understand that legal matters can be overwhelming, which is why we're here to provide you with the compassionate, expert guidance you deserve. Our award-winning, women-led team is ready to help you navigate your legal challenges with confidence.
+            </p>
+            
+            <div class="highlight-box">
+                <div class="highlight-text">🗓️ Schedule Your Free Consultation Today</div>
+                <div class="highlight-subtext">Take the first step toward resolving your legal matter with a personalized consultation</div>
+            </div>
+            
+            <div class="services-section">
+                <div class="services-title">We're Here to Help With:</div>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">👨‍👩‍👧‍👦</div>
+                        <div class="service-name">Family Law</div>
+                        <div class="service-description">Divorce, custody, support, adoption, and family legal matters</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🏛️</div>
+                        <div class="service-name">Estate Planning</div>
+                        <div class="service-description">Wills, trusts, and legacy planning to protect your future</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">⚖️</div>
+                        <div class="service-name">Criminal Defense</div>
+                        <div class="service-description">DWI, domestic violence, and criminal defense representation</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">📋</div>
+                        <div class="service-name">Probate Law</div>
+                        <div class="service-description">Estate administration and probate legal services</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <div class="cta-title">Ready to Get Started?</div>
+                <div class="cta-subtitle">Schedule your consultation and take the first step toward resolution</div>
+                <a href="https://www.moralespadialaw.com/schedule" class="cta-button">Schedule My Consultation</a>
+                <a href="https://www.moralespadialaw.com/contact-us" class="cta-button-secondary">Contact Us First</a>
+            </div>
+            
+            <div class="consultation-info">
+                <div class="consultation-title">📞 What to Expect During Your Consultation:</div>
+                <ul class="consultation-list">
+                    <li>Comprehensive review of your legal situation</li>
+                    <li>Clear explanation of your rights and options</li>
+                    <li>Strategic guidance tailored to your specific needs</li>
+                    <li>Transparent discussion of fees and next steps</li>
+                    <li>Personalized approach from our bilingual team</li>
+                    <li>Compassionate support throughout the process</li>
+                </ul>
+            </div>
+            
+            <p class="message">
+                At Morales Padia Law, we believe that everyone deserves access to quality legal representation. Whether you're facing a family law challenge, planning your estate, or navigating criminal or probate matters, we're committed to protecting your rights and achieving the best possible outcome for your case.
+            </p>
+            
+            <p class="message">
+                Our team combines decades of legal experience with a deep commitment to client service. We understand that legal matters are often stressful and emotional, and we're here to provide the support and guidance you need during this challenging time.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-title">Multiple Ways to Connect:</div>
+                <div class="contact-item"><strong>📞 Phone:</strong> (726) 204-4044</div>
+                <div class="contact-item"><strong>📧 Email:</strong> info@moralespadialaw.com</div>
+                <div class="contact-item"><strong>🏢 Office:</strong> San Antonio, Texas</div>
+                <div class="contact-item"><strong>🌐 Online:</strong> <a href="https://www.moralespadialaw.com/schedule" style="color: #639BE3;">Schedule Online 24/7</a></div>
+                <div class="contact-item"><strong>🗣️ Languages:</strong> English & Spanish</div>
+            </div>
+            
+            <p class="message">
+                Don't wait to get the legal help you need. Contact us today to schedule your consultation and take the first step toward resolving your legal matter with confidence.
+            </p>
+            
+            <p class="message">
+                We look forward to serving you,<br>
+                <strong>The Morales Padia Law Team</strong>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <div class="social-links">
+                <a href="#">Instagram</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">YouTube</a> | 
+                <a href="#">LinkedIn</a> | 
+                <a href="#">TikTok</a>
+            </div>
+            <p>&copy; 2025 Morales Padia Law. All Rights Reserved.</p>
+            <p>
+                <a href="https://moralespadialaw.com">Visit Our Website</a> | 
+                <a href="https://www.moralespadialaw.com/books">Free Legal Resources</a> | 
+                <a href="#">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

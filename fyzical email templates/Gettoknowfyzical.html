@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get to Know FYZICAL South San Antonio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #007bff 100%);
+            padding: 50px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="50" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="30" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        
+        .logo {
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 25px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .intro-section h2 {
+            color: #28a745;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .intro-text {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .intro-text strong {
+            color: #28a745;
+        }
+        
+        .highlight-statement {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-left: 5px solid #28a745;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-size: 18px;
+            color: #495057;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .services-section {
+            margin: 40px 0;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #28a745;
+        }
+        
+        .section-icon {
+            font-size: 28px;
+            margin-right: 12px;
+            width: 40px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+            color: #28a745;
+        }
+        
+        .service-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .service-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .specialty-section {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .specialty-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .specialty-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .specialty-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .specialty-item::before {
+            content: "✓ ";
+            font-weight: bold;
+            color: #20c997;
+            margin-right: 8px;
+        }
+        
+        .grand-opening-section {
+            background: linear-gradient(135deg, #ffc107 0%, #ffab00 100%);
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2);
+        }
+        
+        .grand-opening-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .event-details {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .detail-icon {
+            font-size: 20px;
+            margin-right: 12px;
+            width: 30px;
+            color: #ffc107;
+        }
+        
+        .detail-text {
+            color: #333;
+        }
+        
+        .commitment-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 35px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            border-left: 5px solid #20c997;
+        }
+        
+        .commitment-section h3 {
+            color: #28a745;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .commitment-text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-primary:hover {
+            background: white;
+            color: #28a745;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .divider {
+            height: 3px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            margin: 30px 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .email-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 40px 15px;
+            }
+            
+            .header h1 {
+                font-size: 26px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .specialty-section,
+            .grand-opening-section,
+            .cta-section,
+            .commitment-section {
+                padding: 30px 20px;
+            }
+            
+            .intro-section h2 {
+                font-size: 24px;
+            }
+            
+            .section-header {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            
+            .header .subtitle {
+                font-size: 16px;
+            }
+            
+            .intro-section h2 {
+                font-size: 20px;
+            }
+            
+            .highlight-statement {
+                padding: 20px;
+                font-size: 16px;
+            }
+            
+            .detail-item {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header">
+            <!-- Logo placeholder - Replace with actual FYZICAL logo -->
+            <div class="logo" style="background-color: white; padding: 15px; border-radius: 12px; display: inline-block; margin-bottom: 25px;">
+                <strong style="color: #28a745; font-size: 24px;">FYZICAL</strong>
+            </div>
+            <h1>Get to Know FYZICAL</h1>
+            <p class="subtitle">South San Antonio's Premier Physical Therapy & Fitness Center</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Introduction Section -->
+            <div class="intro-section">
+                <h2>Welcome to Excellence in Physical Therapy</h2>
+                <p class="intro-text">
+                    <strong>FYZICAL South San Antonio</strong> is a medical and scientific-based physical therapy and fitness organization with a broad range of expertise. You will find that we are much more than your typical physical therapy clinic.
+                </p>
+            </div>
+
+            <!-- Mission Statement -->
+            <div class="highlight-statement">
+                Our goal at FYZICAL is to help you discover how to achieve the pinnacle of healthy living by expanding your physical boundaries and maximizing your health. We work to help you feel younger, more fit, healthier, and to love your life.
+            </div>
+
+            <!-- Services Section -->
+            <div class="services-section">
+                <div class="section-header">
+                    <span class="section-icon">🏥</span>
+                    Our Core Services
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="service-icon">⚕️</span>
+                        <div class="service-title">Physical Therapy</div>
+                        <div class="service-desc">Evidence-based treatment programs designed to restore function and mobility</div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">🧪</span>
+                        <div class="service-title">Functional Testing</div>
+                        <div class="service-desc">Comprehensive medical-based evaluations to assess your physical capabilities</div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">💪</span>
+                        <div class="service-title">Physical Fitness</div>
+                        <div class="service-desc">Medically-supervised fitness programs tailored to your specific needs</div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">🔬</span>
+                        <div class="service-title">Specialty Testing</div>
+                        <div class="service-desc">Advanced diagnostic services for comprehensive health assessment</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialty Services -->
+            <div class="specialty-section">
+                <h3>Our Specialty Testing & Services</h3>
+                <p style="margin-bottom: 25px; font-size: 16px; opacity: 0.9;">
+                    We offer comprehensive specialty evaluations tailored to your specific needs:
+                </p>
+                
+                <div class="specialty-list">
+                    <div class="specialty-item">Functional Capacity and Return to Work Evaluations</div>
+                    <div class="specialty-item">Department of Transportation (DOT) Medical Evaluations</div>
+                    <div class="specialty-item">Non-DOT Medical Evaluations</div>
+                    <div class="specialty-item">Pre and Post-Offer Employment Testing</div>
+                    <div class="specialty-item">Back Coordination Testing</div>
+                    <div class="specialty-item">Vestibular and Balance Testing</div>
+                </div>
+            </div>
+
+            <!-- Grand Opening Event -->
+            <div class="grand-opening-section">
+                <h3>🎉 Join Us for Our Grand Opening! 🎉</h3>
+                <p style="font-size: 18px; margin-bottom: 25px; font-weight: 500;">
+                    You're invited to celebrate with us as we officially open our doors to serve the South San Antonio community!
+                </p>
+                
+                <div class="event-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">📅</span>
+                        <span class="detail-text"><strong>Date:</strong> July 25th, 2025</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎊</span>
+                        <span class="detail-text"><strong>Grand Opening:</strong> 2:30 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">✂️</span>
+                        <span class="detail-text"><strong>Ribbon Cutting:</strong> 3:30 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📍</span>
+                        <span class="detail-text"><strong>Location:</strong> 88 Briggs Ave, Suite 245</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commitment Section -->
+            <div class="commitment-section">
+                <h3>Our Commitment to You</h3>
+                <p class="commitment-text">
+                    Our staff has the clinical art, medical knowledge and commitment to provide the excellent services required to help you have a highly successful physical therapy experience.
+                </p>
+                <p class="commitment-text">
+                    We make every effort to ensure that the quality of our services exceeds your expectations. As a result, we are sure that you will be happy working with us.
+                </p>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h3>Ready to Start Your Journey?</h3>
+                <p>
+                    Don't wait to begin your path to better health. Contact us today to schedule your consultation and discover how FYZICAL can help you achieve your wellness goals.
+                </p>
+                
+                <div class="btn-container">
+                    <a href="tel:+18046512531" class="btn btn-primary">📞 Call Us Now</a>
+                    <a href="mailto:info@fyzical.com" class="btn btn-secondary">✉️ Email Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>FYZICAL Therapy & Balance Center</strong></p>
+            <p>88 Briggs Ave, Suite 245 | South San Antonio</p>
+            <p>Phone: +1 804-651-2531 | Email: info@fyzical.com</p>
+            <p style="margin-top: 15px; font-size: 12px; opacity: 0.7;">
+                This email was sent to you because you expressed interest in FYZICAL services. 
+                If you no longer wish to receive these emails, please unsubscribe.
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

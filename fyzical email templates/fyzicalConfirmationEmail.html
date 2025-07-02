@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✅ You're Confirmed: Ribbon Cutting Celebration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .confirmation-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .content h2 {
+            color: #28a745;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .highlight-text {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        
+        .event-details {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #28a745;
+        }
+        
+        .event-details h3 {
+            color: #28a745;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .detail-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            width: 25px;
+        }
+        
+        .detail-text {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .contact-section h3 {
+            color: #28a745;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            margin: 10px;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .divider {
+            height: 3px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            margin: 20px 0;
+        }
+        
+        .closing-message {
+            background: linear-gradient(135deg, #ffc107 0%, #ffab00 100%);
+            color: #333;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .event-details {
+                padding: 20px;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .detail-icon {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            
+            .contact-btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="https://assets.cdn.filesafe.space/DjmsEtveEmsMg9wmEmvX/media/685710d73df5ba258ade0172.png" alt="Fyzical Logo" class="logo">
+            <h1>✅ You're Confirmed!</h1>
+            <div class="confirmation-badge">Ribbon Cutting Celebration</div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <h2>Thank you for RSVPing!</h2>
+            <div class="divider"></div>
+            
+            <p>We're excited to welcome you to <span class="highlight-text">FYZICAL's Ribbon Cutting & Networking Event</span>. Your attendance will make this celebration even more special!</p>
+            
+            <!-- Event Details -->
+            <div class="event-details">
+                <h3>📋 Event Details</h3>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">📍</span>
+                    <span class="detail-text">88 Briggs Ave, Suite 245</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <span class="detail-text">July 25th, 2025</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">🎊</span>
+                    <span class="detail-text">Grand Opening: 2:30 PM</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">✂️</span>
+                    <span class="detail-text">Ribbon Cutting: 3:30 PM</span>
+                </div>
+            </div>
+            
+            <!-- What to Expect -->
+            <div class="highlight-box">
+                <h4>🎉 What to Expect</h4>
+                <p>🥂 Light refreshments to enjoy</p>
+                <p>🎁 Exciting giveaways and prizes</p>
+                <p>🤝 Great networking connections</p>
+                <p>🏥 Tour of our state-of-the-art facility</p>
+            </div>
+            
+            <p>We can't wait to meet you and share our passion for helping people achieve better health and balance!</p>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3>Questions? We're Here to Help!</h3>
+            <p>Need directions, have dietary restrictions, or other questions?</p>
+            <a href="sms:+18046512531" class="contact-btn">📱 Text Us: +1 804-651-2531</a>
+        </div>
+        
+        <!-- Closing Message -->
+        <div style="padding: 0 30px;">
+            <div class="closing-message">
+                🌟 See you soon! 🌟
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Fyzical Therapy & Balance Centers. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+                This confirmation email was sent because you RSVP'd for our Ribbon Cutting event.
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

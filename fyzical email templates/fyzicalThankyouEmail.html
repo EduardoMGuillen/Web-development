@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🙏 Thank You for Celebrating With Us!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .content h2 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .highlight-text {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        
+        .button-container {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+        
+        .social-section {
+            background-color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .social-section h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .social-btn.facebook {
+            background-color: #1877f2;
+        }
+        
+        .social-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .divider {
+            height: 3px;
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            margin: 20px 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .social-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="https://assets.cdn.filesafe.space/DjmsEtveEmsMg9wmEmvX/media/685710d73df5ba258ade0172.png" alt="Fyzical Logo" class="logo">
+            <h1>🙏 Thank You for Celebrating With Us!</h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <h2>What an incredible day!</h2>
+            <div class="divider"></div>
+            
+            <p>We're so grateful you joined us for our <span class="highlight-text">Ribbon Cutting</span> celebration on <strong>July 25th, 2025</strong> at our new location on <strong>88 Briggs Ave, Suite 245</strong>. Your presence made our special day even more meaningful!</p>
+            
+            <!-- Event Recap -->
+            <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #007bff;">
+                <h4 style="color: #007bff; font-size: 18px; margin-bottom: 15px; font-weight: 600;">🎉 What a Celebration!</h4>
+                <p style="font-size: 14px; color: #555; margin-bottom: 10px; line-height: 1.6;">
+                    ✓ Grand Opening at 2:30 PM<br>
+                    ✓ Ribbon Cutting Ceremony at 3:30 PM<br>
+                    ✓ Facility tours and demonstrations<br>
+                    ✓ Community connections made
+                </p>
+            </div>
+            
+            <p>If you enjoyed your experience with us, we'd love for you to share your thoughts and help us grow our community.</p>
+            
+            <div class="button-container">
+                <a href="#" class="btn btn-primary">📝 Leave a Review</a>
+                <a href="#" class="btn btn-secondary">👥 Refer a Friend</a>
+            </div>
+            
+            <p><em>Your feedback helps us continue providing exceptional care and service to our community!</em></p>
+        </div>
+        
+        <!-- Social Media Section -->
+        <div class="social-section">
+            <h3>Stay Connected With Us!</h3>
+            <p>Follow us for health tips, community updates, and exclusive offers</p>
+            <div class="social-links">
+                <a href="#" class="social-btn facebook">📘 Facebook</a>
+                <a href="#" class="social-btn instagram">📸 Instagram</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 14px; color: #666;">
+                @YourHandle
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Fyzical Therapy & Balance Centers. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+                This email was sent because you attended our Ribbon Cutting celebration.
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

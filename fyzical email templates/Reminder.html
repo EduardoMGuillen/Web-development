@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔔 Reminder: FYZICAL Grand Opening This Friday!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ffc107 0%, #ff8c00 50%, #ff6b35 100%);
+            padding: 50px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="50" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="30" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 25px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .reminder-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .content {
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .reminder-text {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .reminder-text strong {
+            color: #ff6b35;
+        }
+        
+        .countdown-section {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.2);
+        }
+        
+        .countdown-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .countdown-text {
+            font-size: 20px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .event-details {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .detail-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            width: 35px;
+        }
+        
+        .detail-text {
+            color: white;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .highlight-box p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .cta-section h3 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 160px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .divider {
+            height: 3px;
+            background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
+            margin: 30px 0;
+        }
+        
+        .urgent-notice {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .email-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 40px 15px;
+            }
+            
+            .header h1 {
+                font-size: 26px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .countdown-section,
+            .highlight-box,
+            .cta-section {
+                padding: 30px 20px;
+            }
+            
+            .countdown-section h2 {
+                font-size: 24px;
+            }
+            
+            .countdown-text {
+                font-size: 18px;
+            }
+            
+            .detail-item {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            
+            .header .subtitle {
+                font-size: 16px;
+            }
+            
+            .reminder-text {
+                font-size: 16px;
+            }
+            
+            .countdown-section h2 {
+                font-size: 20px;
+            }
+            
+            .countdown-text {
+                font-size: 16px;
+            }
+            
+            .detail-item {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header">
+            <!-- Logo placeholder - Replace with actual FYZICAL logo -->
+            <div class="logo" style="background-color: white; padding: 15px; border-radius: 12px; display: inline-block; margin-bottom: 25px;">
+                <strong style="color: #28a745; font-size: 24px;">FYZICAL</strong>
+            </div>
+            <h1>🔔 Event Reminder</h1>
+            <p class="subtitle">Don't Miss Our Grand Opening Celebration!</p>
+            <div class="reminder-badge">
+                This Friday • July 25th
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Reminder Message -->
+            <p class="reminder-text">
+                This is a friendly reminder that <strong>FYZICAL South San Antonio's Grand Opening</strong> is happening this Friday! We can't wait to celebrate with you and introduce our community to our comprehensive physical therapy and fitness services.
+            </p>
+
+            <!-- Urgent Notice -->
+            <div class="urgent-notice">
+                ⏰ HAPPENING THIS FRIDAY - Mark Your Calendar!
+            </div>
+
+            <!-- Event Countdown -->
+            <div class="countdown-section">
+                <h2>🎉 Grand Opening Event 🎉</h2>
+                <p class="countdown-text">Join us for this special milestone!</p>
+                
+                <div class="event-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">📅</span>
+                        <span class="detail-text"><strong>Date:</strong> Friday, July 25th, 2025</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎊</span>
+                        <span class="detail-text"><strong>Grand Opening:</strong> 2:30 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">✂️</span>
+                        <span class="detail-text"><strong>Ribbon Cutting:</strong> 3:30 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📍</span>
+                        <span class="detail-text"><strong>Location:</strong> 88 Briggs Ave, Suite 245</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What to Expect -->
+            <div class="highlight-box">
+                <h3>What to Expect at Our Grand Opening</h3>
+                <p>
+                    ✓ Facility tours and meet our expert staff<br>
+                    ✓ Learn about our comprehensive services<br>
+                    ✓ Free health screenings and consultations<br>
+                    ✓ Refreshments and door prizes<br>
+                    ✓ Special grand opening promotions
+                </p>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h3>Questions Before the Event?</h3>
+                <p>
+                    If you have any questions about our grand opening or want to learn more about FYZICAL's services, don't hesitate to reach out to us!
+                </p>
+                
+                <div class="btn-container">
+                    <a href="tel:+18046512531" class="btn btn-primary">📞 Call Us</a>
+                    <a href="mailto:info@fyzical.com" class="btn btn-secondary">✉️ Email Us</a>
+                </div>
+            </div>
+
+            <!-- Final Reminder -->
+            <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 20px; border-radius: 10px; margin: 30px 0; text-align: center;">
+                <strong>📍 Save the Address:</strong> 88 Briggs Ave, Suite 245<br>
+                <strong>⏰ Save the Time:</strong> Grand Opening at 2:30 PM • Ribbon Cutting at 3:30 PM<br>
+                <strong>📅 Save the Date:</strong> This Friday, July 25th, 2025
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>FYZICAL Therapy & Balance Center</strong></p>
+            <p>88 Briggs Ave, Suite 245 | South San Antonio</p>
+            <p>Phone: +1 804-651-2531 | Email: info@fyzical.com</p>
+            <p style="margin-top: 15px; font-size: 12px; opacity: 0.7;">
+                This is a reminder email for our upcoming grand opening event. 
+                If you no longer wish to receive these emails, please unsubscribe.
+            </p>
+        </div>
+    </div>
+</body>
+</body>
+</html> 

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Planning E-Book Download - Morales Padia Law</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Times+New+Roman&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #234374;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #234374 0%, #4475B5 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.95;
+            margin-top: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .greeting {
+            font-size: 32px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .book-showcase {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 2px solid #639BE3;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 35px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(99, 155, 227, 0.1);
+        }
+        
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 12px;
+        }
+        
+        .book-subtitle {
+            font-size: 20px;
+            color: #4475B5;
+            font-style: italic;
+            margin-bottom: 18px;
+        }
+        
+        .book-author {
+            font-size: 18px;
+            font-weight: 600;
+            color: #234374;
+        }
+        
+        .message {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .highlight-box {
+            background-color: #639BE3;
+            color: white;
+            padding: 25px;
+            margin: 35px 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .highlight-text {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .benefits-section {
+            background-color: #f8f9fa;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 35px 0;
+            border-left: 5px solid #639BE3;
+        }
+        
+        .benefits-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 15px;
+            font-size: 17px;
+            position: relative;
+            padding-left: 35px;
+            line-height: 1.6;
+        }
+        
+        .benefits-list li:before {
+            content: "⚖️";
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #639BE3 0%, #4475B5 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            margin: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(68, 117, 181, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(68, 117, 181, 0.4);
+        }
+        
+        .next-steps {
+            background-color: #ffffff;
+            border: 2px solid #639BE3;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 35px 0;
+            box-shadow: 0 4px 20px rgba(99, 155, 227, 0.1);
+        }
+        
+        .next-steps-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 18px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 35px 0;
+            border-left: 5px solid #639BE3;
+        }
+        
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .contact-item strong {
+            color: #234374;
+        }
+        
+        .footer {
+            background-color: #234374;
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+            font-size: 15px;
+        }
+        
+        .footer a {
+            color: #639BE3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #ffffff;
+        }
+        
+        .social-links {
+            margin: 25px 0;
+        }
+        
+        .social-links a {
+            color: #639BE3;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #ffffff;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .content {
+                padding: 30px 25px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+            
+            .greeting {
+                font-size: 26px;
+            }
+            
+            .book-title {
+                font-size: 26px;
+            }
+            
+            .message {
+                font-size: 16px;
+            }
+            
+            .benefits-list li {
+                font-size: 16px;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="../Sections MPL Home/mpl new logo (1).png" alt="Morales Padia Law" class="logo">
+            </div>
+            <div class="tagline">Your lawyer for life.</div>
+        </div>
+        
+        <div class="content">
+            <h1 class="greeting">Your Estate Planning Guide is Ready!</h1>
+            
+            <div class="book-showcase">
+                <div class="book-title">Estate Planning Guide</div>
+                <div class="book-subtitle">Protect Your Legacy & Secure Your Future</div>
+                <div class="book-author">By Morales Padia Law Team</div>
+            </div>
+            
+            <p class="message">
+                Thank you for downloading our comprehensive Estate Planning Guide! You've taken an important step toward protecting your assets and ensuring your legacy is preserved for future generations. This guide contains essential strategies and expert insights to help you navigate the estate planning process with confidence.
+            </p>
+            
+            <div class="highlight-box">
+                <div class="highlight-text">
+                    Your download should begin automatically. If not, please check your email for the direct download link.
+                </div>
+            </div>
+            
+            <div class="benefits-section">
+                <div class="benefits-title">🏛️ What You'll Discover in This Guide:</div>
+                <ul class="benefits-list">
+                    <li>Essential strategies to protect your assets and minimize taxes</li>
+                    <li>Understanding different types of trusts and their benefits</li>
+                    <li>How to create a comprehensive will that reflects your wishes</li>
+                    <li>Power of attorney and healthcare directive essentials</li>
+                    <li>Strategies for business succession and legacy planning</li>
+                    <li>Common estate planning mistakes and how to avoid them</li>
+                </ul>
+            </div>
+            
+            <p class="message">
+                Estate planning is about more than just wills and trusts—it's about ensuring your loved ones are protected and your wishes are honored. Our guide breaks down complex legal concepts into easy-to-understand advice that you can implement to secure your family's future.
+            </p>
+            
+            <div class="next-steps">
+                <div class="next-steps-title">💡 Ready to Create Your Estate Plan?</div>
+                <p>While this guide provides valuable information, every family's situation is unique. Our experienced estate planning attorneys can help you create a personalized plan that addresses your specific needs and goals. We'll work with you to ensure your assets are protected and your legacy is preserved exactly as you envision.</p>
+            </div>
+            
+            <div class="cta-section">
+                <a href="https://www.moralespadialaw.com/schedule" class="cta-button">Schedule Your Consultation</a>
+                <a href="https://www.moralespadialaw.com/Estate-Planning" class="cta-button">View Our Estate Services</a>
+            </div>
+            
+            <p class="message">
+                At Morales Padia Law, we specialize in comprehensive estate planning services designed to protect your wealth and provide peace of mind. Our award-winning team understands that estate planning isn't one-size-fits-all, and we're committed to creating solutions that work for your unique situation.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-title">Ready to Start Your Estate Plan?</div>
+                <div class="contact-item"><strong>Phone:</strong> (726) 204-4044</div>
+                <div class="contact-item"><strong>Email:</strong> info@moralespadialaw.com</div>
+                <div class="contact-item"><strong>Office:</strong> San Antonio, Texas</div>
+                <div class="contact-item"><strong>Website:</strong> <a href="https://moralespadialaw.com" style="color: #639BE3;">moralespadialaw.com</a></div>
+            </div>
+            
+            <p class="message">
+                Thank you for trusting us with your estate planning needs. We look forward to helping you protect what matters most.
+            </p>
+            
+            <p class="message">
+                Best regards,<br>
+                <strong>The Morales Padia Law Team</strong>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <div class="social-links">
+                <a href="#">Instagram</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">YouTube</a> | 
+                <a href="#">LinkedIn</a> | 
+                <a href="#">TikTok</a>
+            </div>
+            <p>&copy; 2025 Morales Padia Law. All Rights Reserved.</p>
+            <p>
+                <a href="https://moralespadialaw.com">Visit Our Website</a> | 
+                <a href="https://www.moralespadialaw.com/books">More Free Resources</a> | 
+                <a href="#">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 
