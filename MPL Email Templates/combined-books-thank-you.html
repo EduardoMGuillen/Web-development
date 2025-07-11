@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Download - Morales Padia Law</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Times+New+Roman&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #234374;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #234374 0%, #4475B5 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.95;
+            margin-top: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .greeting {
+            font-size: 32px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .books-showcase {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 2px solid #639BE3;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 35px 0;
+            box-shadow: 0 4px 20px rgba(99, 155, 227, 0.1);
+        }
+        
+        .books-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .book-item {
+            background: white;
+            border: 1px solid #e8ecf0;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .book-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(99, 155, 227, 0.15);
+        }
+        
+        .book-item-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 8px;
+        }
+        
+        .book-item-subtitle {
+            font-size: 16px;
+            color: #4475B5;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        
+        .book-item-author {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .message {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .highlight-box {
+            background-color: #639BE3;
+            color: white;
+            padding: 25px;
+            margin: 35px 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .highlight-text {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .benefits-section {
+            background-color: #f8f9fa;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 35px 0;
+            border-left: 5px solid #639BE3;
+        }
+        
+        .benefits-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .benefits-column {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #e8ecf0;
+        }
+        
+        .benefits-column-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.4;
+        }
+        
+        .benefits-list.divorce li:before {
+            content: "👨‍⚖️";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+        
+        .benefits-list.estate li:before {
+            content: "⚖️";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+        
+        .benefits-list.family li:before {
+            content: "📚";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #639BE3 0%, #4475B5 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            margin: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(68, 117, 181, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(68, 117, 181, 0.4);
+        }
+        
+        .next-steps {
+            background-color: #ffffff;
+            border: 2px solid #639BE3;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 35px 0;
+            box-shadow: 0 4px 20px rgba(99, 155, 227, 0.1);
+        }
+        
+        .next-steps-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 18px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 35px 0;
+            border-left: 5px solid #639BE3;
+        }
+        
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .contact-item strong {
+            color: #234374;
+        }
+        
+        .footer {
+            background-color: #234374;
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+            font-size: 15px;
+        }
+        
+        .footer a {
+            color: #639BE3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #ffffff;
+        }
+        
+        .social-links {
+            margin: 25px 0;
+        }
+        
+        .social-links a {
+            color: #639BE3;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #ffffff;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .content {
+                padding: 30px 25px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+            
+            .greeting {
+                font-size: 26px;
+            }
+            
+            .books-title {
+                font-size: 24px;
+            }
+            
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .message {
+                font-size: 16px;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/68475cb847cd630299b60a0f.png" alt="Morales Padia Law" class="logo">
+            </div>
+        </div>
+        
+        <div class="content">
+            <h1 class="greeting">Thank You for Your Download!</h1>
+            
+            <div class="books-showcase">
+                <div class="books-title">Your Complete Legal Resource Library</div>
+                <div class="book-grid">
+                    <div class="book-item">
+                        <div class="book-item-title">Your Complete Divorce Guide</div>
+                        <div class="book-item-subtitle">Navigate Your Divorce with Confidence</div>
+                        <div class="book-item-author">By Morales Padia Law Team</div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-item-title">Estate Planning Guide</div>
+                        <div class="book-item-subtitle">Protect Your Legacy & Secure Your Future</div>
+                        <div class="book-item-author">By Morales Padia Law Team</div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-item-title">Family Blindsided</div>
+                        <div class="book-item-subtitle">Don't Let Your Loved Ones Suffer</div>
+                        <div class="book-item-author">By Trisha Morales Padia</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="message">
+                Thank you for downloading our comprehensive legal resource library! You now have access to expert guidance across three critical areas of law - divorce, estate planning, and family protection. These guides contain the knowledge and strategies you need to navigate complex legal matters with confidence and make informed decisions for your future.
+            </p>
+            
+            <div class="highlight-box">
+                <div class="highlight-text">
+                    Your downloads should begin automatically. If not, please check your email for the direct download links.
+                </div>
+            </div>
+            
+            <div class="benefits-section">
+                <div class="benefits-title">📚 What You'll Learn Across These Comprehensive Guides:</div>
+                <div class="benefits-grid">
+                    <div class="benefits-column">
+                        <div class="benefits-column-title">Divorce Guide</div>
+                        <ul class="benefits-list divorce">
+                            <li>Step-by-step divorce process in Texas</li>
+                            <li>Understanding your legal rights</li>
+                            <li>Financial planning and asset division</li>
+                            <li>Child custody and support guidance</li>
+                            <li>Expert tips to avoid costly mistakes</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-column">
+                        <div class="benefits-column-title">Estate Planning</div>
+                        <ul class="benefits-list estate">
+                            <li>Asset protection strategies</li>
+                            <li>Understanding wills and trusts</li>
+                            <li>Power of attorney essentials</li>
+                            <li>Business succession planning</li>
+                            <li>Tax minimization strategies</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-column">
+                        <div class="benefits-column-title">Family Protection</div>
+                        <ul class="benefits-list family">
+                            <li>Estate planning for all ages</li>
+                            <li>Protecting your family's future</li>
+                            <li>Avoiding legal and financial hurdles</li>
+                            <li>Adapting plans as life changes</li>
+                            <li>Peace of mind strategies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="message">
+                Written by our experienced legal team with decades of combined experience, these guides provide the expert knowledge you need to make informed decisions across all areas of family law and estate planning. We believe in empowering our clients with comprehensive information so you can approach your legal matters with confidence and clarity.
+            </p>
+            
+            <div class="next-steps">
+                <div class="next-steps-title">🤝 Ready for Personalized Legal Guidance?</div>
+                <p>While these guides provide comprehensive information, every situation is unique. Our compassionate legal team is here to provide personalized guidance tailored to your specific circumstances. Whether you need help with divorce, estate planning, or family protection, we'll work tirelessly to protect your rights and ensure the best possible outcome for your case.</p>
+            </div>
+            
+            <div class="cta-section">
+                <a href="https://www.moralespadialaw.com/schedule" class="cta-button">Schedule a Consultation</a>
+                <a href="https://www.moralespadialaw.com/services" class="cta-button">Explore Our Services</a>
+            </div>
+            
+            <p class="message">
+                At Morales Padia Law, our award-winning, women-led team specializes in family law, estate planning, and protecting what matters most to you. We understand that legal matters require both expertise and emotional sensitivity, and we're committed to providing compassionate support throughout your journey.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-title">Ready to Discuss Your Legal Needs?</div>
+                <div class="contact-item"><strong>Phone:</strong> (726) 204-4044</div>
+                <div class="contact-item"><strong>Email:</strong> info@moralespadialaw.com</div>
+                <div class="contact-item"><strong>Office:</strong> San Antonio, Texas</div>
+                <div class="contact-item"><strong>Website:</strong> <a href="https://moralespadialaw.com" style="color: #639BE3;">moralespadialaw.com</a></div>
+            </div>
+            
+            <p class="message">
+                Remember, you don't have to face these challenges alone. We're here to guide you toward a brighter future and help you move forward with confidence and peace of mind.
+            </p>
+            
+            <p class="message">
+                With compassion and expert guidance,<br>
+                <strong>The Morales Padia Law Team</strong>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <div class="social-links">
+                <a href="#">Instagram</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">YouTube</a> | 
+                <a href="#">LinkedIn</a> | 
+                <a href="#">TikTok</a>
+            </div>
+            <p>&copy; 2025 Morales Padia Law. All Rights Reserved.</p>
+            <p>
+                <a href="https://moralespadialaw.com">Visit Our Website</a> | 
+                <a href="https://www.moralespadialaw.com/books">More Free Resources</a> | 
+                <a href="#">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

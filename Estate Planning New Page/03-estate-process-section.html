@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Planning Process</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            box-shadow: none !important;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #234374;
+            background: transparent;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: #ffffff;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #234374;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #4475B5, #639BE3);
+            border-radius: 2px;
+        }
+
+        .section-title em {
+            color: #4475B5;
+            font-style: italic;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 50px 25px 35px 25px;
+            text-align: center;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            position: relative;
+            margin-top: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4475B5, #639BE3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.4rem;
+            border: 4px solid #ffffff;
+        }
+
+        .process-step i {
+            font-size: 2.5rem;
+            color: #639BE3;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover i {
+            transform: scale(1.1);
+            color: #4475B5;
+        }
+
+        .process-step h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #234374;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .process-step:hover h4 {
+            color: #4475B5;
+        }
+
+        .process-step p {
+            color: #6B7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .step-highlight {
+            background: #F8FAFC;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid #639BE3;
+            text-align: left;
+        }
+
+        .step-highlight strong {
+            color: #4475B5;
+            font-weight: 600;
+        }
+
+        .step-highlight {
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .process-step {
+                padding: 40px 20px 30px 20px;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Our <em>Estate Planning</em> Process</h2>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <i class="fas fa-comments"></i>
+                    <h4>Free Estate Planning Consultation</h4>
+                    <p>Start with a free discovery call with our team. We'll help you understand the process, answer your questions, and recommend a bespoke package that meets your needs.</p>
+                    <div class="step-highlight">
+                        <strong>Duration:</strong> 30 minutes<br>
+                        <strong>Cost:</strong> Free
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <i class="fas fa-handshake"></i>
+                    <h4>Legacy Planning Sessions</h4>
+                    <p>We'll continue discussions to get to know your estate planning wishes and collaborate on a strategy that keeps you and your family protected.</p>
+                    <div class="step-highlight">
+                        <strong>Focus:</strong> Goals & Strategy<br>
+                        <strong>Outcome:</strong> Custom Plan
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <i class="fas fa-file-contract"></i>
+                    <h4>Documentation</h4>
+                    <p>Receive all necessary, legally binding documentation covering every aspect of your estate - wills, trusts, power of attorney, healthcare directives, and more.</p>
+                    <div class="step-highlight">
+                        <strong>Includes:</strong> All Legal Documents<br>
+                        <strong>Timeline:</strong> 2-4 weeks
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <i class="fas fa-heart"></i>
+                    <h4>Ongoing Guidance</h4>
+                    <p>Our services don't end after signing. We offer our FamilyCare Program to guide you through estate administration, plan changes, and ongoing support.</p>
+                    <div class="step-highlight">
+                        <strong>Service:</strong> FamilyCare Program<br>
+                        <strong>Support:</strong> Lifetime
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

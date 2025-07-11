@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Planning Contact Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #234374;
+            --secondary: #639BE3;
+            --accent: #4475B5;
+            --light: #F8FAFC;
+            --dark: #4475B5;
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(35,67,116,0.10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: transparent;
+            color: var(--dark);
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .section {
+            padding: 80px 0;
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 90%;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: transparent;
+            color: var(--white);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff !important;
+            line-height: 1.2;
+        }
+
+        .contact-text h2 span {
+            color: #ffffff !important;
+        }
+
+        .contact-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ffffff !important;
+            line-height: 1.6;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-text .highlight {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .contact-text .highlight h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff !important;
+        }
+
+        .contact-text .highlight p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            color: #ffffff !important;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #4475B5 100%);
+            color: #ffffff !important;
+            border: none;
+            border-radius: 25px;
+            padding: 18px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(68, 117, 181, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(68, 117, 181, 0.4);
+            color: #ffffff !important;
+        }
+
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff !important;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #ffffff;
+            color: var(--primary) !important;
+        }
+
+        .contact-info {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #ffffff !important;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #ffffff !important;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #ffffff !important;
+            flex-shrink: 0;
+        }
+
+        .contact-item span {
+            font-size: 1.1rem;
+            color: #ffffff !important;
+        }
+
+        .contact-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-highlight h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff !important;
+        }
+
+        .contact-highlight p {
+            font-size: 1.1rem;
+            color: #ffffff !important;
+            margin-bottom: 20px;
+        }
+
+        .contact-highlight .cta-btn {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            color: var(--primary) !important;
+        }
+
+        .contact-highlight .cta-btn:hover {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            color: var(--primary) !important;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .contact-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .contact-text h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .section {
+                width: 95%;
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 60px 0;
+            }
+
+            .contact-info {
+                padding: 30px 20px;
+            }
+
+            .contact-text h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="section">
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h2>Ready to <span>Secure Your Legacy?</span></h2>
+                    <p>Give us 15 minutes of your time. On this call, we'll explore the best estate plan for you and your loved ones, discuss your goals and concerns, and provide expert guidance on next steps.</p>
+                    
+                    <div class="highlight">
+                        <h4>What We'll Cover:</h4>
+                        <p>Your Goals & Concerns | Key Estate Planning Documents | Asset Protection | Next Steps | Legal Guidance & Costs | Guardianship & Beneficiaries</p>
+                    </div>
+                    
+                    <p>As your <strong>Trusted Family Lawyer</strong>, we promise to help you create a plan that keeps your loved ones out of court and out of conflict.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="https://www.moralespadialaw.com/schedule" class="cta-btn">Schedule Your Free Consultation</a>
+                        <a href="tel:726-204-4044" class="cta-btn secondary">Call (726) 204-4044</a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(726) 204-4044</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@moralespadialaw.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>45 NE Interstate 410 Loop Suite 206, San Antonio, TX 78216</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>moralespadialaw.com</span>
+                    </div>
+                    <div class="contact-highlight">
+                        <h4>Get Your Free Estate Planning Guide</h4>
+                        <p>Download "Family Blindsided" - An Estate Planning Road Map for Keeping Your Family Out of Court and Out of Conflict.</p>
+                        <a href="https://www.moralespadialaw.com/books" class="cta-btn">Download Free Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
