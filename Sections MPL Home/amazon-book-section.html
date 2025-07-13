@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Book Section - Morales Padia Law</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1a2a4f;
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        .amazon-book-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .amazon-book-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(32,64,116,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(32,64,116,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .book-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .book-image {
+            position: relative;
+            animation: fadeInLeft 0.8s ease-out 0.3s both;
+        }
+
+        .book-cover {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(32,64,116,0.2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.05);
+        }
+
+        .book-cover-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shine 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .book-info {
+            animation: fadeInRight 0.8s ease-out 0.5s both;
+        }
+
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .book-description {
+            font-size: 1.1rem;
+            color: var(--dark);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .book-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .book-features li {
+            padding: 0.5rem 0;
+            color: var(--dark);
+            opacity: 0.9;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .book-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .amazon-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #ff9900, #ff6600);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,153,0,0.3);
+            cursor: pointer;
+        }
+
+        .amazon-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,153,0,0.4);
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .amazon-button i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .amazon-book-section {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .book-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .book-cover {
+                max-width: 300px;
+                height: 400px;
+                margin: 0 auto;
+            }
+
+            .book-title {
+                font-size: 1.5rem;
+            }
+
+            .book-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="amazon-book-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Now Available on Amazon</h2>
+                <p class="section-subtitle">Get your copy of our comprehensive legal guide, now available for purchase on Amazon</p>
+            </div>
+            
+            <div class="book-showcase">
+                <div class="book-image">
+                    <div class="book-cover">
+                        <img src="https://m.media-amazon.com/images/I/81tILBPJyDL._SY466_.jpg" 
+                             alt="Published Legal Guide Book Cover" 
+                             class="book-cover-img">
+                    </div>
+                </div>
+                
+                <div class="book-info">
+                    <h3 class="book-title">Professional Legal Guide</h3>
+                    <p class="book-description">
+                        A comprehensive resource covering essential legal topics including family law, divorce proceedings, 
+                        estate planning, and protecting your family's future. Written by experienced attorneys with practical 
+                        insights and actionable advice.
+                    </p>
+                    
+                    <ul class="book-features">
+                        <li>Expert legal guidance and strategies</li>
+                        <li>Step-by-step processes and checklists</li>
+                        <li>Real-world case studies and examples</li>
+                        <li>Updated with current laws and regulations</li>
+                        <li>Easy-to-understand language for all readers</li>
+                    </ul>
+                    
+                    <a href="https://www.amazon.com/dp/B0DJG12RLD/" target="_blank" class="amazon-button">
+                        <i class="fab fa-amazon"></i>
+                        Buy on Amazon
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
