@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Defense Process - Morales Padia Law</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #234374;
+            --secondary: #639BE3;
+            --accent: #4475B5;
+            --light: #F3E3D3;
+            --dark: #1a2a4f;
+            --white: #FFFFFF;
+            --shadow: 0 8px 32px rgba(35,67,116,0.10);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes progressFill {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .criminal-process {
+            padding: 6rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .criminal-process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="800" cy="300" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="400" cy="700" r="2" fill="rgba(35,67,116,0.05)"/></svg>');
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .section-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 3rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--white);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .process-timeline {
+            position: relative;
+            margin-bottom: 6rem;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--light);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: var(--gradient);
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: progressFill 3s ease-out forwards;
+        }
+
+        .process-step {
+            position: relative;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .process-step:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .process-step:nth-child(3n) {
+            animation-delay: 0.4s;
+        }
+
+        .step-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            position: relative;
+            flex-shrink: 0;
+            box-shadow: var(--shadow);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .step-number::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .step-info {
+            flex: 1;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .step-info:hover::before {
+            transform: scaleX(1);
+        }
+
+        .step-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(35,67,116,0.15);
+        }
+
+        .step-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .step-description {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .step-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .step-features li {
+            padding: 0.5rem 0;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .step-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        /* Alternate layout for even steps */
+        .process-step:nth-child(even) .step-content {
+            flex-direction: row-reverse;
+        }
+
+        .process-step:nth-child(even) .step-info {
+            background: var(--light);
+        }
+
+        .cta-section {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M50 100 L150 100 M100 50 L100 150" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .cta-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(35,67,116,0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline-line,
+            .timeline-progress {
+                left: 40px;
+            }
+
+            .step-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .process-step:nth-child(even) .step-content {
+                flex-direction: column;
+            }
+
+            .step-number {
+                position: relative;
+                left: -50px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .criminal-process {
+                padding: 4rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .step-info {
+                padding: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 3rem 1rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="criminal-process">
+        <div class="container">
+            <h2 class="section-title">Criminal Defense Process</h2>
+            <p class="section-subtitle">Your step-by-step guide through the criminal justice system</p>
+            
+            <div class="process-timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-progress"></div>
+                
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Arrest & Initial Contact</h3>
+                            <p class="step-description">
+                                The moment you're arrested or under investigation, contact us immediately. Time is critical in criminal cases, and early intervention can make a significant difference in the outcome.
+                            </p>
+                            <span class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                Within 24 hours
+                            </span>
+                            <ul class="step-features">
+                                <li>Emergency legal consultation</li>
+                                <li>Bail hearing preparation</li>
+                                <li>Initial case assessment</li>
+                                <li>Rights protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">2</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Investigation & Evidence Review</h3>
+                            <p class="step-description">
+                                We conduct a thorough investigation of your case, reviewing all evidence, police reports, and witness statements to identify weaknesses in the prosecution's case.
+                            </p>
+                            <span class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                1-2 weeks
+                            </span>
+                            <ul class="step-features">
+                                <li>Evidence collection and analysis</li>
+                                <li>Witness interviews</li>
+                                <li>Police report review</li>
+                                <li>Expert consultation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">3</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Defense Strategy Development</h3>
+                            <p class="step-description">
+                                Based on our investigation, we develop a comprehensive defense strategy tailored to your specific case, focusing on the strongest possible defense.
+                            </p>
+                            <span class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                2-3 weeks
+                            </span>
+                            <ul class="step-features">
+                                <li>Legal research and precedent analysis</li>
+                                <li>Defense theory development</li>
+                                <li>Motion preparation</li>
+                                <li>Strategy refinement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">4</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Pre-Trial Motions</h3>
+                            <p class="step-description">
+                                We file strategic pre-trial motions to suppress evidence, dismiss charges, or limit the prosecution's case, often leading to reduced charges or case dismissal.
+                            </p>
+                            <span class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                2-4 weeks
+                            </span>
+                            <ul class="step-features">
+                                <li>Motion to suppress evidence</li>
+                                <li>Motion to dismiss charges</li>
+                                <li>Discovery motions</li>
+                                <li>Constitutional challenges</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">5</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Plea Negotiations</h3>
+                            <p class="step-description">
+                                We negotiate with prosecutors to secure the best possible plea agreement, which may include reduced charges, lighter sentences, or alternative sentencing options.
+                            </p>
+                            <span class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                2-6 weeks
+                            </span>
+                            <ul class="step-features">
+                                <li>Prosecutor negotiations</li>
+                                <li>Charge reduction discussions</li>
+                                <li>Sentencing alternatives</li>
+                                <li>Plea agreement review</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">6</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Trial Preparation</h3>
+                            <p class="step-description">
+                                If a favorable plea cannot be reached, we prepare for trial by organizing evidence, preparing witnesses, and developing compelling arguments for your defense.
+                            </p>
+                            <span class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                4-8 weeks
+                            </span>
+                            <ul class="step-features">
+                                <li>Witness preparation</li>
+                                <li>Evidence organization</li>
+                                <li>Jury selection strategy</li>
+                                <li>Opening/closing arguments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">7</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Trial & Resolution</h3>
+                            <p class="step-description">
+                                We aggressively represent you at trial, presenting your defense to the jury and fighting for an acquittal or the best possible outcome.
+                            </p>
+                            <span class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                1-2 weeks
+                            </span>
+                            <ul class="step-features">
+                                <li>Jury trial representation</li>
+                                <li>Cross-examination of witnesses</li>
+                                <li>Evidence presentation</li>
+                                <li>Verdict and sentencing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3 class="cta-title">Time Is Critical - Act Now</h3>
+                <p class="cta-description">
+                    Don't wait to get the legal help you need. Every moment counts in criminal cases. Contact us immediately for a confidential consultation and aggressive defense.
+                </p>
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-phone"></i>
+                    Call Now for Emergency Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

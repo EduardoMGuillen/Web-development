@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Law Services - Morales Padia Law</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #234374;
+            --secondary: #639BE3;
+            --accent: #4475B5;
+            --light: #F3E3D3;
+            --dark: #1a2a4f;
+            --white: #FFFFFF;
+            --shadow: 0 8px 32px rgba(35,67,116,0.10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        .family-services {
+            padding: 6rem 2rem;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .family-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(32,64,116,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(32,64,116,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(32, 64, 116, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--white);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(32, 64, 116, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(32, 64, 116, 0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(32, 64, 116, 0.2);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--dark);
+            opacity: 0.8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.3rem 0;
+            color: var(--dark);
+            opacity: 0.8;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .featured-service {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            text-align: center;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+
+        .featured-service h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .featured-service p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        .featured-btn {
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .featured-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .service-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .family-services {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .featured-service {
+                padding: 2rem;
+            }
+
+            .featured-service h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="family-services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-users"></i>
+                    Our Family Law Services
+                </div>
+                <h2 class="section-title">Comprehensive Family Legal Support</h2>
+                <p class="section-subtitle">
+                    We provide expert legal representation for all family matters, ensuring your rights 
+                    are protected and your family's best interests are served.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Uncontested Divorce</h3>
+                    <p>
+                        Streamlined divorce process for couples who agree on all major issues, 
+                        providing efficient and cost-effective legal solutions.
+                    </p>
+                    <ul class="service-features">
+                        <li>Mutual Agreement Divorces</li>
+                        <li>Simplified Process</li>
+                        <li>Reduced Court Time</li>
+                        <li>Cost-Effective Solutions</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/uncontested-divorce" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Contested Divorce</h3>
+                    <p>
+                        Expert representation in complex divorce cases involving disputes over 
+                        assets, custody, or support arrangements.
+                    </p>
+                    <ul class="service-features">
+                        <li>Asset Division Disputes</li>
+                        <li>Custody Battles</li>
+                        <li>Alimony Negotiations</li>
+                        <li>Court Representation</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/contested-divorce" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Child Custody</h3>
+                    <p>
+                        Protecting your parental rights and ensuring the best interests of your 
+                        children in custody arrangements.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custody Evaluations</li>
+                        <li>Parenting Plans</li>
+                        <li>Visitation Rights</li>
+                        <li>Joint Custody Agreements</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/child-custody" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Child Support</h3>
+                    <p>
+                        Ensuring fair child support arrangements that prioritize your children's 
+                        needs and financial security.
+                    </p>
+                    <ul class="service-features">
+                        <li>Support Calculations</li>
+                        <li>Modification Requests</li>
+                        <li>Enforcement Actions</li>
+                        <li>Payment Arrangements</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/child-support" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Adoption</h3>
+                    <p>
+                        Guiding families through the legal adoption process with care, ensuring 
+                        all requirements are met.
+                    </p>
+                    <ul class="service-features">
+                        <li>Private Adoptions</li>
+                        <li>Step-parent Adoptions</li>
+                        <li>Agency Adoptions</li>
+                        <li>Legal Documentation</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/adoption" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Modification of Previous Order</h3>
+                    <p>
+                        Helping you modify existing court orders when circumstances change, 
+                        ensuring they remain fair and current.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custody Modifications</li>
+                        <li>Support Adjustments</li>
+                        <li>Visitation Changes</li>
+                        <li>Court Petitions</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/modification-of-previous-order" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Uncontested Flat Fee Divorce</h3>
+                    <p>
+                        Affordable, fixed-price divorce services for uncontested cases with 
+                        transparent pricing and no hidden fees.
+                    </p>
+                    <ul class="service-features">
+                        <li>Fixed Pricing</li>
+                        <li>No Hidden Costs</li>
+                        <li>Quick Processing</li>
+                        <li>Simple Documentation</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/uncontested-flat-fee-divorce" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Enforcement</h3>
+                    <p>
+                        Enforcing existing court orders when the other party fails to comply 
+                        with custody, support, or visitation agreements.
+                    </p>
+                    <ul class="service-features">
+                        <li>Contempt Proceedings</li>
+                        <li>Support Enforcement</li>
+                        <li>Custody Enforcement</li>
+                        <li>Wage Garnishment</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/enforcement" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Name Change</h3>
+                    <p>
+                        Legal name change services for adults and children, handling all 
+                        necessary paperwork and court proceedings.
+                    </p>
+                    <ul class="service-features">
+                        <li>Adult Name Changes</li>
+                        <li>Minor Name Changes</li>
+                        <li>Court Petitions</li>
+                        <li>Documentation Updates</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/name-change" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Property Division</h3>
+                    <p>
+                        Fair and equitable division of marital property, assets, and debts 
+                        during divorce proceedings.
+                    </p>
+                    <ul class="service-features">
+                        <li>Asset Valuation</li>
+                        <li>Property Appraisals</li>
+                        <li>Debt Division</li>
+                        <li>Settlement Negotiations</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/property-division" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3>Spousal Maintenance</h3>
+                    <p>
+                        Determining fair spousal support arrangements and maintenance orders 
+                        based on financial circumstances and legal requirements.
+                    </p>
+                    <ul class="service-features">
+                        <li>Alimony Calculations</li>
+                        <li>Support Duration</li>
+                        <li>Modification Requests</li>
+                        <li>Enforcement Actions</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/spousal-maintenance" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Prenuptial Agreement</h3>
+                    <p>
+                        Protecting your assets and clarifying financial responsibilities with 
+                        comprehensive prenuptial agreements before marriage.
+                    </p>
+                    <ul class="service-features">
+                        <li>Asset Protection</li>
+                        <li>Financial Planning</li>
+                        <li>Debt Allocation</li>
+                        <li>Future Planning</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/prenuptial-agreement" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3>Postnuptial Agreement</h3>
+                    <p>
+                        Creating postnuptial agreements after marriage to address changing 
+                        circumstances and protect both parties' interests.
+                    </p>
+                    <ul class="service-features">
+                        <li>Post-Marriage Protection</li>
+                        <li>Financial Restructuring</li>
+                        <li>Asset Clarification</li>
+                        <li>Legal Documentation</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/postnuptial-agreement" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-service">
+                <h3>Need Immediate Family Law Help?</h3>
+                <p>
+                    Our experienced family law attorneys are here to provide the guidance and 
+                    representation you need during this challenging time.
+                </p>
+                <a href="#contact" class="featured-btn">
+                    <i class="fas fa-phone"></i>
+                    Schedule Free Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

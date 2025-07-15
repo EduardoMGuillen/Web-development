@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Defense Attorney San Antonio | Morales Padia Law</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #234374;
+            --secondary: #639BE3;
+            --accent: #4475B5;
+            --light: #F3E3D3;
+            --dark: #1a2a4f;
+            --white: #FFFFFF;
+            --shadow: 0 8px 32px rgba(35,67,116,0.10);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes progressFill {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        @keyframes urgent {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,0,0.2); }
+            50% { transform: scale(1.02); box-shadow: 0 0 30px rgba(255,0,0,0.4); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #dc2626;
+        }
+
+        /* Hero Section */
+        .criminal-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .criminal-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: none;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(220, 38, 38, 0.2);
+            color: #ef4444;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #dc2626;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 0.8s ease-out 0.3s both;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            background: #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .hero-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .urgent-banner {
+            background: #dc2626;
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Services Section */
+        .criminal-services {
+            padding: 6rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .criminal-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="100" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="900" cy="200" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="300" cy="800" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="700" cy="600" r="3" fill="rgba(35,67,116,0.05)"/></svg>');
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .section-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 3rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--white);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .service-card:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3n) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(35,67,116,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        .service-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        .service-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-cta:hover::before {
+            left: 100%;
+        }
+
+        .service-cta:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .expertise-section {
+            background: var(--light);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M50 100 L150 100 M100 50 L100 150" stroke="rgba(35,67,116,0.05)" stroke-width="2" fill="none"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .expertise-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .expertise-text {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .expertise-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .expertise-description {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .expertise-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-box .stat-number {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box .stat-label {
+            color: var(--dark);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Process Section */
+        .criminal-process {
+            padding: 6rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .criminal-process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="800" cy="300" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="400" cy="700" r="2" fill="rgba(35,67,116,0.05)"/></svg>');
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .process-timeline {
+            position: relative;
+            margin-bottom: 6rem;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--light);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: var(--gradient);
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: progressFill 3s ease-out forwards;
+        }
+
+        .process-step {
+            position: relative;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .process-step:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .process-step:nth-child(3n) {
+            animation-delay: 0.4s;
+        }
+
+        .step-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            position: relative;
+            flex-shrink: 0;
+            box-shadow: var(--shadow);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .step-number::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .step-info {
+            flex: 1;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .step-info:hover::before {
+            transform: scaleX(1);
+        }
+
+        .step-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(35,67,116,0.15);
+        }
+
+        .step-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .step-description {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--light);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Benefits Section */
+        .criminal-benefits {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .criminal-benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="150" cy="150" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="850" cy="250" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="350" cy="750" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="650" cy="550" r="3" fill="rgba(35,67,116,0.05)"/></svg>');
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .benefit-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .benefit-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .benefit-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(35,67,116,0.15);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1);
+            animation: bounce 1s ease-in-out;
+        }
+
+        .benefit-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .benefit-description {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .benefit-features li {
+            padding: 0.5rem 0;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .benefit-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        .why-choose-section {
+            background: var(--white);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-choose-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M50 100 L150 100 M100 50 L100 150 M70 70 L130 130 M130 70 L70 130" stroke="rgba(35,67,116,0.05)" stroke-width="2" fill="none"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .why-choose-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Contact Section */
+        .criminal-contact {
+            padding: 6rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .criminal-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="800" cy="300" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="400" cy="700" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="600" cy="500" r="2" fill="rgba(35,67,116,0.05)"/></svg>');
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .urgent-notice {
+            background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            animation: urgent 3s ease-in-out infinite;
+        }
+
+        .urgent-notice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="150" cy="100" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="100" cy="150" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .urgent-notice h3 {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .urgent-notice h3 i {
+            color: #ffeb3b;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        .urgent-notice p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .urgent-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.2rem 2.5rem;
+            background: var(--white);
+            color: #d32f2f;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .urgent-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-info {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .contact-info-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-description {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            animation: slideInRight 1s ease-out;
+        }
+
+        .form-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .form-subtitle {
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            background: var(--white);
+            color: var(--dark);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(68,117,181,0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(68,117,181,0.3);
+        }
+
+        .privacy-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .criminal-hero {
+                padding: 4rem 1rem;
+                min-height: 80vh;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .expertise-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .criminal-services {
+                padding: 4rem 1rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .expertise-section {
+                padding: 3rem 1rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Morales Padia Law</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="criminal-hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        URGENT - Time Sensitive Criminal Defense
+                    </div>
+                    <h1 class="hero-title">Expert Criminal Defense for San Antonio</h1>
+                    <p class="hero-subtitle">Aggressive representation when your freedom is on the line</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">300+</span>
+                            <span class="stat-label">Cases Won</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Available</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Get Free Consultation
+                        </a>
+                        <a href="#services" class="btn-secondary">
+                            <i class="fas fa-shield-alt"></i>
+                            Our Services
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <div class="hero-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="urgent-banner">ARRESTED? Call Now!</div>
+                        <h3>Immediate Defense Available</h3>
+                        <p>Don't wait - your rights need protection now. Our experienced criminal defense team is available 24/7 to provide immediate legal counsel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="criminal-services" id="services">
+        <div class="container">
+            <h2 class="section-title">Criminal Law Services</h2>
+            <p class="section-subtitle">Aggressive defense and skilled representation for all criminal matters</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="service-title">DUI/DWI Defense</h3>
+                    <p class="service-description">
+                        Expert defense against drunk driving charges, fighting to protect your license, freedom, and future.
+                    </p>
+                    <ul class="service-features">
+                        <li>License suspension hearings</li>
+                        <li>Field sobriety test challenges</li>
+                        <li>Breathalyzer accuracy disputes</li>
+                        <li>Plea negotiations</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/dwi" class="service-cta">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Criminal Defense</h3>
+                    <p class="service-description">
+                        Comprehensive defense for serious felony charges that could result in significant prison time.
+                    </p>
+                    <ul class="service-features">
+                        <li>Violent crime defense</li>
+                        <li>White collar crime</li>
+                        <li>Drug offense defense</li>
+                        <li>Theft and burglary</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/criminal-defense" class="service-cta">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handcuffs"></i>
+                    </div>
+                    <h3 class="service-title">Domestic Violence</h3>
+                    <p class="service-description">
+                        Skilled representation for domestic violence charges to minimize penalties and protect your record.
+                    </p>
+                    <ul class="service-features">
+                        <li>Assault charges</li>
+                        <li>Domestic violence defense</li>
+                        <li>Protective order violations</li>
+                        <li>Family violence cases</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/domestic-violence" class="service-cta">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-halt"></i>
+                    </div>
+                    <h3 class="service-title">Protective Orders</h3>
+                    <p class="service-description">
+                        Expert assistance with protective orders, whether you need one or are defending against false allegations.
+                    </p>
+                    <ul class="service-features">
+                        <li>Protective order applications</li>
+                        <li>Defending against orders</li>
+                        <li>Violation defense</li>
+                        <li>Order modifications</li>
+                    </ul>
+                    <a href="https://www.moralespadialaw.com/protective-orders" class="service-cta">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+
+            <div class="expertise-section">
+                <div class="expertise-content">
+                    <div class="expertise-text">
+                        <h3 class="expertise-title">Why Choose Our Criminal Defense?</h3>
+                        <p class="expertise-description">
+                            With over 15 years of criminal defense experience, we understand the stakes involved when facing criminal charges. Our aggressive defense strategies and thorough case preparation have helped hundreds of clients achieve favorable outcomes.
+                        </p>
+                        <p class="expertise-description">
+                            We handle every aspect of your criminal case, from initial arrest through trial and appeals, ensuring your rights are protected at every stage of the process.
+                        </p>
+                    </div>
+                    <div class="expertise-stats">
+                        <div class="stat-box">
+                            <span class="stat-number">300+</span>
+                            <span class="stat-label">Criminal Cases Won</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">Dismissal Rate</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Emergency Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="criminal-process" id="process">
+        <div class="container">
+            <h2 class="section-title">Our Criminal Defense Process</h2>
+            <p class="section-subtitle">A systematic approach to defending your rights and freedom</p>
+
+            <div class="process-timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-progress"></div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Emergency Response</h3>
+                            <p class="step-description">
+                                Immediate legal counsel available 24/7 for arrest situations. We provide guidance on what to say and not say to police.
+                            </p>
+                            <div class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                Within 1 hour
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">2</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Case Evaluation</h3>
+                            <p class="step-description">
+                                Thorough review of charges, evidence, and circumstances. We identify potential defense strategies and weaknesses in prosecution's case.
+                            </p>
+                            <div class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                1-2 days
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">3</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Evidence Investigation</h3>
+                            <p class="step-description">
+                                Comprehensive evidence gathering, witness interviews, and expert consultation to build the strongest possible defense.
+                            </p>
+                            <div class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                2-4 weeks
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">4</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Pre-Trial Motions</h3>
+                            <p class="step-description">
+                                Filing motions to suppress evidence, dismiss charges, or reduce penalties based on legal technicalities and constitutional violations.
+                            </p>
+                            <div class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                2-6 weeks
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">5</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Plea Negotiations</h3>
+                            <p class="step-description">
+                                Skilled negotiation with prosecutors to secure reduced charges, alternative sentencing, or dismissal when possible.
+                            </p>
+                            <div class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                2-8 weeks
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">6</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Trial Preparation</h3>
+                            <p class="step-description">
+                                Comprehensive trial preparation including witness prep, jury selection strategy, and presentation of evidence.
+                            </p>
+                            <div class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                3-12 weeks
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-number">7</div>
+                        <div class="step-info">
+                            <h3 class="step-title">Trial & Appeals</h3>
+                            <p class="step-description">
+                                Aggressive courtroom advocacy and post-trial appeals if necessary to protect your rights and achieve the best outcome.
+                            </p>
+                            <div class="step-duration">
+                                <i class="fas fa-clock"></i>
+                                Varies by case
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="criminal-benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose Morales Padia Law for Criminal Defense?</h2>
+            <p class="section-subtitle">Experience, dedication, and proven results when your freedom is at stake</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Aggressive Defense</h3>
+                    <p class="benefit-description">
+                        We fight tirelessly to protect your rights and freedom, challenging every aspect of the prosecution's case.
+                    </p>
+                    <ul class="benefit-features">
+                        <li>Comprehensive case investigation</li>
+                        <li>Expert witness testimony</li>
+                        <li>Constitutional violation challenges</li>
+                        <li>Evidence suppression motions</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="benefit-title">24/7 Availability</h3>
+                    <p class="benefit-description">
+                        Criminal charges don't wait for business hours. Our emergency hotline ensures immediate legal counsel.
+                    </p>
+                    <ul class="benefit-features">
+                        <li>Emergency arrest response</li>
+                        <li>Immediate legal guidance</li>
+                        <li>Bail hearing representation</li>
+                        <li>Police interview protection</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="benefit-title">Proven Experience</h3>
+                    <p class="benefit-description">
+                        Over 15 years of criminal defense experience with hundreds of successful cases and satisfied clients.
+                    </p>
+                    <ul class="benefit-features">
+                        <li>300+ criminal cases won</li>
+                        <li>85% dismissal/reduction rate</li>
+                        <li>Trial-tested strategies</li>
+                        <li>Local court knowledge</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="benefit-title">Personalized Service</h3>
+                    <p class="benefit-description">
+                        Every case is unique. We provide personalized attention and tailored defense strategies for your situation.
+                    </p>
+                    <ul class="benefit-features">
+                        <li>One-on-one attorney meetings</li>
+                        <li>Regular case updates</li>
+                        <li>Flexible payment options</li>
+                        <li>Confidential consultations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="why-choose-section">
+                <div class="why-choose-content">
+                    <div class="expertise-text">
+                        <h3 class="expertise-title">Your Freedom is Our Priority</h3>
+                        <p class="expertise-description">
+                            When you're facing criminal charges, you need more than just a lawyer - you need a dedicated advocate who will fight for your rights and freedom. Our team combines aggressive advocacy with compassionate support to guide you through this challenging time.
+                        </p>
+                        <p class="expertise-description">
+                            We understand that criminal charges can devastate your life, career, and family. That's why we work tirelessly to achieve the best possible outcome for every client, whether through negotiation, motion practice, or trial advocacy.
+                        </p>
+                    </div>
+                    <div class="expertise-stats">
+                        <div class="stat-box">
+                            <span class="stat-number">$2M+</span>
+                            <span class="stat-label">In Fines & Penalties Avoided</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Felony Cases Dismissed</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Client Satisfaction Rate</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">1HR</span>
+                            <span class="stat-label">Average Response Time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="criminal-contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get Immediate Criminal Defense Help</h2>
+            <p class="section-subtitle">Time is critical in criminal cases - contact us now for a free consultation</p>
+
+            <div class="urgent-notice">
+                <h3>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    ARRESTED? Don't Wait - Call Now!
+                </h3>
+                <p>
+                    If you or a loved one has been arrested, time is critical. Exercise your right to remain silent and call our emergency hotline immediately.
+                </p>
+                <a href="tel:555-123-4567" class="urgent-btn">
+                    <i class="fas fa-phone"></i>
+                    Call Emergency Hotline: (555) 123-4567
+                </a>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Contact Information</h3>
+                    <p class="contact-info-description">
+                        Our experienced criminal defense attorneys are available 24/7 to provide immediate legal counsel and representation.
+                    </p>
+
+                    <div class="contact-methods">
+                        <a href="tel:555-123-4567" class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>24/7 Emergency Hotline</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:criminal@moralespadialaw.com" class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>criminal@moralespadialaw.com</p>
+                            </div>
+                        </a>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Office Location</h4>
+                                <p>123 Criminal Defense Way<br>San Antonio, TX 78201</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Availability</h4>
+                                <p>24/7 Emergency Response<br>Office Hours: Mon-Fri 8AM-6PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 class="form-title">Request Free Consultation</h3>
+                    <p class="form-subtitle">Get immediate legal advice for your criminal case</p>
+
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="chargeType">Type of Criminal Charge</label>
+                            <select id="chargeType" name="chargeType" required>
+                                <option value="">Select charge type</option>
+                                <option value="dui">DUI/DWI</option>
+                                <option value="drug">Drug Offense</option>
+                                <option value="assault">Assault/Violence</option>
+                                <option value="theft">Theft/Burglary</option>
+                                <option value="domestic">Domestic Violence</option>
+                                <option value="white-collar">White Collar Crime</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency" required>
+                                <option value="">Select urgency</option>
+                                <option value="arrested">Just arrested/in custody</option>
+                                <option value="charged">Formally charged</option>
+                                <option value="court-date">Have court date</option>
+                                <option value="investigation">Under investigation</option>
+                                <option value="consultation">General consultation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="details">Case Details</label>
+                            <textarea id="details" name="details" placeholder="Briefly describe your situation and any immediate concerns..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-gavel"></i>
+                            Get Free Consultation
+                        </button>
+
+                        <p class="privacy-note">
+                            Your information is confidential and protected by attorney-client privilege.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your submission. We will contact you immediately to discuss your case.');
+        });
+    </script>
+</body>
+</html> 
