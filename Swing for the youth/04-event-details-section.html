@@ -1,0 +1,151 @@
+<!-- Event Details Section -->
+<section class="event-details" id="event">
+    <div class="details-container">
+        <div class="detail-card fade-in-up">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Event Date</h3>
+            <p>Friday, November 7, 2025<br>18 holes of championship golf</p>
+        </div>
+        
+        <div class="detail-card fade-in-up">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p>Silverhorn Golf Club of Texas<br>1100 W Bitters Rd, San Antonio, TX 78216</p>
+        </div>
+        
+        <div class="detail-card fade-in-up">
+            <i class="fas fa-trophy"></i>
+            <h3>Hole in One</h3>
+            <p>Luxury car prize for a hole-in-one!<br>Plus incredible prizes throughout the course</p>
+        </div>
+        
+        <div class="detail-card fade-in-up">
+            <i class="fas fa-users"></i>
+            <h3>Networking</h3>
+            <p>Connect with fellow sports enthusiasts<br>Grow your network and elevate your brand</p>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Event Details Section Styles */
+.event-details {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="golf-clubs" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse"><g opacity="0.05"><path d="M 60 20 L 60 100 M 55 25 L 65 25 M 55 30 L 65 30" stroke="%231a5f3a" stroke-width="2" fill="none"/><circle cx="60" cy="15" r="3" fill="%231a5f3a"/></g></pattern></defs><rect width="1200" height="600" fill="url(%23golf-clubs)"/><circle cx="200" cy="150" r="15" fill="%23ffd700" opacity="0.1"/><circle cx="1000" cy="200" r="12" fill="%23ffd700" opacity="0.1"/><circle cx="800" cy="400" r="18" fill="%23ffd700" opacity="0.1"/><circle cx="400" cy="500" r="10" fill="%23ffd700" opacity="0.1"/></svg>');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.details-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.detail-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    background: rgba(255, 255, 255, 1);
+}
+
+.detail-card i {
+    font-size: 2.5rem;
+    color: #1a5f3a;
+    margin-bottom: 0.8rem;
+}
+
+.detail-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #1a5f3a;
+}
+
+.detail-card p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 1200px) {
+    .details-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .details-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+</style>
+
+<script>
+// Add fade-in animation to elements on scroll
+const fadeElements = document.querySelectorAll('.fade-in-up');
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+fadeElements.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    fadeObserver.observe(element);
+});
+</script> 

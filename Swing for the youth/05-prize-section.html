@@ -1,0 +1,133 @@
+<!-- Prize Section -->
+<section class="prize-section">
+    <div class="prize-container">
+        <h2 class="prize-title">Total Prize Pool</h2>
+        <div class="prize-amount">$50,000</div>
+        <p class="prize-description">Experience the excitement on a breathtaking course. Compete for incredible prizes—and ultimate bragging rights.</p>
+        
+        <div class="prize-features">
+            <div class="prize-feature">
+                <i class="fas fa-car"></i>
+                <h3>Luxury Car</h3>
+                <p>Hole-in-one prize</p>
+            </div>
+            
+            <div class="prize-feature">
+                <i class="fas fa-medal"></i>
+                <h3>Championship</h3>
+                <p>Top performers rewarded</p>
+            </div>
+            
+            <div class="prize-feature">
+                <i class="fas fa-gift"></i>
+                <h3>Raffle Prizes</h3>
+                <p>Amazing giveaways</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Prize Section Styles */
+.prize-section {
+    background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4d 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.prize-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="trophy-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse"><g opacity="0.1"><path d="M 40 10 L 40 70 M 30 20 L 50 20 M 25 30 L 55 30 M 20 40 L 60 40" stroke="%23ffffff" stroke-width="1" fill="none"/><circle cx="40" cy="15" r="2" fill="%23ffffff"/></g></pattern></defs><rect width="1200" height="600" fill="url(%23trophy-pattern)"/><circle cx="150" cy="150" r="20" fill="%23ffd700" opacity="0.2"/><circle cx="1050" cy="200" r="15" fill="%23ffd700" opacity="0.2"/><circle cx="800" cy="400" r="25" fill="%23ffd700" opacity="0.2"/><circle cx="400" cy="500" r="18" fill="%23ffd700" opacity="0.2"/><circle cx="1100" cy="450" r="12" fill="%23ffd700" opacity="0.2"/></svg>');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+}
+
+.prize-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.prize-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.prize-amount {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #ffd700;
+    margin-bottom: 2rem;
+}
+
+.prize-description {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.prize-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.prize-feature {
+    background: rgba(255,255,255,0.15);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.prize-feature:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.prize-feature i {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.prize-feature h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.prize-feature p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .prize-title {
+        font-size: 2.5rem;
+    }
+    
+    .prize-amount {
+        font-size: 3rem;
+    }
+    
+    .prize-features {
+        grid-template-columns: 1fr;
+    }
+}
+</style> 

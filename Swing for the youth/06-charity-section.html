@@ -1,0 +1,109 @@
+<!-- Charity Section -->
+<section class="charity-section">
+    <div class="charity-container">
+        <h2 class="charity-title">Opening Doors for Kids in Sports</h2>
+        <p class="charity-mission">Helping San Antonio youth overcome financial barriers to play the sports they love. Every swing makes a difference in a child's life.</p>
+        
+        <div class="charity-stats">
+            <div class="charity-stat">
+                <div class="number">500+</div>
+                <div class="label">Youth Supported</div>
+            </div>
+            
+            <div class="charity-stat">
+                <div class="number">15</div>
+                <div class="label">Sports Programs</div>
+            </div>
+            
+            <div class="charity-stat">
+                <div class="number">$250K</div>
+                <div class="label">Total Impact</div>
+            </div>
+            
+            <div class="charity-stat">
+                <div class="number">100%</div>
+                <div class="label">Local Focus</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Charity Section Styles */
+.charity-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.charity-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="heart-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><g opacity="0.05"><path d="M 50 30 Q 50 20 40 20 Q 30 20 30 30 Q 30 40 50 60 Q 70 40 70 30 Q 70 20 60 20 Q 50 20 50 30" fill="%231a5f3a"/></g></pattern></defs><rect width="1200" height="600" fill="url(%23heart-pattern)"/><circle cx="200" cy="150" r="12" fill="%231a5f3a" opacity="0.1"/><circle cx="1000" cy="200" r="18" fill="%231a5f3a" opacity="0.1"/><circle cx="800" cy="400" r="15" fill="%231a5f3a" opacity="0.1"/><circle cx="400" cy="500" r="10" fill="%231a5f3a" opacity="0.1"/><circle cx="1100" cy="450" r="14" fill="%231a5f3a" opacity="0.1"/></svg>');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+
+.charity-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.charity-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a5f3a;
+}
+
+.charity-mission {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.charity-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.charity-stat {
+    text-align: center;
+}
+
+.charity-stat .number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a5f3a;
+}
+
+.charity-stat .label {
+    color: #666;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .charity-title {
+        font-size: 2rem;
+    }
+    
+    .charity-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style> 
