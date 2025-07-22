@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Morales Padia Law | San Antonio Family & Estate Attorneys</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <style>
+            :root {
+                --primary: #234374;
+                --secondary: #639be3;
+                --accent: #4475b5;
+                --light: #f8fafc;
+                --dark: #4475b5;
+                --white: #fff;
+                --shadow: 0 8px 32px rgba(35, 67, 116, 0.1);
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                background: transparent;
+                color: var(--dark);
+                scroll-behavior: smooth;
+                line-height: 1.6;
+                font-weight: 400;
+                opacity: 0;
+                transition: opacity 0.7s;
+            }
+            body.loaded {
+                opacity: 1;
+            }
+            .hero-section {
+                background: transparent;
+                color: var(--white);
+                position: relative;
+                overflow: hidden;
+                padding: 60px 0 40px 0;
+            }
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            .hero {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                min-height: 480px;
+                z-index: 2;
+            }
+            .hero-text {
+                flex: 1 1 100%;
+                max-width: 800px;
+                z-index: 1;
+                animation: fadeInUp 1.2s;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-family: "Playfair Display", serif;
+                font-size: 2.9rem;
+                font-weight: 700;
+                margin-bottom: 18px;
+                letter-spacing: 1px;
+                line-height: 1.1;
+                animation: fadeInUp 1.2s;
+            }
+            .hero-text .typewriter {
+                font-family: "Playfair Display", serif;
+                color: var(--accent);
+                font-weight: 700;
+                font-size: 2.9rem;
+                display: inline-block;
+                border-right: 2px solid var(--accent);
+                padding-right: 6px;
+                margin-bottom: 10px;
+                min-height: 2.2rem;
+                animation: blink-caret 0.8s step-end infinite;
+            }
+            @keyframes blink-caret {
+                50% {
+                    border-color: transparent;
+                }
+            }
+            .hero-text p {
+                font-size: 1.2rem;
+                margin-bottom: 24px;
+                color: #e3e8f0;
+                line-height: 1.6;
+                animation: fadeInUp 1.5s;
+            }
+            .hero-text ul {
+                margin: 0 0 18px 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                gap: 18px;
+                color: var(--accent);
+                font-weight: 600;
+                font-size: 1.08rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .hero-text h1 span,
+            .hero-text ul li,
+            .stat strong {
+                color: var(--accent) !important;
+            }
+            .hero-text ul li {
+                font-weight: 600;
+            }
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            .cta-btn {
+                background: linear-gradient(135deg, var(--accent) 0%, #4475b5 100%);
+                color: var(--white);
+                border: none;
+                border-radius: 25px;
+                padding: 12px 32px;
+                font-size: 1rem;
+                font-weight: 700;
+                cursor: pointer;
+                box-shadow: 0 8px 25px rgba(68, 117, 181, 0.3);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            .cta-btn::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                transition: left 0.5s;
+            }
+            .cta-btn:hover {
+                background: linear-gradient(135deg, #639be3 0%, var(--accent) 100%);
+                transform: translateY(-3px);
+                box-shadow: 0 12px 35px rgba(68, 117, 181, 0.4);
+            }
+            .cta-btn:hover::before {
+                left: 100%;
+            }
+            @media (max-width: 968px) {
+                .hero {
+                    padding: 40px 0;
+                }
+                .hero-text {
+                    max-width: 100%;
+                }
+                .hero-text h1,
+                .hero-text .typewriter {
+                    font-size: 2.2rem;
+                }
+            }
+            @media (max-width: 768px) {
+                .hero-text h1,
+                .hero-text .typewriter {
+                    font-size: 1.9rem;
+                }
+                .hero-text p {
+                    font-size: 1.1rem;
+                }
+                .hero-text ul {
+                    flex-direction: column;
+                    gap: 8px;
+                    align-items: center;
+                }
+            }
+            @media (max-width: 480px) {
+                .container {
+                    width: 98%;
+                    padding: 0 0.5rem;
+                }
+                .hero-text h1,
+                .hero-text .typewriter {
+                    font-size: 1.7rem;
+                }
+                .hero-text p {
+                    font-size: 1rem;
+                }
+            }
+            .stats-flow {
+                background: transparent;
+                display: flex;
+                gap: 60px;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.1rem;
+                z-index: 2;
+                position: relative;
+                padding: 40px 20px 60px 20px;
+                flex-wrap: wrap;
+            }
+            .stat {
+                text-align: center;
+                padding: 30px 25px;
+                transition: all 0.4s ease;
+                position: relative;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                color: var(--white);
+                min-width: 180px;
+                overflow: hidden;
+            }
+            .stat-content {
+                position: relative;
+                z-index: 1;
+            }
+            .stat strong {
+                display: block;
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--accent);
+                margin-bottom: 8px;
+                text-shadow: 0 2px 10px rgba(68, 117, 181, 0.4);
+                font-family: "Playfair Display", serif;
+            }
+            .stat-label {
+                font-size: 1rem;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.95);
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            }
+            .stat:hover {
+                transform: translateY(-12px) scale(1.05);
+                background: rgba(255, 255, 255, 0.15);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 0 40px rgba(68, 117, 181, 0.2);
+                border-color: rgba(68, 117, 181, 0.4);
+            }
+            .stat:hover strong {
+                transform: scale(1.1);
+                text-shadow: 0 4px 20px rgba(68, 117, 181, 0.6);
+            }
+            @media (max-width: 968px) {
+                .stats-flow {
+                    flex-direction: column;
+                    gap: 25px;
+                    padding: 30px 20px 50px 20px;
+                }
+                .stat {
+                    min-width: 260px;
+                    max-width: 320px;
+                    padding: 25px 20px;
+                }
+                .stat strong {
+                    font-size: 2.2rem;
+                }
+            }
+            @media (max-width: 768px) {
+                .stats-flow {
+                    gap: 20px;
+                    padding: 25px 15px 40px 15px;
+                }
+                .stat {
+                    min-width: 240px;
+                    padding: 20px 15px;
+                }
+                .stat strong {
+                    font-size: 2rem;
+                }
+                .stat-label {
+                    font-size: 0.95rem;
+                }
+            }
+            @media (max-width: 480px) {
+                .stats-flow {
+                    gap: 15px;
+                    padding: 20px 10px 30px 10px;
+                }
+                .stat {
+                    min-width: 220px;
+                    padding: 18px 12px;
+                }
+                .stat strong {
+                    font-size: 1.8rem;
+                    margin-bottom: 6px;
+                }
+                .stat-label {
+                    font-size: 0.9rem;
+                }
+            }
+            .hero-text h1,
+            .hero-text h1 span,
+            .hero-text .typewriter,
+            .hero-text p,
+            .hero-text ul li,
+            .stat strong,
+            .stat-label {
+                color: var(--white) !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero-section">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-text">
+                        <h1>Protecting <span class="typewriter" id="typewriter"></span></h1>
+                        <p>
+                            Whether you're facing a family law challenge, planning your estate, or navigating probate or criminal law matters, Morales Padia Law is here to provide compassionate, expert legal guidance. Our award-winning,
+                            women-led, bilingual team is dedicated to protecting your rights and achieving the best possible outcome for your case.
+                        </p>
+                        <ul>
+                            <li>Family Law</li>
+                            <li>Estate Planning</li>
+                            <li>Probate Law</li>
+                            <li>Criminal Law</li>
+                        </ul>
+                        <button class="cta-btn" onclick="scrollToContact()">Schedule a call</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-flow">
+            <div class="stat">
+                <div class="stat-content">
+                    <strong id="stat-years">0</strong>
+                    <div class="stat-label">Years Practicing</div>
+                </div>
+            </div>
+            <div class="stat">
+                <div class="stat-content">
+                    <strong id="stat-cases">0</strong>
+                    <div class="stat-label">Cases Served</div>
+                </div>
+            </div>
+            <div class="stat">
+                <div class="stat-content">
+                    <strong id="stat-awards">0</strong>
+                    <div class="stat-label">Awards & Honors</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                document.body.classList.add("loaded");
+            });
+            const words = ["Your Family", "Your Legacy", "Your Rights", "Your Future", "San Antonio Families"];
+            let twIndex = 0,
+                charIndex = 0,
+                isDeleting = false;
+            const twElem = document.getElementById("typewriter");
+            function typeWriter() {
+                const word = words[twIndex];
+                twElem.textContent = word.substring(0, charIndex) + (charIndex % 2 === 0 ? "|" : "");
+                if (!isDeleting && charIndex < word.length) {
+                    charIndex++;
+                    setTimeout(typeWriter, 90);
+                } else if (isDeleting && charIndex > 0) {
+                    charIndex--;
+                    setTimeout(typeWriter, 40);
+                } else {
+                    isDeleting = !isDeleting;
+                    if (!isDeleting) twIndex = (twIndex + 1) % words.length;
+                    setTimeout(typeWriter, isDeleting ? 700 : 1200);
+                }
+            }
+            setTimeout(typeWriter, 800);
+            function animateStat(id, target, duration = 1200) {
+                const el = document.getElementById(id);
+                let start = 0,
+                    startTime = null;
+                function animate(ts) {
+                    if (!startTime) startTime = ts;
+                    const progress = Math.min((ts - startTime) / duration, 1);
+                    el.textContent = Math.floor(progress * target);
+                    if (progress < 1) requestAnimationFrame(animate);
+                    else el.textContent = target;
+                }
+                requestAnimationFrame(animate);
+            }
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => animateStat("stat-years", 15), 0);
+                            setTimeout(() => animateStat("stat-cases", 1000), 200);
+                            setTimeout(() => animateStat("stat-awards", 5), 400);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.3 }
+            );
+            setTimeout(() => {
+                const statsSection = document.querySelector(".stats-flow");
+                if (statsSection) {
+                    observer.observe(statsSection);
+                }
+            }, 2000);
+            function scrollToContact() {
+                window.location.href = "https://www.moralespadialaw.com/schedule";
+            }
+        </script>
+    </body>
+</html>
