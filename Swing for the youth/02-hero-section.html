@@ -20,6 +20,10 @@
                                 SCAN HERE
                             </div>
                         </div>
+                        <a href="https://goplaysportsinc.org/go-play-sports-inc/upcoming-events/golf_tournament-san-antonio/" target="_blank" class="swing-register-btn">
+                            <i class="fas fa-golf-ball"></i>
+                            REGISTER NOW
+                        </a>
                     </div>
                 </div>
             </div>
@@ -29,7 +33,7 @@
                 <!-- Center Section - Main Title -->
                 <div class="swing-center-section">
                     <div class="swing-main-title">
-                        <div class="swing-year">2025</div>
+                        <div class="swing-year">FALL 2025</div>
                         <div class="swing-fore">SWING FORE</div>
                         <div class="swing-the-youth">THE YOUTH</div>
                     </div>
@@ -402,6 +406,59 @@ body {
     font-size: 1rem;
 }
 
+/* Register Button */
+.swing-register-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #1a5f3a;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.swing-register-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.swing-register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    color: #1a5f3a;
+    border-color: #1a5f3a;
+}
+
+.swing-register-btn:hover::before {
+    left: 100%;
+}
+
+.swing-register-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.swing-register-btn:hover i {
+    transform: rotate(360deg);
+}
+
 /* Right Main Content Area */
 .swing-main-content-area {
     flex: 1;
@@ -766,6 +823,12 @@ body {
         height: 80px;
     }
     
+    .swing-register-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
+        margin-top: 0.8rem;
+    }
+    
     .swing-main-content-area {
         padding: 2rem;
     }
@@ -844,6 +907,12 @@ body {
     .swing-qr-code {
         width: 70px;
         height: 70px;
+    }
+    
+    .swing-register-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
+        margin-top: 0.6rem;
     }
 }
 
