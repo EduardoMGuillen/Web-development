@@ -1,0 +1,32 @@
+SEO METADATA FOR CIQ WEB PROPOSAL PAGES
+=========================================
+
+1. MAIN PROPOSAL PAGE (proposal-3-no-nav.html)
+-----------------------------------------------
+Title: Creative IQ Marketing - Digital Marketing Solutions & Web Design Services
+Description: Transform your business with Creative IQ Marketing's comprehensive digital marketing solutions. Expert web design, SEO, social media management, and Google My Business optimization services to boost your online presence and drive growth.
+Keywords: digital marketing, web design, SEO services, social media management, Google My Business, marketing agency, business growth, online presence, digital strategy, creative marketing
+
+2. SOCIAL MEDIA MANAGEMENT PAGE (smm-service-page.html)
+-------------------------------------------------------
+Title: Social Media Management Services - Creative IQ Marketing
+Description: Boost your brand's social media presence with Creative IQ Marketing's comprehensive SMM services. Professional content creation, community management, and strategic social media campaigns to engage your audience and drive conversions.
+Keywords: social media management, SMM services, social media marketing, content creation, community management, social media strategy, brand engagement, social media campaigns, Facebook marketing, Instagram marketing, LinkedIn marketing
+
+3. GOOGLE MY BUSINESS PAGE (gmb-service-page.html)
+--------------------------------------------------
+Title: Google My Business Optimization Services - Creative IQ Marketing
+Description: Maximize your local business visibility with Creative IQ Marketing's Google My Business optimization services. Professional GMB setup, review management, and local SEO strategies to dominate local search results.
+Keywords: Google My Business, GMB optimization, local SEO, local business marketing, Google Maps optimization, business listing management, local search visibility, customer reviews, local marketing, Google Business Profile
+
+4. SEARCH ENGINE OPTIMIZATION PAGE (seo-service-page.html)
+----------------------------------------------------------
+Title: SEO Services & Search Engine Optimization - Creative IQ Marketing
+Description: Improve your website's search engine rankings with Creative IQ Marketing's expert SEO services. Comprehensive on-page and off-page optimization, keyword research, and technical SEO to increase organic traffic and conversions.
+Keywords: SEO services, search engine optimization, website optimization, keyword research, on-page SEO, off-page SEO, technical SEO, organic traffic, search rankings, digital marketing, website visibility
+
+5. CUSTOMER RELATIONSHIP MANAGEMENT PAGE (crm-service-page.html)
+----------------------------------------------------------------
+Title: CRM Solutions & Customer Relationship Management - Creative IQ Marketing
+Description: Streamline your customer relationships with Creative IQ Marketing's CRM solutions. Custom CRM implementation, automation, and integration services to improve customer retention and boost sales efficiency.
+Keywords: CRM solutions, customer relationship management, CRM implementation, customer retention, sales automation, CRM integration, customer data management, business automation, sales efficiency, customer experience 
