@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeIQ - Customer Relationship Management Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: transparent;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        @keyframes backgroundShift {
+            0% { 
+                background-position: 0% 50%;
+                opacity: 1;
+            }
+            50% { 
+                background-position: 100% 50%;
+                opacity: 0.95;
+            }
+            100% { 
+                background-position: 0% 50%;
+                opacity: 1;
+            }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            animation: slideInUp 1.2s ease-out;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { 
+                background-position: 0% 50%;
+            }
+            50% { 
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            animation: slideInUp 1.2s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 1.2s ease-out 0.6s both;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.3);
+        }
+
+        .services {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 4rem;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.02);
+        }
+
+        .service-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .stats {
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .stat-item:hover::before {
+            left: 100%;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .pricing {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            min-height: 700px;
+            justify-content: space-between;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        .pricing-card.featured {
+            border-color: #667eea;
+            transform: scale(1.02);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .plan-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .plan-price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .plan-period {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .plan-features li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 2.5rem;
+            display: flex;
+            align-items: center;
+            min-height: 2.2rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            margin-top: auto;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+
+        .footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            max-width: 600px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            align-self: center;
+        }
+
+        .footer-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .service-card p {
+                font-size: 0.95rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                max-width: 100%;
+            }
+
+            .footer-section {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .services {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .service-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+                height: auto;
+                min-height: 600px;
+            }
+
+            .plan-features li {
+                min-height: 1.8rem;
+                padding: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .plan-name {
+                font-size: 1.8rem;
+            }
+
+            .plan-price {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transform Your <span class="gradient-text">Customer Relationships</span></h1>
+            <p>Streamline your business operations with powerful CRM solutions that help you manage leads, nurture relationships, and drive growth through intelligent automation and data-driven insights.</p>
+            <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Comprehensive CRM Solutions</h2>
+        <div class="services-grid">
+            <div class="service-card glass">
+                <div class="service-icon">📊</div>
+                <h3>Lead Management & Tracking</h3>
+                <p>Capture, qualify, and track leads through every stage of your sales funnel with intelligent lead scoring and automated workflows.</p>
+            </div>
+            <div class="service-card glass">
+                <div class="service-icon">🤖</div>
+                <h3>Automated Workflows</h3>
+                <p>Streamline your business processes with custom automation that handles repetitive tasks and ensures no lead falls through the cracks.</p>
+            </div>
+            <div class="service-card glass">
+                <div class="service-icon">📧</div>
+                <h3>Email Marketing Integration</h3>
+                <p>Seamlessly integrate email campaigns with your CRM to nurture leads and maintain consistent communication with your audience.</p>
+            </div>
+            <div class="service-card glass">
+                <div class="service-icon">📈</div>
+                <h3>Analytics & Reporting</h3>
+                <p>Get deep insights into your sales performance, customer behavior, and ROI with comprehensive analytics and custom reporting.</p>
+            </div>
+            <div class="service-card glass">
+                <div class="service-icon">🎯</div>
+                <h3>Sales Pipeline Management</h3>
+                <p>Visualize and optimize your sales process with customizable pipelines that help you close more deals and increase revenue.</p>
+            </div>
+            <div class="service-card glass">
+                <div class="service-icon">🔗</div>
+                <h3>Third-Party Integrations</h3>
+                <p>Connect your CRM with your favorite tools and platforms for a unified business ecosystem that works seamlessly together.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item glass">
+                <div class="stat-number">47%</div>
+                <div class="stat-label">increase in sales productivity with CRM</div>
+            </div>
+            <div class="stat-item glass">
+                <div class="stat-number">29%</div>
+                <div class="stat-label">improvement in sales forecast accuracy</div>
+            </div>
+            <div class="stat-item glass">
+                <div class="stat-number">34%</div>
+                <div class="stat-label">faster lead response times</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">CRM Management Plans</h2>
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
+            Choose the perfect CRM solution to streamline your business operations and boost your sales performance.
+        </p>
+        <div class="pricing-grid">
+            <div class="pricing-card glass">
+                <h3 class="plan-name">Starter CRM Plan</h3>
+                <div class="plan-price">$1,200</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>CRM Platform Setup & Configuration</li>
+                    <li>Basic Lead Management System</li>
+                    <li>Email Integration Setup</li>
+                    <li>Standard Reporting Dashboard</li>
+                    <li>Basic Workflow Automation</li>
+                    <li>Training & Support</li>
+                    <li>3-Month Contract</li>
+                </ul>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="pricing-cta">Choose to Start</a>
+            </div>
+            <div class="pricing-card glass featured">
+                <h3 class="plan-name">Growth CRM Plan</h3>
+                <div class="plan-price">$1,800</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>Advanced CRM Configuration</li>
+                    <li>Custom Lead Scoring & Qualification</li>
+                    <li>Advanced Workflow Automation</li>
+                    <li>Email Marketing Campaign Management</li>
+                    <li>Custom Sales Pipeline Setup</li>
+                    <li>Advanced Analytics & Reporting</li>
+                    <li>Third-Party Integrations</li>
+                    <li>3-Month Contract</li>
+                </ul>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="pricing-cta">Choose Growth</a>
+            </div>
+            <div class="pricing-card glass">
+                <h3 class="plan-name">Pro CRM Plan</h3>
+                <div class="plan-price">$2,500</div>
+                <div class="plan-period">per month</div>
+                <ul class="plan-features">
+                    <li>Full CRM Implementation & Optimization</li>
+                    <li>Custom Automation Development</li>
+                    <li>Advanced Email Marketing Strategies</li>
+                    <li>Sales Process Optimization</li>
+                    <li>Custom Reporting & Analytics</li>
+                    <li>Multi-Platform Integration</li>
+                    <li>Ongoing Strategy & Optimization</li>
+                    <li>Priority Support & Training</li>
+                    <li>3-Month Contract</li>
+                </ul>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="pricing-cta">Go Pro</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section glass">
+                <h3>Ready to Transform Your Business Operations?</h3>
+                <p>Let's discuss how our CRM solutions can streamline your processes, boost sales, and help you build stronger customer relationships.</p>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="footer-button">Contact Us Today</a>
+            </div>
+        </div>
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <p>&copy; 2025 CreativeIQ Digital Marketing. All rights reserved. | (804) 651-2531</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Performance monitoring and particle configuration
+        const getParticleConfig = () => ({
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#000000" }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": { "enable": false }
+                },
+                "size": {
+                    "value": 2,
+                    "random": false,
+                    "anim": { "enable": false }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 120,
+                    "color": "#ffffff",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "speed": 3,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "repulse": { "distance": 100, "duration": 0.3 },
+                    "push": { "particles_nb": 2 }
+                }
+            },
+            "retina_detect": false
+        });
+
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', getParticleConfig());
+        }
+
+        // Fallback for when particles.js fails to load
+        setTimeout(() => {
+            const particlesContainer = document.getElementById('particles-js');
+            if (particlesContainer && !particlesContainer.children.length) {
+                particlesContainer.style.background = 'radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)';
+                particlesContainer.style.animation = 'backgroundShift 8s ease-in-out infinite';
+            }
+        }, 2000);
+    </script>
+</body>
+</html> 

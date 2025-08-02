@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeIQ - Digital Marketing Agency | Proposal 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: transparent;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            /* Background is now transparent to let Go High Level background show through */
+            background: transparent;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        @keyframes backgroundShift {
+            0% { 
+                background-position: 0% 50%;
+                opacity: 1;
+            }
+            50% { 
+                background-position: 100% 50%;
+                opacity: 0.95;
+            }
+            100% { 
+                background-position: 0% 50%;
+                opacity: 1;
+            }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            animation: slideInUp 1.2s ease-out;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { 
+                background-position: 0% 50%;
+            }
+            50% { 
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            animation: slideInUp 1.2s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 1.2s ease-out 0.6s both;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.3);
+        }
+
+        .missed-call {
+            padding: 6rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .missed-call-content {
+            padding: 3rem;
+        }
+
+        .missed-call h2 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .missed-call p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .services {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 4rem;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.02);
+        }
+
+        .service-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .stats {
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .stat-item:hover::before {
+            left: 100%;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .products {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .product-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .testimonials {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            padding: 3rem;
+            text-align: left;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            font-size: 5rem;
+            color: rgba(102, 126, 234, 0.3);
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            padding-left: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .faq {
+            padding: 8rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .faq-item:hover {
+            transform: translateX(3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .pricing {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            min-height: 700px;
+            justify-content: space-between;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        .pricing-card.featured {
+            border-color: #667eea;
+            transform: scale(1.02);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .plan-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .plan-price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .plan-period {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .plan-features li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 2.5rem;
+            display: flex;
+            align-items: center;
+            min-height: 2.2rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            margin-top: auto;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+
+
+
+        .footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            max-width: 600px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            align-self: center;
+        }
+
+        .footer-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .service-card p {
+                font-size: 0.95rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                max-width: 100%;
+            }
+
+            .footer-section {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .services {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .service-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .missed-call {
+                padding: 4rem 1rem;
+            }
+
+            .missed-call h2 {
+                font-size: 2rem;
+            }
+
+            .missed-call p {
+                font-size: 1rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .pricing-card {
+                height: auto;
+                min-height: 600px;
+            }
+
+            .plan-features li {
+                min-height: 1.8rem;
+                padding: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .plan-name {
+                font-size: 1.8rem;
+            }
+
+            .plan-price {
+                font-size: 2.5rem;
+            }
+
+            .faq {
+                padding: 4rem 1rem;
+            }
+        }
+
+        /* Performance optimization: Reduce animations on mobile */
+        @media (max-width: 768px) {
+            .hero h1 .gradient-text {
+                animation: none; /* Disable gradient animation on mobile */
+            }
+            
+            .cta-button::before {
+                display: none; /* Disable button shine effect on mobile */
+            }
+            
+            .service-card:hover {
+                transform: none; /* Disable hover animations on mobile */
+            }
+            
+            .product-card:hover {
+                transform: none; /* Disable hover animations on mobile */
+            }
+            
+            .testimonial-card:hover {
+                transform: none; /* Disable hover animations on mobile */
+            }
+            
+            .pricing-card:hover {
+                transform: none; /* Disable hover animations on mobile */
+            }
+            
+            .faq-item:hover {
+                transform: none; /* Disable hover animations on mobile */
+            }
+        }
+
+        /* Disable animations for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Navigation menu removed as requested -->
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Together, Let's <span class="gradient-text">Spark Growth</span><br>Through Strategy & Creativity</h1>
+            <p>At CreativeIQ, we're more than a digital marketing agency—we're a collective of creative minds, strategists, and growth partners. We help businesses like yours unlock their full digital potential through cutting-edge marketing, tech-driven solutions, and bold creative execution.</p>
+            <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <section class="missed-call">
+        <div class="missed-call-content glass">
+            <h2>Missed Call Text Back</h2>
+            <p>Never miss a customer again. If a call goes unanswered, we instantly text your lead back—keeping conversations flowing and opportunities alive.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">What We Do</h2>
+        <div class="services-grid">
+            <div class="service-card glass">
+                <div class="service-icon">🔍</div>
+                <h3>Find Your Problem</h3>
+                <p>We identify what's holding your business back—visibility, traffic, or conversion gaps—and uncover growth opportunities.</p>
+            </div>
+            <div class="service-card glass">
+                <div class="service-icon">📊</div>
+                <h3>Research Your Business</h3>
+                <p>We deep dive into your goals, your audience, and your competitors. Every strategy is built just for you.</p>
+            </div>
+            <div class="service-card glass">
+                <div class="service-icon">🚀</div>
+                <h3>Processing Time On Target</h3>
+                <p>From Google Ads to content campaigns, we launch strategies that bring results—and revenue.</p>
+            </div>
+            <div class="service-card glass">
+                <div class="service-icon">💎</div>
+                <h3>Open In Progress</h3>
+                <p>Unlock your business's full potential with our cutting-edge digital marketing solutions!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item glass">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item glass">
+                <div class="stat-number">200K</div>
+                <div class="stat-label">Daily Visitors</div>
+            </div>
+            <div class="stat-item glass">
+                <div class="stat-number">334%</div>
+                <div class="stat-label">Growth Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2 class="section-title">Our Products Are Ready To Help Your Business</h2>
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
+            Our cutting-edge digital marketing products are designed to boost your business growth. From SEO and social media strategies to email campaigns, we've got you covered. Elevate your brand, increase engagement, and drive conversions with our proven solutions.
+        </p>
+        <div class="products-grid">
+            <div class="product-card glass">
+                <div class="product-icon">🌐</div>
+                <h3>Building Website</h3>
+                <p>Create stunning, high-converting websites to grow your business online!</p>
+            </div>
+            <div class="product-card glass">
+                <div class="product-icon">📈</div>
+                <h3>SEO Product Digital</h3>
+                <p>Boost visibility, drive traffic, and grow sales with expert SEO services!</p>
+            </div>
+            <div class="product-card glass">
+                <div class="product-icon">📝</div>
+                <h3>Content Management</h3>
+                <p>Streamline your content strategy with seamless management for maximum impact.</p>
+            </div>
+            <div class="product-card glass">
+                <div class="product-icon">🎯</div>
+                <h3>Product Advertising</h3>
+                <p>Boost sales with targeted product advertising that drives measurable results!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">What Others Are Saying</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card glass">
+                <p class="testimonial-text">"Exceptional Results and Professional Service! Within just a few months, we saw a significant increase in web traffic, social media engagement, and lead generation."</p>
+                <div class="testimonial-author">- Sarah J., Marketing Director, GreenTech Solutions</div>
+            </div>
+            <div class="testimonial-card glass">
+                <p class="testimonial-text">"A Game Changer for Our Brand! Their deep understanding of digital marketing trends and tailored strategies helped us revamp our social media campaigns."</p>
+                <div class="testimonial-author">- Michael T., Founder, Urban Threads</div>
+            </div>
+            <div class="testimonial-card glass">
+                <p class="testimonial-text">"Outstanding ROI and Great Support! Their expertise in PPC and SEO campaigns has provided an incredible return on investment for my business."</p>
+                <div class="testimonial-author">- Emily P., Owner, FreshBloom Florist</div>
+            </div>
+            <div class="testimonial-card glass">
+                <p class="testimonial-text">"Top-notch Strategy and Execution! From crafting our content strategy to optimizing our website and running impactful ad campaigns, they've been instrumental in driving our growth."</p>
+                <div class="testimonial-author">- David R., CEO, FitLife Wellness</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item glass">
+            <div class="faq-question">What is digital marketing and how can it benefit my business?</div>
+            <div class="faq-answer">Digital marketing encompasses all online marketing efforts that use digital channels such as search engines, social media, email, and websites to connect with current and prospective customers. It can benefit your business by increasing visibility, driving traffic, improving customer engagement, and boosting conversions through targeted strategies like SEO, PPC, content marketing, and social media management.</div>
+        </div>
+        <div class="faq-item glass">
+            <div class="faq-question">How long does it take to see results from digital marketing campaigns?</div>
+            <div class="faq-answer">The timeline for seeing results from digital marketing depends on the type of campaign and your specific goals. For example, paid advertising (PPC) campaigns can generate leads almost immediately, while SEO efforts may take 3-6 months to show significant improvements. Consistent effort, strategic planning, and regular monitoring are key to achieving sustained success in digital marketing.</div>
+        </div>
+        <div class="faq-item glass">
+            <div class="faq-question">How do you determine which digital marketing strategies are right for my business?</div>
+            <div class="faq-answer">We begin by conducting a thorough analysis of your business, target audience, industry, and competitors. Based on this research, we develop a customized digital marketing strategy that aligns with your business goals. This may include a combination of SEO, PPC, social media marketing, content marketing, and email marketing to ensure the best possible results for your brand.</div>
+        </div>
+        <div class="faq-item glass">
+            <div class="faq-question">Do I need to have a large budget to be successful in digital marketing?</div>
+            <div class="faq-answer">No, digital marketing can be effective on any budget. The key is to allocate your resources wisely by focusing on the channels and tactics that will have the most impact for your business. Whether you have a small budget for targeted social media ads or a larger budget for a comprehensive campaign, we tailor our strategies to maximize your ROI and drive meaningful results.</div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Choose Your Plan</h2>
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
+            Select the perfect plan for your business needs. All plans include professional content creation, strategic scheduling, and dedicated support to help your brand thrive on social media.
+        </p>
+        <div class="pricing-grid">
+            <div class="pricing-card glass">
+                <h3 class="plan-name">Starter Plan</h3>
+                <div class="plan-price">$850</div>
+                <div class="plan-period">per month or bi-weekly</div>
+                <ul class="plan-features">
+                    <li>Alternating 2/3 posts per week</li>
+                    <li>Static, carousel, or stories content</li>
+                    <li>Professional captions</li>
+                    <li>Strategic scheduling</li>
+                    <li>Basic support</li>
+                    <li>Content optimization</li>
+                </ul>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="pricing-cta">Get Started</a>
+            </div>
+            <div class="pricing-card glass featured">
+                <h3 class="plan-name">Pro Plan</h3>
+                <div class="plan-price">$1,400</div>
+                <div class="plan-period">per month or bi-weekly</div>
+                <ul class="plan-features">
+                    <li>Alternating 3-5 posts per week</li>
+                    <li>Mix of static, reels, stories</li>
+                    <li>Professional captions</li>
+                    <li>Strategic scheduling</li>
+                    <li>Quick-turnaround support</li>
+                    <li>Time-sensitive content pushes</li>
+                </ul>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="pricing-cta">Get Started</a>
+            </div>
+            <div class="pricing-card glass">
+                <h3 class="plan-name">Elite Plan</h3>
+                <div class="plan-price">$1,900</div>
+                <div class="plan-period">per month or $950 bi-weekly</div>
+                <ul class="plan-features">
+                    <li>Alternating 4-6 posts per week</li>
+                    <li>Reels/short-form video content</li>
+                    <li>Custom graphics</li>
+                    <li>Full engagement management</li>
+                    <li>Comment & DM responses</li>
+                    <li>Priority support</li>
+                    <li>CRM platform integration</li>
+                    <li>Automated email campaigns</li>
+                </ul>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="pricing-cta">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section glass">
+                <h3>Contact Us</h3>
+                <p>Get in touch with us today to discuss how we can help elevate your brand through expert digital marketing solutions.</p>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="footer-button">Our Contact</a>
+            </div>
+        </div>
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <p>&copy; 2025 CreativeIQ Digital Marketing. All rights reserved. | (804) 651-2531</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Advanced Performance Monitoring System
+        class PerformanceMonitor {
+            constructor() {
+                this.fps = 60;
+                this.frameCount = 0;
+                this.lastTime = performance.now();
+                this.performanceLevel = 'high'; // high, medium, low
+                this.isMonitoring = false;
+                this.particlesInstance = null;
+                this.animationFrameId = null;
+                
+                // Device capability detection
+                this.deviceMemory = navigator.deviceMemory || 4;
+                this.hardwareConcurrency = navigator.hardwareConcurrency || 4;
+                this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                this.isLowEndDevice = this.deviceMemory < 4 || this.hardwareConcurrency < 4 || this.isMobile;
+                
+                this.init();
+            }
+
+            init() {
+                // Start with conservative settings for low-end devices
+                if (this.isLowEndDevice) {
+                    this.performanceLevel = 'low';
+                }
+                
+                // Start performance monitoring after page load
+                setTimeout(() => {
+                    this.startMonitoring();
+                }, 1000);
+            }
+
+            startMonitoring() {
+                this.isMonitoring = true;
+                this.monitorFrameRate();
+                this.monitorCPUUsage();
+            }
+
+            monitorFrameRate() {
+                const measureFPS = () => {
+                    this.frameCount++;
+                    const currentTime = performance.now();
+                    
+                    if (currentTime - this.lastTime >= 1000) {
+                        this.fps = this.frameCount;
+                        this.frameCount = 0;
+                        this.lastTime = currentTime;
+                        
+                        // Adjust performance level based on FPS
+                        this.adjustPerformanceLevel();
+                    }
+                    
+                    if (this.isMonitoring) {
+                        this.animationFrameId = requestAnimationFrame(measureFPS);
+                    }
+                };
+                
+                measureFPS();
+            }
+
+            monitorCPUUsage() {
+                // Monitor for signs of high CPU usage
+                let lastTime = performance.now();
+                let frameCount = 0;
+                
+                const checkCPU = () => {
+                    frameCount++;
+                    const currentTime = performance.now();
+                    
+                    if (currentTime - lastTime >= 2000) {
+                        const actualFPS = frameCount / 2;
+                        
+                        // If FPS drops significantly, reduce effects
+                        if (actualFPS < 30 && this.performanceLevel !== 'low') {
+                            this.performanceLevel = 'low';
+                            this.applyPerformanceSettings();
+                        }
+                        
+                        frameCount = 0;
+                        lastTime = currentTime;
+                    }
+                    
+                    if (this.isMonitoring) {
+                        setTimeout(checkCPU, 16); // ~60fps monitoring
+                    }
+                };
+                
+                checkCPU();
+            }
+
+            adjustPerformanceLevel() {
+                let newLevel = this.performanceLevel;
+                
+                if (this.fps >= 55) {
+                    newLevel = 'high';
+                } else if (this.fps >= 40) {
+                    newLevel = 'medium';
+                } else {
+                    newLevel = 'low';
+                }
+                
+                if (newLevel !== this.performanceLevel) {
+                    this.performanceLevel = newLevel;
+                    this.applyPerformanceSettings();
+                }
+            }
+
+            applyPerformanceSettings() {
+                console.log(`Performance level adjusted to: ${this.performanceLevel} (FPS: ${this.fps})`);
+                
+                switch (this.performanceLevel) {
+                    case 'high':
+                        this.enableFullEffects();
+                        break;
+                    case 'medium':
+                        this.enableMediumEffects();
+                        break;
+                    case 'low':
+                        this.enableLowEffects();
+                        break;
+                }
+            }
+
+            enableFullEffects() {
+                // Full visual quality
+                this.updateParticles({
+                    number: { value: 50 },
+                    move: { speed: 3 },
+                    line_linked: { enable: true, distance: 120 },
+                    interactivity: {
+                        onhover: { enable: true },
+                        onclick: { enable: true }
+                    }
+                });
+                this.enableAllAnimations();
+            }
+
+            enableMediumEffects() {
+                // Balanced performance and quality
+                this.updateParticles({
+                    number: { value: 35 },
+                    move: { speed: 2.5 },
+                    line_linked: { enable: true, distance: 100 },
+                    interactivity: {
+                        onhover: { enable: true },
+                        onclick: { enable: false }
+                    }
+                });
+                this.enableMediumAnimations();
+            }
+
+            enableLowEffects() {
+                // Maximum performance
+                this.updateParticles({
+                    number: { value: 20 },
+                    move: { speed: 2 },
+                    line_linked: { enable: false },
+                    interactivity: {
+                        onhover: { enable: false },
+                        onclick: { enable: false }
+                    }
+                });
+                this.enableLowAnimations();
+            }
+
+            updateParticles(config) {
+                if (this.particlesInstance && typeof this.particlesInstance.pJS !== 'undefined') {
+                    // Update particle configuration dynamically
+                    Object.assign(this.particlesInstance.pJS.pJS.particles, config);
+                    this.particlesInstance.pJS.pJS.fn.particlesRefresh();
+                }
+            }
+
+            enableAllAnimations() {
+                document.body.style.setProperty('--animation-quality', 'high');
+                this.enableCSSAnimations(true);
+            }
+
+            enableMediumAnimations() {
+                document.body.style.setProperty('--animation-quality', 'medium');
+                this.enableCSSAnimations(true);
+            }
+
+            enableLowAnimations() {
+                document.body.style.setProperty('--animation-quality', 'low');
+                this.enableCSSAnimations(false);
+            }
+
+            enableCSSAnimations(enable) {
+                const style = document.createElement('style');
+                style.id = 'performance-override';
+                
+                if (!enable) {
+                    style.textContent = `
+                        * {
+                            animation-duration: 0.01ms !important;
+                            animation-iteration-count: 1 !important;
+                            transition-duration: 0.01ms !important;
+                        }
+                        .glass {
+                            backdrop-filter: blur(10px) !important;
+                        }
+                    `;
+                }
+                
+                // Remove existing override
+                const existing = document.getElementById('performance-override');
+                if (existing) existing.remove();
+                
+                if (!enable) {
+                    document.head.appendChild(style);
+                }
+            }
+
+            destroy() {
+                this.isMonitoring = false;
+                if (this.animationFrameId) {
+                    cancelAnimationFrame(this.animationFrameId);
+                }
+            }
+        }
+
+        // Initialize performance monitor
+        const performanceMonitor = new PerformanceMonitor();
+
+        // Base particle configuration
+        const getParticleConfig = (level = 'high') => {
+            const configs = {
+                high: {
+                    number: { value: 50, density: { enable: true, value_area: 800 } },
+                    move: { speed: 3, direction: "none", random: false, straight: false, out_mode: "out", bounce: false },
+                    line_linked: { enable: true, distance: 120, color: "#ffffff", opacity: 0.2, width: 1 },
+                    interactivity: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" }
+                    }
+                },
+                medium: {
+                    number: { value: 35, density: { enable: true, value_area: 800 } },
+                    move: { speed: 2.5, direction: "none", random: false, straight: false, out_mode: "out", bounce: false },
+                    line_linked: { enable: true, distance: 100, color: "#ffffff", opacity: 0.15, width: 1 },
+                    interactivity: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: false, mode: "push" }
+                    }
+                },
+                low: {
+                    number: { value: 20, density: { enable: true, value_area: 800 } },
+                    move: { speed: 2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false },
+                    line_linked: { enable: false },
+                    interactivity: {
+                        onhover: { enable: false },
+                        onclick: { enable: false }
+                    }
+                }
+            };
+            
+            return {
+                "particles": {
+                    "number": configs[level].number,
+                    "color": { "value": "#ffffff" },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": { "width": 0, "color": "#000000" }
+                    },
+                    "opacity": {
+                        "value": 0.3,
+                        "random": false,
+                        "anim": { "enable": false }
+                    },
+                    "size": {
+                        "value": 2,
+                        "random": false,
+                        "anim": { "enable": false }
+                    },
+                    "line_linked": configs[level].line_linked,
+                    "move": configs[level].move
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": configs[level].interactivity,
+                    "modes": {
+                        "repulse": { "distance": 100, "duration": 0.3 },
+                        "push": { "particles_nb": 2 }
+                    }
+                },
+                "retina_detect": false
+            };
+        };
+
+        // Initialize particles with performance monitoring
+        if (typeof particlesJS !== 'undefined') {
+            const initialLevel = performanceMonitor.isLowEndDevice ? 'low' : 'high';
+            const config = getParticleConfig(initialLevel);
+            
+            performanceMonitor.particlesInstance = particlesJS('particles-js', config);
+        }
+
+        // Fallback for when particles.js fails to load
+        setTimeout(() => {
+            const particlesContainer = document.getElementById('particles-js');
+            if (particlesContainer && !particlesContainer.children.length) {
+                particlesContainer.style.background = 'radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)';
+                particlesContainer.style.animation = 'backgroundShift 8s ease-in-out infinite';
+            }
+        }, 2000);
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+            performanceMonitor.destroy();
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gradient Background Generator</h1>
+        <p>This will create a gradient background image matching the CSS gradient from the proposal.</p>
+        
+        <canvas id="gradientCanvas" width="1920" height="1080"></canvas>
+        
+        <br>
+        <button onclick="generateGradient()">Generate Gradient</button>
+        <button onclick="downloadImage()">Download Image</button>
+        
+        <div id="info"></div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gradientCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function generateGradient() {
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Define gradient colors (matching the CSS gradient)
+            const colors = [
+                {r: 12, g: 12, b: 12},    // #0c0c0c
+                {r: 26, g: 26, b: 46},    // #1a1a2e
+                {r: 22, g: 33, b: 62},    // #16213e
+                {r: 15, g: 52, b: 96}     // #0f3460
+            ];
+            
+            // Create the gradient
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    // Calculate position for diagonal gradient
+                    const pos = (x + y) / (width + height);
+                    
+                    let r, g, b;
+                    
+                    // Interpolate between colors
+                    if (pos <= 0.33) {
+                        const t = pos / 0.33;
+                        r = Math.round(colors[0].r * (1-t) + colors[1].r * t);
+                        g = Math.round(colors[0].g * (1-t) + colors[1].g * t);
+                        b = Math.round(colors[0].b * (1-t) + colors[1].b * t);
+                    } else if (pos <= 0.66) {
+                        const t = (pos - 0.33) / 0.33;
+                        r = Math.round(colors[1].r * (1-t) + colors[2].r * t);
+                        g = Math.round(colors[1].g * (1-t) + colors[2].g * t);
+                        b = Math.round(colors[1].b * (1-t) + colors[2].b * t);
+                    } else {
+                        const t = (pos - 0.66) / 0.34;
+                        r = Math.round(colors[2].r * (1-t) + colors[3].r * t);
+                        g = Math.round(colors[2].g * (1-t) + colors[3].g * t);
+                        b = Math.round(colors[2].b * (1-t) + colors[3].b * t);
+                    }
+                    
+                    ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+                    ctx.fillRect(x, y, 1, 1);
+                }
+            }
+            
+            document.getElementById('info').innerHTML = '<p style="color: green;">✓ Gradient generated successfully!</p>';
+        }
+        
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'gradient-background.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Auto-generate on page load
+        window.onload = function() {
+            generateGradient();
+        };
+    </script>
+</body>
+</html> 
