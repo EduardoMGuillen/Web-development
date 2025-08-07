@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreativeIQ - Digital Marketing Agency | Proposal 3</title>
+    <meta name="description" content="CreativeIQ Digital Marketing Agency - Full-service digital marketing solutions for modern businesses. SEO, CRM, Web Development, and more.">
+    <meta name="theme-color" content="#667eea">
+    <title>CreativeIQ Digital Marketing Agency </title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" as="script">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <style>
         * {
             margin: 0;
@@ -197,7 +204,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
         }
 
@@ -389,6 +396,8 @@
             padding: 2rem;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
         }
 
         .faq-item:hover {
@@ -401,11 +410,45 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
         }
 
         .faq-answer {
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateY(-10px);
+        }
+
+        .faq-item:hover .faq-answer {
+            max-height: 200px;
+            opacity: 1;
+            transform: translateY(0);
+            margin-top: 1rem;
+        }
+
+        .faq-item:hover .faq-question {
+            color: #667eea;
+        }
+
+        .faq-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .faq-item:hover::before {
+            left: 100%;
         }
 
         .pricing {
@@ -765,6 +808,35 @@
             .faq-item:hover {
                 transform: none; /* Disable hover animations on mobile */
             }
+            
+            .faq-item:hover .faq-answer {
+                max-height: none;
+                opacity: 1;
+                transform: none;
+                margin-top: 1rem;
+            }
+        }
+
+        /* Optimize for better performance */
+        .glass {
+            will-change: transform;
+            contain: layout style paint;
+        }
+
+        .service-card, .product-card, .testimonial-card, .pricing-card, .faq-item {
+            will-change: transform;
+            contain: layout style paint;
+        }
+
+        /* Reduce repaints for better performance */
+        .hero h1, .hero p, .cta-button {
+            will-change: transform;
+        }
+
+        /* Optimize particle container */
+        #particles-js {
+            will-change: transform;
+            contain: layout style paint;
         }
 
         /* Disable animations for users who prefer reduced motion */
@@ -785,17 +857,12 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Together, Let's <span class="gradient-text">Spark Growth</span><br>Through Strategy & Creativity</h1>
-            <p>At CreativeIQ, we're more than a digital marketing agency—we're a collective of creative minds, strategists, and growth partners. We help businesses like yours unlock their full digital potential through cutting-edge marketing, tech-driven solutions, and bold creative execution.</p>
-            <a href="https://creativeiq.marketing/contact" class="cta-button">Get Started Today</a>
+            <p>Creative IQ is a full-service digital marketing agency built for modern businesses. With years of experience across SEO, CRM, Web Development, Content Strategy, Paid Advertising, and Social Media Management — we don’t just manage campaigns. <strong>We engineer growth</strong></p> <P> We’re here to elevate your business with strategy, creativity, and systems that work — so you can focus on what you do best.</P>
+            <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="cta-button">🔍 CLAIM YOUR FREE AUDIT</a>
         </div>
     </section>
 
-    <section class="missed-call">
-        <div class="missed-call-content glass">
-            <h2>Missed Call Text Back</h2>
-            <p>Never miss a customer again. If a call goes unanswered, we instantly text your lead back—keeping conversations flowing and opportunities alive.</p>
-        </div>
-    </section>
+  
 
     <section class="services" id="services">
         <h2 class="section-title">What We Do</h2>
@@ -823,6 +890,47 @@
         </div>
     </section>
 
+    <section class="services" id="our-services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <a href="https://creativeiq.marketing/gmb" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">🎯</div>
+                <h3>Google My Business & Ads</h3>
+                <p>Dominate local search with GMB optimization and strategic Google Ads campaigns. From setup to optimization, we drive local customers to your business.</p>
+            </a>
+            <a href="/crm" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">💼</div>
+                <h3>CRM & Automation</h3>
+                <p>Streamline operations with our all-in-one CRM powered by Go High Level. Manage leads, automate workflows, and convert prospects into customers.</p>
+            </a>
+            <a href="/seo" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">🔍</div>
+                <h3>Search Engine Optimization</h3>
+                <p>Boost your organic visibility and drive qualified traffic with our comprehensive SEO strategies. Get found online and stay ahead of competitors.</p>
+            </a>
+            <a href="/smm" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">📱</div>
+                <h3>Social Media Management</h3>
+                <p>Build authentic connections with your audience through strategic content creation and community management across all social platforms.</p>
+            </a>
+            <a href="/web-development" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">🌐</div>
+                <h3>Website Development</h3>
+                <p>Create stunning, high-converting websites that represent your brand perfectly. From design to development, we build sites that drive results.</p>
+            </a>
+            <a href="https://creativeiq.marketing/homepage" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">🎬</div>
+                <h3>Video Production & Social Media Strategy</h3>
+                <p>Your brand's story, told visually. Professional interviews, testimonials, short-form reels, and promotional videos. Scriptwriting, filming, editing, and repurposing for all platforms.</p>
+            </a>
+        </div>
+    </section>
+  <section class="missed-call">
+        <div class="missed-call-content glass">
+            <h2>Missed Call Text Back</h2>
+            <p>Never miss a customer again. If a call goes unanswered, we instantly text your lead back—keeping conversations flowing and opportunities alive.</p>
+        </div>
+    </section>
     <section class="stats">
         <div class="stats-grid">
             <div class="stat-item glass">
@@ -839,54 +947,16 @@
             </div>
         </div>
     </section>
-
-    <section class="products">
-        <h2 class="section-title">Our Products Are Ready To Help Your Business</h2>
-        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
-            Our cutting-edge digital marketing products are designed to boost your business growth. From SEO and social media strategies to email campaigns, we've got you covered. Elevate your brand, increase engagement, and drive conversions with our proven solutions.
-        </p>
-        <div class="products-grid">
-            <div class="product-card glass">
-                <div class="product-icon">🌐</div>
-                <h3>Building Website</h3>
-                <p>Create stunning, high-converting websites to grow your business online!</p>
-            </div>
-            <div class="product-card glass">
-                <div class="product-icon">📈</div>
-                <h3>SEO Product Digital</h3>
-                <p>Boost visibility, drive traffic, and grow sales with expert SEO services!</p>
-            </div>
-            <div class="product-card glass">
-                <div class="product-icon">📝</div>
-                <h3>Content Management</h3>
-                <p>Streamline your content strategy with seamless management for maximum impact.</p>
-            </div>
-            <div class="product-card glass">
-                <div class="product-icon">🎯</div>
-                <h3>Product Advertising</h3>
-                <p>Boost sales with targeted product advertising that drives measurable results!</p>
-            </div>
-        </div>
-    </section>
-
     <section class="testimonials">
         <h2 class="section-title">What Others Are Saying</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card glass">
-                <p class="testimonial-text">"Exceptional Results and Professional Service! Within just a few months, we saw a significant increase in web traffic, social media engagement, and lead generation."</p>
-                <div class="testimonial-author">- Sarah J., Marketing Director, GreenTech Solutions</div>
+                <p class="testimonial-text">"Partnering with Creative IQ marketing team has been a game changer for my business. Their creativity, strategy, and passion has taken my business to the next level. Truly the best decision I’ve made!"</p>
+                <div class="testimonial-author">- Kassandra Ramirez</div>
             </div>
             <div class="testimonial-card glass">
-                <p class="testimonial-text">"A Game Changer for Our Brand! Their deep understanding of digital marketing trends and tailored strategies helped us revamp our social media campaigns."</p>
-                <div class="testimonial-author">- Michael T., Founder, Urban Threads</div>
-            </div>
-            <div class="testimonial-card glass">
-                <p class="testimonial-text">"Outstanding ROI and Great Support! Their expertise in PPC and SEO campaigns has provided an incredible return on investment for my business."</p>
-                <div class="testimonial-author">- Emily P., Owner, FreshBloom Florist</div>
-            </div>
-            <div class="testimonial-card glass">
-                <p class="testimonial-text">"Top-notch Strategy and Execution! From crafting our content strategy to optimizing our website and running impactful ad campaigns, they've been instrumental in driving our growth."</p>
-                <div class="testimonial-author">- David R., CEO, FitLife Wellness</div>
+                <p class="testimonial-text">"Had an awesome experience working with Vilma! She’s super friendly, easy to work with, and really knows her stuff. The whole process was smooth, and the final recording came out better than I expected. If you’re looking for someone to help with digital marketing, I’d definitely recommend her."</p>
+                <div class="testimonial-author">- Fernando Jesus</div>
             </div>
         </div>
     </section>
@@ -910,70 +980,15 @@
             <div class="faq-answer">No, digital marketing can be effective on any budget. The key is to allocate your resources wisely by focusing on the channels and tactics that will have the most impact for your business. Whether you have a small budget for targeted social media ads or a larger budget for a comprehensive campaign, we tailor our strategies to maximize your ROI and drive meaningful results.</div>
         </div>
     </section>
-
-    <section class="pricing" id="pricing">
-        <h2 class="section-title">Choose Your Plan</h2>
-        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
-            Select the perfect plan for your business needs. All plans include professional content creation, strategic scheduling, and dedicated support to help your brand thrive on social media.
-        </p>
-        <div class="pricing-grid">
-            <div class="pricing-card glass">
-                <h3 class="plan-name">Starter Plan</h3>
-                <div class="plan-price">$850</div>
-                <div class="plan-period">per month or bi-weekly</div>
-                <ul class="plan-features">
-                    <li>Alternating 2/3 posts per week</li>
-                    <li>Static, carousel, or stories content</li>
-                    <li>Professional captions</li>
-                    <li>Strategic scheduling</li>
-                    <li>Basic support</li>
-                    <li>Content optimization</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started</a>
-            </div>
-            <div class="pricing-card glass featured">
-                <h3 class="plan-name">Pro Plan</h3>
-                <div class="plan-price">$1,400</div>
-                <div class="plan-period">per month or bi-weekly</div>
-                <ul class="plan-features">
-                    <li>Alternating 3-5 posts per week</li>
-                    <li>Mix of static, reels, stories</li>
-                    <li>Professional captions</li>
-                    <li>Strategic scheduling</li>
-                    <li>Quick-turnaround support</li>
-                    <li>Time-sensitive content pushes</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started</a>
-            </div>
-            <div class="pricing-card glass">
-                <h3 class="plan-name">Elite Plan</h3>
-                <div class="plan-price">$1,900</div>
-                <div class="plan-period">per month or $950 bi-weekly</div>
-                <ul class="plan-features">
-                    <li>Alternating 4-6 posts per week</li>
-                    <li>Reels/short-form video content</li>
-                    <li>Custom graphics</li>
-                    <li>Full engagement management</li>
-                    <li>Comment & DM responses</li>
-                    <li>Priority support</li>
-                    <li>CRM platform integration</li>
-                    <li>Automated email campaigns</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started</a>
-            </div>
-        </div>
-    </section>
-
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section glass">
                 <h3>Contact Us</h3>
                 <p>Get in touch with us today to discuss how we can help elevate your brand through expert digital marketing solutions.</p>
-                <a href="https://creativeiq.marketing/contact" class="footer-button">Our Contact</a>
+                <a href="https://creativeiq.marketing/homepage#section-PfmFR_-jnN" class="footer-button">Our Contact</a>
             </div>
         </div>
         <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <p>&copy; 2025 CreativeIQ Digital Marketing. All rights reserved. | (804) 651-2531</p>
         </div>
     </footer>
 
@@ -996,12 +1011,16 @@
                 this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 this.isLowEndDevice = this.deviceMemory < 4 || this.hardwareConcurrency < 4 || this.isMobile;
                 
+                // Connection speed detection
+                this.connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                this.isSlowConnection = this.connection && (this.connection.effectiveType === 'slow-2g' || this.connection.effectiveType === '2g');
+                
                 this.init();
             }
 
             init() {
-                // Start with conservative settings for low-end devices
-                if (this.isLowEndDevice) {
+                // Start with conservative settings for low-end devices or slow connections
+                if (this.isLowEndDevice || this.isSlowConnection) {
                     this.performanceLevel = 'low';
                 }
                 
@@ -1271,7 +1290,7 @@
 
         // Initialize particles with performance monitoring
         if (typeof particlesJS !== 'undefined') {
-            const initialLevel = performanceMonitor.isLowEndDevice ? 'low' : 'high';
+            const initialLevel = performanceMonitor.isLowEndDevice || performanceMonitor.isSlowConnection ? 'low' : 'high';
             const config = getParticleConfig(initialLevel);
             
             performanceMonitor.particlesInstance = particlesJS('particles-js', config);
