@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - FYZICAL Health & Wellness</title>
+    <meta name="description" content="Stay informed with the latest health and wellness tips, physical therapy insights, and educational content from FYZICAL experts.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --secondary-blue: #004499;
+            --accent-orange: #ff6600;
+            --light-blue: #e6f3ff;
+            --dark-blue: #003366;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333333;
+            --text-gray: #666666;
+            --border-gray: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--accent-orange);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--white);
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 1rem 0;
+            top: 100%;
+            left: 0;
+            z-index: 1001;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Blog Content */
+        .blog-content {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .blog-main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 20px 20px;
+        }
+
+        .blog-content-inner {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Sidebar */
+        .blog-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: var(--light-gray);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .widget-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .search-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .search-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-button:hover {
+            background: var(--secondary-blue);
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-blue);
+        }
+
+        .category-count {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .recent-posts {
+            list-style: none;
+        }
+
+        .recent-posts li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .recent-posts li:last-child {
+            border-bottom: none;
+        }
+
+        .recent-post-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .recent-post-title a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .recent-post-title a:hover {
+            color: var(--primary-blue);
+        }
+
+        .recent-post-date {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .newsletter-button {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            background: #e55a00;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .page-link {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .page-link:hover,
+        .page-link.active {
+            background: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .featured-post h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .featured-post p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .featured-post .read-more {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-orange);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .blog-sidebar {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header {
+                padding: 100px 0 40px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .blog-content-inner {
+                padding: 1.5rem;
+            }
+
+            .blog-title {
+                font-size: 1.3rem;
+            }
+
+            .sidebar-widget {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    FYZICAL
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About Us</a>
+                            <a href="about.html#direct-access">Direct Access</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="services.html#orthopedic">Orthopedic Rehabilitation</a>
+                            <a href="services.html#pediatrics">Pediatrics</a>
+                            <a href="services.html#balance">Balance Therapy</a>
+                            <a href="services.html#fitness">Fitness & Wellness</a>
+                            <a href="services.html#occupational">Occupational Therapy</a>
+                            <a href="services.html#pelvic">Pelvic Therapy</a>
+                            <a href="services.html#neurological">Neurological Rehabilitation</a>
+                            <a href="services.html#specialty">Specialty Services</a>
+                        </div>
+                    </li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="careers.html">Join Team</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="locations.html" class="cta-button">Find a Center</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Health & Wellness Blog</h1>
+            <p>Stay informed with the latest insights, tips, and expert advice from our physical therapy and wellness professionals</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-grid">
+                <div class="blog-main">
+                    <!-- Featured Post -->
+                    <div class="featured-post fade-in-up">
+                        <h2>Featured: The Complete Guide to Fall Prevention</h2>
+                        <p>Learn essential strategies and exercises to prevent falls and maintain your independence as you age. Our comprehensive guide covers everything from home safety modifications to balance training exercises.</p>
+                        <a href="#" class="read-more">Read Full Article →</a>
+                    </div>
+
+                    <!-- Blog Posts -->
+                    <article class="blog-post fade-in-up">
+                        <div class="blog-image">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="blog-content-inner">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> January 15, 2025</span>
+                                <span><i class="fas fa-user"></i> Dr. Sarah Johnson</span>
+                                <span><i class="fas fa-tag"></i> Fitness & Wellness</span>
+                            </div>
+                            <h3 class="blog-title">5 Essential Exercises for Better Balance and Stability</h3>
+                            <p class="blog-excerpt">Improve your balance and reduce your risk of falls with these simple yet effective exercises you can do at home. Our physical therapy experts share their top recommendations for maintaining stability and confidence in daily activities.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post fade-in-up">
+                        <div class="blog-image">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <div class="blog-content-inner">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> January 12, 2025</span>
+                                <span><i class="fas fa-user"></i> Dr. Michael Chen</span>
+                                <span><i class="fas fa-tag"></i> Orthopedic Care</span>
+                            </div>
+                            <h3 class="blog-title">Understanding Back Pain: Causes, Treatment, and Prevention</h3>
+                            <p class="blog-excerpt">Back pain affects millions of people worldwide. Learn about the common causes, effective treatment options, and preventive measures to keep your spine healthy and pain-free.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post fade-in-up">
+                        <div class="blog-image">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="blog-content-inner">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> January 10, 2025</span>
+                                <span><i class="fas fa-user"></i> Jennifer Rodriguez</span>
+                                <span><i class="fas fa-tag"></i> Pediatric Care</span>
+                            </div>
+                            <h3 class="blog-title">Physical Therapy for Children: When and Why It's Needed</h3>
+                            <p class="blog-excerpt">Discover how pediatric physical therapy can help children with developmental delays, injuries, and various conditions. Learn about the signs that indicate your child might benefit from physical therapy.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post fade-in-up">
+                        <div class="blog-image">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="blog-content-inner">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> January 8, 2025</span>
+                                <span><i class="fas fa-user"></i> Dr. Sarah Johnson</span>
+                                <span><i class="fas fa-tag"></i> Neurological Rehabilitation</span>
+                            </div>
+                            <h3 class="blog-title">Stroke Recovery: The Role of Physical Therapy in Rehabilitation</h3>
+                            <p class="blog-excerpt">Physical therapy plays a crucial role in stroke recovery. Learn about the rehabilitation process, treatment approaches, and how early intervention can significantly improve outcomes.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">Next →</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="blog-sidebar">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Search Articles</h3>
+                        <form class="search-form">
+                            <input type="text" class="search-input" placeholder="Search articles...">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Orthopedic Care <span class="category-count">12</span></a></li>
+                            <li><a href="#">Balance & Fall Prevention <span class="category-count">8</span></a></li>
+                            <li><a href="#">Pediatric Care <span class="category-count">6</span></a></li>
+                            <li><a href="#">Neurological Rehabilitation <span class="category-count">5</span></a></li>
+                            <li><a href="#">Fitness & Wellness <span class="category-count">10</span></a></li>
+                            <li><a href="#">Injury Recovery <span class="category-count">7</span></a></li>
+                            <li><a href="#">Preventive Care <span class="category-count">9</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Recent Posts</h3>
+                        <ul class="recent-posts">
+                            <li>
+                                <div class="recent-post-title">
+                                    <a href="#">The Benefits of Aquatic Therapy for Rehabilitation</a>
+                                </div>
+                                <div class="recent-post-date">January 5, 2025</div>
+                            </li>
+                            <li>
+                                <div class="recent-post-title">
+                                    <a href="#">Managing Chronic Pain Through Physical Therapy</a>
+                                </div>
+                                <div class="recent-post-date">January 3, 2025</div>
+                            </li>
+                            <li>
+                                <div class="recent-post-title">
+                                    <a href="#">Sports Injury Prevention: Tips for Athletes</a>
+                                </div>
+                                <div class="recent-post-date">December 30, 2024</div>
+                            </li>
+                            <li>
+                                <div class="recent-post-title">
+                                    <a href="#">Post-Surgery Rehabilitation: What to Expect</a>
+                                </div>
+                                <div class="recent-post-date">December 28, 2024</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Stay Updated</h3>
+                        <p style="margin-bottom: 1rem; color: var(--text-gray);">Subscribe to our newsletter for the latest health tips and wellness insights.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FYZICAL</h3>
+                    <p>Leading the healthcare revolution with innovative wellness programs and clinical care.</p>
+                    <p>Each franchise location is independently owned and operated.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="locations.html">Find a Center</a>
+                    <a href="careers.html">Join Our Team</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html#orthopedic">Orthopedic Rehabilitation</a>
+                    <a href="services.html#balance">Balance Therapy</a>
+                    <a href="services.html#pediatrics">Pediatric Care</a>
+                    <a href="services.html#fitness">Fitness & Wellness</a>
+                    <a href="services.html#neurological">Neurological Rehabilitation</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Corporate</h3>
+                    <a href="franchise.html">Franchise Opportunities</a>
+                    <a href="residency.html">Orthopedic Residency</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="accessibility.html">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FYZICAL. All rights reserved.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    The information presented on this site shall not be construed as medical advice. 
+                    You should always consult with your physician for medical advice in order to make sound medical decisions.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Search form
+        const searchForm = document.querySelector('.search-form');
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = this.querySelector('.search-input').value;
+            alert(`Searching for: ${searchTerm}`);
+        });
+
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('.newsletter-input').value;
+            alert(`Thank you for subscribing with: ${email}`);
+            this.reset();
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

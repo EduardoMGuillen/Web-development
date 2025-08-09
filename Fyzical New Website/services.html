@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - FYZICAL Physical Therapy & Wellness</title>
+    <meta name="description" content="Comprehensive physical therapy services including orthopedic rehabilitation, balance therapy, pediatric care, fitness & wellness, and specialty services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --secondary-blue: #004499;
+            --accent-orange: #ff6600;
+            --light-blue: #e6f3ff;
+            --dark-blue: #003366;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333333;
+            --text-gray: #666666;
+            --border-gray: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--accent-orange);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--white);
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 1rem 0;
+            top: 100%;
+            left: 0;
+            z-index: 1001;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Navigation */
+        .services-nav {
+            background: var(--white);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+        }
+
+        .services-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .services-nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .services-nav a:hover,
+        .services-nav a.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Service Sections */
+        .service-section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .service-section:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .service-content.reverse {
+            direction: rtl;
+        }
+
+        .service-content.reverse > * {
+            direction: ltr;
+        }
+
+        .service-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .service-text p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .service-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-gray);
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-image {
+            background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 20px 20px;
+        }
+
+        /* Specialty Services Grid */
+        .specialty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .specialty-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .specialty-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .specialty-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .specialty-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .specialty-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: 2px solid var(--white);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-orange);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .specialty-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header {
+                padding: 100px 0 40px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .service-text h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    FYZICAL
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About Us</a>
+                            <a href="about.html#direct-access">Direct Access</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="services.html#orthopedic">Orthopedic Rehabilitation</a>
+                            <a href="services.html#pediatrics">Pediatrics</a>
+                            <a href="services.html#balance">Balance Therapy</a>
+                            <a href="services.html#fitness">Fitness & Wellness</a>
+                            <a href="services.html#occupational">Occupational Therapy</a>
+                            <a href="services.html#pelvic">Pelvic Therapy</a>
+                            <a href="services.html#neurological">Neurological Rehabilitation</a>
+                            <a href="services.html#specialty">Specialty Services</a>
+                        </div>
+                    </li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="careers.html">Join Team</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="locations.html" class="cta-button">Find a Center</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive physical therapy and wellness services designed to help you achieve optimal health and recovery</p>
+        </div>
+    </section>
+
+    <!-- Services Navigation -->
+    <section class="services-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#orthopedic">Orthopedic</a></li>
+                <li><a href="#pediatrics">Pediatrics</a></li>
+                <li><a href="#balance">Balance</a></li>
+                <li><a href="#fitness">Fitness & Wellness</a></li>
+                <li><a href="#occupational">Occupational</a></li>
+                <li><a href="#pelvic">Pelvic</a></li>
+                <li><a href="#neurological">Neurological</a></li>
+                <li><a href="#specialty">Specialty</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Orthopedic Rehabilitation -->
+    <section class="service-section" id="orthopedic">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-text fade-in-up">
+                    <h2>Orthopedic Rehabilitation</h2>
+                    <p>Comprehensive treatment for musculoskeletal conditions, injuries, and post-surgical recovery. Our orthopedic rehabilitation programs are designed to restore function, reduce pain, and improve quality of life.</p>
+                    <ul class="service-features">
+                        <li>Orthopedic Health & Injury Recovery</li>
+                        <li>TMJD (Temporomandibular Joint Disorder)</li>
+                        <li>Auto & Work Injury Rehabilitation</li>
+                        <li>Hand Therapy & Upper Extremity Care</li>
+                        <li>Chronic Back Pain Management</li>
+                        <li>Foot Therapy & Lower Extremity Care</li>
+                        <li>Post-Surgical Rehabilitation</li>
+                        <li>Sports Injury Recovery</li>
+                    </ul>
+                    <a href="locations.html" class="cta-button">Find Orthopedic Care</a>
+                </div>
+                <div class="service-image fade-in-up">
+                    <i class="fas fa-bone"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pediatrics -->
+    <section class="service-section" id="pediatrics">
+        <div class="container">
+            <div class="service-content reverse">
+                <div class="service-text fade-in-up">
+                    <h2>Pediatric Care</h2>
+                    <p>Specialized therapy services designed specifically for children's unique developmental needs. Our pediatric team provides comprehensive care to help children reach their full potential.</p>
+                    <ul class="service-features">
+                        <li>Pediatric Physical Therapy</li>
+                        <li>Pediatric Speech Therapy</li>
+                        <li>Pediatric Occupational Therapy</li>
+                        <li>Developmental Delay Treatment</li>
+                        <li>Motor Skills Development</li>
+                        <li>Coordination & Balance Training</li>
+                        <li>Family Education & Support</li>
+                        <li>Early Intervention Programs</li>
+                    </ul>
+                    <a href="locations.html" class="cta-button">Find Pediatric Care</a>
+                </div>
+                <div class="service-image fade-in-up">
+                    <i class="fas fa-baby"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Balance Therapy -->
+    <section class="service-section" id="balance">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-text fade-in-up">
+                    <h2>Balance Therapy</h2>
+                    <p>Specialized programs for fall prevention, dizziness management, and improving balance and coordination. Our balance therapy programs help patients regain confidence and independence.</p>
+                    <ul class="service-features">
+                        <li>Balance Therapy Programs</li>
+                        <li>Concussion Management</li>
+                        <li>Dizziness & Vertigo Treatment</li>
+                        <li>Fall Prevention Training</li>
+                        <li>Vestibular Rehabilitation</li>
+                        <li>Gait Training & Analysis</li>
+                        <li>Proprioception Training</li>
+                        <li>Safety Assessment & Training</li>
+                    </ul>
+                    <a href="locations.html" class="cta-button">Find Balance Care</a>
+                </div>
+                <div class="service-image fade-in-up">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitness & Wellness -->
+    <section class="service-section" id="fitness">
+        <div class="container">
+            <div class="service-content reverse">
+                <div class="service-text fade-in-up">
+                    <h2>Fitness & Wellness</h2>
+                    <p>Preventive care and wellness programs to maintain optimal health and prevent future injuries. Our fitness programs are designed to improve strength, flexibility, and overall well-being.</p>
+                    <ul class="service-features">
+                        <li>Fitness & Wellness Programs</li>
+                        <li>Sports Rehabilitation</li>
+                        <li>Strength Training</li>
+                        <li>Flexibility & Mobility Work</li>
+                        <li>Cardiovascular Conditioning</li>
+                        <li>Injury Prevention Programs</li>
+                        <li>Wellness Coaching</li>
+                        <li>Performance Enhancement</li>
+                    </ul>
+                    <a href="locations.html" class="cta-button">Find Wellness Programs</a>
+                </div>
+                <div class="service-image fade-in-up">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Occupational Therapy -->
+    <section class="service-section" id="occupational">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-text fade-in-up">
+                    <h2>Occupational Therapy</h2>
+                    <p>Comprehensive occupational therapy services to help patients regain independence in daily activities and return to work or hobbies they love.</p>
+                    <ul class="service-features">
+                        <li>Activities of Daily Living (ADL) Training</li>
+                        <li>Work Rehabilitation</li>
+                        <li>Hand & Upper Extremity Therapy</li>
+                        <li>Adaptive Equipment Training</li>
+                        <li>Ergonomic Assessment</li>
+                        <li>Workplace Safety Training</li>
+                        <li>Functional Capacity Evaluation</li>
+                        <li>Return to Work Programs</li>
+                    </ul>
+                    <a href="locations.html" class="cta-button">Find Occupational Therapy</a>
+                </div>
+                <div class="service-image fade-in-up">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pelvic Therapy -->
+    <section class="service-section" id="pelvic">
+        <div class="container">
+            <div class="service-content reverse">
+                <div class="service-text fade-in-up">
+                    <h2>Pelvic Therapy</h2>
+                    <p>Specialized pelvic health and wellness services to address pelvic floor dysfunction, incontinence, and related conditions with compassionate, evidence-based care.</p>
+                    <ul class="service-features">
+                        <li>Pelvic Health & Wellness</li>
+                        <li>Incontinence Treatment</li>
+                        <li>Pelvic Floor Rehabilitation</li>
+                        <li>Pre & Postpartum Care</li>
+                        <li>Pelvic Pain Management</li>
+                        <li>Bladder & Bowel Training</li>
+                        <li>Sexual Health Rehabilitation</li>
+                        <li>Core Strengthening Programs</li>
+                    </ul>
+                    <a href="locations.html" class="cta-button">Find Pelvic Therapy</a>
+                </div>
+                <div class="service-image fade-in-up">
+                    <i class="fas fa-female"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neurological Rehabilitation -->
+    <section class="service-section" id="neurological">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-text fade-in-up">
+                    <h2>Neurological Rehabilitation</h2>
+                    <p>Specialized treatment for neurological conditions, stroke recovery, and brain injury rehabilitation. Our neurological programs focus on maximizing recovery and improving quality of life.</p>
+                    <ul class="service-features">
+                        <li>Stroke Rehabilitation</li>
+                        <li>Brain Injury Recovery</li>
+                        <li>Multiple Sclerosis Treatment</li>
+                        <li>Parkinson's Disease Management</li>
+                        <li>Spinal Cord Injury Rehabilitation</li>
+                        <li>Neuropathy Treatment</li>
+                        <li>Gait Training & Mobility</li>
+                        <li>Cognitive Rehabilitation</li>
+                    </ul>
+                    <a href="locations.html" class="cta-button">Find Neurological Care</a>
+                </div>
+                <div class="service-image fade-in-up">
+                    <i class="fas fa-brain"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialty Services -->
+    <section class="service-section" id="specialty">
+        <div class="container">
+            <div class="service-text fade-in-up" style="text-align: center; margin-bottom: 3rem;">
+                <h2>Specialty Services</h2>
+                <p>Advanced treatments and specialized services to complement your rehabilitation journey</p>
+            </div>
+            <div class="specialty-grid">
+                <div class="specialty-card fade-in-up">
+                    <div class="specialty-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Massage Therapy</h3>
+                    <p>Therapeutic massage to reduce pain, improve circulation, and promote relaxation and healing.</p>
+                </div>
+                <div class="specialty-card fade-in-up">
+                    <div class="specialty-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Anti-Gravity Treadmill</h3>
+                    <p>Advanced rehabilitation technology that reduces weight-bearing stress while maintaining cardiovascular benefits.</p>
+                </div>
+                <div class="specialty-card fade-in-up">
+                    <div class="specialty-icon">
+                        <i class="fas fa-acupuncture"></i>
+                    </div>
+                    <h3>Dry Needling</h3>
+                    <p>Minimally invasive technique to release muscle tension and reduce pain through targeted needle therapy.</p>
+                </div>
+                <div class="specialty-card fade-in-up">
+                    <div class="specialty-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3>Thermal Therapy</h3>
+                    <p>Heat and cold therapy applications to reduce pain, inflammation, and promote healing.</p>
+                </div>
+                <div class="specialty-card fade-in-up">
+                    <div class="specialty-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Stimulation</h3>
+                    <p>Advanced electrical stimulation techniques to improve muscle function and reduce pain.</p>
+                </div>
+                <div class="specialty-card fade-in-up">
+                    <div class="specialty-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h3>Ultrasound Therapy</h3>
+                    <p>Deep tissue therapy using sound waves to promote healing and reduce inflammation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Recovery Journey?</h2>
+            <p>Find a FYZICAL center near you and take the first step toward better health and wellness</p>
+            <div class="cta-buttons">
+                <a href="locations.html" class="btn-primary">Find a Center</a>
+                <a href="about.html" class="btn-secondary">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FYZICAL</h3>
+                    <p>Leading the healthcare revolution with innovative wellness programs and clinical care.</p>
+                    <p>Each franchise location is independently owned and operated.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="locations.html">Find a Center</a>
+                    <a href="careers.html">Join Our Team</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html#orthopedic">Orthopedic Rehabilitation</a>
+                    <a href="services.html#balance">Balance Therapy</a>
+                    <a href="services.html#pediatrics">Pediatric Care</a>
+                    <a href="services.html#fitness">Fitness & Wellness</a>
+                    <a href="services.html#neurological">Neurological Rehabilitation</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Corporate</h3>
+                    <a href="franchise.html">Franchise Opportunities</a>
+                    <a href="residency.html">Orthopedic Residency</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="accessibility.html">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FYZICAL. All rights reserved.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    The information presented on this site shall not be construed as medical advice. 
+                    You should always consult with your physician for medical advice in order to make sound medical decisions.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Services navigation highlighting
+        const serviceLinks = document.querySelectorAll('.services-nav a');
+        const serviceSections = document.querySelectorAll('.service-section');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            serviceSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            serviceLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

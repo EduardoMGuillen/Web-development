@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team - FYZICAL Careers</title>
+    <meta name="description" content="Join the FYZICAL team and be part of the healthcare revolution. Explore career opportunities in physical therapy, administration, and healthcare management.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --secondary-blue: #004499;
+            --accent-orange: #ff6600;
+            --light-blue: #e6f3ff;
+            --dark-blue: #003366;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333333;
+            --text-gray: #666666;
+            --border-gray: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--accent-orange);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--white);
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 1rem 0;
+            top: 100%;
+            left: 0;
+            z-index: 1001;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Culture Section */
+        .culture {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .culture-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .culture-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .culture-text p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .culture-image {
+            background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .culture-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 20px 20px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .benefit-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Job Listings */
+        .jobs {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .jobs-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .job-filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            background: var(--light-gray);
+            color: var(--text-gray);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-button.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .job-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-blue);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-location {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .job-type {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .job-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .job-requirements {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .job-requirements li {
+            padding: 0.25rem 0;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .job-requirements li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .job-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-blue);
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Application Form */
+        .application {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .application-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-button {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-orange);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .culture-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .benefits-grid,
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .job-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .job-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header {
+                padding: 100px 0 40px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .culture-text h2,
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .application-form {
+                padding: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    FYZICAL
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About Us</a>
+                            <a href="about.html#direct-access">Direct Access</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="services.html#orthopedic">Orthopedic Rehabilitation</a>
+                            <a href="services.html#pediatrics">Pediatrics</a>
+                            <a href="services.html#balance">Balance Therapy</a>
+                            <a href="services.html#fitness">Fitness & Wellness</a>
+                            <a href="services.html#occupational">Occupational Therapy</a>
+                            <a href="services.html#pelvic">Pelvic Therapy</a>
+                            <a href="services.html#neurological">Neurological Rehabilitation</a>
+                            <a href="services.html#specialty">Specialty Services</a>
+                        </div>
+                    </li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="careers.html">Join Team</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="locations.html" class="cta-button">Find a Center</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Join Our Team</h1>
+            <p>Be part of the healthcare revolution and help transform lives through innovative physical therapy and wellness care</p>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture">
+        <div class="container">
+            <div class="culture-content">
+                <div class="culture-text fade-in-up">
+                    <h2>Why Work at FYZICAL?</h2>
+                    <p>Join a team that's passionate about revolutionizing healthcare and making a real difference in patients' lives. At FYZICAL, we believe in fostering a culture of innovation, collaboration, and continuous growth.</p>
+                    <p>Our team members enjoy working in a supportive environment where their expertise is valued, their growth is encouraged, and their contributions directly impact patient outcomes. We're committed to providing the tools, training, and resources you need to excel in your career.</p>
+                    <p>Whether you're a physical therapist, administrator, or healthcare professional, you'll find opportunities to grow, learn, and make a meaningful impact in the communities we serve.</p>
+                    <a href="#jobs" class="cta-button">View Open Positions</a>
+                </div>
+                <div class="culture-image fade-in-up">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefits & Perks</h2>
+            <p class="section-subtitle">We invest in our team's success and well-being</p>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health & Wellness</h3>
+                    <p>Comprehensive health insurance, dental and vision coverage, and wellness programs to keep you healthy and thriving.</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Professional Development</h3>
+                    <p>Continuous education opportunities, training programs, and career advancement paths to help you grow professionally.</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>Flexible scheduling options, paid time off, and family-friendly policies to support your work-life balance.</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Competitive Compensation</h3>
+                    <p>Attractive salary packages, performance bonuses, and retirement plans to reward your hard work and dedication.</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation Culture</h3>
+                    <p>Work with cutting-edge technology and innovative treatment approaches in a forward-thinking healthcare environment.</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Team Support</h3>
+                    <p>Collaborative work environment with supportive colleagues and leadership who value your contributions and expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section class="jobs" id="jobs">
+        <div class="container">
+            <div class="jobs-header">
+                <h2 class="section-title">Open Positions</h2>
+                <p class="section-subtitle">Find your perfect role in our growing organization</p>
+            </div>
+            <div class="job-filters">
+                <button class="filter-button active" data-filter="all">All Positions</button>
+                <button class="filter-button" data-filter="clinical">Clinical</button>
+                <button class="filter-button" data-filter="administrative">Administrative</button>
+                <button class="filter-button" data-filter="management">Management</button>
+            </div>
+            <div class="jobs-grid" id="jobs-grid">
+                <!-- Job listings will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application">
+        <div class="container">
+            <h2 class="section-title">Apply Now</h2>
+            <p class="section-subtitle">Ready to join our team? Submit your application below</p>
+            <form class="application-form" id="application-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name *</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name *</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="position">Position of Interest *</label>
+                    <select id="position" name="position" required>
+                        <option value="">Select a position</option>
+                        <option value="physical-therapist">Physical Therapist</option>
+                        <option value="physical-therapist-assistant">Physical Therapist Assistant</option>
+                        <option value="occupational-therapist">Occupational Therapist</option>
+                        <option value="speech-therapist">Speech Therapist</option>
+                        <option value="office-manager">Office Manager</option>
+                        <option value="receptionist">Receptionist</option>
+                        <option value="billing-specialist">Billing Specialist</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Preferred Location</label>
+                    <input type="text" id="location" name="location" placeholder="City, State">
+                </div>
+                <div class="form-group">
+                    <label for="experience">Years of Experience</label>
+                    <select id="experience" name="experience">
+                        <option value="">Select experience level</option>
+                        <option value="0-1">0-1 years</option>
+                        <option value="2-5">2-5 years</option>
+                        <option value="6-10">6-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cover-letter">Cover Letter</label>
+                    <textarea id="cover-letter" name="cover-letter" placeholder="Tell us why you'd like to join FYZICAL..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="resume">Resume/CV *</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                </div>
+                <button type="submit" class="submit-button">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FYZICAL</h3>
+                    <p>Leading the healthcare revolution with innovative wellness programs and clinical care.</p>
+                    <p>Each franchise location is independently owned and operated.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="locations.html">Find a Center</a>
+                    <a href="careers.html">Join Our Team</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html#orthopedic">Orthopedic Rehabilitation</a>
+                    <a href="services.html#balance">Balance Therapy</a>
+                    <a href="services.html#pediatrics">Pediatric Care</a>
+                    <a href="services.html#fitness">Fitness & Wellness</a>
+                    <a href="services.html#neurological">Neurological Rehabilitation</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Corporate</h3>
+                    <a href="franchise.html">Franchise Opportunities</a>
+                    <a href="residency.html">Orthopedic Residency</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="accessibility.html">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FYZICAL. All rights reserved.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    The information presented on this site shall not be construed as medical advice. 
+                    You should always consult with your physician for medical advice in order to make sound medical decisions.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample job data
+        const jobs = [
+            {
+                id: 1,
+                title: "Physical Therapist",
+                location: "Downtown, CA",
+                type: "Full-time",
+                category: "clinical",
+                description: "Join our team as a Physical Therapist and help patients achieve their rehabilitation goals through evidence-based treatment approaches.",
+                requirements: [
+                    "Doctorate or Master's degree in Physical Therapy",
+                    "Current state license",
+                    "2+ years of clinical experience preferred",
+                    "Strong communication and interpersonal skills"
+                ]
+            },
+            {
+                id: 2,
+                title: "Physical Therapist Assistant",
+                location: "Westside, CA",
+                type: "Full-time",
+                category: "clinical",
+                description: "Support our physical therapists in delivering high-quality patient care and rehabilitation services.",
+                requirements: [
+                    "Associate's degree in Physical Therapy Assistant",
+                    "Current state license",
+                    "1+ years of experience preferred",
+                    "Team-oriented and patient-focused"
+                ]
+            },
+            {
+                id: 3,
+                title: "Office Manager",
+                location: "Eastside, CA",
+                type: "Full-time",
+                category: "administrative",
+                description: "Lead our administrative team and ensure smooth operations of our physical therapy center.",
+                requirements: [
+                    "Bachelor's degree in Healthcare Administration or related field",
+                    "3+ years of healthcare office management experience",
+                    "Strong leadership and organizational skills",
+                    "Knowledge of healthcare billing and insurance"
+                ]
+            },
+            {
+                id: 4,
+                title: "Receptionist",
+                location: "Northside, CA",
+                type: "Part-time",
+                category: "administrative",
+                description: "Provide excellent customer service and support our patients and clinical team.",
+                requirements: [
+                    "High school diploma or equivalent",
+                    "1+ years of customer service experience",
+                    "Excellent communication skills",
+                    "Proficiency in Microsoft Office"
+                ]
+            },
+            {
+                id: 5,
+                title: "Center Director",
+                location: "Southside, CA",
+                type: "Full-time",
+                category: "management",
+                description: "Lead our center's operations, clinical excellence, and business growth initiatives.",
+                requirements: [
+                    "Master's degree in Healthcare Administration or related field",
+                    "5+ years of healthcare management experience",
+                    "Strong business acumen and leadership skills",
+                    "Experience in physical therapy or rehabilitation"
+                ]
+            },
+            {
+                id: 6,
+                title: "Occupational Therapist",
+                location: "Central, CA",
+                type: "Full-time",
+                category: "clinical",
+                description: "Help patients regain independence in daily activities through occupational therapy interventions.",
+                requirements: [
+                    "Master's degree in Occupational Therapy",
+                    "Current state license",
+                    "2+ years of clinical experience",
+                    "Specialized training in hand therapy preferred"
+                ]
+            }
+        ];
+
+        let filteredJobs = [...jobs];
+        let currentFilter = 'all';
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Job filtering
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const jobsGrid = document.getElementById('jobs-grid');
+
+        function renderJobs(jobsToRender) {
+            jobsGrid.innerHTML = jobsToRender.map(job => `
+                <div class="job-card fade-in-up">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">${job.title}</div>
+                            <div class="job-location">${job.location}</div>
+                        </div>
+                        <div class="job-type">${job.type}</div>
+                    </div>
+                    <div class="job-description">${job.description}</div>
+                    <ul class="job-requirements">
+                        ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+                    </ul>
+                    <div class="job-actions">
+                        <a href="#" class="btn-primary">Apply Now</a>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                currentFilter = this.dataset.filter;
+                if (currentFilter === 'all') {
+                    filteredJobs = jobs;
+                } else {
+                    filteredJobs = jobs.filter(job => job.category === currentFilter);
+                }
+                renderJobs(filteredJobs);
+            });
+        });
+
+        // Application form
+        const applicationForm = document.getElementById('application-form');
+        applicationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will review your information and contact you soon.');
+            this.reset();
+        });
+
+        // Initialize
+        renderJobs(jobs);
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
