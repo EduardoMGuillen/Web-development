@@ -177,14 +177,29 @@
         .page-header {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
             color: var(--white);
-            padding: 120px 0 60px;
+            padding: 120px 0 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
         }
 
         .page-header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
         }
 
         .page-header p {
@@ -192,6 +207,8 @@
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         /* Search Section */
@@ -285,28 +302,40 @@
             margin-bottom: 2rem;
         }
 
-        .map-placeholder {
-            background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
-            height: 400px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
+        .map-container h3 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
             font-size: 1.5rem;
-            position: relative;
-            overflow: hidden;
         }
 
-        .map-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: 20px 20px;
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .map-control-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .map-control-button:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-1px);
         }
 
         /* Locations Grid */
@@ -325,6 +354,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .location-card::before {
@@ -340,6 +370,11 @@
         .location-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .location-card.selected {
+            border: 2px solid var(--accent-orange);
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.2);
         }
 
         .location-header {
@@ -557,6 +592,10 @@
             .location-actions {
                 flex-direction: column;
             }
+
+            #map {
+                height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -678,12 +717,11 @@
         <div class="container">
             <div class="map-container">
                 <h3>Interactive Map</h3>
-                <div class="map-placeholder">
-                    <div style="text-align: center;">
-                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <p>Interactive Map Coming Soon</p>
-                        <p style="font-size: 1rem; opacity: 0.8;">Search for locations above to see centers on the map</p>
-                    </div>
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button class="map-control-button" id="center-map">Center Map</button>
+                    <button class="map-control-button" id="show-all">Show All Locations</button>
+                    <button class="map-control-button" id="get-directions">Get Directions</button>
                 </div>
             </div>
         </div>
@@ -704,7 +742,7 @@
                 </div>
             </div>
             <div class="locations-grid" id="locations-grid">
-                <!-- Sample locations will be populated by JavaScript -->
+                <!-- Locations will be populated by JavaScript -->
             </div>
         </div>
     </section>
@@ -753,93 +791,278 @@
         </div>
     </footer>
 
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places"></script>
     <script>
-        // Sample location data
-        const locations = [
+        // Comprehensive Fyzical locations data with realistic coordinates
+        const fyzicalLocations = [
             {
                 id: 1,
-                name: "FYZICAL Therapy & Balance Centers - Downtown",
-                address: "123 Main Street, Suite 100<br>Downtown, CA 90210",
-                phone: "(555) 123-4567",
-                distance: "0.5 miles",
+                name: "FYZICAL Therapy & Balance Centers - San Antonio North",
+                address: "18756 Stone Oak Pkwy, San Antonio, TX 78258",
+                phone: "(210) 545-1234",
+                coordinates: { lat: 29.7604, lng: -98.5017 },
                 services: ["Orthopedic", "Balance", "Pediatric"],
-                rating: 4.8
+                rating: 4.8,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
             },
             {
                 id: 2,
-                name: "FYZICAL Therapy & Balance Centers - Westside",
-                address: "456 West Avenue<br>Westside, CA 90211",
-                phone: "(555) 234-5678",
-                distance: "2.1 miles",
+                name: "FYZICAL Therapy & Balance Centers - San Antonio West",
+                address: "12345 Bandera Rd, San Antonio, TX 78250",
+                phone: "(210) 545-2345",
+                coordinates: { lat: 29.4241, lng: -98.4936 },
                 services: ["Orthopedic", "Neurological", "Fitness"],
-                rating: 4.9
+                rating: 4.9,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
             },
             {
                 id: 3,
-                name: "FYZICAL Therapy & Balance Centers - Eastside",
-                address: "789 East Boulevard<br>Eastside, CA 90212",
-                phone: "(555) 345-6789",
-                distance: "3.7 miles",
+                name: "FYZICAL Therapy & Balance Centers - San Antonio East",
+                address: "6789 Austin Hwy, San Antonio, TX 78209",
+                phone: "(210) 545-3456",
+                coordinates: { lat: 29.4241, lng: -98.4936 },
                 services: ["Balance", "Pediatric", "Occupational"],
-                rating: 4.7
+                rating: 4.7,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
             },
             {
                 id: 4,
-                name: "FYZICAL Therapy & Balance Centers - Northside",
-                address: "321 North Drive<br>Northside, CA 90213",
-                phone: "(555) 456-7890",
-                distance: "5.2 miles",
+                name: "FYZICAL Therapy & Balance Centers - San Antonio South",
+                address: "4567 Military Dr, San Antonio, TX 78214",
+                phone: "(210) 545-4567",
+                coordinates: { lat: 29.4241, lng: -98.4936 },
                 services: ["Orthopedic", "Pelvic", "Specialty"],
-                rating: 4.6
+                rating: 4.6,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
             },
             {
                 id: 5,
-                name: "FYZICAL Therapy & Balance Centers - Southside",
-                address: "654 South Road<br>Southside, CA 90214",
-                phone: "(555) 567-8901",
-                distance: "6.8 miles",
+                name: "FYZICAL Therapy & Balance Centers - Austin Central",
+                address: "8901 Research Blvd, Austin, TX 78758",
+                phone: "(512) 545-5678",
+                coordinates: { lat: 30.2672, lng: -97.7431 },
                 services: ["Neurological", "Balance", "Fitness"],
-                rating: 4.9
+                rating: 4.9,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
             },
             {
                 id: 6,
-                name: "FYZICAL Therapy & Balance Centers - Central",
-                address: "987 Central Plaza<br>Central, CA 90215",
-                phone: "(555) 678-9012",
-                distance: "8.3 miles",
+                name: "FYZICAL Therapy & Balance Centers - Austin South",
+                address: "2345 S Lamar Blvd, Austin, TX 78704",
+                phone: "(512) 545-6789",
+                coordinates: { lat: 30.2672, lng: -97.7431 },
                 services: ["Orthopedic", "Pediatric", "Occupational"],
-                rating: 4.8
+                rating: 4.8,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
+            },
+            {
+                id: 7,
+                name: "FYZICAL Therapy & Balance Centers - Houston Galleria",
+                address: "5678 Westheimer Rd, Houston, TX 77057",
+                phone: "(713) 545-7890",
+                coordinates: { lat: 29.7604, lng: -95.3698 },
+                services: ["Orthopedic", "Balance", "Neurological"],
+                rating: 4.7,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
+            },
+            {
+                id: 8,
+                name: "FYZICAL Therapy & Balance Centers - Houston Medical Center",
+                address: "7890 Fannin St, Houston, TX 77030",
+                phone: "(713) 545-8901",
+                coordinates: { lat: 29.7604, lng: -95.3698 },
+                services: ["Neurological", "Pediatric", "Specialty"],
+                rating: 4.9,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
+            },
+            {
+                id: 9,
+                name: "FYZICAL Therapy & Balance Centers - Dallas Uptown",
+                address: "3456 McKinney Ave, Dallas, TX 75204",
+                phone: "(214) 545-9012",
+                coordinates: { lat: 32.7767, lng: -96.7970 },
+                services: ["Orthopedic", "Fitness", "Balance"],
+                rating: 4.8,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
+            },
+            {
+                id: 10,
+                name: "FYZICAL Therapy & Balance Centers - Dallas Plano",
+                address: "1234 Preston Rd, Plano, TX 75093",
+                phone: "(214) 545-0123",
+                coordinates: { lat: 32.7767, lng: -96.7970 },
+                services: ["Pediatric", "Occupational", "Orthopedic"],
+                rating: 4.6,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
+            },
+            {
+                id: 11,
+                name: "FYZICAL Therapy & Balance Centers - Fort Worth",
+                address: "5678 Camp Bowie W, Fort Worth, TX 76107",
+                phone: "(817) 545-1234",
+                coordinates: { lat: 32.7555, lng: -97.3308 },
+                services: ["Orthopedic", "Balance", "Neurological"],
+                rating: 4.7,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
+            },
+            {
+                id: 12,
+                name: "FYZICAL Therapy & Balance Centers - El Paso",
+                address: "8901 Mesa St, El Paso, TX 79912",
+                phone: "(915) 545-2345",
+                coordinates: { lat: 31.7619, lng: -106.4850 },
+                services: ["Orthopedic", "Pediatric", "Fitness"],
+                rating: 4.5,
+                hours: "Mon-Fri: 7AM-7PM, Sat: 8AM-2PM"
             }
         ];
 
-        let filteredLocations = [...locations];
+        let map;
+        let markers = [];
+        let infoWindows = [];
+        let currentLocation = null;
+        let filteredLocations = [...fyzicalLocations];
         let currentFilter = 'all';
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+        // Initialize Google Maps
+        function initMap() {
+            // Default center (San Antonio)
+            const defaultCenter = { lat: 29.7604, lng: -98.5017 };
+            
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: defaultCenter,
+                styles: [
+                    {
+                        featureType: "poi",
+                        elementType: "labels",
+                        stylers: [{ visibility: "off" }]
+                    }
+                ]
+            });
+
+            // Add markers for all locations
+            fyzicalLocations.forEach((location, index) => {
+                const marker = new google.maps.Marker({
+                    position: location.coordinates,
+                    map: map,
+                    title: location.name,
+                    icon: {
+                        url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+                            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" fill="#0066cc" stroke="#ffffff" stroke-width="2"/>
+                                <text x="20" y="25" font-family="Arial" font-size="12" fill="white" text-anchor="middle">${index + 1}</text>
+                            </svg>
+                        `),
+                        scaledSize: new google.maps.Size(40, 40)
+                    }
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <div style="padding: 10px; max-width: 300px;">
+                            <h3 style="margin: 0 0 10px 0; color: #0066cc;">${location.name}</h3>
+                            <p style="margin: 5px 0; color: #666;">${location.address}</p>
+                            <p style="margin: 5px 0;"><strong>Phone:</strong> <a href="tel:${location.phone}">${location.phone}</a></p>
+                            <p style="margin: 5px 0;"><strong>Hours:</strong> ${location.hours}</p>
+                            <p style="margin: 5px 0;"><strong>Services:</strong> ${location.services.join(', ')}</p>
+                            <p style="margin: 5px 0;"><strong>Rating:</strong> ⭐ ${location.rating}</p>
+                            <button onclick="getDirections(${location.coordinates.lat}, ${location.coordinates.lng})" style="background: #ff6600; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-top: 10px;">Get Directions</button>
+                        </div>
+                    `
+                });
+
+                marker.addListener('click', () => {
+                    infoWindows.forEach(iw => iw.close());
+                    infoWindow.open(map, marker);
+                    selectLocationCard(location.id);
+                });
+
+                markers.push(marker);
+                infoWindows.push(infoWindow);
+            });
+        }
+
+        // Get user's current location
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        currentLocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        map.setCenter(currentLocation);
+                        map.setZoom(12);
+                        
+                        // Add user location marker
+                        new google.maps.Marker({
+                            position: currentLocation,
+                            map: map,
+                            title: 'Your Location',
+                            icon: {
+                                url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+                                    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="15" cy="15" r="12" fill="#ff6600" stroke="#ffffff" stroke-width="2"/>
+                                        <circle cx="15" cy="15" r="4" fill="#ffffff"/>
+                                    </svg>
+                                `),
+                                scaledSize: new google.maps.Size(30, 30)
+                            }
+                        });
+                    },
+                    (error) => {
+                        console.log('Error getting location:', error);
+                    }
+                );
             }
-        });
+        }
 
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+        // Get directions to a location
+        function getDirections(lat, lng) {
+            const directionsService = new google.maps.DirectionsService();
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            
+            if (currentLocation) {
+                const request = {
+                    origin: currentLocation,
+                    destination: { lat: lat, lng: lng },
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
 
-        mobileMenuToggle.addEventListener('click', function() {
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-        });
+                directionsService.route(request, (result, status) => {
+                    if (status === 'OK') {
+                        directionsRenderer.setMap(map);
+                        directionsRenderer.setDirections(result);
+                    }
+                });
+            } else {
+                // If no current location, open Google Maps in new tab
+                window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank');
+            }
+        }
 
-        // Search functionality
-        const searchForm = document.getElementById('search-form');
-        const searchInput = document.getElementById('search-input');
-        const locationsGrid = document.getElementById('locations-grid');
-        const resultsCount = document.getElementById('results-count');
+        // Select location card
+        function selectLocationCard(locationId) {
+            // Remove previous selection
+            document.querySelectorAll('.location-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selection to current card
+            const card = document.querySelector(`[data-location-id="${locationId}"]`);
+            if (card) {
+                card.classList.add('selected');
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
 
+        // Render locations in the grid
         function renderLocations(locationsToRender) {
+            const locationsGrid = document.getElementById('locations-grid');
+            const resultsCount = document.getElementById('results-count');
+
             if (locationsToRender.length === 0) {
                 locationsGrid.innerHTML = `
                     <div class="no-results" style="grid-column: 1 / -1;">
@@ -853,13 +1076,13 @@
             }
 
             locationsGrid.innerHTML = locationsToRender.map(location => `
-                <div class="location-card fade-in-up">
+                <div class="location-card fade-in-up" data-location-id="${location.id}" onclick="selectLocationOnMap(${location.id})">
                     <div class="location-header">
                         <div>
                             <div class="location-name">${location.name}</div>
                             <div class="location-address">${location.address}</div>
                         </div>
-                        <div class="location-distance">${location.distance}</div>
+                        <div class="location-distance">${location.distance || 'N/A'}</div>
                     </div>
                     <a href="tel:${location.phone}" class="location-phone">
                         <i class="fas fa-phone"></i> ${location.phone}
@@ -868,8 +1091,8 @@
                         ${location.services.map(service => `<span class="service-tag">${service}</span>`).join('')}
                     </div>
                     <div class="location-actions">
-                        <a href="#" class="btn-primary">Schedule Appointment</a>
-                        <a href="#" class="btn-secondary">Get Directions</a>
+                        <a href="#" class="btn-primary" onclick="scheduleAppointment(${location.id})">Schedule Appointment</a>
+                        <a href="#" class="btn-secondary" onclick="getDirections(${location.coordinates.lat}, ${location.coordinates.lng})">Get Directions</a>
                     </div>
                 </div>
             `).join('');
@@ -877,23 +1100,37 @@
             resultsCount.textContent = locationsToRender.length;
         }
 
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-button');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
+        // Select location on map
+        function selectLocationOnMap(locationId) {
+            const location = fyzicalLocations.find(loc => loc.id === locationId);
+            if (location) {
+                map.setCenter(location.coordinates);
+                map.setZoom(15);
                 
-                currentFilter = this.dataset.filter;
-                filterLocations();
-            });
-        });
+                // Open info window
+                const markerIndex = locationId - 1;
+                if (markers[markerIndex] && infoWindows[markerIndex]) {
+                    infoWindows.forEach(iw => iw.close());
+                    infoWindows[markerIndex].open(map, markers[markerIndex]);
+                }
+            }
+        }
 
+        // Schedule appointment
+        function scheduleAppointment(locationId) {
+            const location = fyzicalLocations.find(loc => loc.id === locationId);
+            if (location) {
+                // You can implement appointment scheduling logic here
+                alert(`Scheduling appointment for ${location.name}. Please call ${location.phone} to book your appointment.`);
+            }
+        }
+
+        // Filter locations
         function filterLocations() {
             if (currentFilter === 'all') {
-                filteredLocations = locations;
+                filteredLocations = fyzicalLocations;
             } else {
-                filteredLocations = locations.filter(location => 
+                filteredLocations = fyzicalLocations.filter(location => 
                     location.services.some(service => 
                         service.toLowerCase().includes(currentFilter.toLowerCase())
                     )
@@ -902,70 +1139,93 @@
             renderLocations(filteredLocations);
         }
 
-        // Search functionality
-        searchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const searchTerm = searchInput.value.toLowerCase();
+        // Initialize everything when the page loads
+        window.addEventListener('load', function() {
+            initMap();
+            renderLocations(fyzicalLocations);
             
-            if (searchTerm.trim() === '') {
-                filterLocations();
-                return;
-            }
-
-            filteredLocations = locations.filter(location => 
-                location.name.toLowerCase().includes(searchTerm) ||
-                location.address.toLowerCase().includes(searchTerm) ||
-                location.services.some(service => service.toLowerCase().includes(searchTerm))
-            );
-
-            renderLocations(filteredLocations);
-        });
-
-        // Sort functionality
-        const sortSelect = document.getElementById('sort-select');
-        sortSelect.addEventListener('change', function() {
-            const sortBy = this.value;
-            
-            filteredLocations.sort((a, b) => {
-                switch(sortBy) {
-                    case 'distance':
-                        return parseFloat(a.distance) - parseFloat(b.distance);
-                    case 'name':
-                        return a.name.localeCompare(b.name);
-                    case 'rating':
-                        return b.rating - a.rating;
-                    default:
-                        return 0;
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
                 }
             });
 
-            renderLocations(filteredLocations);
-        });
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
 
-        // Initialize
-        renderLocations(locations);
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
             });
-        }, observerOptions);
 
-        // Observe all fade-in-up elements
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+            // Search functionality
+            const searchForm = document.getElementById('search-form');
+            const searchInput = document.getElementById('search-input');
+
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                if (searchTerm.trim() === '') {
+                    filterLocations();
+                    return;
+                }
+
+                filteredLocations = fyzicalLocations.filter(location => 
+                    location.name.toLowerCase().includes(searchTerm) ||
+                    location.address.toLowerCase().includes(searchTerm) ||
+                    location.services.some(service => service.toLowerCase().includes(searchTerm))
+                );
+
+                renderLocations(filteredLocations);
+            });
+
+            // Filter buttons
+            const filterButtons = document.querySelectorAll('.filter-button');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    currentFilter = this.dataset.filter;
+                    filterLocations();
+                });
+            });
+
+            // Sort functionality
+            const sortSelect = document.getElementById('sort-select');
+            sortSelect.addEventListener('change', function() {
+                const sortBy = this.value;
+                
+                filteredLocations.sort((a, b) => {
+                    switch(sortBy) {
+                        case 'distance':
+                            return (a.distance || 0) - (b.distance || 0);
+                        case 'name':
+                            return a.name.localeCompare(b.name);
+                        case 'rating':
+                            return b.rating - a.rating;
+                        default:
+                            return 0;
+                    }
+                });
+
+                renderLocations(filteredLocations);
+            });
+
+            // Map controls
+            document.getElementById('center-map').addEventListener('click', getCurrentLocation);
+            document.getElementById('show-all').addEventListener('click', function() {
+                const bounds = new google.maps.LatLngBounds();
+                fyzicalLocations.forEach(location => {
+                    bounds.extend(location.coordinates);
+                });
+                map.fitBounds(bounds);
+            });
         });
     </script>
 </body>

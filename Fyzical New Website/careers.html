@@ -327,229 +327,72 @@
             line-height: 1.6;
         }
 
-        /* Job Listings */
-        .jobs {
+        /* CTA Section */
+        .cta-section {
             padding: 80px 0;
             background: var(--white);
-        }
-
-        .jobs-header {
             text-align: center;
-            margin-bottom: 3rem;
         }
 
-        .job-filters {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .filter-button {
-            background: var(--light-gray);
-            color: var(--text-gray);
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-button.active {
-            background: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .jobs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .job-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            border-color: var(--primary-blue);
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .job-title {
-            font-size: 1.3rem;
-            font-weight: 600;
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
             color: var(--dark-blue);
-            margin-bottom: 0.5rem;
         }
 
-        .job-location {
+        .cta-content p {
+            font-size: 1.2rem;
             color: var(--text-gray);
-            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
-        .job-type {
-            background: var(--accent-orange);
-            color: var(--white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .job-description {
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .job-requirements {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .job-requirements li {
-            padding: 0.25rem 0;
-            color: var(--text-gray);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .job-requirements li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent-orange);
-            font-weight: bold;
-        }
-
-        .job-actions {
+        .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn-primary {
             background: var(--primary-blue);
             color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 20px;
+            padding: 1rem 2rem;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            flex: 1;
-            text-align: center;
+            display: inline-block;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--primary-blue);
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 2rem;
             border: 2px solid var(--primary-blue);
-            border-radius: 20px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            flex: 1;
-            text-align: center;
+            display: inline-block;
         }
 
         .btn-secondary:hover {
             background: var(--primary-blue);
             color: var(--white);
-        }
-
-        /* Application Form */
-        .application {
-            padding: 80px 0;
-            background: var(--light-gray);
-        }
-
-        .application-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: 15px;
-            padding: 3rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark-blue);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--border-gray);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .submit-button {
-            background: var(--accent-orange);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
         }
 
         /* Footer */
@@ -612,22 +455,13 @@
                 gap: 2rem;
             }
 
-            .benefits-grid,
-            .jobs-grid {
+            .benefits-grid {
                 grid-template-columns: 1fr;
             }
 
-            .job-filters {
+            .cta-buttons {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .job-actions {
-                flex-direction: column;
             }
         }
 
@@ -645,12 +479,9 @@
             }
 
             .culture-text h2,
-            .section-title {
+            .section-title,
+            .cta-content h2 {
                 font-size: 2rem;
-            }
-
-            .application-form {
-                padding: 2rem;
             }
         }
 
@@ -736,7 +567,7 @@
                     <p>Join a team that's passionate about revolutionizing healthcare and making a real difference in patients' lives. At FYZICAL, we believe in fostering a culture of innovation, collaboration, and continuous growth.</p>
                     <p>Our team members enjoy working in a supportive environment where their expertise is valued, their growth is encouraged, and their contributions directly impact patient outcomes. We're committed to providing the tools, training, and resources you need to excel in your career.</p>
                     <p>Whether you're a physical therapist, administrator, or healthcare professional, you'll find opportunities to grow, learn, and make a meaningful impact in the communities we serve.</p>
-                    <a href="#jobs" class="cta-button">View Open Positions</a>
+                    <a href="https://fyzicaljobs.com" target="_blank" class="cta-button">Explore Career Opportunities</a>
                 </div>
                 <div class="culture-image fade-in-up">
                     <i class="fas fa-users"></i>
@@ -797,89 +628,21 @@
         </div>
     </section>
 
-    <!-- Job Listings -->
-    <section class="jobs" id="jobs">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="jobs-header">
-                <h2 class="section-title">Open Positions</h2>
-                <p class="section-subtitle">Find your perfect role in our growing organization</p>
+            <div class="cta-content">
+                <h2 class="fade-in-up">Ready to Join Our Team?</h2>
+                <p class="fade-in-up">Discover exciting career opportunities at FYZICAL and be part of a team that's transforming healthcare. Whether you're a physical therapist, administrator, or healthcare professional, we have positions that match your skills and career goals.</p>
+                <div class="cta-buttons fade-in-up">
+                    <a href="https://fyzicaljobs.com" target="_blank" class="btn-primary">
+                        <i class="fas fa-search"></i> Browse Open Positions
+                    </a>
+                    <a href="https://fyzicaljobs.com" target="_blank" class="btn-secondary">
+                        <i class="fas fa-user-plus"></i> Join Our Talent Network
+                    </a>
+                </div>
             </div>
-            <div class="job-filters">
-                <button class="filter-button active" data-filter="all">All Positions</button>
-                <button class="filter-button" data-filter="clinical">Clinical</button>
-                <button class="filter-button" data-filter="administrative">Administrative</button>
-                <button class="filter-button" data-filter="management">Management</button>
-            </div>
-            <div class="jobs-grid" id="jobs-grid">
-                <!-- Job listings will be populated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Application Form -->
-    <section class="application">
-        <div class="container">
-            <h2 class="section-title">Apply Now</h2>
-            <p class="section-subtitle">Ready to join our team? Submit your application below</p>
-            <form class="application-form" id="application-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="first-name">First Name *</label>
-                        <input type="text" id="first-name" name="first-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="last-name">Last Name *</label>
-                        <input type="text" id="last-name" name="last-name" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="position">Position of Interest *</label>
-                    <select id="position" name="position" required>
-                        <option value="">Select a position</option>
-                        <option value="physical-therapist">Physical Therapist</option>
-                        <option value="physical-therapist-assistant">Physical Therapist Assistant</option>
-                        <option value="occupational-therapist">Occupational Therapist</option>
-                        <option value="speech-therapist">Speech Therapist</option>
-                        <option value="office-manager">Office Manager</option>
-                        <option value="receptionist">Receptionist</option>
-                        <option value="billing-specialist">Billing Specialist</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="location">Preferred Location</label>
-                    <input type="text" id="location" name="location" placeholder="City, State">
-                </div>
-                <div class="form-group">
-                    <label for="experience">Years of Experience</label>
-                    <select id="experience" name="experience">
-                        <option value="">Select experience level</option>
-                        <option value="0-1">0-1 years</option>
-                        <option value="2-5">2-5 years</option>
-                        <option value="6-10">6-10 years</option>
-                        <option value="10+">10+ years</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="cover-letter">Cover Letter</label>
-                    <textarea id="cover-letter" name="cover-letter" placeholder="Tell us why you'd like to join FYZICAL..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="resume">Resume/CV *</label>
-                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                </div>
-                <button type="submit" class="submit-button">Submit Application</button>
-            </form>
         </div>
     </section>
 
@@ -928,97 +691,6 @@
     </footer>
 
     <script>
-        // Sample job data
-        const jobs = [
-            {
-                id: 1,
-                title: "Physical Therapist",
-                location: "Downtown, CA",
-                type: "Full-time",
-                category: "clinical",
-                description: "Join our team as a Physical Therapist and help patients achieve their rehabilitation goals through evidence-based treatment approaches.",
-                requirements: [
-                    "Doctorate or Master's degree in Physical Therapy",
-                    "Current state license",
-                    "2+ years of clinical experience preferred",
-                    "Strong communication and interpersonal skills"
-                ]
-            },
-            {
-                id: 2,
-                title: "Physical Therapist Assistant",
-                location: "Westside, CA",
-                type: "Full-time",
-                category: "clinical",
-                description: "Support our physical therapists in delivering high-quality patient care and rehabilitation services.",
-                requirements: [
-                    "Associate's degree in Physical Therapy Assistant",
-                    "Current state license",
-                    "1+ years of experience preferred",
-                    "Team-oriented and patient-focused"
-                ]
-            },
-            {
-                id: 3,
-                title: "Office Manager",
-                location: "Eastside, CA",
-                type: "Full-time",
-                category: "administrative",
-                description: "Lead our administrative team and ensure smooth operations of our physical therapy center.",
-                requirements: [
-                    "Bachelor's degree in Healthcare Administration or related field",
-                    "3+ years of healthcare office management experience",
-                    "Strong leadership and organizational skills",
-                    "Knowledge of healthcare billing and insurance"
-                ]
-            },
-            {
-                id: 4,
-                title: "Receptionist",
-                location: "Northside, CA",
-                type: "Part-time",
-                category: "administrative",
-                description: "Provide excellent customer service and support our patients and clinical team.",
-                requirements: [
-                    "High school diploma or equivalent",
-                    "1+ years of customer service experience",
-                    "Excellent communication skills",
-                    "Proficiency in Microsoft Office"
-                ]
-            },
-            {
-                id: 5,
-                title: "Center Director",
-                location: "Southside, CA",
-                type: "Full-time",
-                category: "management",
-                description: "Lead our center's operations, clinical excellence, and business growth initiatives.",
-                requirements: [
-                    "Master's degree in Healthcare Administration or related field",
-                    "5+ years of healthcare management experience",
-                    "Strong business acumen and leadership skills",
-                    "Experience in physical therapy or rehabilitation"
-                ]
-            },
-            {
-                id: 6,
-                title: "Occupational Therapist",
-                location: "Central, CA",
-                type: "Full-time",
-                category: "clinical",
-                description: "Help patients regain independence in daily activities through occupational therapy interventions.",
-                requirements: [
-                    "Master's degree in Occupational Therapy",
-                    "Current state license",
-                    "2+ years of clinical experience",
-                    "Specialized training in hand therapy preferred"
-                ]
-            }
-        ];
-
-        let filteredJobs = [...jobs];
-        let currentFilter = 'all';
-
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
@@ -1036,58 +708,6 @@
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
         });
-
-        // Job filtering
-        const filterButtons = document.querySelectorAll('.filter-button');
-        const jobsGrid = document.getElementById('jobs-grid');
-
-        function renderJobs(jobsToRender) {
-            jobsGrid.innerHTML = jobsToRender.map(job => `
-                <div class="job-card fade-in-up">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">${job.title}</div>
-                            <div class="job-location">${job.location}</div>
-                        </div>
-                        <div class="job-type">${job.type}</div>
-                    </div>
-                    <div class="job-description">${job.description}</div>
-                    <ul class="job-requirements">
-                        ${job.requirements.map(req => `<li>${req}</li>`).join('')}
-                    </ul>
-                    <div class="job-actions">
-                        <a href="#" class="btn-primary">Apply Now</a>
-                        <a href="#" class="btn-secondary">Learn More</a>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                currentFilter = this.dataset.filter;
-                if (currentFilter === 'all') {
-                    filteredJobs = jobs;
-                } else {
-                    filteredJobs = jobs.filter(job => job.category === currentFilter);
-                }
-                renderJobs(filteredJobs);
-            });
-        });
-
-        // Application form
-        const applicationForm = document.getElementById('application-form');
-        applicationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your application! We will review your information and contact you soon.');
-            this.reset();
-        });
-
-        // Initialize
-        renderJobs(jobs);
 
         // Intersection Observer for animations
         const observerOptions = {

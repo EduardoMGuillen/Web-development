@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIQ - The Passion for Digital Marketing: Our Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .intro-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .intro-text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-statement {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 15px;
+            color: #92400e;
+            line-height: 1.6;
+        }
+        
+        .blog-preview {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 35px 0;
+            text-align: center;
+        }
+        
+        .blog-preview h3 {
+            color: #0369a1;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .blog-preview p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .blog-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .blog-feature {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+            text-align: left;
+        }
+        
+        .blog-feature h4 {
+            color: #0369a1;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .blog-feature p {
+            color: #555;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        
+        .services-section {
+            margin: 40px 0;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 20px;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+        
+        .section-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .service-title {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .service-desc {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .cta-section h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3a8a;
+        }
+        
+        .contact-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 20px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #3b82f6;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/6741ff04bac6c2fa2a8ba663.png" alt="CIQ Logo" class="logo">
+            <h1>The Passion for Digital Marketing</h1>
+            <p class="subtitle">Reflections on the Journey of CreativeIQ</p>
+        </div>
+        
+        <div class="content">
+            <div class="intro-section">
+                <h2>Discover What Drives CreativeIQ's Success</h2>
+                <p class="intro-text">
+                    At CreativeIQ, our passion for digital marketing isn't just about delivering results—it's about understanding the heartbeat of modern business and creating strategies that resonate with real people. We're excited to share our latest blog post that takes you behind the scenes of our journey and philosophy.
+                </p>
+                <div class="highlight-statement">
+                    <strong>From Texas roots to digital innovation:</strong> Learn how our passion for helping businesses grow has shaped our approach to digital marketing and why we believe every business deserves to thrive in the digital age.
+                </div>
+            </div>
+            
+            <!-- Blog Preview Section -->
+            <div class="blog-preview">
+                <h3>📖 New Blog Post: "The Passion for Digital Marketing"</h3>
+                <p>
+                    Dive deep into the story behind CreativeIQ and discover how our passion for digital marketing has evolved from a simple desire to help businesses succeed into a comprehensive approach that transforms online presence and drives real results.
+                </p>
+                
+                <div class="blog-features">
+                    <div class="blog-feature">
+                        <h4>🎯 Our Mission</h4>
+                        <p>Understanding what drives us to help businesses succeed in the digital landscape</p>
+                    </div>
+                    
+                    <div class="blog-feature">
+                        <h4>🚀 Service Evolution</h4>
+                        <p>How we've grown from basic web design to comprehensive digital marketing solutions</p>
+                    </div>
+                    
+                    <div class="blog-feature">
+                        <h4>💡 Innovation Focus</h4>
+                        <p>Why we stay ahead of digital marketing trends and technology</p>
+                    </div>
+                    
+                    <div class="blog-feature">
+                        <h4>🤝 Client Success</h4>
+                        <p>Real stories of how our passion translates to client results</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Services Section -->
+            <div class="services-section">
+                <div class="section-header">
+                    <span class="section-icon">🚀</span>
+                    Our Comprehensive Digital Marketing Services
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="service-icon">💻</span>
+                        <div class="service-title">Website Design</div>
+                        <div class="service-desc">Custom websites that convert visitors into customers</div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">🔍</span>
+                        <div class="service-title">SEO & SEM</div>
+                        <div class="service-desc">Search engine optimization and paid advertising strategies</div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">📱</span>
+                        <div class="service-title">Google Ads</div>
+                        <div class="service-desc">Targeted PPC campaigns that drive qualified leads</div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">🏢</span>
+                        <div class="service-title">GMB Management</div>
+                        <div class="service-desc">Local business visibility and reputation management</div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">📊</span>
+                        <div class="service-title">CRM Optimization</div>
+                        <div class="service-desc">Customer relationship management systems that convert</div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">✍️</span>
+                        <div class="service-title">Content Creation</div>
+                        <div class="service-desc">Engaging content that builds authority and trust</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3>Ready to Read Our Story?</h3>
+                <p>
+                    Discover the passion that drives CreativeIQ and learn how our journey can inspire your business's digital transformation. Read our latest blog post and see why passion matters in digital marketing.
+                </p>
+                
+                <div class="btn-container">
+                    <a href="https://creativeiq.marketing/post/The-Passion-for-Digital-Marketing" class="btn btn-primary">Read the Blog Post</a>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-secondary">Schedule a Consultation</a>
+                </div>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <div class="contact-title">Ready to Work with Passionate Digital Marketers?</div>
+                <div class="contact-info">
+                    <div class="contact-item"><strong>📞 Phone:</strong> (804) 651-2531</div>
+                    <div class="contact-item"><strong>📧 Email:</strong> CiQ@creativeiq.marketing</div>
+                    <div class="contact-item"><strong>🌐 Website:</strong> creativeiq.marketing</div>
+                    <div class="contact-item"><strong>📖 Blog:</strong> creativeiq.marketing/blog</div>
+                    <div class="contact-item"><strong>📍 Location:</strong> Dallas, Texas, USA</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px; font-size: 16px; color: #555;">
+                Join us on our journey to transform digital marketing through passion, innovation, and results.
+            </p>
+            
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+                Best regards,<br>
+                <strong>The CreativeIQ Team</strong>
+            </p>
+        </div>
+        
+        <div class="footer">
+                               <div class="social-links">
+                       <a href="https://www.facebook.com/CreativeIQDigitalmarketing">Facebook</a> | 
+                       <a href="https://www.instagram.com/creativeiq.digitalmarketing">Instagram</a> | 
+                       <a href="https://www.youtube.com/@CreativeIQdigitalmarketing">Youtube</a>
+                   </div>
+            <p>&copy; 2025 CreativeIQ. All Rights Reserved.</p>
+            <p>
+                <a href="https://creativeiq.marketing">Visit Our Website</a> | 
+                <a href="#">Unsubscribe</a> | 
+                <a href="#">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
