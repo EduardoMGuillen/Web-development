@@ -23,6 +23,12 @@ https://creativeiq.marketing/contact
 Blogs
 https://creativeiq.marketing/blogs
 
+Privacy Policy
+https://creativeiq.marketing/privacy-policy
+
+Terms of service
+https://creativeiq.marketing/terms-of-service
+
 *** Social Media URLs
 Facebook
 https://www.facebook.com/CreativeIQDigitalmarketing
@@ -42,3 +48,7 @@ CiQ@creativeiq.marketing
 
 Location
 Dallas, Texas, USA
+
+*** Unsubscribe Link
+
+Use this as unsubscribe Link: {{ unsubscribe_url }}
