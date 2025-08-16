@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #234374;
-            --secondary: #639BE3;
-            --accent: #4475B5;
-            --light: #F3E3D3;
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #204074;
+            --light: #f8fafc;
             --dark: #1a2a4f;
-            --white: #FFFFFF;
-            --shadow: 0 8px 32px rgba(35,67,116,0.10);
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
+            --gradient: transparent;
         }
 
         * {
@@ -32,10 +32,20 @@
             overflow-x: hidden;
         }
 
-        /* Animations */
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         @keyframes slideInLeft {
@@ -48,20 +58,16 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(32, 64, 116, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(32, 64, 116, 0.6); }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
+        /* Hero Section */
         .probate-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 8rem 2rem 6rem;
+            padding: 6rem 2rem;
             position: relative;
             overflow: hidden;
             min-height: 100vh;
@@ -76,49 +82,48 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="800" cy="300" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="400" cy="600" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="600" cy="800" r="3" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 6s ease-in-out infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
         }
 
-        .hero-shapes {
+        .floating-elements {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            z-index: 1;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
         }
 
-        .hero-shape {
+        .floating-element {
             position: absolute;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .hero-shape:nth-child(1) {
-            width: 100px;
-            height: 100px;
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
             top: 20%;
             left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            bottom: 20%;
+            right: 10%;
             animation-delay: -2s;
         }
 
-        .hero-shape:nth-child(2) {
-            width: 150px;
-            height: 150px;
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
             top: 60%;
-            right: 10%;
+            left: 80%;
             animation-delay: -4s;
-        }
-
-        .hero-shape:nth-child(3) {
-            width: 80px;
-            height: 80px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: -6s;
         }
 
         .container {
@@ -141,21 +146,22 @@
         }
 
         .hero-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1.5rem;
             color: var(--white);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .hero-subtitle {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             font-weight: 400;
-            color: var(--light);
+            color: var(--white);
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .hero-description {
@@ -164,6 +170,7 @@
             margin-bottom: 3rem;
             color: var(--white);
             opacity: 0.9;
+            max-width: 600px;
         }
 
         .hero-buttons {
@@ -204,7 +211,7 @@
         }
 
         .btn-primary {
-            background: var(--accent);
+            background: var(--secondary);
             color: var(--white);
             box-shadow: var(--shadow);
         }
@@ -212,7 +219,7 @@
         .btn-primary:hover {
             background: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(35,67,116,0.2);
+            box-shadow: 0 12px 40px rgba(32,64,116,0.2);
         }
 
         .btn-secondary {
@@ -337,10 +344,10 @@
 </head>
 <body>
     <section class="probate-hero">
-        <div class="hero-shapes">
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
         </div>
         
         <div class="container">
@@ -390,5 +397,17 @@
             </div>
         </div>
     </section>
+    <script>
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-element');
+            
+            parallax.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
 </body>
 </html> 

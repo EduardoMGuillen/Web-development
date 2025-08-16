@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #234374;
-            --secondary: #639BE3;
-            --accent: #4475B5;
-            --light: #F3E3D3;
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #204074;
+            --light: #f8fafc;
             --dark: #1a2a4f;
-            --white: #FFFFFF;
-            --shadow: 0 8px 32px rgba(35,67,116,0.10);
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         }
 
@@ -77,14 +77,13 @@
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="100" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="900" cy="200" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="300" cy="800" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="700" cy="600" r="3" fill="rgba(35,67,116,0.05)"/></svg>');
-            animation: float 8s ease-in-out infinite;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--light), transparent);
         }
 
         .section-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             text-align: center;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -94,10 +93,11 @@
 
         .section-subtitle {
             font-size: 1.2rem;
-            color: var(--white);
-            opacity: 0.9;
+            color: var(--dark);
+            opacity: 0.8;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 4rem;
+            text-align: center;
         }
 
         .section-title::after {
@@ -106,36 +106,28 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-bottom: 4rem;
+            margin-top: 3rem;
         }
 
         .service-card {
             background: var(--white);
-            border-radius: 20px;
             padding: 2.5rem;
-            text-align: center;
+            border-radius: 16px;
             box-shadow: var(--shadow);
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .service-card:nth-child(even) {
-            animation-delay: 0.2s;
-        }
-
-        .service-card:nth-child(3n) {
-            animation-delay: 0.4s;
+            border: 1px solid rgba(32,64,116,0.1);
         }
 
         .service-card::before {
@@ -146,212 +138,112 @@
             right: 0;
             height: 4px;
             background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(35,67,116,0.15);
+            box-shadow: 0 20px 40px rgba(32,64,116,0.15);
         }
 
         .service-icon {
             width: 80px;
             height: 80px;
-            margin: 0 auto 1.5rem;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-icon i {
             font-size: 2rem;
             color: var(--white);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
-            animation: pulse 1s ease-in-out infinite;
-        }
-
-        .service-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .service-description {
-            color: var(--dark);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .service-features li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--accent);
-            font-size: 0.8rem;
-        }
-
-        .service-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background: var(--accent);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            z-index: 2;
             position: relative;
-            overflow: hidden;
         }
 
-        .service-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .service-cta:hover::before {
-            left: 100%;
-        }
-
-        .service-cta:hover {
-            background: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .expertise-section {
-            background: var(--light);
-            padding: 4rem 2rem;
-            border-radius: 20px;
-            margin-top: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .expertise-section::before {
+        .service-icon::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M50 100 L150 100 M100 50 L100 150" stroke="rgba(35,67,116,0.05)" stroke-width="2" fill="none"/></svg>');
-            animation: float 6s ease-in-out infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: pulse 3s ease-in-out infinite;
         }
 
-        .expertise-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .expertise-text {
-            animation: slideInLeft 1s ease-out;
-        }
-
-        .expertise-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 2.5rem;
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .service-card p {
+            color: var(--dark);
+            line-height: 1.6;
             margin-bottom: 1.5rem;
         }
 
-        .expertise-description {
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
             color: var(--dark);
-            line-height: 1.8;
-            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 1.5rem;
         }
 
-        .expertise-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            animation: slideInRight 1s ease-out;
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
         }
 
-        .stat-box {
+        .service-cta {
+            margin-top: 1.5rem;
             text-align: center;
-            padding: 2rem;
-            background: var(--white);
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
         }
 
-        .stat-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-family: 'Times New Roman', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--dark);
+        .service-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
             font-size: 0.9rem;
-            opacity: 0.8;
+        }
+
+        .service-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            color: var(--white);
+            text-decoration: none;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
-            .expertise-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .expertise-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .probate-services {
-                padding: 4rem 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
             .section-title {
                 font-size: 2rem;
             }
@@ -359,173 +251,159 @@
             .service-card {
                 padding: 2rem;
             }
+        }
 
-            .expertise-section {
-                padding: 3rem 1rem;
-            }
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <section class="probate-services">
         <div class="container">
-            <h2 class="section-title">Probate Law Services</h2>
-            <p class="section-subtitle">Comprehensive legal support for all your probate needs</p>
+            <h2 class="section-title">Comprehensive Probate Services</h2>
+            <p class="section-subtitle">We handle all aspects of probate administration with expertise and compassion</p>
             
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3 class="service-title">Estate Administration</h3>
-                    <p class="service-description">
-                        Complete guidance through the probate process, from filing initial documents to final distribution of assets.
-                    </p>
-                    <ul class="service-features">
-                        <li>Probate court filings</li>
-                        <li>Asset inventory and valuation</li>
-                        <li>Creditor notifications</li>
-                        <li>Estate distribution</li>
-                    </ul>
-                    <a href="#contact" class="service-cta">
-                        <i class="fas fa-arrow-right"></i>
-                        Learn More
-                    </a>
-                </div>
-
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-gavel"></i>
                     </div>
-                    <h3 class="service-title">Will Contests</h3>
-                    <p class="service-description">
-                        Expert representation in will disputes, ensuring your rights are protected and your interests are advocated for.
-                    </p>
+                    <h3>Probate Administration</h3>
+                    <p>Complete probate administration services including filing petitions, inventory management, and final distribution of assets.</p>
                     <ul class="service-features">
-                        <li>Will validity challenges</li>
-                        <li>Undue influence claims</li>
-                        <li>Capacity disputes</li>
-                        <li>Fraud allegations</li>
+                        <li>Petition for probate</li>
+                        <li>Asset inventory and valuation</li>
+                        <li>Creditor notification</li>
+                        <li>Final distribution</li>
                     </ul>
-                    <a href="#contact" class="service-cta">
-                        <i class="fas fa-arrow-right"></i>
-                        Learn More
-                    </a>
+                    <div class="service-cta">
+                        <a href="#contact" class="service-btn">Learn More</a>
+                    </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Will Validation & Contest</h3>
+                    <p>Professional will validation services and representation in will contest proceedings when necessary.</p>
+                    <ul class="service-features">
+                        <li>Will validation</li>
+                        <li>Contest representation</li>
+                        <li>Witness testimony</li>
+                        <li>Court proceedings</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="service-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="service-title">Guardianship</h3>
-                    <p class="service-description">
-                        Assistance with guardianship proceedings for minors and incapacitated adults, ensuring proper care and protection.
-                    </p>
+                    <h3>Executor & Administrator Support</h3>
+                    <p>Comprehensive support for executors and administrators throughout the probate process.</p>
                     <ul class="service-features">
-                        <li>Guardianship petitions</li>
-                        <li>Court representation</li>
-                        <li>Guardian duties guidance</li>
-                        <li>Annual reporting</li>
+                        <li>Executor guidance</li>
+                        <li>Administrator support</li>
+                        <li>Fiduciary duties</li>
+                        <li>Compliance assistance</li>
                     </ul>
-                    <a href="#contact" class="service-cta">
-                        <i class="fas fa-arrow-right"></i>
-                        Learn More
-                    </a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="service-cta">
+                        <a href="#contact" class="service-btn">Learn More</a>
                     </div>
-                    <h3 class="service-title">Trust Administration</h3>
-                    <p class="service-description">
-                        Professional management of trust assets and distributions, ensuring compliance with trust terms and legal requirements.
-                    </p>
-                    <ul class="service-features">
-                        <li>Trust asset management</li>
-                        <li>Beneficiary communications</li>
-                        <li>Distribution planning</li>
-                        <li>Tax compliance</li>
-                    </ul>
-                    <a href="#contact" class="service-cta">
-                        <i class="fas fa-arrow-right"></i>
-                        Learn More
-                    </a>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="service-title">Real Estate Probate</h3>
-                    <p class="service-description">
-                        Specialized handling of real estate matters within probate proceedings, including sales, transfers, and valuations.
-                    </p>
-                    <ul class="service-features">
-                        <li>Property valuations</li>
-                        <li>Court-supervised sales</li>
-                        <li>Title transfers</li>
-                        <li>Partition actions</li>
-                    </ul>
-                    <a href="#contact" class="service-cta">
-                        <i class="fas fa-arrow-right"></i>
-                        Learn More
-                    </a>
-                </div>
-
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <i class="fas fa-calculator"></i>
                     </div>
-                    <h3 class="service-title">Estate Tax Planning</h3>
-                    <p class="service-description">
-                        Strategic tax planning to minimize estate tax liability and maximize the value passed to beneficiaries.
-                    </p>
+                    <h3>Estate Tax Planning</h3>
+                    <p>Strategic estate tax planning to minimize tax liability and maximize inheritance for beneficiaries.</p>
                     <ul class="service-features">
-                        <li>Tax return preparation</li>
-                        <li>Estate tax minimization</li>
-                        <li>Gift tax planning</li>
-                        <li>IRS representation</li>
+                        <li>Tax minimization</li>
+                        <li>Exemption planning</li>
+                        <li>Gift strategies</li>
+                        <li>Trust planning</li>
                     </ul>
-                    <a href="#contact" class="service-cta">
-                        <i class="fas fa-arrow-right"></i>
-                        Learn More
-                    </a>
-                </div>
-            </div>
-
-            <div class="expertise-section">
-                <div class="expertise-content">
-                    <div class="expertise-text">
-                        <h3 class="expertise-title">Why Choose Our Probate Services?</h3>
-                        <p class="expertise-description">
-                            With over 15 years of experience in probate law, we understand the complexities and emotional challenges of estate administration. Our team provides compassionate, efficient, and cost-effective solutions tailored to your specific needs.
-                        </p>
-                        <p class="expertise-description">
-                            We handle all aspects of probate proceedings, from simple estate administrations to complex will contests, ensuring your family's interests are protected throughout the process.
-                        </p>
+                    <div class="service-cta">
+                        <a href="#contact" class="service-btn">Learn More</a>
                     </div>
-                    <div class="expertise-stats">
-                        <div class="stat-box">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Probate Cases Handled</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">95%</span>
-                            <span class="stat-label">Success Rate</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">30</span>
-                            <span class="stat-label">Days Average Resolution</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Client Support</span>
-                        </div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Real Estate in Probate</h3>
+                    <p>Specialized handling of real estate assets during probate, including sales and transfers.</p>
+                    <ul class="service-features">
+                        <li>Property management</li>
+                        <li>Sale coordination</li>
+                        <li>Title transfers</li>
+                        <li>Market analysis</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="service-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Family Dispute Resolution</h3>
+                    <p>Mediation and resolution services for family disputes that commonly arise during probate.</p>
+                    <ul class="service-features">
+                        <li>Family mediation</li>
+                        <li>Dispute resolution</li>
+                        <li>Conflict management</li>
+                        <li>Consensus building</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="service-btn">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        // Scroll Animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run on page load
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
 </body>
 </html> 

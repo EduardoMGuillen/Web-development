@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Probate Law Contact - Morales Padia Law</title>
+    <title>Probate Contact - Morales Padia Law</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #234374;
-            --secondary: #639BE3;
-            --accent: #4475B5;
-            --light: #F3E3D3;
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #204074;
+            --light: #f8fafc;
             --dark: #1a2a4f;
-            --white: #FFFFFF;
-            --shadow: 0 8px 32px rgba(35,67,116,0.10);
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         }
 
@@ -48,9 +48,21 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .probate-contact {
@@ -65,205 +77,513 @@
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="800" cy="300" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="400" cy="700" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="600" cy="500" r="2" fill="rgba(35,67,116,0.05)"/></svg>');
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--light), transparent);
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            color: var(--white);
-            animation: fadeInUp 0.8s ease-out;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
         }
 
         .section-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            color: var(--white);
-            animation: fadeInUp 0.8s ease-out 0.2s both;
+            font-size: 1.2rem;
+            color: var(--dark);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            text-align: center;
         }
 
-        .urgent-notice {
-            background: rgba(245, 158, 11, 0.2);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
         }
 
-        .urgent-notice h3 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .urgent-notice p {
-            opacity: 0.9;
-            font-size: 0.95rem;
-            color: var(--white);
-        }
-
-        .contact-methods {
+        .contact-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
             margin-top: 3rem;
-            width: 100%;
+        }
+
+        .contact-info {
+            animation: slideInLeft 1s ease-out;
         }
 
         .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            background: var(--white);
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(32,64,116,0.1);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-method::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .contact-method:hover::before {
+            transform: scaleX(1);
         }
 
         .contact-method:hover {
-            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(32,64,116,0.15);
         }
 
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
             color: var(--white);
-            flex-shrink: 0;
         }
 
-        .contact-details h3 {
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(32,64,116,0.1);
+            animation: slideInRight 1s ease-out;
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
             font-weight: 600;
-            margin-bottom: 0.3rem;
-            font-size: 1.1rem;
-            color: var(--white);
+            font-size: 0.9rem;
         }
 
-        .contact-details p {
-            opacity: 0.9;
-            font-size: 0.95rem;
-            color: var(--white);
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(32,64,116,0.1);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+            color: var(--dark);
         }
 
-        /* Mobile Responsive */
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(32,64,116,0.2);
+        }
+
+        .contact-cta {
+            background: var(--light);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-top: 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="50" cy="50" r="2" fill="rgba(32,64,116,0.05)"/><circle cx="150" cy="100" r="1" fill="rgba(32,64,116,0.05)"/><circle cx="100" cy="150" r="2" fill="rgba(32,64,116,0.05)"/></svg>');
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .probate-contact {
-                padding: 4rem 1rem;
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .contact-methods {
+            .form-row {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
 
             .contact-method {
                 padding: 1.5rem;
             }
         }
+
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .cta-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
     <section class="probate-contact" id="contact">
         <div class="container">
+            <h2 class="section-title">Contact Our Probate Attorneys</h2>
+            <p class="section-subtitle">Get the expert legal guidance you need during this difficult time</p>
+            
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2 class="section-title">Get Probate Law Help Today</h2>
-                    <p class="section-subtitle">
-                        Don't navigate probate legal matters alone. Our experienced 
-                        team is here to guide you through every step of the process.
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="contact-title">Phone Consultation</h3>
+                        <div class="contact-details">
+                            <p><strong>Main Office:</strong> <a href="tel:+1234567890">(123) 456-7890</a></p>
+                            <p><strong>24/7 Emergency:</strong> <a href="tel:+1234567891">(123) 456-7891</a></p>
+                            <p><strong>Hours:</strong> Monday-Friday 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-title">Email Support</h3>
+                        <div class="contact-details">
+                            <p><strong>General Inquiries:</strong> <a href="mailto:info@moralespadialaw.com">info@moralespadialaw.com</a></p>
+                            <p><strong>Probate Team:</strong> <a href="mailto:probate@moralespadialaw.com">probate@moralespadialaw.com</a></p>
+                            <p><strong>Response Time:</strong> Within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="contact-title">Office Location</h3>
+                        <div class="contact-details">
+                            <p><strong>Address:</strong> 123 Legal Street, Suite 100<br>City, State 12345</p>
+                            <p><strong>Parking:</strong> Free parking available</p>
+                            <p><strong>Accessibility:</strong> Wheelchair accessible</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="contact-title">Appointment Scheduling</h3>
+                        <div class="contact-details">
+                            <p><strong>In-Person:</strong> Available by appointment</p>
+                            <p><strong>Virtual:</strong> Video consultations available</p>
+                            <p><strong>Same Day:</strong> Emergency consultations available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 class="form-title">Schedule Your Free Consultation</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="caseType" class="form-label">Case Type *</label>
+                            <select id="caseType" name="caseType" class="form-select" required>
+                                <option value="">Select a case type</option>
+                                <option value="probate-administration">Probate Administration</option>
+                                <option value="will-contest">Will Contest</option>
+                                <option value="executor-support">Executor Support</option>
+                                <option value="estate-tax-planning">Estate Tax Planning</option>
+                                <option value="real-estate-probate">Real Estate in Probate</option>
+                                <option value="family-dispute">Family Dispute Resolution</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency" class="form-label">Urgency Level</label>
+                            <select id="urgency" name="urgency" class="form-select">
+                                <option value="standard">Standard (1-2 weeks)</option>
+                                <option value="urgent">Urgent (3-5 days)</option>
+                                <option value="emergency">Emergency (Same day)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Brief Description of Your Case *</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Please provide a brief description of your situation..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contact-cta">
+                <div class="cta-content">
+                    <h3 class="cta-title">Don't Wait - Get Help Today</h3>
+                    <p class="cta-description">
+                        The probate process can be complex and overwhelming. Our experienced attorneys are here to guide you through every step, ensuring your loved one's estate is handled with care and expertise.
                     </p>
-
-                    <div class="urgent-notice">
-                        <h3><i class="fas fa-exclamation-circle"></i> Urgent Probate Matter?</h3>
-                        <p>
-                            We understand that probate emergencies can't wait. Contact us 
-                            immediately for urgent matters requiring immediate attention.
-                        </p>
-                    </div>
-
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Call Us</h3>
-                                <p>(555) 123-4567</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Email Us</h3>
-                                <p>probate@moralespadialaw.com</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Visit Us</h3>
-                                <p>123 Probate Law Street<br>San Antonio, TX 78201</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Office Hours</h3>
-                                <p>Mon-Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 2:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="tel:+1234567890" class="cta-button">
+                        <i class="fas fa-phone"></i>
+                        Call Now for Immediate Assistance
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message (replace with actual form submission logic)
+            alert('Thank you for your message! We will contact you within 24 hours.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add hover effects to contact methods
+        document.querySelectorAll('.contact-method').forEach(method => {
+            method.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            method.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Form validation
+        document.querySelectorAll('.form-input, .form-textarea, .form-select').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = 'rgba(32,64,116,0.1)';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.style.borderColor = 'rgba(32,64,116,0.1)';
+                }
+            });
+        });
+    </script>
 </body>
 </html> 

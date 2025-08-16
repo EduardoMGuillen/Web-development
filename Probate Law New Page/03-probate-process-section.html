@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #234374;
-            --secondary: #639BE3;
-            --accent: #4475B5;
-            --light: #F3E3D3;
+            --primary: #204074;
+            --secondary: #3b82f6;
+            --accent: #204074;
+            --light: #f8fafc;
             --dark: #1a2a4f;
-            --white: #FFFFFF;
-            --shadow: 0 8px 32px rgba(35,67,116,0.10);
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(32,64,116,0.10);
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         }
 
@@ -58,11 +58,6 @@
             50% { transform: translateY(-10px); }
         }
 
-        @keyframes progressFill {
-            from { width: 0%; }
-            to { width: 100%; }
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -82,14 +77,13 @@
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="rgba(35,67,116,0.05)"/><circle cx="800" cy="300" r="3" fill="rgba(35,67,116,0.05)"/><circle cx="400" cy="700" r="2" fill="rgba(35,67,116,0.05)"/></svg>');
-            animation: float 8s ease-in-out infinite;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--light), transparent);
         }
 
         .section-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             text-align: center;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -99,10 +93,11 @@
 
         .section-subtitle {
             font-size: 1.2rem;
-            color: var(--white);
-            opacity: 0.9;
+            color: var(--dark);
+            opacity: 0.8;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 4rem;
+            text-align: center;
         }
 
         .section-title::after {
@@ -111,42 +106,32 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
         }
 
         .process-timeline {
             position: relative;
-            margin-bottom: 6rem;
+            max-width: 1000px;
+            margin: 4rem auto 0;
         }
 
-        .timeline-line {
+        .process-timeline::before {
+            content: '';
             position: absolute;
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: var(--light);
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-
-        .timeline-progress {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            width: 3px;
-            height: 0;
+            width: 4px;
             background: var(--gradient);
             transform: translateX(-50%);
-            z-index: 2;
-            animation: progressFill 3s ease-out forwards;
         }
 
         .process-step {
             position: relative;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             animation: fadeInUp 1s ease-out;
         }
 
@@ -158,432 +143,444 @@
             animation-delay: 0.4s;
         }
 
-        .step-content {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            position: relative;
-            z-index: 3;
+        .process-step:nth-child(4n) {
+            animation-delay: 0.6s;
         }
 
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Times New Roman', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--white);
-            position: relative;
-            flex-shrink: 0;
-            box-shadow: var(--shadow);
-            animation: pulse 2s ease-in-out infinite;
+        .process-step:nth-child(5n) {
+            animation-delay: 0.8s;
         }
 
-        .step-number::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: pulse 2s ease-in-out infinite;
+        .process-step:nth-child(6n) {
+            animation-delay: 1s;
         }
 
-        .step-info {
-            flex: 1;
+        .process-content {
             background: var(--white);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 16px;
             box-shadow: var(--shadow);
-            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
+            width: calc(50% - 2rem);
+            border: 1px solid rgba(32,64,116,0.1);
         }
 
-        .step-info::before {
+        .process-step:nth-child(odd) .process-content {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .process-step:nth-child(even) .process-content {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .process-step::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
             background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            box-shadow: 0 0 0 4px var(--white), 0 0 0 8px rgba(32,64,116,0.1);
         }
 
-        .step-info:hover::before {
-            transform: scaleX(1);
+        .process-step:nth-child(odd)::before {
+            left: calc(50% + 1rem);
         }
 
-        .step-info:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(35,67,116,0.15);
+        .process-step:nth-child(even)::before {
+            left: calc(50% - 1rem);
         }
 
-        .step-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 1.5rem;
+        .process-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .process-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             color: var(--primary);
             margin-bottom: 1rem;
-            font-weight: 600;
+            line-height: 1.3;
         }
 
-        .step-description {
+        .process-description {
             color: var(--dark);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
-        .step-duration {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--light);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+        .process-duration {
             font-size: 0.9rem;
-            color: var(--accent);
+            color: var(--secondary);
             font-weight: 600;
-        }
-
-        .step-features {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .step-features li {
-            padding: 0.5rem 0;
-            color: var(--dark);
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .step-features li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--accent);
+        .process-duration i {
             font-size: 0.8rem;
         }
 
-        /* Alternate layout for even steps */
-        .process-step:nth-child(even) .step-content {
-            flex-direction: row-reverse;
+        .process-requirements {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(32,64,116,0.1);
         }
 
-        .process-step:nth-child(even) .step-info {
+        .process-requirements h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .process-requirements ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .process-requirements li {
+            font-size: 0.85rem;
+            color: var(--dark);
+            padding: 0.25rem 0;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .process-requirements li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .process-overview {
             background: var(--light);
-        }
-
-        .cta-section {
-            background: var(--gradient);
-            color: var(--white);
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
             border-radius: 20px;
+            margin-top: 4rem;
             text-align: center;
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 1s ease-out;
         }
 
-        .cta-section::before {
+        .process-overview::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M50 100 L150 100 M100 50 L100 150" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></svg>');
-            animation: float 6s ease-in-out infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="50" cy="50" r="2" fill="rgba(32,64,116,0.05)"/><circle cx="150" cy="100" r="1" fill="rgba(32,64,116,0.05)"/><circle cx="100" cy="150" r="2" fill="rgba(32,64,116,0.05)"/></svg>');
+            animation: float 8s ease-in-out infinite;
         }
 
-        .cta-title {
-            font-family: 'Times New Roman', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .overview-content {
             position: relative;
             z-index: 2;
         }
 
-        .cta-description {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: var(--white);
+        .overview-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             color: var(--primary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-            overflow: hidden;
+            margin-bottom: 1rem;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(35,67,116,0.1), transparent);
-            transition: left 0.6s ease;
+        .overview-description {
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        .overview-stat {
+            text-align: center;
+        }
+
+        .overview-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .overview-stat-label {
+            color: var(--dark);
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .timeline-line,
-            .timeline-progress {
-                left: 40px;
+            .process-timeline::before {
+                left: 2rem;
             }
 
-            .step-content {
-                flex-direction: column;
-                text-align: center;
+            .process-content {
+                width: calc(100% - 4rem);
+                margin-left: 4rem !important;
+                margin-right: 0 !important;
             }
 
-            .process-step:nth-child(even) .step-content {
-                flex-direction: column;
-            }
-
-            .step-number {
-                position: relative;
-                left: -50px;
+            .process-step::before {
+                left: 2rem !important;
             }
 
             .section-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
-            .probate-process {
-                padding: 4rem 1rem;
+            .overview-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
-            .section-title {
-                font-size: 2rem;
+            .overview-stats {
+                grid-template-columns: 1fr;
             }
 
-            .step-info {
+            .process-content {
                 padding: 1.5rem;
             }
+        }
 
-            .cta-section {
-                padding: 3rem 1rem;
-            }
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
 
-            .cta-title {
-                font-size: 2rem;
-            }
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <section class="probate-process">
         <div class="container">
-            <h2 class="section-title">The Probate Process</h2>
-            <p class="section-subtitle">Understanding each step of the probate journey</p>
+            <h2 class="section-title">The Probate Process Explained</h2>
+            <p class="section-subtitle">Understanding the step-by-step journey through probate administration</p>
             
             <div class="process-timeline">
-                <div class="timeline-line"></div>
-                <div class="timeline-progress"></div>
-                
                 <div class="process-step">
-                    <div class="step-content">
-                        <div class="step-number">1</div>
-                        <div class="step-info">
-                            <h3 class="step-title">Filing the Petition</h3>
-                            <p class="step-description">
-                                The probate process begins with filing a petition with the probate court. We handle all necessary paperwork, including the death certificate, will (if applicable), and initial court filings.
-                            </p>
-                            <span class="step-duration">
-                                <i class="fas fa-clock"></i>
-                                1-2 weeks
-                            </span>
-                            <ul class="step-features">
-                                <li>Petition preparation and filing</li>
-                                <li>Death certificate processing</li>
-                                <li>Court scheduling</li>
-                                <li>Initial notices</li>
+                    <div class="process-content">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">Initial Consultation & Assessment</h3>
+                        <p class="process-description">We begin with a comprehensive review of the estate, including assets, debts, and family dynamics to determine the best approach.</p>
+                        <div class="process-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>1-2 weeks</span>
+                        </div>
+                        <div class="process-requirements">
+                            <h4>Required Documents:</h4>
+                            <ul>
+                                <li>Death certificate</li>
+                                <li>Original will (if exists)</li>
+                                <li>Asset information</li>
+                                <li>Family contact details</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="process-step">
-                    <div class="step-content">
-                        <div class="step-number">2</div>
-                        <div class="step-info">
-                            <h3 class="step-title">Appointment of Personal Representative</h3>
-                            <p class="step-description">
-                                The court will appoint a personal representative (executor) to manage the estate. We guide you through the appointment process and ensure all legal requirements are met.
-                            </p>
-                            <span class="step-duration">
-                                <i class="fas fa-clock"></i>
-                                2-3 weeks
-                            </span>
-                            <ul class="step-features">
-                                <li>Court hearing attendance</li>
+                    <div class="process-content">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">Filing Probate Petition</h3>
+                        <p class="process-description">We file the necessary legal documents with the probate court to initiate the formal probate process.</p>
+                        <div class="process-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>2-4 weeks</span>
+                        </div>
+                        <div class="process-requirements">
+                            <h4>Required Documents:</h4>
+                            <ul>
+                                <li>Probate petition</li>
+                                <li>Death certificate</li>
+                                <li>Will (if applicable)</li>
+                                <li>Filing fees</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-content">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">Court Hearing & Appointment</h3>
+                        <p class="process-description">The court holds a hearing to validate the will and appoint an executor or administrator for the estate.</p>
+                        <div class="process-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>4-8 weeks</span>
+                        </div>
+                        <div class="process-requirements">
+                            <h4>Required Documents:</h4>
+                            <ul>
+                                <li>Court hearing notice</li>
+                                <li>Proof of publication</li>
+                                <li>Bond (if required)</li>
                                 <li>Letters of administration</li>
-                                <li>Bond arrangements</li>
-                                <li>Authority establishment</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="process-step">
-                    <div class="step-content">
-                        <div class="step-number">3</div>
-                        <div class="step-info">
-                            <h3 class="step-title">Asset Inventory & Valuation</h3>
-                            <p class="step-description">
-                                We assist in identifying, locating, and valuing all estate assets. This includes real estate, bank accounts, investments, personal property, and any other assets owned by the deceased.
-                            </p>
-                            <span class="step-duration">
-                                <i class="fas fa-clock"></i>
-                                4-6 weeks
-                            </span>
-                            <ul class="step-features">
-                                <li>Asset identification</li>
-                                <li>Professional appraisals</li>
-                                <li>Inventory preparation</li>
-                                <li>Court filing</li>
+                    <div class="process-content">
+                        <div class="process-number">4</div>
+                        <h3 class="process-title">Asset Inventory & Valuation</h3>
+                        <p class="process-description">We conduct a thorough inventory of all estate assets and obtain professional valuations when necessary.</p>
+                        <div class="process-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>2-6 weeks</span>
+                        </div>
+                        <div class="process-requirements">
+                            <h4>Required Documents:</h4>
+                            <ul>
+                                <li>Asset inventory</li>
+                                <li>Appraisals</li>
+                                <li>Account statements</li>
+                                <li>Property records</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="process-step">
-                    <div class="step-content">
-                        <div class="step-number">4</div>
-                        <div class="step-info">
-                            <h3 class="step-title">Creditor Notification</h3>
-                            <p class="step-description">
-                                All known creditors must be notified of the probate proceedings. We publish required notices and handle creditor claims to ensure proper debt settlement.
-                            </p>
-                            <span class="step-duration">
-                                <i class="fas fa-clock"></i>
-                                4-6 months
-                            </span>
-                            <ul class="step-features">
-                                <li>Creditor notifications</li>
-                                <li>Public notice publication</li>
-                                <li>Claims review</li>
-                                <li>Debt settlement</li>
+                    <div class="process-content">
+                        <div class="process-number">5</div>
+                        <h3 class="process-title">Creditor Notification & Claims</h3>
+                        <p class="process-description">We notify all known creditors and handle any claims against the estate according to legal requirements.</p>
+                        <div class="process-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>4-12 weeks</span>
+                        </div>
+                        <div class="process-requirements">
+                            <h4>Required Documents:</h4>
+                            <ul>
+                                <li>Creditor notices</li>
+                                <li>Publication of notice</li>
+                                <li>Claim forms</li>
+                                <li>Payment records</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="process-step">
-                    <div class="step-content">
-                        <div class="step-number">5</div>
-                        <div class="step-info">
-                            <h3 class="step-title">Tax Matters</h3>
-                            <p class="step-description">
-                                We handle all tax-related matters, including final income tax returns, estate tax returns (if applicable), and ensure all tax obligations are properly addressed.
-                            </p>
-                            <span class="step-duration">
-                                <i class="fas fa-clock"></i>
-                                2-4 months
-                            </span>
-                            <ul class="step-features">
-                                <li>Final tax returns</li>
-                                <li>Estate tax planning</li>
-                                <li>Tax clearances</li>
-                                <li>IRS correspondence</li>
-                            </ul>
+                    <div class="process-content">
+                        <div class="process-number">6</div>
+                        <h3 class="process-title">Final Distribution & Closing</h3>
+                        <p class="process-description">We distribute the remaining assets to beneficiaries and file the final accounting to close the estate.</p>
+                        <div class="process-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>2-4 weeks</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-content">
-                        <div class="step-number">6</div>
-                        <div class="step-info">
-                            <h3 class="step-title">Asset Distribution</h3>
-                            <p class="step-description">
-                                Once all debts are paid and legal requirements satisfied, we oversee the distribution of remaining assets to beneficiaries according to the will or state law.
-                            </p>
-                            <span class="step-duration">
-                                <i class="fas fa-clock"></i>
-                                2-4 weeks
-                            </span>
-                            <ul class="step-features">
-                                <li>Distribution planning</li>
-                                <li>Asset transfers</li>
-                                <li>Beneficiary communications</li>
+                        <div class="process-requirements">
+                            <h4>Required Documents:</h4>
+                            <ul>
                                 <li>Final accounting</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-content">
-                        <div class="step-number">7</div>
-                        <div class="step-info">
-                            <h3 class="step-title">Estate Closure</h3>
-                            <p class="step-description">
-                                The final step involves closing the estate by filing all required documents with the court and ensuring all legal obligations have been fulfilled.
-                            </p>
-                            <span class="step-duration">
-                                <i class="fas fa-clock"></i>
-                                1-2 weeks
-                            </span>
-                            <ul class="step-features">
-                                <li>Final court filings</li>
-                                <li>Closure documentation</li>
-                                <li>Record maintenance</li>
-                                <li>Case completion</li>
+                                <li>Distribution receipts</li>
+                                <li>Closing petition</li>
+                                <li>Court order</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="cta-section">
-                <h3 class="cta-title">Ready to Start the Process?</h3>
-                <p class="cta-description">
-                    Don't navigate the probate process alone. Our experienced team will guide you through every step, ensuring your loved one's estate is handled with care and expertise.
-                </p>
-                <a href="#contact" class="cta-button">
-                    <i class="fas fa-calendar-alt"></i>
-                    Schedule Your Consultation
-                </a>
+            <div class="process-overview">
+                <div class="overview-content">
+                    <h3 class="overview-title">Probate Process Overview</h3>
+                    <p class="overview-description">
+                        The complete probate process typically takes 6-18 months depending on the complexity of the estate, court schedules, and any disputes that may arise. Our experienced team ensures efficient handling while maintaining the highest standards of legal compliance.
+                    </p>
+                    <div class="overview-stats">
+                        <div class="overview-stat">
+                            <span class="overview-stat-number">6-18</span>
+                            <span class="overview-stat-label">Months Average</span>
+                        </div>
+                        <div class="overview-stat">
+                            <span class="overview-stat-number">95%</span>
+                            <span class="overview-stat-label">Success Rate</span>
+                        </div>
+                        <div class="overview-stat">
+                            <span class="overview-stat-number">24/7</span>
+                            <span class="overview-stat-label">Client Support</span>
+                        </div>
+                        <div class="overview-stat">
+                            <span class="overview-stat-number">500+</span>
+                            <span class="overview-stat-label">Cases Completed</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <script>
+        // Scroll Animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.process-step');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run on page load
+
+        // Add hover effects to process steps
+        document.querySelectorAll('.process-content').forEach(content => {
+            content.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+                this.style.boxShadow = '0 20px 40px rgba(32,64,116,0.15)';
+            });
+            
+            content.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = 'var(--shadow)';
+            });
+        });
+    </script>
 </body>
 </html> 
