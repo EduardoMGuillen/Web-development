@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Awards & Recognition Carousel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Optimized Awards & Recognition Carousel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -77,30 +77,31 @@
         /* Ensure exactly 4 badges are visible on desktop */
         @media (min-width: 1200px) {
             .badges-carousel {
-                max-width: 1040px; /* 4 badges (230px each) + 3 gaps (30px each) = 1010px + padding */
+                max-width: 1040px;
             }
         }
         
         /* Ensure exactly 3 badges are visible on tablet */
         @media (min-width: 968px) and (max-width: 1199px) {
             .badges-carousel {
-                max-width: 780px; /* 3 badges (230px each) + 2 gaps (30px each) = 750px + padding */
+                max-width: 780px;
             }
         }
         
         /* Ensure exactly 2 badges are visible on mobile */
         @media (min-width: 768px) and (max-width: 967px) {
             .badges-carousel {
-                max-width: 520px; /* 2 badges (230px each) + 1 gap (30px each) = 490px + padding */
+                max-width: 520px;
             }
         }
         
         .badges-container {
             display: flex;
-            transition: transform 0.6s ease-in-out;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             align-items: center;
             gap: 30px;
             padding: 20px 0;
+            will-change: transform;
         }
         
         .badge {
@@ -111,7 +112,7 @@
             padding: 25px 18px;
             box-shadow: 0 8px 25px rgba(32, 64, 116, 0.08);
             border: 1px solid rgba(32, 64, 116, 0.1);
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             cursor: pointer;
             position: relative;
             overflow: hidden;
@@ -122,6 +123,7 @@
             text-align: center;
             flex-shrink: 0;
             color: var(--badges-primary);
+            will-change: transform;
         }
         
         .badge.primary {
@@ -129,7 +131,10 @@
             color: var(--badges-white);
         }
         
-
+        .badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(32, 64, 116, 0.15);
+        }
         
         .badge-icon {
             font-size: 2.2rem;
@@ -184,10 +189,6 @@
             opacity: 0.9;
             color: var(--badges-white);
         }
-        
-
-        
-
         
         /* Mobile Responsiveness */
         @media (max-width: 968px) {
@@ -299,6 +300,17 @@
                 margin-bottom: 6px;
             }
         }
+        
+        /* Performance optimizations */
+        .badges-container {
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        
+        .badge {
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
     </style>
 </head>
 <body>
@@ -394,21 +406,43 @@
     </div>
     
     <script>
-        class BadgesCarousel {
+        class OptimizedBadgesCarousel {
             constructor() {
                 this.currentSlide = 0;
                 this.totalSlides = 5;
                 this.autoScrollInterval = null;
-                this.autoScrollDuration = 3000; // 3 seconds - faster for testing
+                this.autoScrollDuration = 5000; // Increased to 5 seconds for better performance
                 this.visibleSlides = this.calculateVisibleSlides();
+                this.isMobile = this.detectMobile();
+                this.isVisible = this.isElementInViewport();
                 
-                console.log('BadgesCarousel constructor called');
+                console.log('OptimizedBadgesCarousel constructor called');
                 this.initializeCarousel();
                 this.handleResize();
+                this.handleVisibilityChange();
                 
-                // Start auto-scroll immediately
-                this.startAutoScroll();
-                console.log('Auto-scroll started immediately');
+                // Only start auto-scroll on desktop and when visible
+                if (!this.isMobile && this.isVisible) {
+                    this.startAutoScroll();
+                    console.log('Auto-scroll started for desktop');
+                }
+            }
+            
+            detectMobile() {
+                return window.innerWidth <= 768;
+            }
+            
+            isElementInViewport() {
+                const element = document.querySelector('.badges-section');
+                if (!element) return false;
+                
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
             }
             
             calculateVisibleSlides() {
@@ -420,61 +454,105 @@
             }
             
             handleResize() {
+                let resizeTimeout;
                 window.addEventListener('resize', () => {
-                    this.visibleSlides = this.calculateVisibleSlides();
-                    this.updateCarousel();
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        this.visibleSlides = this.calculateVisibleSlides();
+                        this.isMobile = this.detectMobile();
+                        this.updateCarousel();
+                        
+                        // Restart auto-scroll if switching between mobile/desktop
+                        if (this.isMobile) {
+                            this.stopAutoScroll();
+                        } else if (this.isVisible && !this.autoScrollInterval) {
+                            this.startAutoScroll();
+                        }
+                    }, 250); // Debounced resize handling
                 });
+            }
+            
+            handleVisibilityChange() {
+                // Use Intersection Observer for better performance
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            this.isVisible = entry.isIntersecting;
+                            if (this.isVisible && !this.isMobile && !this.autoScrollInterval) {
+                                this.startAutoScroll();
+                            } else if (!this.isVisible) {
+                                this.stopAutoScroll();
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    
+                    const element = document.querySelector('.badges-section');
+                    if (element) observer.observe(element);
+                }
             }
             
             initializeCarousel() {
                 const container = document.querySelector('.badges-container');
+                if (!container) return;
                 
-                // Touch/swipe support
+                // Touch/swipe support with passive listeners for better performance
                 let startX = 0;
                 let endX = 0;
+                let isDragging = false;
                 
                 container.addEventListener('touchstart', (e) => {
                     startX = e.touches[0].clientX;
-                });
+                    isDragging = true;
+                    this.stopAutoScroll();
+                }, { passive: true });
                 
                 container.addEventListener('touchmove', (e) => {
-                    endX = e.touches[0].clientX;
-                });
+                    if (isDragging) {
+                        endX = e.touches[0].clientX;
+                    }
+                }, { passive: true });
                 
                 container.addEventListener('touchend', () => {
-                    const threshold = 50;
-                    const diff = startX - endX;
-                    
-                    if (Math.abs(diff) > threshold) {
-                        this.stopAutoScroll();
-                        if (diff > 0) {
-                            this.nextSlide();
-                        } else {
-                            this.prevSlide();
+                    if (isDragging) {
+                        const threshold = 50;
+                        const diff = startX - endX;
+                        
+                        if (Math.abs(diff) > threshold) {
+                            if (diff > 0) {
+                                this.nextSlide();
+                            } else {
+                                this.prevSlide();
+                            }
                         }
-                        this.startAutoScroll();
+                        
+                        isDragging = false;
+                        
+                        // Restart auto-scroll on desktop after touch interaction
+                        if (!this.isMobile && this.isVisible) {
+                            setTimeout(() => this.startAutoScroll(), 1000);
+                        }
                     }
-                });
-                
-
+                }, { passive: true });
             }
             
             updateCarousel() {
                 const container = document.querySelector('.badges-container');
-                const slideWidth = 260; // badge width + gap (230px + 30px)
+                if (!container) return;
                 
+                const slideWidth = 260; // badge width + gap (230px + 30px)
                 const offset = -(this.currentSlide * slideWidth);
-                container.style.transform = `translateX(${offset}px)`;
+                
+                // Use transform3d for better GPU acceleration
+                container.style.transform = `translate3d(${offset}px, 0, 0)`;
                 
                 // Check if we need to reset for infinite loop
-                // Only reset when we've moved past what would show the original 5 badges
                 if (this.currentSlide >= this.totalSlides) {
                     setTimeout(() => {
                         container.style.transition = 'none';
                         this.currentSlide = 0;
-                        container.style.transform = `translateX(0px)`;
+                        container.style.transform = 'translate3d(0, 0, 0)';
                         setTimeout(() => {
-                            container.style.transition = 'transform 0.6s ease-in-out';
+                            container.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
                         }, 50);
                     }, 600);
                 }
@@ -501,12 +579,16 @@
             }
             
             startAutoScroll() {
+                if (this.isMobile) return; // Don't auto-scroll on mobile
+                
                 this.stopAutoScroll();
                 console.log('Starting auto-scroll with interval:', this.autoScrollDuration);
                 
                 this.autoScrollInterval = setInterval(() => {
-                    console.log('Auto-scroll tick');
-                    this.nextSlide();
+                    if (this.isVisible && !this.isMobile) {
+                        console.log('Auto-scroll tick');
+                        this.nextSlide();
+                    }
                 }, this.autoScrollDuration);
             }
             
@@ -522,11 +604,11 @@
         let carousel;
         
         function initCarousel() {
-            console.log('Attempting to initialize carousel...');
+            console.log('Attempting to initialize optimized carousel...');
             const container = document.querySelector('.badges-container');
             if (container) {
-                carousel = new BadgesCarousel();
-                console.log('Badges carousel initialized successfully');
+                carousel = new OptimizedBadgesCarousel();
+                console.log('Optimized badges carousel initialized successfully');
                 return true;
             } else {
                 console.log('Badges container not found');
@@ -542,4 +624,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
