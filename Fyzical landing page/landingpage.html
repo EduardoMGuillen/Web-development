@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FYZICAL Therapy & Balance Centers - South San Antonio, TX</title>
+    <meta name="description" content="FYZICAL Therapy & Balance Centers in South San Antonio, TX. Specializing in balance therapy, fall prevention, orthopedic rehabilitation, and comprehensive physical therapy services. Accepting most insurance plans.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-blue: #60a5fa;
+            --light-blue: #dbeafe;
+            --lighter-blue: #eff6ff;
+            --dark-blue: #1e3a8a;
+            --white: #ffffff;
+            --off-white: #fafafa;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --orange: #F54927;
+            --border-light: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: transparent;
+            font-weight: 500;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+
+
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-dark);
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+
+
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-logo img {
+            max-width: 400px;
+            height: auto;
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoGlow {
+            0% {
+                filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3));
+                transform: scale(1);
+            }
+            100% {
+                filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
+                transform: scale(1.02);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .moved-notice {
+            background: var(--lighter-blue);
+            color: var(--primary-blue);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid var(--light-blue);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: transparent;
+            position: relative;
+            z-index: 10;
+        }
+
+
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-category {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .service-category:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-blue);
+        }
+
+        .service-category h3 {
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-category i {
+            color: var(--secondary-blue);
+            font-size: 1.75rem;
+            background: var(--lighter-blue);
+            padding: 0.75rem;
+            border-radius: 12px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            line-height: 1.5;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            color: var(--secondary-blue);
+            font-weight: bold;
+            margin-right: 1rem;
+            background: var(--lighter-blue);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+
+        /* Insurance Section */
+        .insurance-section {
+            padding: 100px 0;
+            background: transparent;
+            position: relative;
+            z-index: 10;
+        }
+
+        .insurance-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            background: var(--lighter-blue);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--light-blue);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .insurance-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .insurance-column h4 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .insurance-list {
+            list-style: none;
+        }
+
+        .insurance-list li {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Fall Prevention Section */
+        .fall-prevention {
+            padding: 100px 0;
+            background: transparent;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fall-risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .risk-assessment {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .risk-assessment p span {
+            color: var(--orange) !important;
+        }
+        
+        .risk-assessment .orange-text {
+            color: var(--orange) !important;
+        }
+
+        .risk-assessment h3 {
+            color: var(--white);
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
+        }
+
+        .risk-factors {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .risk-factors li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--white) !important;
+        }
+
+        .risk-factors li::before {
+            content: '✓';
+            color: var(--accent-blue);
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-choose {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .why-choose h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .why-choose p {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        .insurance-note {
+            background: var(--secondary-blue);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: transparent;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            padding: 1rem;
+            background: var(--lighter-blue);
+            border-radius: 12px;
+            border: 1px solid var(--light-blue);
+            font-weight: 500;
+        }
+
+        .contact-item i {
+            color: var(--accent-blue);
+            font-size: 1.25rem;
+            width: 24px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            background: var(--primary-blue);
+            color: var(--white);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            background: var(--dark-blue);
+        }
+
+        /* Mobile-First Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+                text-align: center;
+            }
+
+            .hero-section {
+                padding: 60px 0 40px;
+                text-align: center;
+            }
+
+            .hero-split {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-left, .hero-right {
+                text-align: center;
+                animation: none; /* Remove slide animations on mobile */
+            }
+
+            .hero-logo img {
+                max-width: 300px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+                text-align: center;
+            }
+
+            .hero-description {
+                text-align: center;
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .moved-notice {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .fall-month-title {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .promotion-features {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+                text-align: center;
+            }
+
+            .feature-item {
+                justify-content: center;
+                text-align: center;
+            }
+
+            /* Services Section Mobile */
+            .services-section {
+                text-align: center;
+                padding: 60px 0;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: clamp(1.8rem, 5vw, 2.5rem);
+            }
+
+            .section-header p {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .services-grid {
+                gap: 1.5rem;
+            }
+
+            .service-category {
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .service-category h3 {
+                justify-content: center;
+                text-align: center;
+                font-size: 1.3rem;
+            }
+
+            .service-list {
+                text-align: left;
+                max-width: 100%;
+            }
+
+            .service-list li {
+                justify-content: flex-start;
+                font-size: 1rem;
+            }
+
+            /* Insurance Section Mobile */
+            .insurance-section {
+                text-align: center;
+                padding: 60px 0;
+            }
+
+            .insurance-container {
+                margin: 2rem auto 0;
+                padding: 2rem 1.5rem;
+            }
+
+            .insurance-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            /* Fall Prevention Mobile */
+            .fall-prevention {
+                text-align: center;
+                padding: 60px 0;
+            }
+
+            .fall-risk-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .risk-assessment, .why-choose {
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            /* Contact Section Mobile */
+            .contact-section {
+                text-align: center;
+                padding: 60px 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .contact-item {
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 1rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+                text-align: center;
+            }
+
+            .hero-section {
+                padding: 40px 0 30px;
+            }
+
+            .hero-logo img {
+                max-width: 250px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 0.875rem 1rem;
+                font-size: 1rem;
+            }
+
+            .fall-month-title {
+                font-size: 1.5rem;
+            }
+
+            .fall-month-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .service-category,
+            .risk-assessment,
+            .why-choose {
+                padding: 1.5rem 1rem;
+            }
+
+            .insurance-container {
+                margin: 1.5rem auto 0;
+                padding: 1.5rem 1rem;
+            }
+
+            .service-category h3 {
+                font-size: 1.2rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .service-category i {
+                font-size: 1.5rem;
+            }
+
+            .contact-item {
+                font-size: 0.9rem;
+                padding: 0.75rem;
+            }
+
+            .social-link {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+            }
+
+            .moved-notice {
+                font-size: 0.9rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Individual Image Sections */
+        .image-divider {
+            padding: 60px 0;
+            background: transparent;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .image-divider img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .image-divider img:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .image-divider {
+                padding: 40px 0;
+            }
+        }
+
+        /* Additional styling for better visual hierarchy */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+            margin: 0 auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <!-- Hero Section -->
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-left {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-right {
+            animation: slideInRight 1s ease-out;
+            background: var(--lighter-blue);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid var(--light-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+            z-index: 0;
+        }
+
+        .promotion-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .fall-month-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .fall-month-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .fall-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .promotion-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .feature-item:nth-child(1) { animation-delay: 0.2s; }
+        .feature-item:nth-child(2) { animation-delay: 0.4s; }
+        .feature-item:nth-child(3) { animation-delay: 0.6s; }
+        .feature-item:nth-child(4) { animation-delay: 0.8s; }
+
+        .feature-item i {
+            color: var(--primary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-right {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-split">
+                <div class="hero-left">
+                    <div class="hero-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/685710d73df5ba258ade0172.png" alt="FYZICAL Therapy & Balance Centers" />
+                    </div>
+                    <div class="hero-subtitle">Therapy & Balance Centers</div>
+                    <h1 class="hero-title">South San Antonio, TX</h1>
+                    <p class="hero-description">
+                        Leading the healthcare revolution with innovative wellness programs and clinical care. 
+                        Specializing in balance therapy, fall prevention, and comprehensive physical therapy services.
+                    </p>
+                    <div class="hero-slogan" style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--orange); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 0.1em; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        LOVE YOUR LIFE.
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#services" class="btn-primary">Our Services</a>
+                        <a href="#contact" class="btn-secondary">Contact Us</a>
+                    </div>
+                    <div class="moved-notice" style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        88 Briggs Ave #245
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="promotion-content">
+                        <div class="fall-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h2 class="fall-month-title">Fight The Fall Month</h2>
+                        <p class="fall-month-subtitle">Join our mission to prevent falls and promote better balance. Early detection means early prevention!</p>
+                        <div class="promotion-features">
+                            <div class="feature-item">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Body Weakness</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-dizzy"></i>
+                                <span>Vertigo & Dizziness</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-walking"></i>
+                                <span>Mobility Issues</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-balance-scale"></i>
+                                <span>Balance Problems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Comprehensive Services</h2>
+                <p>We offer a wide range of physical therapy and rehabilitation services to help you achieve optimal health and wellness.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-category fade-in-up">
+                    <h3><i class="fas fa-heartbeat"></i> Core Services</h3>
+                    <ul class="service-list">
+                        <li>Balance & Fall Prevention</li>
+                        <li>Pediatric Rehabilitation</li>
+                        <li>Testing Training & Rehabilitation</li>
+                        <li>Vestibular Therapy</li>
+                        <li>Shoulder, Hip, & Knee Therapy</li>
+                        <li>Spine Therapy</li>
+                        <li>Functional Capacity Evaluations</li>
+                        <li>Orthopedic & Sports Injury Physical Therapy</li>
+                        <li>Personal Injury (Auto Accident)</li>
+                    </ul>
+                </div>
+
+                <div class="service-category fade-in-up">
+                    <h3><i class="fas fa-briefcase"></i> Work & Employment Services</h3>
+                    <ul class="service-list">
+                        <li>Work Injury Testing & Rehabilitation</li>
+                        <li>Work Conditioning | Work Hardening</li>
+                        <li>Employment & Return to Work Testing</li>
+                        <li>Body Q System</li>
+                    </ul>
+                </div>
+
+                <div class="service-category fade-in-up">
+                    <h3><i class="fas fa-star"></i> Specialized Care</h3>
+                    <ul class="service-list">
+                        <li>Podiatric Rehabilitation</li>
+                        <li>Personal Training</li>
+                        <li>Solostep Safety Harness System</li>
+                        <li>Shuttle Balance System</li>
+                        <li>LSVT BIG</li>
+                    </ul>
+                </div>
+
+                <div class="service-category fade-in-up">
+                    <h3><i class="fas fa-plus-circle"></i> Pain Management</h3>
+                    <ul class="service-list">
+                        <li>Laser Therapy Category IV Laser</li>
+                        <li>Juvent Micro-Vibration Treatments</li>
+                        <li>Hivamat Therapy</li>
+                        <li>Acoustic Wave Therapy</li>
+                        <li>Manual Therapy</li>
+                        <li>Myofascial Relief Therapy</li>
+                        <li>TENS: Transcutaneous Electrical Nerve Stimulation</li>
+                        <li>Therapeutic Electricity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Divider 1 -->
+    <div class="image-divider">
+        <div class="container">
+            <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/68b650ea92f47f1b523722c1.jpeg" alt="FYZICAL Team Member" loading="lazy" />
+        </div>
+    </div>
+
+    <!-- Insurance Section -->
+    <section class="insurance-section" id="insurance">
+        <div class="container">
+            <div class="section-header">
+                <h2>Insurance & Payment Options</h2>
+                <p>We accept most major insurance plans and offer flexible payment options to ensure you can access the care you need.</p>
+            </div>
+            
+            <div class="insurance-container">
+                <div class="insurance-content">
+                    <div class="insurance-column">
+                        <h4>Major Insurance</h4>
+                        <ul class="insurance-list">
+                            <li>AETNA</li>
+                            <li>BCBS</li>
+                            <li>HUMANA</li>
+                            <li>MEDICARE</li>
+                            <li>MEDICAID</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="insurance-column">
+                        <h4>Government & Special</h4>
+                        <ul class="insurance-list">
+                            <li>DEPT. OF LABOR</li>
+                            <li>AMERIGROUP</li>
+                            <li>COMMUNITY FIRST</li>
+                            <li>SUPERIOR</li>
+                            <li>L.O.P</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="insurance-column">
+                        <h4>Additional Plans</h4>
+                        <ul class="insurance-list">
+                            <li>ALL ONE CIGNA</li>
+                            <li>UNITED HEALTH CARE TEXAS</li>
+                            <li>MUTUAL</li>
+                            <li>LIBERTYMUTUAL</li>
+                            <li>PERSONAL INJURY PROTECTION (PIP)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/68b64efe92f47f6f3236d6d0.pdf" target="_blank" class="btn-primary" style="background: var(--primary-blue); padding: 1.25rem 2.5rem; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: white; border-radius: 50px; box-shadow: var(--shadow-lg);">
+                    <i class="fas fa-file-pdf"></i>
+                    Take this referral pad to your primary care provider (PCP) and start your journey to love your life.
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Divider 2 -->
+    <div class="image-divider">
+        <div class="container">
+            <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/68b650ea869d5b0a5931ec8b.jpeg" alt="FYZICAL Treatment Room" loading="lazy" />
+        </div>
+    </div>
+
+    <!-- Fall Prevention Section -->
+    <section class="fall-prevention">
+        <div class="container">
+            <div class="section-header">
+                <h2>Fight The Fall Month - Fall Prevention</h2>
+                <p>Every year, thousands of San Antonio residents experience falls that could have been prevented. Early detection means early prevention.</p>
+            </div>
+            
+            <div class="fall-risk-grid">
+                <div class="risk-assessment fade-in-up">
+                    <h3>Free Fall Risk Assessment</h3>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                        <i class="fas fa-exclamation-triangle" style="color: var(--orange) !important;"></i> <span style="color: var(--orange) !important; font-weight: 600 !important;">Early detection means early prevention.</span>
+                    </p>
+                    <ul class="risk-factors" style="color: var(--white)";>
+                        <li>Body weakness</li>
+                        <li>Vertigo & dizziness</li>
+                        <li>Pain & mobility limitations</li>
+                        <li>Balance issues</li>
+                    </ul>
+                </div>
+                
+                <div class="why-choose fade-in-up">
+                    <h3>Why Choose Us</h3>
+                    <p>Our programs focus on pain reduction and long-lasting alleviation, helping you regain comfort and mobility. Each treatment plan is personalized and tailored to meet your specific needs.</p>
+                    <div class="insurance-note">
+                        Best of all, insurance is <strong>NOT REQUIRED</strong> to get started—you can begin your care right away!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Divider 3 -->
+    <div class="image-divider">
+        <div class="container">
+            <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/68b650ea869d5b019431ec8a.png" alt="FYZICAL Therapy Equipment" loading="lazy" />
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Information</h2>
+                <p>Get in touch with us to schedule your appointment or learn more about our services.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info fade-in-up">
+                    <div style="margin-bottom: 2rem; text-align: center;">
+                        <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/685710d73df5ba258ade0172.png" alt="FYZICAL Logo" style="max-width: 200px; height: auto; opacity: 0.8;" />
+                    </div>
+                    <h3>Location & Contact</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>88 Briggs Ave #245, San Antonio, TX 78224</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(210) 921-1599</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-fax"></i>
+                        <span>(210) 921-2088</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>southsanantonio@fyzical.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>www.Fyzicalsanantonio.com</span>
+                    </div>
+                </div>
+                
+                <div class="contact-info fade-in-up">
+                    <h3>Connect With Us</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">
+                        Follow us on social media for the latest updates, health tips, and success stories from our patients.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/fyzicaltherapysatx" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Divider 4 -->
+    <div class="image-divider">
+        <div class="container">
+            <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/68b650eac459064efe26bd40.jpeg" alt="FYZICAL Therapy Session" loading="lazy" />
+        </div>
+    </div>
+
+    <script>
+        // Add fade-in animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service categories and other elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToObserve = document.querySelectorAll('.service-category, .risk-assessment, .why-choose, .contact-info');
+            elementsToObserve.forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize Particles.js
+        particlesJS('particles-js',
+        {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#3b82f6"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#60a5fa",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
