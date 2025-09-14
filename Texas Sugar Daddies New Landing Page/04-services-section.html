@@ -1,0 +1,164 @@
+<!-- Section 04: Services Grid Section -->
+<section id="services" class="services">
+    <div class="container">
+        <h2>What We Offer</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">🎂</div>
+                <h3>Custom Cakes</h3>
+                <p>Personalized birthday cakes, wedding cakes, and special occasion desserts made with love and the finest ingredients. Every cake tells an American story!</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🍪</div>
+                <h3>Fresh Baked Goods</h3>
+                <p>Daily fresh cookies, brownies, muffins, and other sweet treats that will make your taste buds dance with joy!</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🎉</div>
+                <h3>Event Catering</h3>
+                <p>Perfect desserts for your next event, party, or corporate gathering. We'll make it sweet and memorable - American style!</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🚚</div>
+                <h3>Local Delivery</h3>
+                <p>Fresh baked goods delivered to your doorstep across San Antonio. Hot and fresh, just like homemade!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Services Section */
+.services {
+    padding: 6rem 0;
+    background: transparent;
+    color: white;
+    position: relative;
+}
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.services h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    color: #FFFFFF;
+    font-weight: 900;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+}
+
+.service-card {
+    background: transparent;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: #FFFFFF;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.service-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #FFFFFF, #B22234);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 3rem;
+    color: #FFFFFF;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.2) rotate(360deg);
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.service-card p {
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+</style>
+
+<script>
+// Fade in animation on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+});
+</script>

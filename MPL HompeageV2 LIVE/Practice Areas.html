@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Practice Areas Section</title>
+        
+        <!-- Resource Hints for Performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        
+        <!-- Optimized Font Loading - Only Essential Weights -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+        <style>
+            :root {
+                --primary: #234374;
+                --secondary: #639be3;
+                --accent: #4475b5;
+                --light: #f8fafc;
+                --dark: #4475b5;
+                --white: #fff;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                background: transparent;
+                color: var(--dark);
+                line-height: 1.6;
+                font-weight: 400;
+            }
+            .section {
+                padding: 80px 0;
+                margin: 0 auto;
+                max-width: 1200px;
+                width: 90%;
+            }
+            .section-title {
+                font-family: "Playfair Display", serif;
+                font-size: 2.5rem;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 3rem;
+                color: var(--primary);
+                position: relative;
+            }
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, var(--accent), var(--secondary));
+                border-radius: 2px;
+            }
+            .section-title em {
+                color: var(--accent);
+                font-style: italic;
+                text-shadow: 0 2px 10px rgba(68, 117, 181, 0.3);
+            }
+            .service-tabs {
+                display: flex;
+                justify-content: center;
+                gap: 0;
+                margin-bottom: 3rem;
+                background: #f1f5f9;
+                border-radius: 15px;
+                padding: 8px;
+                box-shadow: 0 5px 15px rgba(30, 58, 138, 0.08);
+            }
+            .service-tab {
+                background: transparent;
+                border: none;
+                padding: 15px 25px;
+                font-size: 1rem;
+                font-weight: 600;
+                color: #64748b;
+                cursor: pointer;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+                position: relative;
+                flex: 1;
+                max-width: 200px;
+                -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+                touch-action: manipulation; /* Optimize for touch */
+            }
+            .service-tab:hover {
+                color: var(--primary);
+                background: rgba(255, 255, 255, 0.5);
+            }
+            .service-tab.active {
+                background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+                color: var(--white);
+                box-shadow: 0 5px 15px rgba(30, 58, 138, 0.2);
+            }
+            .service-content {
+                position: relative;
+                min-height: 500px;
+            }
+            .service-panel {
+                display: none;
+                animation: fadeIn 0.5s ease-in-out;
+            }
+            .service-panel.active {
+                display: block;
+            }
+            .service-layout {
+                display: flex;
+                gap: 3rem;
+                align-items: flex-start;
+                background: linear-gradient(145deg, var(--white) 0%, #f8fafc 100%);
+                border-radius: 20px;
+                padding: 3rem;
+                box-shadow: 0 15px 40px rgba(30, 58, 138, 0.08);
+                border: 1px solid rgba(59, 130, 246, 0.1);
+            }
+            .service-image {
+                flex: 0 0 300px;
+            }
+            .service-image img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 15px;
+                box-shadow: 0 10px 25px rgba(30, 58, 138, 0.1);
+                transition: all 0.3s ease;
+            }
+            .service-image img:hover {
+                transform: scale(1.02);
+                box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15);
+            }
+            .service-info {
+                flex: 1;
+            }
+            .service-info h3 {
+                font-family: "Playfair Display", serif;
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--primary);
+                margin-bottom: 1.5rem;
+            }
+            .service-info p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                color: #374151;
+                margin-bottom: 2rem;
+            }
+            .service-info h4 {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: var(--secondary);
+                margin-bottom: 1rem;
+                position: relative;
+            }
+            .service-info h4::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 40px;
+                height: 2px;
+                background: var(--accent);
+                border-radius: 1px;
+            }
+            .service-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 0.8rem;
+            }
+            .service-list li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 15px;
+                background: rgba(59, 130, 246, 0.05);
+                border-radius: 8px;
+                color: var(--primary);
+                font-weight: 500;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                border-left: 3px solid transparent;
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+                min-height: 44px; /* Minimum touch target size */
+            }
+            .service-list li:hover {
+                background: rgba(59, 130, 246, 0.1);
+                border-left-color: var(--accent);
+                transform: translateX(5px);
+            }
+            .service-list li i {
+                color: var(--accent);
+                font-size: 0.9rem;
+                opacity: 0.7;
+                transition: all 0.3s ease;
+            }
+            .service-list li:hover i {
+                opacity: 1;
+                transform: translateX(3px);
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @media (max-width: 968px) {
+                .section {
+                    width: 95%;
+                    padding: 50px 0 30px 0;
+                }
+                .service-tabs {
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    padding: 8px;
+                    margin-bottom: 2rem;
+                }
+                .service-tab {
+                    flex: 1;
+                    min-width: calc(50% - 4px);
+                    padding: 12px 15px;
+                    font-size: 0.9rem;
+                    text-align: center;
+                }
+                .service-layout {
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    padding: 1.5rem 1rem;
+                }
+                .service-image {
+                    flex: none;
+                    order: -1; /* Move image to top on mobile */
+                }
+                .service-image img {
+                    height: 180px;
+                    width: 100%;
+                }
+                .service-info h3 {
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+                .service-info p {
+                    font-size: 1rem;
+                    text-align: center;
+                }
+                .service-info h4 {
+                    text-align: center;
+                    font-size: 1.1rem;
+                }
+                .service-list {
+                    grid-template-columns: 1fr;
+                    gap: 0.6rem;
+                }
+                .service-list li {
+                    padding: 12px 15px;
+                    font-size: 0.9rem;
+                    border-radius: 10px;
+                }
+            }
+            @media (max-width: 768px) {
+                .section-title {
+                    font-size: 1.8rem;
+                    margin-bottom: 1.5rem;
+                }
+                .service-tabs {
+                    gap: 6px;
+                    padding: 6px;
+                }
+                .service-tab {
+                    padding: 10px 12px;
+                    font-size: 0.85rem;
+                }
+                .service-layout {
+                    padding: 1.2rem 0.8rem;
+                }
+                .service-image img {
+                    height: 160px;
+                }
+                .service-info h3 {
+                    font-size: 1.4rem;
+                    margin-bottom: 1rem;
+                }
+                .service-info p {
+                    font-size: 0.95rem;
+                    line-height: 1.5;
+                    margin-bottom: 1.5rem;
+                }
+                .service-info h4 {
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                }
+                .service-list li {
+                    padding: 10px 12px;
+                    font-size: 0.85rem;
+                    margin-bottom: 0.3rem;
+                }
+                .service-list li:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            @media (max-width: 480px) {
+                .section {
+                    width: 98%;
+                    padding: 30px 0.3rem;
+                }
+                .section-title {
+                    font-size: 1.6rem;
+                    margin-bottom: 1.2rem;
+                    padding: 0 0.5rem;
+                }
+                .service-tabs {
+                    flex-direction: column;
+                    gap: 6px;
+                    padding: 4px;
+                    margin-bottom: 1.5rem;
+                }
+                .service-tab {
+                    min-width: 100%;
+                    padding: 12px 15px;
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                }
+                .service-layout {
+                    padding: 1rem 0.8rem;
+                    gap: 1.2rem;
+                    border-radius: 15px;
+                }
+                .service-image img {
+                    height: 150px;
+                    border-radius: 12px;
+                }
+                .service-info h3 {
+                    font-size: 1.3rem;
+                    margin-bottom: 0.8rem;
+                }
+                .service-info p {
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    margin-bottom: 1.2rem;
+                }
+                .service-info h4 {
+                    font-size: 1rem;
+                    margin-bottom: 0.8rem;
+                }
+                .service-list {
+                    gap: 0.4rem;
+                }
+                .service-list li {
+                    padding: 12px 15px;
+                    font-size: 0.85rem;
+                    border-radius: 8px;
+                    transition: all 0.2s ease;
+                }
+                .service-list li:hover {
+                    transform: translateX(2px);
+                }
+                .service-list li a {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Hidden SEO Navigation for Audit Tools - Only Links Used in This Section -->
+        <nav style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true" class="seo-nav">
+            <!-- Family Law Services (Used in Family Law Tab) -->
+            <a href="https://www.moralespadialaw.com/family-law/uncontested-divorce">Uncontested Divorce</a>
+            <a href="https://www.moralespadialaw.com/family-law/contested-divorce">Contested Divorce</a>
+            <a href="https://www.moralespadialaw.com/family-law/child-custody">Child Custody</a>
+            <a href="https://www.moralespadialaw.com/family-law/child-support">Child Support</a>
+            <a href="https://www.moralespadialaw.com/family-law/adoption">Adoption</a>
+            <a href="https://www.moralespadialaw.com/family-law/property-division">Property Division</a>
+            <a href="https://www.moralespadialaw.com/family-law/spousal-maintenance">Spousal Maintenance</a>
+            <a href="https://www.moralespadialaw.com/family-law/prenuptial-agreement">Prenuptial Agreement</a>
+            <a href="https://www.moralespadialaw.com/family-law/postnuptial-agreement">Postnuptial Agreement</a>
+            <a href="https://www.moralespadialaw.com/family-law/enforcement">Enforcement</a>
+            <a href="https://www.moralespadialaw.com/family-law/modification">Modification</a>
+            <a href="https://www.moralespadialaw.com/family-law/paternity">Paternity</a>
+            <a href="https://www.moralespadialaw.com/family-law/cps-cases">CPS Cases</a>
+            
+            <!-- Estate Planning Services (Used in Estate Planning Tab) -->
+            <a href="https://www.moralespadialaw.com/estate-planning/power-of-attorney">Power of Attorney</a>
+            <a href="https://www.moralespadialaw.com/estate-planning/advance-directives">Advance Directives</a>
+            <a href="https://www.moralespadialaw.com/estate-planning/asset-protection">Asset Protection</a>
+            <a href="https://www.moralespadialaw.com/estate-planning/trust">Trust</a>
+            <a href="https://www.moralespadialaw.com/estate-planning/will">Will</a>
+            
+            <!-- Probate Law Services (Used in Probate Law Tab) -->
+            <a href="https://www.moralespadialaw.com/probate-law/heirship-proceedings">Heirship Proceedings</a>
+            <a href="https://www.moralespadialaw.com/probate-law/muniment-of-title">Muniment of Title</a>
+            <a href="https://www.moralespadialaw.com/probate-law/probate-litigation">Probate Litigation</a>
+            <a href="https://www.moralespadialaw.com/probate-law/estate-affidavits">Estate Affidavits</a>
+            
+            <!-- Criminal Law Services (Used in Criminal Law Tab) -->
+            <a href="https://www.moralespadialaw.com/criminal-defense/dwi">DWI</a>
+            <a href="https://www.moralespadialaw.com/criminal-defense/domestic-violence">Domestic Violence</a>
+            <a href="https://www.moralespadialaw.com/criminal-defense/protective-orders">Protective Orders</a>
+            <a href="https://www.moralespadialaw.com/criminal-defense/theft-property-crimes">Theft & Property Crimes</a>
+            <a href="https://www.moralespadialaw.com/criminal-defense/juvenile-defense">Juvenile Defense</a>
+            <a href="https://www.moralespadialaw.com/criminal-defense/expungement-record-sealing">Expungement & Record Sealing</a>
+            <a href="https://www.moralespadialaw.com/criminal-defense/drug-charges">Drug Charges</a>
+        </nav>
+        
+        <div class="section">
+            <h2 class="section-title">Legal Services <em>We Provide</em></h2>
+            <div class="service-tabs">
+                <button class="service-tab active" data-service="family">Family Law</button>
+                <button class="service-tab" data-service="estate">Estate Planning</button>
+                <button class="service-tab" data-service="probate">Probate Law</button>
+                <button class="service-tab" data-service="criminal">Criminal Law</button>
+            </div>
+            <div class="service-content">
+                <div class="service-panel active" id="family">
+                    <div class="service-layout">
+                        <div class="service-image"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=500&q=80" alt="Family Law Services" loading="lazy" /></div>
+                        <div class="service-info">
+                            <h3>Family Law</h3>
+                            <p>
+                                When family matters arise, it's important to have an experienced family law team on your side. At Morales Padia Law, we are committed to protecting your rights and interests in a variety of family law
+                                matters, including divorce, child custody, child support, adoption, and much more. Our attorneys have a proven track record of success and will fight tirelessly to ensure the best possible outcome for your
+                                case.
+                            </p>
+                            <h4>in San Antonio</h4>
+                            <ul class="service-list">
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/family-attorney/" target="_blank" rel="noopener">Family Attorney <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/uncontested-divorce/" target="_blank" rel="noopener">Uncontested Divorce <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/contested-divorce/" target="_blank" rel="noopener">Contested Divorce <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/child-custody/" target="_blank" rel="noopener">Child Custody <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/child-support/" target="_blank" rel="noopener">Child Support <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/adoption/" target="_blank" rel="noopener">Adoption <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/name-change/" target="_blank" rel="noopener">Name Change <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/property-division/" target="_blank" rel="noopener">Property Division <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/spousal-maintenance/" target="_blank" rel="noopener">Spousal Maintenance <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/prenuptial-agreement/" target="_blank" rel="noopener">Prenuptial Agreement <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/postnuptial-agreement/" target="_blank" rel="noopener">Postnuptial Agreement <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/family-law/enforcement/" target="_blank" rel="noopener">Enforcement <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-panel" id="estate">
+                    <div class="service-layout">
+                        <div class="service-image"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Estate Planning Services" loading="lazy" /></div>
+                        <div class="service-info">
+                            <h3>Estate Planning</h3>
+                            <p>
+                                At Morales Padia Law, we understand that your legacy is important to you. That's why we offer comprehensive estate planning services to ensure that your assets and loved ones are protected. Our
+                                experienced attorneys will guide you through every step of the estate planning process, from drafting wills and trusts to establishing powers of attorney and healthcare directives.
+                            </p>
+                            <h4>in San Antonio</h4>
+                            <ul class="service-list">
+                                <li>
+                                    <a href="https://moralespadialaw.com/estate-planning/" target="_blank" rel="noopener">Estate Planning Overview <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/estate-planning/power-of-attorney/" target="_blank" rel="noopener">Power of Attorney <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/estate-planning/advance-directives/" target="_blank" rel="noopener">Advance Directives <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/estate-planning/asset-protection/" target="_blank" rel="noopener">Asset Protection <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/estate-planning/trust/" target="_blank" rel="noopener">Trust Creation & Management <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/estate-planning/will/" target="_blank" rel="noopener">Wills & Testament <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-panel" id="probate">
+                    <div class="service-layout">
+                        <div class="service-image"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Probate Law Services" loading="lazy" /></div>
+                        <div class="service-info">
+                            <h3>Probate Law</h3>
+                            <p>
+                                Navigating the probate process can be overwhelming during an already difficult time. Our experienced probate attorneys at Morales Padia Law will guide you through estate administration, helping you fulfill your duties as an executor or administrator while ensuring compliance with Texas probate law.
+                            </p>
+                            <h4>in San Antonio</h4>
+                            <ul class="service-list">
+                                <li>
+                                    <a href="https://moralespadialaw.com/probate-law/" target="_blank" rel="noopener">Probate Overview <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/probate-law/heirship-proceedings/" target="_blank" rel="noopener">Heirship Proceedings <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/probate-law/muniment-of-title/" target="_blank" rel="noopener">Muniment of Title <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/probate-law/probate-litigation/" target="_blank" rel="noopener">Probate Litigation <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/probate-law/estate-affidavits/" target="_blank" rel="noopener">Estate Affidavits <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-panel" id="criminal">
+                    <div class="service-layout">
+                        <div class="service-image"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=80" alt="Criminal Defense Services" loading="lazy" /></div>
+                        <div class="service-info">
+                            <h3>Criminal Law</h3>
+                            <p>
+                                When facing criminal charges, you need aggressive and experienced representation. At Morales Padia Law, we are committed to protecting your rights and freedom in a variety of criminal defense matters,
+                                including DWI, drug offenses, domestic violence, and much more. Our attorneys will work tirelessly to build a strong defense strategy for your case.
+                            </p>
+                            <h4>in San Antonio</h4>
+                            <ul class="service-list">
+                                <li>
+                                    <a href="https://moralespadialaw.com/criminal-law/criminal-defense/" target="_blank" rel="noopener">Criminal Defense Overview <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/criminal-law/dwi/" target="_blank" rel="noopener">DWI Defense <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/criminal-law/domestic-violence/" target="_blank" rel="noopener">Domestic Violence Defense <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/criminal-law/protective-orders/" target="_blank" rel="noopener">Protective Orders <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/criminal-law/theft-property-crimes/" target="_blank" rel="noopener">Theft & Property Crimes <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/criminal-law/juvenile-defense/" target="_blank" rel="noopener">Juvenile Defense <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/criminal-law/expungement-record-sealing/" target="_blank" rel="noopener">Expungement & Record Sealing <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://moralespadialaw.com/criminal-law/drug-charges/" target="_blank" rel="noopener">Drug Charges <i class="fas fa-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Optimized tab switching with better performance
+            function initServiceTabs() {
+                const tabs = document.querySelectorAll(".service-tab");
+                const panels = document.querySelectorAll(".service-panel");
+                
+                if (!tabs.length || !panels.length) return;
+                
+                tabs.forEach((tab) => {
+                    tab.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        
+                        const service = this.getAttribute("data-service");
+                        const targetPanel = document.getElementById(service);
+                        
+                        if (!targetPanel) return;
+                        
+                        // Remove active class from all tabs and panels
+                        tabs.forEach(t => t.classList.remove("active"));
+                        panels.forEach(p => p.classList.remove("active"));
+                        
+                        // Add active class to clicked tab and corresponding panel
+                        this.classList.add("active");
+                        targetPanel.classList.add("active");
+                        
+                        // Scroll to top of service content for better UX
+                        const serviceContent = document.querySelector(".service-content");
+                        if (serviceContent) {
+                            serviceContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
+            }
+            
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initServiceTabs);
+            } else {
+                initServiceTabs();
+            }
+        </script>
+    </body>
+</html>

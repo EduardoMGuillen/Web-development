@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Optimized Awards & Recognition Carousel</title>
+        
+        <!-- Resource Hints for Performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        
+        <!-- Optimized Font Loading - Only Essential Weights -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --badges-primary: #204074;
+            --badges-secondary: #3b82f6;
+            --badges-accent: #f59e0b;
+            --badges-light: #f8fafc;
+            --badges-dark: #1a2a4f;
+            --badges-white: #fff;
+            --badges-shadow: 0 8px 32px rgba(32,64,116,0.10);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: transparent;
+            color: var(--badges-dark);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .badges-section {
+            background: transparent;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--badges-primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--badges-accent), var(--badges-secondary));
+            border-radius: 2px;
+        }
+        
+        .badges-carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        /* Ensure exactly 4 badges are visible on desktop */
+        @media (min-width: 1200px) {
+            .badges-carousel {
+                max-width: 1040px;
+            }
+        }
+        
+        /* Ensure exactly 3 badges are visible on tablet */
+        @media (min-width: 968px) and (max-width: 1199px) {
+            .badges-carousel {
+                max-width: 780px;
+            }
+        }
+        
+        /* Ensure exactly 2 badges are visible on mobile */
+        @media (min-width: 768px) and (max-width: 967px) {
+            .badges-carousel {
+                max-width: 520px;
+            }
+        }
+        
+        .badges-container {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            align-items: center;
+            gap: 30px;
+            padding: 20px 0;
+            will-change: transform;
+            cursor: grab;
+        }
+        
+        .badges-container:active {
+            cursor: grabbing;
+        }
+        
+        .badge {
+            min-width: 230px;
+            height: 160px;
+            background: var(--badges-white);
+            border-radius: 15px;
+            padding: 25px 18px;
+            box-shadow: 0 8px 25px rgba(32, 64, 116, 0.08);
+            border: 1px solid rgba(32, 64, 116, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-shrink: 0;
+            color: var(--badges-primary);
+            will-change: transform;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        
+        .badge.primary {
+            background: linear-gradient(135deg, var(--badges-primary) 0%, #1e3a8a 50%, var(--badges-secondary) 100%);
+            color: var(--badges-white);
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(32, 64, 116, 0.15);
+        }
+        
+        .badge-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--badges-primary);
+            text-shadow: 0 2px 10px rgba(32, 64, 116, 0.3);
+        }
+        
+        .badge.primary .badge-icon {
+            color: var(--badges-white);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        .badge-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.1;
+            color: var(--badges-primary);
+        }
+        
+        .badge.primary .badge-title {
+            color: var(--badges-white);
+        }
+        
+        .badge-year {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--badges-primary);
+            margin-bottom: 8px;
+        }
+        
+        .badge.primary .badge-year {
+            color: var(--badges-white);
+        }
+        
+        .badge-organization {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-style: italic;
+            line-height: 1.15;
+            margin-top: 2px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            color: var(--badges-primary);
+        }
+        
+        .badge.primary .badge-organization {
+            opacity: 0.9;
+            color: var(--badges-white);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .badges-section {
+                padding: 50px 0;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .badges-carousel::after {
+                content: "← Swipe to see more →";
+                display: block;
+                text-align: center;
+                font-size: 0.8rem;
+                color: rgba(32, 64, 116, 0.6);
+                margin-top: 10px;
+                font-style: italic;
+            }
+            
+            .badge {
+                min-width: 210px;
+                height: 160px;
+                padding: 20px 15px;
+            }
+            
+            .badge-title {
+                font-size: 1rem;
+            }
+            
+            .badge-icon {
+                font-size: 2rem;
+                margin-bottom: 8px;
+            }
+            
+            .badge-year {
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+            }
+            
+            .badge-organization {
+                font-size: 0.68rem;
+                line-height: 1.2;
+                margin-top: 2px;
+                overflow: visible;
+                display: block;
+                max-height: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .badge {
+                min-width: 185px;
+                height: 150px;
+                padding: 18px 12px;
+            }
+            
+            .badge-title {
+                font-size: 0.95rem;
+            }
+            
+            .badge-icon {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+            
+            .badge-year {
+                font-size: 0.85rem;
+                margin-bottom: 6px;
+            }
+            
+            .badge-organization {
+                font-size: 0.62rem;
+                line-height: 1.2;
+                margin-top: 2px;
+                overflow: visible;
+                display: block;
+                max-height: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .badges-container {
+                gap: 20px;
+            }
+            
+            .badge {
+                min-width: 160px;
+                height: 140px;
+                padding: 15px 10px;
+            }
+            
+            .badge-title {
+                font-size: 0.85rem;
+                margin-bottom: 4px;
+            }
+            
+            .badge-year {
+                font-size: 0.8rem;
+                margin-bottom: 5px;
+            }
+            
+            .badge-organization {
+                font-size: 0.58rem;
+                line-height: 1.2;
+                margin-top: 2px;
+                overflow: visible;
+                display: block;
+                max-height: none;
+            }
+            
+            .badge-icon {
+                font-size: 1.6rem;
+                margin-bottom: 6px;
+            }
+        }
+        
+        /* Performance optimizations */
+        .badges-container {
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        
+        .badge {
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="badges-section">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            
+            <div class="badges-carousel">
+                <div class="badges-container">
+                    <!-- Badge 1 -->
+                    <div class="badge">
+                        <div class="badge-icon">🏆</div>
+                        <div class="badge-title">Top Family<br>Law Lawyer</div>
+                        <div class="badge-year">2017</div>
+                        <div class="badge-organization">San Antonio Scene Magazine</div>
+                    </div>
+                    
+                    <!-- Badge 2 -->
+                    <div class="badge primary">
+                        <div class="badge-icon">🥇</div>
+                        <div class="badge-title">Best S.A<br>Female Lawyers</div>
+                        <div class="badge-year">2021</div>
+                        <div class="badge-organization">San Antonio Scene Magazine</div>
+                    </div>
+                    
+                    <!-- Badge 3 -->
+                    <div class="badge">
+                        <div class="badge-icon">⭐</div>
+                        <div class="badge-title">San Antonio<br>Best Lawyer</div>
+                        <div class="badge-year">2016</div>
+                        <div class="badge-organization">San Antonio Scene Magazine</div>
+                    </div>
+                    
+                    <!-- Badge 4 -->
+                    <div class="badge primary">
+                        <div class="badge-icon">🛡️</div>
+                        <div class="badge-title">2023 Top<br>DUI/DWI Lawyer</div>
+                        <div class="badge-year">2023</div>
+                        <div class="badge-organization">San Antonio Scene Magazine</div>
+                    </div>
+                    
+                    <!-- Badge 5 -->
+                    <div class="badge">
+                        <div class="badge-icon">🏅</div>
+                        <div class="badge-title">2025 Top 10<br>Best Law Firm</div>
+                        <div class="badge-year">2025</div>
+                        <div class="badge-organization">American Institute of<br>Family Law Attorneys</div>
+                    </div>
+                    
+                    <!-- Duplicate badges for infinite loop -->
+                    <!-- Badge 1 (duplicate) - should be blue to continue pattern -->
+                    <div class="badge primary">
+                        <div class="badge-icon">🏆</div>
+                        <div class="badge-title">Top Family<br>Law Lawyer</div>
+                        <div class="badge-year">2017</div>
+                        <div class="badge-organization">San Antonio Scene Magazine</div>
+                    </div>
+                    
+                    <!-- Badge 2 (duplicate) - should be white to continue pattern -->
+                    <div class="badge">
+                        <div class="badge-icon">🥇</div>
+                        <div class="badge-title">Best S.A<br>Female Lawyers</div>
+                        <div class="badge-year">2021</div>
+                        <div class="badge-organization">San Antonio Scene Magazine</div>
+                    </div>
+                    
+                    <!-- Badge 3 (duplicate) - should be blue to continue pattern -->
+                    <div class="badge primary">
+                        <div class="badge-icon">⭐</div>
+                        <div class="badge-title">San Antonio<br>Best Lawyer</div>
+                        <div class="badge-year">2016</div>
+                        <div class="badge-organization">San Antonio Scene Magazine</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        class OptimizedBadgesCarousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = 5;
+                this.autoScrollInterval = null;
+                this.autoScrollDuration = 6000; // Slower for better UX
+                this.isMobile = this.detectMobile();
+                this.isVisible = false;
+                
+                this.initializeCarousel();
+                this.setupIntersectionObserver();
+                this.handleResize();
+            }
+            
+            detectMobile() {
+                return window.innerWidth <= 768 || 'ontouchstart' in window;
+            }
+            
+            setupIntersectionObserver() {
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            this.isVisible = entry.isIntersecting;
+                            if (this.isVisible && !this.isMobile) {
+                                this.startAutoScroll();
+                            } else {
+                                this.stopAutoScroll();
+                            }
+                        });
+                    }, { threshold: 0.3, rootMargin: '0px 0px -100px 0px' });
+                    
+                    const element = document.querySelector('.badges-section');
+                    if (element) observer.observe(element);
+                }
+            }
+            
+            handleResize() {
+                let resizeTimeout;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        const wasMobile = this.isMobile;
+                        this.isMobile = this.detectMobile();
+                        
+                        // Only restart auto-scroll if mobile state changed
+                        if (wasMobile !== this.isMobile) {
+                            if (this.isMobile) {
+                                this.stopAutoScroll();
+                            } else if (this.isVisible) {
+                                this.startAutoScroll();
+                            }
+                        }
+                    }, 300);
+                });
+            }
+            
+            initializeCarousel() {
+                const container = document.querySelector('.badges-container');
+                if (!container) return;
+                
+                // Touch support for both mobile and desktop
+                let startX = 0;
+                let startY = 0;
+                let isScrolling = false;
+                
+                container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                    isScrolling = false;
+                    this.stopAutoScroll();
+                }, { passive: true });
+                
+                container.addEventListener('touchmove', (e) => {
+                    if (!startX || !startY) return;
+                    
+                    const currentX = e.touches[0].clientX;
+                    const currentY = e.touches[0].clientY;
+                    const diffX = Math.abs(startX - currentX);
+                    const diffY = Math.abs(startY - currentY);
+                    
+                    // Determine if user is scrolling vertically or swiping horizontally
+                    if (!isScrolling) {
+                        isScrolling = diffY > diffX;
+                    }
+                    
+                    // Prevent horizontal scroll if swiping horizontally
+                    if (!isScrolling && diffX > 10) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+                
+                container.addEventListener('touchend', (e) => {
+                    if (!startX || isScrolling) return;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > 50) { // Swipe threshold
+                        if (diff > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
+                    }
+                    
+                    // Reset values
+                    startX = 0;
+                    startY = 0;
+                    isScrolling = false;
+                    
+                    // Restart auto-scroll after interaction (desktop only)
+                    if (!this.isMobile && this.isVisible) {
+                        setTimeout(() => this.startAutoScroll(), 2000);
+                    }
+                }, { passive: true });
+            }
+            
+            updateCarousel() {
+                const container = document.querySelector('.badges-container');
+                if (!container) return;
+                
+                const slideWidth = 260; // badge width + gap
+                const offset = -(this.currentSlide * slideWidth);
+                
+                container.style.transform = `translate3d(${offset}px, 0, 0)`;
+                
+                // Reset for infinite loop
+                if (this.currentSlide >= this.totalSlides) {
+                    setTimeout(() => {
+                        container.style.transition = 'none';
+                        this.currentSlide = 0;
+                        container.style.transform = 'translate3d(0, 0, 0)';
+                        requestAnimationFrame(() => {
+                            container.style.transition = 'transform 0.6s ease-out';
+                        });
+                    }, 600);
+                }
+            }
+            
+            nextSlide() {
+                this.currentSlide++;
+                this.updateCarousel();
+            }
+            
+            prevSlide() {
+                this.currentSlide = this.currentSlide > 0 ? this.currentSlide - 1 : this.totalSlides - 1;
+                this.updateCarousel();
+            }
+            
+            startAutoScroll() {
+                if (this.isMobile || this.autoScrollInterval) return;
+                
+                this.autoScrollInterval = setInterval(() => {
+                    if (this.isVisible && !this.isMobile) {
+                        this.nextSlide();
+                    }
+                }, this.autoScrollDuration);
+            }
+            
+            stopAutoScroll() {
+                if (this.autoScrollInterval) {
+                    clearInterval(this.autoScrollInterval);
+                    this.autoScrollInterval = null;
+                }
+            }
+        }
+        
+        // Simplified initialization
+        function initCarousel() {
+            const container = document.querySelector('.badges-container');
+            if (container) {
+                new OptimizedBadgesCarousel();
+            }
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCarousel);
+        } else {
+            initCarousel();
+        }
+    </script>
+</body>
+</html>

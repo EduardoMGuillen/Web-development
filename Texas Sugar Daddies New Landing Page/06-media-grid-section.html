@@ -1,0 +1,189 @@
+<!-- Section 06: Dynamic Media Grid Section -->
+<section id="media" class="media-grid">
+    <div class="media-container">
+        <h2>Our Work in Action</h2>
+        <p>See how we bring our American passion to life in our bakery and community.</p>
+        <div class="media-grid-layout">
+            <div class="media-column left">
+                <div class="media-column-content">
+                    <!-- 4 unique items for left column -->
+                    <div class="media-item video"></div>
+                    <div class="media-item image"></div>
+                    <div class="media-item large"></div>
+                    <div class="media-item image"></div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="media-item video"></div>
+                    <div class="media-item image"></div>
+                    <div class="media-item large"></div>
+                    <div class="media-item image"></div>
+                </div>
+            </div>
+            <div class="media-column right">
+                <div class="media-column-content">
+                    <!-- 4 unique items for right column -->
+                    <div class="media-item image"></div>
+                    <div class="media-item video"></div>
+                    <div class="media-item large"></div>
+                    <div class="media-item image"></div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="media-item image"></div>
+                    <div class="media-item video"></div>
+                    <div class="media-item large"></div>
+                    <div class="media-item image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Dynamic Media Grid Section */
+.media-grid {
+    padding: 6rem 0;
+    background: transparent;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.media-grid h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+    font-weight: 900;
+}
+
+.media-grid p {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.media-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.media-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.media-column {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.media-column-content {
+    position: absolute;
+    width: 100%;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.media-column.left .media-column-content {
+    animation-name: scrollUp;
+}
+
+.media-column.right .media-column-content {
+    animation-name: scrollDown;
+}
+
+.media-item {
+    background: transparent;
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    position: relative;
+    margin-bottom: 1.5rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.media-item.video {
+    height: 250px;
+    background-image: url('https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f744a6632cc3db5706.jpeg');
+}
+
+.media-item.image {
+    height: 200px;
+}
+
+.media-item.large {
+    height: 300px;
+}
+
+/* Specific image backgrounds for each media item */
+.media-item.image:nth-child(2) {
+    background-image: url('https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f732f339f985194b08.jpeg');
+}
+
+.media-item.large:nth-child(3) {
+    background-image: url('https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f6fc367038f91acf8a.jpeg');
+}
+
+.media-item.image:nth-child(4) {
+    background-image: url('https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f71192fa9cd13d2b70.jpeg');
+}
+
+/* Right column specific images */
+.media-column.right .media-item.image:nth-child(1),
+.media-column.right .media-item.image:nth-child(5) {
+    background-image: url('https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f632f3399471194aff.jpeg');
+}
+
+.media-column.right .media-item.video:nth-child(2),
+.media-column.right .media-item.video:nth-child(6) {
+    background-image: url('https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f77f917b16acd8ea46.jpeg');
+}
+
+.media-column.right .media-item.large:nth-child(3),
+.media-column.right .media-item.large:nth-child(7) {
+    background-image: url('https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f632f3396f28194b00.jpeg');
+}
+
+.media-column.right .media-item.image:nth-child(4),
+.media-column.right .media-item.image:nth-child(8) {
+    background-image: url('https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f6fc3670a8eb1acf89.jpeg');
+}
+
+
+
+@keyframes scrollUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .media-grid-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .media-column-content {
+        position: static;
+        animation: none;
+    }
+}
+</style>

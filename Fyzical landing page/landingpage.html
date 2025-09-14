@@ -339,9 +339,10 @@
 
         .insurance-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
             margin-top: 2rem;
+            justify-items: center;
         }
 
         .insurance-column h4 {
@@ -983,6 +984,37 @@
             color: var(--primary-blue);
         }
 
+        /* CTA Button Styles */
+        .fall-cta-button {
+            background: var(--orange);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .fall-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+            background: #e03e1f;
+        }
+
+        .fall-cta-secondary {
+            background: var(--primary-blue);
+        }
+
+        .fall-cta-secondary:hover {
+            background: var(--dark-blue);
+        }
+
         @media (max-width: 768px) {
             .hero-split {
                 grid-template-columns: 1fr;
@@ -990,6 +1022,11 @@
             
             .hero-right {
                 margin-top: 2rem;
+            }
+
+            .fall-cta-button {
+                font-size: 0.95rem;
+                padding: 0.875rem 1.25rem;
             }
         }
     </style>
@@ -999,9 +1036,10 @@
             <div class="hero-split">
                 <div class="hero-left">
                     <div class="hero-logo">
-                        <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/685710d73df5ba258ade0172.png" alt="FYZICAL Therapy & Balance Centers" />
+                        <a href="https://www.fyzical.com/southsanantonio" target="_blank" rel="noopener noreferrer">
+                            <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/685710d73df5ba258ade0172.png" alt="FYZICAL Therapy & Balance Centers" />
+                        </a>
                     </div>
-                    <div class="hero-subtitle">Therapy & Balance Centers</div>
                     <h1 class="hero-title">South San Antonio, TX</h1>
                     <p class="hero-description">
                         Leading the healthcare revolution with innovative wellness programs and clinical care. 
@@ -1025,7 +1063,14 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h2 class="fall-month-title">Fight The Fall Month</h2>
-                        <p class="fall-month-subtitle">Join our mission to prevent falls and promote better balance. Early detection means early prevention!</p>
+                        <p class="fall-month-subtitle">Don't wait for fall season! Get your <strong style="color: var(--orange);">FREE Fall Risk Assessment</strong> now. Early detection means early prevention!</p>
+                        
+                        <!-- FREE Testing Emphasis -->
+                        <div style="background: var(--orange); color: white; padding: 1rem; border-radius: 12px; margin: 1.5rem 0; text-align: center; font-weight: 600; font-size: 1.1rem; box-shadow: var(--shadow-md);">
+                            <i class="fas fa-gift" style="margin-right: 0.5rem;"></i>
+                            100% FREE Testing - No Insurance Required!
+                        </div>
+
                         <div class="promotion-features">
                             <div class="feature-item">
                                 <i class="fas fa-heartbeat"></i>
@@ -1043,6 +1088,26 @@
                                 <i class="fas fa-balance-scale"></i>
                                 <span>Balance Problems</span>
                             </div>
+                        </div>
+
+                        <!-- Urgency Message -->
+                        <div style="background: rgba(245, 73, 39, 0.1); border: 2px solid var(--orange); padding: 1rem; border-radius: 12px; margin-top: 1.5rem; text-align: center;">
+                            <p style="margin: 0; color: var(--text-dark); font-weight: 600; font-size: 1rem;">
+                                <i class="fas fa-clock" style="color: var(--orange); margin-right: 0.5rem;"></i>
+                                Fall season is approaching fast! Schedule your FREE assessment today.
+                            </p>
+                        </div>
+
+                        <!-- Call to Action Buttons -->
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
+                            <a href="tel:(210)921-1599" class="fall-cta-button">
+                                <i class="fas fa-phone"></i>
+                                Call Now: (210) 921-1599
+                            </a>
+                            <a href="#contact" class="fall-cta-button fall-cta-secondary">
+                                <i class="fas fa-calendar-check"></i>
+                                Schedule FREE Assessment
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1063,42 +1128,42 @@
                     <h3><i class="fas fa-heartbeat"></i> Core Services</h3>
                     <ul class="service-list">
                         <li>Balance & Fall Prevention</li>
-                        <li>Pediatric Rehabilitation</li>
-                        <li>Testing Training & Rehabilitation</li>
-                        <li>Vestibular Therapy</li>
-                        <li>Shoulder, Hip, & Knee Therapy</li>
-                        <li>Spine Therapy</li>
+                        <li>Foot/Ankle Therapy</li>
                         <li>Functional Capacity Evaluations</li>
                         <li>Orthopedic & Sports Injury Physical Therapy</li>
+                        <li>Pediatric Rehabilitation</li>
                         <li>Personal Injury (Auto Accident)</li>
+                        <li>Shoulder, Hip, & Knee Therapy</li>
+                        <li>Spine Therapy</li>
+                        <li>Testing Training & Rehabilitation</li>
+                        <li>Upper Extremity Therapy</li>
+                        <li>Vestibular Therapy</li>
                     </ul>
                 </div>
 
                 <div class="service-category fade-in-up">
                     <h3><i class="fas fa-briefcase"></i> Work & Employment Services</h3>
                     <ul class="service-list">
-                        <li>Work Injury Testing & Rehabilitation</li>
-                        <li>Work Conditioning | Work Hardening</li>
                         <li>Employment & Return to Work Testing</li>
-                        <li>Body Q System</li>
+                        <li>Work Conditioning | Work Hardening</li>
+                        <li>Work Injury Testing & Rehabilitation</li>
                     </ul>
                 </div>
 
                 <div class="service-category fade-in-up">
                     <h3><i class="fas fa-star"></i> Specialized Care</h3>
                     <ul class="service-list">
-                        <li>Podiatric Rehabilitation</li>
                         <li>Personal Training</li>
-                        <li>Solostep Safety Harness System</li>
+                        <li>Podiatric Rehabilitation</li>
                         <li>Shuttle Balance System</li>
-                        <li>LSVT BIG</li>
+                        <li>Solostep Safety Harness System</li>
                     </ul>
                 </div>
 
                 <div class="service-category fade-in-up">
                     <h3><i class="fas fa-plus-circle"></i> Pain Management</h3>
                     <ul class="service-list">
-                        <li>Laser Therapy Category IV Laser</li>
+                        <li>Laser Therapy - Category IV Laser</li>
                         <li>Juvent Micro-Vibration Treatments</li>
                         <li>Hivamat Therapy</li>
                         <li>Acoustic Wave Therapy</li>
@@ -1130,44 +1195,41 @@
             <div class="insurance-container">
                 <div class="insurance-content">
                     <div class="insurance-column">
-                        <h4>Major Insurance</h4>
+                        <h4>Accepted Insurance Plans</h4>
                         <ul class="insurance-list">
                             <li>AETNA</li>
-                            <li>BCBS</li>
-                            <li>HUMANA</li>
-                            <li>MEDICARE</li>
-                            <li>MEDICAID</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="insurance-column">
-                        <h4>Government & Special</h4>
-                        <ul class="insurance-list">
-                            <li>DEPT. OF LABOR</li>
-                            <li>AMERIGROUP</li>
-                            <li>COMMUNITY FIRST</li>
-                            <li>SUPERIOR</li>
-                            <li>L.O.P</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="insurance-column">
-                        <h4>Additional Plans</h4>
-                        <ul class="insurance-list">
                             <li>ALL ONE CIGNA</li>
-                            <li>UNITED HEALTH CARE TEXAS</li>
-                            <li>MUTUAL</li>
+                            <li>AMERIGROUP</li>
+                            <li>BCBS</li>
+                            <li>COMMUNITY FIRST</li>
+                            <li>DEPT. OF LABOR</li>
+                            <li>HUMANA</li>
+                            <li>L.O.P</li>
                             <li>LIBERTYMUTUAL</li>
+                            <li>MEDICAID</li>
+                            <li>MEDICARE</li>
+                            <li>MUTUAL</li>
                             <li>PERSONAL INJURY PROTECTION (PIP)</li>
+                            <li>SUPERIOR</li>
+                            <li>TRIWEST</li>
+                            <li>UNITED HEALTH CARE TEXAS</li>
                         </ul>
                     </div>
+                </div>
+                
+                <!-- Call for Information Button -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="tel:(210)921-1599" class="btn-primary" style="background: var(--orange); padding: 1.25rem 2.5rem; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: white; border-radius: 50px; box-shadow: var(--shadow-lg); transition: all 0.3s ease;">
+                        <i class="fas fa-phone"></i>
+                        Call for Insurance Information: (210) 921-1599
+                    </a>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/68b64efe92f47f6f3236d6d0.pdf" target="_blank" class="btn-primary" style="background: var(--primary-blue); padding: 1.25rem 2.5rem; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: white; border-radius: 50px; box-shadow: var(--shadow-lg);">
                     <i class="fas fa-file-pdf"></i>
-                    Take this referral pad to your primary care provider (PCP) and start your journey to love your life.
+                    Referral Form for Your PCP
                 </a>
             </div>
         </div>

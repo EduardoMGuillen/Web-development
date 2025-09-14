@@ -1,0 +1,154 @@
+<!-- Section 02: Hero Section -->
+<section id="home" class="hero">
+    <div class="floating-elements">
+        <div class="floating-element">⭐</div>
+        <div class="floating-element">⭐</div>
+        <div class="floating-element">⭐</div>
+        <div class="floating-element">⭐</div>
+    </div>
+    <div class="hero-content">
+        <h1>Texas Sugar Daddies</h1>
+        <p>Two dads, best friends, and foodies bringing epic bites to San Antonio since 2017</p>
+        <div class="hero-subtitle">"Proudly serving America's sweet tooth since 2017"</div>
+        <a href="#contact" class="cta-button">Order Now</a>
+    </div>
+</section>
+
+<style>
+/* Hero Section */
+.hero {
+    background: transparent;
+    background-size: cover;
+    background-position: center 30%;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    display: none;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+    animation: heroRideIn 1.5s ease-out;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #FFFFFF;
+    font-style: italic;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(45deg, #B22234, #3C3B6E);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-element {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.floating-element:nth-child(2) { top: 60%; left: 80%; animation-delay: 1s; }
+.floating-element:nth-child(3) { top: 80%; left: 20%; animation-delay: 2s; }
+.floating-element:nth-child(4) { top: 30%; left: 70%; animation-delay: 3s; }
+
+/* Animations */
+@keyframes heroRideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px) rotateX(20deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .floating-elements {
+        display: none;
+    }
+}
+</style>

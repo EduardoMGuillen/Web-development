@@ -1,0 +1,124 @@
+<!-- Section 03: Our American Journey Story Section -->
+<section id="story" class="story">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our American Journey</h2>
+            <p>From the corporate frontier to the sweet frontier - this is our American tale</p>
+        </div>
+        <div class="story-content">
+            <div class="story-text">
+                <h3>The Story Behind the Sugar</h3>
+                <p>By day we were housed in cubicles working for the man, by night we were renegade foodies stirring up epic bites our wives and kids couldn't get enough of.</p>
+                <p>We launched in 2017 as an online, home-based bakery with incredible support from our San Antonio community. After a two-year hiatus, we re-launched with new passion and goals.</p>
+                <p>Today, we're proud to operate from our commercial kitchen, serving the community that believed in us from the start. We're not just bakers - we're American dreamers!</p>
+            </div>
+            <div class="story-image">
+                🧁
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Story Section */
+.story {
+    padding: 6rem 0;
+    background: transparent;
+    position: relative;
+}
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #B22234;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-header p {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.story-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #3C3B6E;
+    font-weight: 700;
+}
+
+.story-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.story-image {
+    background: linear-gradient(45deg, #B22234, #3C3B6E);
+    height: 500px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    color: #FFFFFF;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-15deg);
+    transition: all 0.5s ease;
+}
+
+.story-image:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.05);
+}
+
+.story-image::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, #FFFFFF, transparent);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+</style>
