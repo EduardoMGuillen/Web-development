@@ -3,14 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CreativeIQ Digital Marketing Agency - Full-service digital marketing solutions for modern businesses. SEO, CRM, Web Development, and more.">
-    <meta name="theme-color" content="#667eea">
-    <title>CreativeIQ Digital Marketing Agency </title>
     
-    <!-- Preload critical resources -->
+    <!-- SEO Meta Tags -->
+    <title>CreativeIQ Digital Marketing Agency | SEO, CRM, Web Development & Social Media Marketing</title>
+    <meta name="description" content="CreativeIQ is a full-service digital marketing agency offering SEO, social media management, and CRM solutions to help your business grow online.">
+    <meta name="keywords" content="digital marketing agency, SEO services, search engine optimization, CRM automation, web development, Google Ads, PPC advertising, social media marketing, social media management, video production, content marketing, lead generation, conversion optimization, online marketing, internet marketing, digital strategy, brand development, website design, e-commerce solutions, local SEO, Google My Business optimization, email marketing, marketing automation, growth hacking, performance marketing, ROI optimization, customer acquisition, brand awareness, online presence, digital transformation, marketing consultant, advertising agency, creative agency, full-service marketing, business growth, revenue optimization, competitive analysis, market research, analytics reporting">
+    <meta name="author" content="CreativeIQ Digital Marketing Agency">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CreativeIQ Digital Marketing Agency | Expert SEO, CRM & Web Development">
+    <meta property="og:description" content="Transform your business with CreativeIQ's comprehensive digital marketing solutions. From SEO to CRM automation, we drive measurable results and sustainable growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://creativeiq.marketing">
+    <meta property="og:site_name" content="CreativeIQ Digital Marketing Agency">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CreativeIQ Digital Marketing Agency | SEO, CRM & Web Development Experts">
+    <meta name="twitter:description" content="Full-service digital marketing agency delivering proven SEO, CRM automation, web development, and social media marketing solutions for business growth.">
+    <meta name="twitter:site" content="@CreativeIQAgency">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://creativeiq.marketing">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CreativeIQ Digital Marketing Agency",
+        "url": "https://creativeiq.marketing",
+        "logo": "https://creativeiq.marketing/logo.png",
+        "description": "Full-service digital marketing agency specializing in SEO, CRM automation, web development, Google Ads, social media marketing, and video production.",
+        "foundingDate": "2020",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "url": "https://creativeiq.marketing/contact"
+        },
+        "sameAs": [
+            "https://www.facebook.com/CreativeIQAgency",
+            "https://www.instagram.com/CreativeIQAgency",
+            "https://www.linkedin.com/company/CreativeIQAgency"
+        ],
+        "service": [
+            {
+                "@type": "Service",
+                "name": "Search Engine Optimization",
+                "description": "Comprehensive SEO services to improve organic search rankings and drive qualified traffic"
+            },
+            {
+                "@type": "Service", 
+                "name": "CRM Automation",
+                "description": "Advanced CRM systems and automation workflows to streamline business operations"
+            },
+            {
+                "@type": "Service",
+                "name": "Web Development",
+                "description": "Custom website design and development services for optimal user experience and conversions"
+            },
+            {
+                "@type": "Service",
+                "name": "Google Ads Management",
+                "description": "Strategic PPC advertising campaigns to maximize ROI and drive targeted traffic"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Performance Optimizations -->
     <link rel="preload" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" as="script">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS inline optimization -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
     <style>
         * {
             margin: 0;
@@ -135,12 +217,13 @@
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             text-decoration: none;
             display: inline-block;
             position: relative;
             overflow: hidden;
             animation: slideInUp 1.2s ease-out 0.6s both;
+            transform: translateY(0) scale(1);
         }
 
         .cta-button::before {
@@ -159,8 +242,9 @@
         }
 
         .cta-button:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.3);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 16px 32px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4c93 100%);
         }
 
         .missed-call {
@@ -204,31 +288,32 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
         }
 
         .service-card {
             padding: 3rem;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
+            transform: translateY(0) scale(1);
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .service-icon {
             font-size: 3rem;
             margin-bottom: 2rem;
             display: block;
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .service-card:hover .service-icon {
-            transform: scale(1.02);
+            transform: scale(1.1) rotate(2deg);
         }
 
         .service-card h3 {
@@ -309,12 +394,13 @@
         .product-card {
             padding: 3rem;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transform: translateY(0) scale(1);
         }
 
         .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .product-icon {
@@ -352,12 +438,13 @@
             padding: 3rem;
             text-align: left;
             position: relative;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transform: translateY(0) scale(1);
         }
 
         .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
         }
 
         .testimonial-card::before {
@@ -395,14 +482,15 @@
             margin-bottom: 2rem;
             padding: 2rem;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
             overflow: hidden;
+            transform: translateX(0) scale(1);
         }
 
         .faq-item:hover {
-            transform: translateX(3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transform: translateX(4px) scale(1.01);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
         }
 
         .faq-question {
@@ -421,8 +509,8 @@
             max-height: 0;
             opacity: 0;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transform: translateY(-10px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transform: translateY(-8px);
         }
 
         .faq-item:hover .faq-answer {
@@ -468,18 +556,19 @@
             padding: 3rem 2rem;
             text-align: center;
             position: relative;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             border: 2px solid transparent;
             display: flex;
             flex-direction: column;
             min-height: 700px;
             justify-content: space-between;
+            transform: translateY(0) scale(1);
         }
 
         .pricing-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
-            border-color: rgba(102, 126, 234, 0.2);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+            border-color: rgba(102, 126, 234, 0.3);
         }
 
         .pricing-card.featured {
@@ -579,18 +668,20 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             text-decoration: none;
             display: inline-block;
             width: 100%;
             margin-top: auto;
             box-sizing: border-box;
             flex-shrink: 0;
+            transform: translateY(0) scale(1);
         }
 
         .pricing-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a6fd8, #6a4c93);
         }
 
 
@@ -643,15 +734,35 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             text-decoration: none;
             display: inline-block;
             align-self: center;
+            transform: translateY(0) scale(1);
         }
 
         .footer-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, #5a6fd8, #6a4c93);
+        }
+
+        /* Specific styling for "Our Services" section - 2 rows of 3 */
+        #our-services .services-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            #our-services .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -660,6 +771,11 @@
             }
 
             .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            #our-services .services-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -817,26 +933,67 @@
             }
         }
 
-        /* Optimize for better performance */
+        /* Enhanced Performance Optimizations */
         .glass {
             will-change: transform;
             contain: layout style paint;
+            transform: translateZ(0); /* Hardware acceleration */
+            backface-visibility: hidden;
         }
 
         .service-card, .product-card, .testimonial-card, .pricing-card, .faq-item {
             will-change: transform;
             contain: layout style paint;
+            transform: translateZ(0); /* Hardware acceleration */
+            backface-visibility: hidden;
         }
 
         /* Reduce repaints for better performance */
         .hero h1, .hero p, .cta-button {
             will-change: transform;
+            transform: translateZ(0); /* Hardware acceleration */
         }
 
         /* Optimize particle container */
         #particles-js {
             will-change: transform;
             contain: layout style paint;
+            transform: translateZ(0);
+            isolation: isolate; /* Create new stacking context */
+        }
+
+        /* Critical rendering optimizations */
+        .hero-content {
+            contain: layout style;
+        }
+
+        .services, .products, .testimonials, .pricing, .faq {
+            contain: layout style;
+        }
+
+        /* Optimize font rendering */
+        body {
+            font-display: swap;
+            text-rendering: optimizeSpeed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Optimize images and media */
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Lazy loading support */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        img[loading="lazy"].loaded {
+            opacity: 1;
         }
 
         /* Disable animations for users who prefer reduced motion */
@@ -1305,10 +1462,42 @@
             }
         }, 2000);
 
-        // Cleanup on page unload
+        // Enhanced cleanup and memory management
         window.addEventListener('beforeunload', () => {
             performanceMonitor.destroy();
         });
+
+        // Page visibility API for better performance
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                // Pause expensive operations when page is hidden
+                performanceMonitor.performanceLevel = 'low';
+                performanceMonitor.applyPerformanceSettings();
+            } else {
+                // Resume normal operations when page is visible
+                setTimeout(() => {
+                    performanceMonitor.startMonitoring();
+                }, 100);
+            }
+        });
+
+        // Intersection Observer for lazy loading (if needed for future images)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            // Observe lazy loading images
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
     </script>
 </body>
 </html> 

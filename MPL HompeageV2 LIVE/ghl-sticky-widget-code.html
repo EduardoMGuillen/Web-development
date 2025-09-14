@@ -1,0 +1,356 @@
+<!-- GHL Custom Code Block - Sticky Review Widget -->
+<!-- Paste this entire code into a GoHighLevel Custom Code Block -->
+
+<style>
+/* Sticky Review Widget - GHL Custom Code */
+.mpl-sticky-widget {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(0) !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    opacity: 1 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    pointer-events: all !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    max-width: 320px !important;
+    width: calc(100% - 40px) !important;
+    visibility: visible !important;
+}
+
+.mpl-sticky-widget.mpl-visible {
+    opacity: 1 !important;
+    transform: translateX(-50%) translateY(0) !important;
+    pointer-events: all !important;
+    visibility: visible !important;
+}
+
+/* Google Review Card */
+.mpl-review-card {
+    background: white !important;
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+}
+
+.mpl-review-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16) !important;
+    text-decoration: none !important;
+}
+
+.mpl-google-logo {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+.mpl-review-content {
+    flex: 1 !important;
+}
+
+.mpl-review-rating {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-bottom: 2px !important;
+}
+
+.mpl-rating-number {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    margin: 0 !important;
+}
+
+.mpl-stars {
+    display: flex !important;
+    gap: 1px !important;
+}
+
+.mpl-star {
+    width: 14px !important;
+    height: 14px !important;
+    color: #fbbc04 !important;
+}
+
+.mpl-review-count {
+    font-size: 12px !important;
+    color: #5f6368 !important;
+    margin: 0 !important;
+}
+
+/* Consultation Button */
+.mpl-consultation-btn {
+    background: linear-gradient(135deg, #234374 0%, #4475b5 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 25px !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    box-shadow: 0 3px 12px rgba(35, 67, 116, 0.3) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    min-height: 44px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.mpl-consultation-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(35, 67, 116, 0.4) !important;
+    background: linear-gradient(135deg, #1a2d5a 0%, #3a6ba3 100%) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.mpl-consultation-icon {
+    font-size: 16px !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .mpl-sticky-widget {
+        bottom: 15px !important;
+        max-width: 300px !important;
+        width: calc(100% - 30px) !important;
+    }
+    
+    .mpl-review-card {
+        padding: 10px 14px !important;
+    }
+    
+    .mpl-consultation-btn {
+        font-size: 13px !important;
+        padding: 10px 16px !important;
+        min-height: 40px !important;
+    }
+    
+    .mpl-google-logo {
+        width: 18px !important;
+        height: 18px !important;
+    }
+    
+    .mpl-rating-number {
+        font-size: 15px !important;
+    }
+    
+    .mpl-star {
+        width: 13px !important;
+        height: 13px !important;
+    }
+    
+    .mpl-review-count {
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .mpl-sticky-widget {
+        bottom: 10px !important;
+        max-width: 280px !important;
+        width: calc(100% - 20px) !important;
+    }
+    
+    .mpl-review-card {
+        padding: 8px 12px !important;
+    }
+    
+    .mpl-consultation-btn {
+        font-size: 12px !important;
+        padding: 8px 14px !important;
+        min-height: 36px !important;
+    }
+    
+    .mpl-consultation-icon {
+        font-size: 14px !important;
+    }
+}
+</style>
+
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Widget HTML -->
+<div class="mpl-sticky-widget" id="mplStickyWidget">
+    <!-- Google Review Card -->
+    <div class="mpl-review-card" onclick="window.open('https://maps.app.goo.gl/i95uK3PR3N8QUJsF6', '_blank')">
+        <svg class="mpl-google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <div class="mpl-review-content">
+            <div class="mpl-review-rating">
+                <span class="mpl-rating-number" id="mpl-rating-display">4.9</span>
+                <div class="mpl-stars">
+                    <i class="fas fa-star mpl-star"></i>
+                    <i class="fas fa-star mpl-star"></i>
+                    <i class="fas fa-star mpl-star"></i>
+                    <i class="fas fa-star mpl-star"></i>
+                    <i class="fas fa-star mpl-star"></i>
+                </div>
+            </div>
+            <p class="mpl-review-count" id="mpl-review-count">Google reviews</p>
+        </div>
+    </div>
+
+    <!-- Consultation Button -->
+    <a href="https://www.moralespadialaw.com/schedule" class="mpl-consultation-btn" id="mplConsultationBtn" target="_blank">
+        <i class="fas fa-calendar-check mpl-consultation-icon"></i>
+        SCHEDULE A CONSULTATION
+    </a>
+</div>
+
+<script>
+(function() {
+    'use strict';
+    
+    // Wait for DOM to be ready
+    function ready(fn) {
+        if (document.readyState !== 'loading') {
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    }
+    
+    ready(function() {
+        const widget = document.getElementById('mplStickyWidget');
+        const consultationBtn = document.getElementById('mplConsultationBtn');
+        
+        if (!widget) return;
+        
+        // Configuration - Update these based on your actual GHL section IDs
+        const START_SECTION_ID = 'section-ZJC1eZf0q_';
+        const END_SECTION_ID = 'section-MTqHGbXpoB';
+        
+        let isVisible = true; // Always visible now
+        let startElement = null;
+        let endElement = null;
+        
+        // Simplified section finding (no console logs)
+        function findSections() {
+            startElement = document.getElementById(START_SECTION_ID);
+            endElement = document.getElementById(END_SECTION_ID);
+            
+            if (!startElement) {
+                startElement = document.querySelector('[data-section="' + START_SECTION_ID + '"]') ||
+                              document.querySelector('[data-id="' + START_SECTION_ID + '"]') ||
+                              document.querySelector('.' + START_SECTION_ID) ||
+                              document.querySelector('[class*="' + START_SECTION_ID + '"]');
+            }
+            
+            if (!endElement) {
+                endElement = document.querySelector('[data-section="' + END_SECTION_ID + '"]') ||
+                            document.querySelector('[data-id="' + END_SECTION_ID + '"]') ||
+                            document.querySelector('.' + END_SECTION_ID) ||
+                            document.querySelector('[class*="' + END_SECTION_ID + '"]');
+            }
+            
+            return startElement && endElement;
+        }
+        
+        // Simplified show/hide functions (widget is always visible now)
+        function showWidget() {
+            isVisible = true;
+            widget.classList.add('mpl-visible');
+        }
+        
+        function hideWidget() {
+            isVisible = false;
+            widget.classList.remove('mpl-visible');
+        }
+        
+        // Check if user is in the target section range
+        function checkVisibility() {
+            if (!startElement || !endElement) return;
+            
+            const startRect = startElement.getBoundingClientRect();
+            const endRect = endElement.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Show widget when start section enters viewport (80% visible)
+            const startInView = startRect.top <= windowHeight * 0.8;
+            // Hide widget when end section exits viewport completely
+            const endPassed = endRect.bottom <= 0;
+            
+            const shouldShow = startInView && !endPassed;
+            
+            if (shouldShow) {
+                showWidget();
+            } else {
+                hideWidget();
+            }
+        }
+        
+        // Initialize scroll listener with throttling for performance
+        function initScrollListener() {
+            let ticking = false;
+            
+            function updateVisibility() {
+                checkVisibility();
+                ticking = false;
+            }
+            
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateVisibility);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestTick, { passive: true });
+            window.addEventListener('resize', requestTick, { passive: true });
+            
+            // Initial check
+            checkVisibility();
+        }
+        
+        
+        // Simplified initialization - widget always visible
+        function initialize() {
+            if (!widget) return;
+            
+            // Set up consultation button click handler
+            if (consultationBtn) {
+                consultationBtn.addEventListener('click', function(e) {
+                    // Track the click (optional - for analytics)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'click', {
+                            event_category: 'sticky_widget',
+                            event_label: 'schedule_consultation'
+                        });
+                    }
+                });
+            }
+            
+            // Widget is always visible now - no need for section detection
+            showWidget();
+        }
+        
+        // Start initialization
+        initialize();
+    });
+})();
+</script>
