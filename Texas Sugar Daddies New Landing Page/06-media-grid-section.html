@@ -46,6 +46,14 @@
     overflow: hidden;
 }
 
+/* Ensure animations work in GHL */
+.media-grid * {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 
 .media-grid h2 {
     text-align: center;
@@ -94,6 +102,8 @@
     animation-duration: 20s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    will-change: transform;
 }
 
 .media-column.left .media-column-content {
@@ -165,25 +175,151 @@
 
 
 @keyframes scrollUp {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
+    0% { 
+        transform: translateY(0); 
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(-50%); 
+        opacity: 1;
+    }
 }
 
 @keyframes scrollDown {
-    0% { transform: translateY(-50%); }
-    100% { transform: translateY(0); }
+    0% { 
+        transform: translateY(-50%); 
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(0); 
+        opacity: 1;
+    }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .media-grid-layout {
-        grid-template-columns: 1fr;
-        height: auto;
+    .media-grid {
+        padding: 4rem 0;
     }
     
-    .media-column-content {
-        position: static;
-        animation: none;
+    .media-grid h2 {
+        font-size: 2.5rem;
+    }
+    
+    .media-grid p {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+    
+    .media-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+        height: 500px;
+        overflow: hidden;
+    }
+    
+    .media-column {
+        height: 100%;
+        margin-bottom: 0;
+    }
+    
+    /* Hide the right column on mobile */
+    .media-column.right {
+        display: none;
+    }
+    
+    /* Only animate the left column on mobile */
+    .media-column.left .media-column-content {
+        position: absolute;
+        width: 100%;
+        animation: mobileScroll 15s linear infinite;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .media-item {
+        margin-bottom: 0;
+        height: 180px;
+        flex-shrink: 0;
+    }
+    
+    .media-item.large {
+        height: 220px;
+    }
+    
+    .media-item.video {
+        height: 180px;
+    }
+}
+
+@keyframes mobileScroll {
+    0% { 
+        transform: translateY(0); 
+    }
+    100% { 
+        transform: translateY(-50%); 
     }
 }
 </style>
+
+<script>
+// Ensure animations work in GHL
+document.addEventListener('DOMContentLoaded', function() {
+    const mediaColumns = document.querySelectorAll('.media-column-content');
+    
+    // Force animation restart if needed
+    mediaColumns.forEach(function(column) {
+        // Remove and re-add animation to ensure it starts
+        const animationName = column.style.animationName;
+        column.style.animation = 'none';
+        column.offsetHeight; // Trigger reflow
+        column.style.animation = null;
+    });
+    
+    // Alternative: Use CSS transforms if animations don't work
+    let scrollPosition = 0;
+    const scrollSpeed = 0.5;
+    
+    function animateColumns() {
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            // Mobile: single column animation (left column only)
+            const mobileColumn = document.querySelector('.media-column.left .media-column-content');
+            if (mobileColumn) {
+                const computedStyle = window.getComputedStyle(mobileColumn);
+                const animationName = computedStyle.animationName;
+                
+                if (animationName === 'none' || animationName === '') {
+                    scrollPosition += scrollSpeed;
+                    mobileColumn.style.transform = `translateY(${-scrollPosition % 50}%)`;
+                }
+            }
+        } else {
+            // Desktop: dual column animation
+            const leftColumn = document.querySelector('.media-column.left .media-column-content');
+            const rightColumn = document.querySelector('.media-column.right .media-column-content');
+            
+            if (leftColumn && rightColumn) {
+                scrollPosition += scrollSpeed;
+                
+                // Check if animation is working
+                const computedStyle = window.getComputedStyle(leftColumn);
+                const animationName = computedStyle.animationName;
+                
+                if (animationName === 'none' || animationName === '') {
+                    // Fallback: manual animation
+                    leftColumn.style.transform = `translateY(${-scrollPosition % 50}%)`;
+                    rightColumn.style.transform = `translateY(${(scrollPosition % 50) - 50}%)`;
+                }
+            }
+        }
+        
+        requestAnimationFrame(animateColumns);
+    }
+    
+    // Start fallback animation after a delay
+    setTimeout(animateColumns, 1000);
+});
+</script>
