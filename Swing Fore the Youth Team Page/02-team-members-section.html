@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="team-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><g opacity="0.05"><circle cx="50" cy="50" r="4" fill="%231a5f3a"/><circle cx="25" cy="25" r="2" fill="%23ffd700"/><circle cx="75" cy="75" r="2" fill="%23ffd700"/><circle cx="25" cy="75" r="1" fill="%231a5f3a"/><circle cx="75" cy="25" r="1" fill="%231a5f3a"/></g></pattern></defs><rect width="1200" height="600" fill="url(%23team-pattern)"/></svg>');
+            background-size: cover;
+            opacity: 0.6;
+        }
+
+        .team-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .team-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .team-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a5f3a;
+            margin-bottom: 1rem;
+        }
+
+        .team-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a5f3a, #ffd700, #1a5f3a);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 4px solid #ffd700;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .member-photo {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a5f3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-title {
+            font-size: 1rem;
+            color: #ffd700;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .member-bio {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        .member-bio p {
+            margin-bottom: 1rem;
+        }
+
+        .member-bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        .member-highlight {
+            color: #1a5f3a;
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .team-member {
+                padding: 1.5rem;
+            }
+
+            .member-photo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="team-container">
+            <div class="team-intro">
+                <h2>Our Leadership Team</h2>
+                <p>Meet the dedicated individuals who make Swing Fore The Youth possible. Each team member brings unique expertise and unwavering commitment to our mission of supporting San Antonio youth through sports.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Roger Guerrero -->
+                <div class="team-member fade-in-up">
+                    <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68d35a5fc50899f172fd9353.jpeg" alt="Roger Guerrero" class="member-photo">
+                    <h3 class="member-name">Roger Guerrero</h3>
+                    <p class="member-title">Founder & Director</p>
+                    <div class="member-bio">
+                        <p>Roger Guerrero is the passionate force behind <span class="member-highlight">NZone Sports CenTex</span> and <span class="member-highlight">Go Play Sports Inc.</span>, a youth sports organization that's redefining community engagement in San Antonio.</p>
+                        <p>His journey began in the 1970s when his parents opened a local sports complex, planting the seeds of a lifelong commitment to youth development through play. During COVID-19, Roger saw children losing access to physical activity and launched programs serving over 2,000 children annually.</p>
+                        <p>Roger's mission is to <span class="member-highlight">level the playing field</span> by removing financial barriers, giving every child the chance to "Unplug and Have Fun" and "Get Out and Play."</p>
+                    </div>
+                </div>
+
+                <!-- Su Jin Letellier -->
+                <div class="team-member fade-in-up">
+                    <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68d359a0ef40ca7e55cdeb3a.png" alt="Su Jin Letellier" class="member-photo">
+                    <h3 class="member-name">Su Jin Letellier</h3>
+                    <p class="member-title">Vice Chair</p>
+                    <div class="member-bio">
+                        <p>Su Jin Letellier is an <span class="member-highlight">Employer-Sponsored Benefits Advocate</span> with <span class="member-highlight">DEBS Insurance</span>, helping businesses transform employee benefits into strategic, tax-advantaged tools for growth.</p>
+                        <p>As Vice Chair of Go Play Sports Inc., Su brings her passion for equity and empowerment to support underserved youth in San Antonio. A former athlete herself, she believes the values learned on the field—resilience, teamwork, leadership—drive meaningful change in business and life.</p>
+                        <p>For Su, it's all about giving people the tools to thrive—whether that's in the workplace or on the field.</p>
+                    </div>
+                </div>
+
+                <!-- Vilma Tovar -->
+                <div class="team-member fade-in-up">
+                    <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68d359abe1ce454f23ed3387.png" alt="Vilma Tovar" class="member-photo">
+                    <h3 class="member-name">Vilma Tovar</h3>
+                    <p class="member-title">Founder & Owner - CreativeIQ Marketing</p>
+                    <div class="member-bio">
+                        <p>Vilma Tovar is the Founder and Owner of <span class="member-highlight">CreativeIQ Digital Marketing</span>, a Texas-based digital agency helping businesses grow through innovative strategies and measurable results.</p>
+                        <p>Her community impact includes supporting initiatives like <span class="member-highlight">Swing for the Youth</span> and the <span class="member-highlight">Two Step Gala with Team Ability</span>. She speaks at universities and provides mentorship by taking in students to give them a head start in the professional world.</p>
+                        <p>Through her leadership, Vilma bridges business growth with community impact—helping organizations tell their stories, expand their reach, and create lasting change.</p>
+                    </div>
+                </div>
+
+                <!-- Mike Dannelly -->
+                <div class="team-member fade-in-up">
+                    <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68d35a5fc50899f172fd9353.jpeg" alt="Mike Dannelly" class="member-photo">
+                    <h3 class="member-name">Mike Dannelly</h3>
+                    <p class="member-title">Board Member & Real Estate Agent</p>
+                    <div class="member-bio">
+                        <p>Mike Dannelly is a San Antonio real estate agent with <span class="member-highlight">eXp Realty</span>, blending nearly 30 years of sales and leadership experience with a personal, fun approach to helping clients buy and sell homes.</p>
+                        <p>Beyond real estate, he founded <span class="member-highlight">Lone Star Improv</span>, teaching youth and adults the power of "yes, and" through improv comedy, and performs stand-up comedy across Texas.</p>
+                        <p>As a board member of Go Play Sports, Mike is passionate about ensuring all kids have the chance to experience teamwork, discipline, and joy of organized sports. His guiding principle—<span class="member-highlight">"Inspiration over Obligation"</span>—shapes his mission to inspire, connect, and uplift others.</p>
+                    </div>
+                </div>
+
+                <!-- Paul McGehee -->
+                <div class="team-member fade-in-up">
+                    <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68d3599bb59d667e4e22ab4d.jpeg" alt="Paul McGehee" class="member-photo">
+                    <h3 class="member-name">Paul McGehee</h3>
+                    <p class="member-title">Golf Tournament Committee Member</p>
+                    <div class="member-bio">
+                        <p>Paul McGehee serves on the golf tournament committee for Go Play Sports Inc. His family strongly believes in giving back to the community, and supporting kids is especially meaningful to them.</p>
+                        <p>Paul runs <span class="member-highlight">360 Painting of NW San Antonio & 360 Painting of Castle Hills</span>, where they serve local families and businesses. He sees giving back through this tournament as another way to invest in the community they're blessed to work in every day.</p>
+                        <p>Paul believes that children don't get to choose their circumstances, so when we have the chance to help open doors for them, it matters.</p>
+                    </div>
+                </div>
+
+                <!-- Jacob Sanchez -->
+                <div class="team-member fade-in-up">
+                    <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68d35990b59d6687f122a9c1.png" alt="Jacob Sanchez" class="member-photo">
+                    <h3 class="member-name">Jacob Sanchez</h3>
+                    <p class="member-title">Licensed Agent - New York Life</p>
+                    <div class="member-bio">
+                        <p>Jacob Sanchez is a <span class="member-highlight">Licensed Agent with New York Life Insurance Company</span> and a Registered Representative offering securities products through NYLIFE Securities LLC.</p>
+                        <p>He works closely with business owners to implement tax-saving strategies, build retirement solutions, and create succession plans. He also supports families by providing guidance on life insurance, college funding, and investment strategies.</p>
+                        <p>Growing up, sports weren't just about the game—they were about community, discipline, confidence, and opportunity. That's why supporting Go Play Sports means so much to him, as it helps cover registration fees so no child is priced out of the chance to play.</p>
+                    </div>
+                </div>
+
+                <!-- Jonathan Barragan -->
+                <div class="team-member fade-in-up">
+                    <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68d35995ef40cab701cde991.png" alt="Jonathan Barragan" class="member-photo">
+                    <h3 class="member-name">Jonathan Barragan</h3>
+                    <p class="member-title">Licensed Agent - New York Life</p>
+                    <div class="member-bio">
+                        <p>Jonathan Barragan is a <span class="member-highlight">Licensed Agent with New York Life Insurance Company</span> and a Registered Representative offering securities through NYLIFE Securities LLC.</p>
+                        <p>He specializes in guiding nonprofit organizations through their financial journey, helping them implement tax-efficient strategies, build tailored retirement solutions, and develop succession plans that support their long-term mission and sustainability.</p>
+                        <p>Jonathan believes that the most important lessons in life—teamwork, discipline, resilience—aren't learned in a classroom but on the field, court, and in the game. That's why he's passionate about supporting Go Play Sports.</p>
+                    </div>
+                </div>
+
+                <!-- Fabian -->
+                <div class="team-member fade-in-up">
+                    <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68d35984ef40ca7123cde758.jpeg" alt="Fabian" class="member-photo">
+                    <h3 class="member-name">Fabian</h3>
+                    <p class="member-title">Founder - To Be Developed Project Services</p>
+                    <div class="member-bio">
+                        <p>Born and raised in San Antonio, Fabian founded <span class="member-highlight">To Be Developed – Project Services LLC</span> to channel his passion for construction and his love for his hometown.</p>
+                        <p>His firm has evolved into a respected construction and development company specializing in residential construction, restoration, and real estate projects with a focus on respecting each client's budget and vision.</p>
+                        <p>Fabian's collaborative mindset extends beyond his business: he builds relationships across the real estate and construction community, mentors emerging contractors, and engages in initiatives that strengthen San Antonio's neighborhoods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add fade-in animation to elements on scroll
+        const fadeElements = document.querySelectorAll('.fade-in-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            fadeObserver.observe(element);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Mission Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4d 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="mission-pattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse"><g opacity="0.1"><path d="M 60 20 L 60 100 M 55 25 L 65 25 M 55 30 L 65 30" stroke="%23ffd700" stroke-width="2" fill="none"/><circle cx="60" cy="15" r="3" fill="%23ffd700"/><circle cx="30" cy="30" r="2" fill="%23ffffff"/><circle cx="90" cy="90" r="2" fill="%23ffffff"/></g></pattern></defs><rect width="1200" height="400" fill="url(%23mission-pattern)"/></svg>');
+            background-size: cover;
+            opacity: 0.4;
+        }
+
+        .mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .mission-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .mission-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mission-stat {
+            text-align: center;
+        }
+
+        .mission-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffd700;
+            display: block;
+        }
+
+        .mission-stat .label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mission-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-container">
+            <h2 class="mission-title">Our Mission</h2>
+            <p class="mission-text">
+                We believe every child deserves the opportunity to participate in sports, regardless of their family's financial situation. Through scholarships, grants, and community support, we're opening doors for San Antonio youth to experience the life-changing power of team sports.
+            </p>
+            
+            <div class="mission-stats">
+                <div class="mission-stat">
+                    <span class="number">2,000+</span>
+                    <span class="label">Children Served Annually</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="number">15+</span>
+                    <span class="label">Sports Programs</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="number">$250K+</span>
+                    <span class="label">Total Community Impact</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="number">100%</span>
+                    <span class="label">Local Focus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

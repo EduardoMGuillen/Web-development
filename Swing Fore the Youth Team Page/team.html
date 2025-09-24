@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Team - Swing Fore The Youth 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header-section {
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4d 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="golf-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse"><g opacity="0.1"><circle cx="40" cy="40" r="3" fill="%23ffd700"/><circle cx="20" cy="20" r="2" fill="%23ffffff"/><circle cx="60" cy="60" r="2" fill="%23ffffff"/><circle cx="20" cy="60" r="1" fill="%23ffd700"/><circle cx="60" cy="20" r="1" fill="%23ffd700"/></g></pattern></defs><rect width="1200" height="400" fill="url(%23golf-pattern)"/></svg>');
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #ffd700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .back-to-home:hover {
+            background: #ffd700;
+            color: #1a5f3a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Team Section */
+        .team-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="team-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><g opacity="0.05"><circle cx="50" cy="50" r="4" fill="%231a5f3a"/><circle cx="25" cy="25" r="2" fill="%23ffd700"/><circle cx="75" cy="75" r="2" fill="%23ffd700"/><circle cx="25" cy="75" r="1" fill="%231a5f3a"/><circle cx="75" cy="25" r="1" fill="%231a5f3a"/></g></pattern></defs><rect width="1200" height="600" fill="url(%23team-pattern)"/></svg>');
+            background-size: cover;
+            opacity: 0.6;
+        }
+
+        .team-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .team-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .team-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a5f3a;
+            margin-bottom: 1rem;
+        }
+
+        .team-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a5f3a, #ffd700, #1a5f3a);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 4px solid #ffd700;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .member-photo {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a5f3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-title {
+            font-size: 1rem;
+            color: #ffd700;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .member-bio {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        .member-bio p {
+            margin-bottom: 1rem;
+        }
+
+        .member-bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        .member-highlight {
+            color: #1a5f3a;
+            font-weight: 600;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4d 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="mission-pattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse"><g opacity="0.1"><path d="M 60 20 L 60 100 M 55 25 L 65 25 M 55 30 L 65 30" stroke="%23ffd700" stroke-width="2" fill="none"/><circle cx="60" cy="15" r="3" fill="%23ffd700"/><circle cx="30" cy="30" r="2" fill="%23ffffff"/><circle cx="90" cy="90" r="2" fill="%23ffffff"/></g></pattern></defs><rect width="1200" height="400" fill="url(%23mission-pattern)"/></svg>');
+            background-size: cover;
+            opacity: 0.4;
+        }
+
+        .mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .mission-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .mission-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mission-stat {
+            text-align: center;
+        }
+
+        .mission-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffd700;
+            display: block;
+        }
+
+        .mission-stat .label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+
+            .header-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .team-member {
+                padding: 1.5rem;
+            }
+
+            .member-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .mission-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="header-container">
+            <h1 class="header-title">Meet Our Team</h1>
+            <p class="header-subtitle">Passionate leaders dedicated to opening doors for kids in sports</p>
+            <a href="../Swing for the youth/SwingForTheYouth-CompleteWebsite.html" class="back-to-home">
+                <i class="fas fa-arrow-left"></i>
+                Back to Main Event
+            </a>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="team-container">
+            <div class="team-intro">
+                <h2>Our Leadership Team</h2>
+                <p>Meet the dedicated individuals who make Swing Fore The Youth possible. Each team member brings unique expertise and unwavering commitment to our mission of supporting San Antonio youth through sports.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Roger Guerrero -->
+                <div class="team-member fade-in-up">
+                    <img src="https://via.placeholder.com/400x400/1a5f3a/ffffff?text=RG" alt="Roger Guerrero" class="member-photo">
+                    <h3 class="member-name">Roger Guerrero</h3>
+                    <p class="member-title">Founder & Director</p>
+                    <div class="member-bio">
+                        <p>Roger Guerrero is the passionate force behind <span class="member-highlight">NZone Sports CenTex</span> and <span class="member-highlight">Go Play Sports Inc.</span>, a youth sports organization that's redefining community engagement in San Antonio.</p>
+                        <p>His journey began in the 1970s when his parents opened a local sports complex, planting the seeds of a lifelong commitment to youth development through play. During COVID-19, Roger saw children losing access to physical activity and launched programs serving over 2,000 children annually.</p>
+                        <p>Roger's mission is to <span class="member-highlight">level the playing field</span> by removing financial barriers, giving every child the chance to "Unplug and Have Fun" and "Get Out and Play."</p>
+                    </div>
+                </div>
+
+                <!-- Su Jin Letellier -->
+                <div class="team-member fade-in-up">
+                    <img src="Su Bio.docx/images/image1.png" alt="Su Jin Letellier" class="member-photo">
+                    <h3 class="member-name">Su Jin Letellier</h3>
+                    <p class="member-title">Vice Chair</p>
+                    <div class="member-bio">
+                        <p>Su Jin Letellier is an <span class="member-highlight">Employer-Sponsored Benefits Advocate</span> with <span class="member-highlight">DEBS Insurance</span>, helping businesses transform employee benefits into strategic, tax-advantaged tools for growth.</p>
+                        <p>As Vice Chair of Go Play Sports Inc., Su brings her passion for equity and empowerment to support underserved youth in San Antonio. A former athlete herself, she believes the values learned on the field—resilience, teamwork, leadership—drive meaningful change in business and life.</p>
+                        <p>For Su, it's all about giving people the tools to thrive—whether that's in the workplace or on the field.</p>
+                    </div>
+                </div>
+
+                <!-- Vilma Tovar -->
+                <div class="team-member fade-in-up">
+                    <img src="Vilma Tovar Bio/images/image2.png" alt="Vilma Tovar" class="member-photo">
+                    <h3 class="member-name">Vilma Tovar</h3>
+                    <p class="member-title">Founder & Owner - CreativeIQ Marketing</p>
+                    <div class="member-bio">
+                        <p>Vilma Tovar is the Founder and Owner of <span class="member-highlight">CreativeIQ Digital Marketing</span>, a Texas-based digital agency helping businesses grow through innovative strategies and measurable results.</p>
+                        <p>Her community impact includes supporting initiatives like <span class="member-highlight">Swing for the Youth</span> and the <span class="member-highlight">Two Step Gala with Team Ability</span>. She speaks at universities and provides mentorship by taking in students to give them a head start in the professional world.</p>
+                        <p>Through her leadership, Vilma bridges business growth with community impact—helping organizations tell their stories, expand their reach, and create lasting change.</p>
+                    </div>
+                </div>
+
+                <!-- Mike Dannelly -->
+                <div class="team-member fade-in-up">
+                    <img src="https://via.placeholder.com/400x400/1a5f3a/ffffff?text=MD" alt="Mike Dannelly" class="member-photo">
+                    <h3 class="member-name">Mike Dannelly</h3>
+                    <p class="member-title">Board Member & Real Estate Agent</p>
+                    <div class="member-bio">
+                        <p>Mike Dannelly is a San Antonio real estate agent with <span class="member-highlight">eXp Realty</span>, blending nearly 30 years of sales and leadership experience with a personal, fun approach to helping clients buy and sell homes.</p>
+                        <p>Beyond real estate, he founded <span class="member-highlight">Lone Star Improv</span>, teaching youth and adults the power of "yes, and" through improv comedy, and performs stand-up comedy across Texas.</p>
+                        <p>As a board member of Go Play Sports, Mike is passionate about ensuring all kids have the chance to experience teamwork, discipline, and joy of organized sports. His guiding principle—<span class="member-highlight">"Inspiration over Obligation"</span>—shapes his mission to inspire, connect, and uplift others.</p>
+                    </div>
+                </div>
+
+                <!-- Paul McGehee -->
+                <div class="team-member fade-in-up">
+                    <img src="Paul McGehee - Bio/images/image2.jpg" alt="Paul McGehee" class="member-photo">
+                    <h3 class="member-name">Paul McGehee</h3>
+                    <p class="member-title">Golf Tournament Committee Member</p>
+                    <div class="member-bio">
+                        <p>Paul McGehee serves on the golf tournament committee for Go Play Sports Inc. His family strongly believes in giving back to the community, and supporting kids is especially meaningful to them.</p>
+                        <p>Paul runs <span class="member-highlight">360 Painting of NW San Antonio & 360 Painting of Castle Hills</span>, where they serve local families and businesses. He sees giving back through this tournament as another way to invest in the community they're blessed to work in every day.</p>
+                        <p>Paul believes that children don't get to choose their circumstances, so when we have the chance to help open doors for them, it matters.</p>
+                    </div>
+                </div>
+
+                <!-- Jacob Sanchez -->
+                <div class="team-member fade-in-up">
+                    <img src="Jacob Sanchez Go Play Sports Bio.docx/images/image1.png" alt="Jacob Sanchez" class="member-photo">
+                    <h3 class="member-name">Jacob Sanchez</h3>
+                    <p class="member-title">Licensed Agent - New York Life</p>
+                    <div class="member-bio">
+                        <p>Jacob Sanchez is a <span class="member-highlight">Licensed Agent with New York Life Insurance Company</span> and a Registered Representative offering securities products through NYLIFE Securities LLC.</p>
+                        <p>He works closely with business owners to implement tax-saving strategies, build retirement solutions, and create succession plans. He also supports families by providing guidance on life insurance, college funding, and investment strategies.</p>
+                        <p>Growing up, sports weren't just about the game—they were about community, discipline, confidence, and opportunity. That's why supporting Go Play Sports means so much to him, as it helps cover registration fees so no child is priced out of the chance to play.</p>
+                    </div>
+                </div>
+
+                <!-- Jonathan Barragan -->
+                <div class="team-member fade-in-up">
+                    <img src="Jonathan Barragan Go Play Sports Bio.docx/images/image1.png" alt="Jonathan Barragan" class="member-photo">
+                    <h3 class="member-name">Jonathan Barragan</h3>
+                    <p class="member-title">Licensed Agent - New York Life</p>
+                    <div class="member-bio">
+                        <p>Jonathan Barragan is a <span class="member-highlight">Licensed Agent with New York Life Insurance Company</span> and a Registered Representative offering securities through NYLIFE Securities LLC.</p>
+                        <p>He specializes in guiding nonprofit organizations through their financial journey, helping them implement tax-efficient strategies, build tailored retirement solutions, and develop succession plans that support their long-term mission and sustainability.</p>
+                        <p>Jonathan believes that the most important lessons in life—teamwork, discipline, resilience—aren't learned in a classroom but on the field, court, and in the game. That's why he's passionate about supporting Go Play Sports.</p>
+                    </div>
+                </div>
+
+                <!-- Fabian -->
+                <div class="team-member fade-in-up">
+                    <img src="fabian_bio.docx/images/image2.jpg" alt="Fabian" class="member-photo">
+                    <h3 class="member-name">Fabian</h3>
+                    <p class="member-title">Founder - To Be Developed Project Services</p>
+                    <div class="member-bio">
+                        <p>Born and raised in San Antonio, Fabian founded <span class="member-highlight">To Be Developed – Project Services LLC</span> to channel his passion for construction and his love for his hometown.</p>
+                        <p>His firm has evolved into a respected construction and development company specializing in residential construction, restoration, and real estate projects with a focus on respecting each client's budget and vision.</p>
+                        <p>Fabian's collaborative mindset extends beyond his business: he builds relationships across the real estate and construction community, mentors emerging contractors, and engages in initiatives that strengthen San Antonio's neighborhoods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-container">
+            <h2 class="mission-title">Our Mission</h2>
+            <p class="mission-text">
+                We believe every child deserves the opportunity to participate in sports, regardless of their family's financial situation. Through scholarships, grants, and community support, we're opening doors for San Antonio youth to experience the life-changing power of team sports.
+            </p>
+            
+            <div class="mission-stats">
+                <div class="mission-stat">
+                    <span class="number">2,000+</span>
+                    <span class="label">Children Served Annually</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="number">15+</span>
+                    <span class="label">Sports Programs</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="number">$250K+</span>
+                    <span class="label">Total Community Impact</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="number">100%</span>
+                    <span class="label">Local Focus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        // Add fade-in animation to elements on scroll
+        const fadeElements = document.querySelectorAll('.fade-in-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            fadeObserver.observe(element);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
