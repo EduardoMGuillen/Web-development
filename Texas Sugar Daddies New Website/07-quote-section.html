@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Sugar Daddies - Quote Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        /* Quote Section */
+        .quote {
+            background: white;
+        }
+
+        .quote h2,
+        .quote p {
+            margin-bottom: 1rem;
+        }
+
+        .quote p {
+            margin-bottom: 3rem;
+        }
+
+        .quote-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .quote-info {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #dc3545;
+            margin-top: 0.2rem;
+        }
+
+        .contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .contact-item p {
+            color: #666;
+            margin: 0;
+            text-align: left;
+        }
+
+        .dad-promise {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .dad-promise h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .dad-promise p {
+            color: #666;
+            font-style: italic;
+            text-align: left;
+        }
+
+        .quote-form {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 12px;
+        }
+
+        .quote-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #dc3545;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+        }
+
+        .form-disclaimer {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Demo Content */
+        .demo-content {
+            padding: 4rem 0;
+            text-align: center;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 12px;
+        }
+
+        .demo-content h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quote-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quote-form {
+                padding: 1.5rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Quote Section -->
+    <section id="quote" class="quote">
+        <div class="container">
+            <h2>Get Your Free Quote Today</h2>
+            <p>Ready to make your event unforgettable? Contact us for a personalized quote and consultation</p>
+            <div class="quote-content">
+                <div class="quote-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(210) 555-DADS</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@texassugardaddies.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Texas Street<br>San Antonio, TX 78201</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Cafe: Mon-Thu 10:30AM-2:30PM<br>Catering: 7 days a week</p>
+                        </div>
+                    </div>
+                    <div class="dad-promise">
+                        <h4>The Dad Promise</h4>
+                        <p>"We promise to treat your event like it's our own family gathering - with love, attention to detail, and maybe a dad joke or two!"</p>
+                    </div>
+                </div>
+                <form class="quote-form">
+                    <h3>Request Your Quote</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="First Name*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Last Name*" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone*" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="date" placeholder="Event Date" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" placeholder="Guest Count" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Event Type</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="baby-shower">Baby Shower</option>
+                            <option value="holiday">Holiday Party</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Event Location" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Additional Details" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get My Free Quote</button>
+                    <p class="form-disclaimer">By submitting this form, you agree to receive communications from Texas Sugar Daddies.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <div class="container">
+        <div class="demo-content">
+            <h1>07 - Quote Section</h1>
+            <p>This section features "Get Your Free Quote Today" with contact information, "The Dad Promise" box, and a comprehensive quote request form with validation.</p>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handling
+        const contactForm = document.querySelector('.quote-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const name = this.querySelector('input[type="text"]').value;
+                const email = this.querySelector('input[type="email"]').value;
+                const phone = this.querySelector('input[type="tel"]').value;
+                const eventType = this.querySelector('select').value;
+                const eventDate = this.querySelector('input[type="date"]').value;
+                const guests = this.querySelector('input[type="number"]').value;
+                
+                // Simple validation
+                if (!name || !email || !eventType || !eventDate || !guests) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Simulate form submission
+                const submitBtn = this.querySelector('.btn-primary');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Thank you for your inquiry! We will contact you within 24 hours.');
+                    this.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Sugar Daddies - Testimonials Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+        }
+
+        .testimonials h2,
+        .testimonials p {
+            margin-bottom: 1rem;
+        }
+
+        .testimonials p {
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .testimonial-card .stars {
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card .stars i {
+            color: #ffd700;
+            font-size: 16px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-author span {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .testimonial-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        .testimonial-stats .stat-number {
+            font-size: 2rem;
+            color: #dc3545;
+        }
+
+        .testimonial-stats .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        /* Demo Content */
+        .demo-content {
+            padding: 4rem 0;
+            text-align: center;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 12px;
+        }
+
+        .demo-content h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p>Don't just take our word for it - hear from the clients who've experienced our exceptional catering services</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Absolutely incredible! The food was amazing and the service was top-notch. Our wedding guests are still talking about it!"</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Johnson</strong>
+                        <span>Bride</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Perfect for our corporate event. Professional, delicious, and exactly what we needed. Will definitely use again!"</p>
+                    <div class="testimonial-author">
+                        <strong>Michael Chen</strong>
+                        <span>Office Manager</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The best BBQ in town! The brisket was melt-in-your-mouth tender and the sides were perfect."</p>
+                    <div class="testimonial-author">
+                        <strong>David Rodriguez</strong>
+                        <span>Birthday Party Host</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Texas Sugar Daddies made our anniversary celebration unforgettable. The custom menu was perfect!"</p>
+                    <div class="testimonial-author">
+                        <strong>Jennifer Martinez</strong>
+                        <span>Anniversary Party</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Amazing cupcakes and cookies! The custom printing on the sugar cookies was exactly what we wanted."</p>
+                    <div class="testimonial-author">
+                        <strong>Lisa Thompson</strong>
+                        <span>Baby Shower Host</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Great venue and even better food! The team was professional and everything went smoothly."</p>
+                    <div class="testimonial-author">
+                        <strong>Robert Wilson</strong>
+                        <span>Corporate Event</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-stats">
+                <div class="stat">
+                    <span class="stat-number">2017</span>
+                    <span class="stat-label">Started Online</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5*</span>
+                    <span class="stat-label">Customer Love</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Foodie Dads</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100</span>
+                    <span class="stat-label">Epic Bites</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <div class="container">
+        <div class="demo-content">
+            <h1>06 - Testimonials Section</h1>
+            <p>This section showcases "What Our Clients Say" with six testimonial cards featuring 5-star reviews, client quotes, names, and event types, plus statistics at the bottom.</p>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.testimonial-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

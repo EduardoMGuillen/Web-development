@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Sugar Daddies - Services Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        /* Services Section */
+        .services {
+            background: #f8f9fa;
+        }
+
+        .services h2,
+        .services p {
+            margin-bottom: 1rem;
+        }
+
+        .services p {
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .service-btn {
+            background: #dc3545;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .service-btn:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        /* Demo Content */
+        .demo-content {
+            padding: 4rem 0;
+            text-align: center;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 12px;
+        }
+
+        .demo-content h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Image loading */
+        img {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>We Do It All!</h2>
+            <p>From our weekday cafe to custom catering and sweet treats - your Texas Sugar Daddies have got you covered</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f77f917b16acd8ea46.jpeg" alt="Chocolate cheesecake">
+                    </div>
+                    <div class="service-content">
+                        <h3>The Bakery</h3>
+                        <p>From our signature cookies and cupcakes to custom cakes and personalized sugar cookies with custom printing, we create sweet treats that make every occasion special.</p>
+                        <a href="#" class="service-btn">PLACE AN ORDER TODAY</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f744a6632cc3db5706.jpeg" alt="Cafe setting">
+                    </div>
+                    <div class="service-content">
+                        <h3>The Cafe</h3>
+                        <p>Join us Monday through Thursday for lunchtime bites, daily specials, and grab-and-go options. Perfect for a quick meal or casual dining experience.</p>
+                        <a href="#" class="service-btn">PLACE AN ORDER TODAY</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f632f3399471194aff.jpeg" alt="Catering team">
+                    </div>
+                    <div class="service-content">
+                        <h3>The Caterers</h3>
+                        <p>Professional onsite and offsite catering services with custom menu development. We bring the restaurant experience to your event location.</p>
+                        <a href="#" class="service-btn">LET US CATER TO YOU</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/68c0e4f6fc367038f91acf8a.jpeg" alt="Event venue">
+                    </div>
+                    <div class="service-content">
+                        <h3>Venue Rentals</h3>
+                        <p>Host your next event at our beautiful venue! Perfect for corporate meetings, birthday parties, and special celebrations. Capacity: 150 people with full amenities.</p>
+                        <a href="#" class="service-btn">HOST YOUR EVENT HERE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <div class="container">
+        <div class="demo-content">
+            <h1>04 - Services Section</h1>
+            <p>This section showcases "We Do It All!" with four service cards: The Bakery (sweet treats), The Cafe (weekday lunch), The Caterers (professional catering), and Venue Rentals (event hosting).</p>
+        </div>
+    </div>
+
+    <script>
+        // Add loading animation to images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', () => {
+                img.style.opacity = '1';
+            });
+            
+            // Set initial opacity
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.service-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Service card tilt effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

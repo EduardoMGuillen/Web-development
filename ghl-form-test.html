@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHL Form Integration Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-container {
+            width: 100%;
+            height: 719px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .test-info {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196F3;
+        }
+        .test-info h3 {
+            margin-top: 0;
+            color: #1976D2;
+        }
+        .test-info ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .test-info li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GHL Form Integration Test</h1>
+        
+        <div class="test-info">
+            <h3>Test Purpose</h3>
+            <p>This page tests whether a GoHighLevel (GHL) form can be embedded and function properly outside of a GHL environment (e.g., on WordPress, static HTML, etc.).</p>
+            
+            <h3>What to Check:</h3>
+            <ul>
+                <li>Does the form load without errors?</li>
+                <li>Are all form fields visible and functional?</li>
+                <li>Can you submit the form successfully?</li>
+                <li>Do you receive confirmation after submission?</li>
+                <li>Are there any console errors in the browser's developer tools?</li>
+                <li>Does the form styling appear correctly?</li>
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <iframe
+                src="https://link.creativeiq.marketing/widget/form/wyXx2g6R7NW2W2fx8HjI"
+                style="width:100%;height:100%;border:none;border-radius:10px"
+                id="inline-wyXx2g6R7NW2W2fx8HjI" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Form 1"
+                data-height="719"
+                data-layout-iframe-id="inline-wyXx2g6R7NW2W2fx8HjI"
+                data-form-id="wyXx2g6R7NW2W2fx8HjI"
+                title="Form 1">
+            </iframe>
+        </div>
+        
+        <div class="test-info">
+            <h3>Testing Instructions:</h3>
+            <ol>
+                <li>Open this page in your browser</li>
+                <li>Check if the form loads completely</li>
+                <li>Try filling out and submitting the form</li>
+                <li>Open browser developer tools (F12) and check the Console tab for any errors</li>
+                <li>Test on different devices/browsers if possible</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="https://link.creativeiq.marketing/js/form_embed.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Sugar Daddies - Menu Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        /* Menu Section */
+        .menu {
+            background: white;
+        }
+
+        .menu h2,
+        .menu p {
+            margin-bottom: 1rem;
+        }
+
+        .menu p {
+            margin-bottom: 3rem;
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border: 2px solid #e9ecef;
+            background: white;
+            color: #666;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            border-color: #dc3545;
+            background: #dc3545;
+            color: white;
+        }
+
+        .menu-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .menu-category {
+            display: none;
+        }
+
+        .menu-category.active {
+            display: block;
+        }
+
+        .menu-items {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .item-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .item-info p {
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .dietary-tag {
+            background: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #dc3545;
+        }
+
+        .dietary-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .dietary-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .dietary-item i {
+            color: #28a745;
+        }
+
+        /* Demo Content */
+        .demo-content {
+            padding: 4rem 0;
+            text-align: center;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 12px;
+        }
+
+        .demo-content h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dietary-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 200px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Epic Bites Menu</h2>
+            <p>A taste of what we're cooking up - from Texas comfort food to custom sweet treats that'll make you smile</p>
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="appetizers">Appetizers</button>
+                <button class="tab-btn" data-tab="main-courses">Main Courses</button>
+                <button class="tab-btn" data-tab="desserts">Desserts</button>
+            </div>
+            <div class="menu-content">
+                <div class="menu-category active" id="appetizers">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Texas Pimento Cheese Dip</h4>
+                                <p>Our signature pimento cheese served with house made chips.</p>
+                                <span class="dietary-tag">Vegetarian</span>
+                            </div>
+                            <span class="price">$8.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Jalapeño Popper Dip</h4>
+                                <p>Creamy jalapeño and bacon dip with tortilla chips.</p>
+                            </div>
+                            <span class="price">$9.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>BBQ Burnt End Bites</h4>
+                                <p>Tender brisket burnt ends with our house BBQ sauce.</p>
+                                <span class="dietary-tag">Gluten-Free</span>
+                            </div>
+                            <span class="price">$12.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Deviled Egg Board</h4>
+                                <p>Classic and loaded deviled eggs with bacon and chives.</p>
+                                <span class="dietary-tag">Gluten-Free</span>
+                            </div>
+                            <span class="price">$10.99</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-category" id="main-courses">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Texas BBQ Brisket</h4>
+                                <p>Slow-smoked brisket with our signature BBQ rub and sauce.</p>
+                            </div>
+                            <span class="price">$18.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Loaded Mac & Cheese</h4>
+                                <p>Creamy three-cheese mac with bacon and jalapeños.</p>
+                            </div>
+                            <span class="price">$14.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Grilled Chicken Salad</h4>
+                                <p>Fresh mixed greens with grilled chicken, tomatoes, and ranch.</p>
+                                <span class="dietary-tag">Gluten-Free</span>
+                            </div>
+                            <span class="price">$16.99</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-category" id="desserts">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Texas Sheet Cake</h4>
+                                <p>Rich chocolate cake with fudge frosting and pecans.</p>
+                            </div>
+                            <span class="price">$6.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Peach Cobbler</h4>
+                                <p>Warm peach cobbler with vanilla ice cream.</p>
+                                <span class="dietary-tag">Vegetarian</span>
+                            </div>
+                            <span class="price">$7.99</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Custom Sugar Cookies</h4>
+                                <p>Personalized sugar cookies with custom printing.</p>
+                            </div>
+                            <span class="price">$3.99 each</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dietary-info">
+                <div class="dietary-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>Vegan Options Available</span>
+                </div>
+                <div class="dietary-item">
+                    <i class="fas fa-wheat"></i>
+                    <span>Gluten-Free Menu</span>
+                </div>
+                <div class="dietary-item">
+                    <i class="fas fa-child"></i>
+                    <span>Kid-Friendly</span>
+                </div>
+                <div class="dietary-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Allergen Information</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <div class="container">
+        <div class="demo-content">
+            <h1>05 - Menu Section</h1>
+            <p>This section features the "Epic Bites Menu" with tabbed navigation (Appetizers, Main Courses, Desserts), menu items with pricing, dietary tags, and allergen information.</p>
+        </div>
+    </div>
+
+    <script>
+        // Menu Tab Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const menuCategories = document.querySelectorAll('.menu-category');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all tabs and categories
+                tabBtns.forEach(tab => tab.classList.remove('active'));
+                menuCategories.forEach(category => category.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                btn.classList.add('active');
+                
+                // Show corresponding category
+                const targetTab = btn.getAttribute('data-tab');
+                const targetCategory = document.getElementById(targetTab);
+                if (targetCategory) {
+                    targetCategory.classList.add('active');
+                }
+            });
+        });
+
+        // Menu item hover effects
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.background = '#e9ecef';
+                item.style.paddingLeft = '1rem';
+                item.style.paddingRight = '1rem';
+                item.style.borderRadius = '10px';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.background = '#f8f9fa';
+                item.style.paddingLeft = '1.5rem';
+                item.style.paddingRight = '1.5rem';
+                item.style.borderRadius = '8px';
+            });
+        });
+    </script>
+</body>
+</html>
