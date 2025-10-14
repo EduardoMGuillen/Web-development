@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsorship Opportunity - Swing Fore The Youth 2025</title>
+    <title>Limited Time - Exclusive Sponsorship - Swing Fore The Youth 2025</title>
     <style>
         /* Reset styles */
         * {
@@ -56,6 +56,23 @@
             letter-spacing: 1px;
         }
 
+        /* Urgency banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
         /* Main content */
         .content {
             padding: 40px 30px;
@@ -78,6 +95,47 @@
             margin-bottom: 15px;
             font-size: 1rem;
             line-height: 1.7;
+        }
+
+        /* Limited spots highlight */
+        .limited-spots {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .limited-spots h3 {
+            color: #856404;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .limited-spots p {
+            font-size: 1.1rem;
+            color: #856404;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .limited-spots::before {
+            content: "⚡";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffc107;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
         }
 
         /* Sponsorship benefits */
@@ -158,10 +216,27 @@
             align-items: center;
             padding: 15px 0;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
         }
 
         .level:last-child {
             border-bottom: none;
+        }
+
+        .level.sold-out {
+            opacity: 0.5;
+        }
+
+        .level.sold-out::after {
+            content: "SOLD OUT";
+            position: absolute;
+            right: 0;
+            background: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
         }
 
         .level-name {
@@ -209,6 +284,11 @@
         .btn-secondary:hover {
             background: #1a5f3a;
             color: white;
+        }
+
+        .btn-urgent {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            animation: pulse 2s infinite;
         }
 
         /* Footer */
@@ -291,9 +371,14 @@
 </head>
 <body>
     <div class="email-container">
+        <!-- Exclusive Banner -->
+        <div class="urgency-banner" style="background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4a 100%); animation: none;">
+            🏆 EXCLUSIVE SPONSORSHIP OPPORTUNITIES AVAILABLE 🏆
+        </div>
+
         <!-- Header -->
         <div class="header">
-            <h1>SPONSORSHIP OPPORTUNITY</h1>
+            <h1>EXCLUSIVE SPONSORSHIP</h1>
             <div class="subtitle">Swing Fore The Youth Golf Tournament 2025</div>
             <div class="date">Friday, November 7, 2025</div>
         </div>
@@ -301,72 +386,76 @@
         <!-- Main Content -->
         <div class="content">
             <div class="section">
-                <h2>🌟 Join Us in Making a Difference</h2>
-                <p>We're excited to invite you to become a sponsor of the <strong>Swing Fore The Youth 2025</strong> golf tournament – an incredible opportunity to support San Antonio youth while elevating your brand's visibility in our community.</p>
-                <p>This premier golf tournament brings together business leaders, community members, and sports enthusiasts for a day of networking, competition, and philanthropy. Your sponsorship directly supports local youth sports programs, helping kids overcome financial barriers to participate in the sports they love.</p>
+                <h2>🏆 Premium Sponsorship Opportunity</h2>
+                <p>Dear Valued Partner,</p>
+                <p>The <strong>Swing Fore The Youth 2025</strong> golf tournament represents one of San Antonio's most prestigious business networking events. This exclusive gathering brings together 150+ of our city's most influential business leaders, decision-makers, and community champions.</p>
+                
+                <p>Your sponsorship positions your brand alongside industry leaders while supporting a cause that resonates throughout our community. This isn't just another golf tournament – it's an opportunity to demonstrate your company's commitment to youth development and community leadership.</p>
+
+                <p>We're reaching out to select companies who understand the value of strategic community partnerships and want to be part of something truly meaningful in San Antonio.</p>
             </div>
 
             <!-- Impact Section -->
             <div class="impact-section">
-                <h2 style="color: white; margin-bottom: 20px;">🎯 Our Impact</h2>
-                <p>Your sponsorship helps us achieve remarkable results in our community:</p>
+                <h2 style="color: white; margin-bottom: 20px;">🎯 Exclusive Access Benefits</h2>
+                <p>Join the elite group of companies already committed to making a difference:</p>
                 <div class="impact-stats">
                     <div class="stat">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Youth Supported</div>
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Exclusive Attendees</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">15</div>
-                        <div class="stat-label">Sports Programs</div>
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">Premium Slots</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">$250K</div>
-                        <div class="stat-label">Total Impact</div>
+                        <div class="stat-label">Total Value</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">100%</div>
-                        <div class="stat-label">Local Focus</div>
+                        <div class="stat-label">Sold Out 2024</div>
                     </div>
                 </div>
             </div>
 
             <!-- Benefits Section -->
             <div class="section">
-                <h2>🏆 Sponsorship Benefits</h2>
-                <p>As a sponsor, you'll receive comprehensive brand exposure and networking opportunities:</p>
+                <h2>🏆 Exclusive Sponsorship Perks</h2>
+                <p>Limited availability means maximum value for your investment:</p>
                 <div class="benefits-grid">
                     <div class="benefit-card">
-                        <h3>🎨 Brand Visibility</h3>
-                        <p>Logo placement on tournament materials, signage, and digital platforms</p>
+                        <h3>🎨 VIP Brand Placement</h3>
+                        <p>Premium logo positioning across all tournament materials and exclusive signage locations</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>🤝 Networking</h3>
-                        <p>Connect with business leaders and community influencers</p>
+                        <h3>🤝 Elite Networking</h3>
+                        <p>Access to exclusive pre-event networking session with other premium sponsors</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>📸 Media Coverage</h3>
-                        <p>Featured in event photography and social media campaigns</p>
+                        <h3>📺 Priority Media Coverage</h3>
+                        <p>First-tier placement in all event photography and media coverage</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>🎁 Recognition</h3>
-                        <p>Public acknowledgment during tournament ceremonies</p>
+                        <h3>🏆 Exclusive Recognition</h3>
+                        <p>Special acknowledgment during ceremonies and VIP sponsor appreciation event</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>🌐 Digital Presence</h3>
-                        <p>Featured on our website and social media channels</p>
+                        <h3>🌐 Premium Digital Presence</h3>
+                        <p>Featured placement on our website with exclusive sponsor spotlight</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>📊 ROI Tracking</h3>
-                        <p>Detailed reporting on brand exposure and engagement</p>
+                        <h3>📊 Custom Analytics</h3>
+                        <p>Detailed ROI reporting with exclusive access to attendee demographics</p>
                     </div>
                 </div>
             </div>
 
             <!-- Sponsorship Levels -->
             <div class="sponsorship-levels">
-                <h2 style="color: #1a5f3a; margin-bottom: 20px;">💰 Sponsorship Levels</h2>
+                <h2 style="color: #1a5f3a; margin-bottom: 20px;">💰 Available Sponsorship Levels</h2>
                 <div class="level">
-                    <div class="level-name">Gold Sponsor</div>
+                    <div class="level-name">Gold Sponsor (Champion Level)</div>
                     <div class="level-amount">$5,000</div>
                 </div>
                 <div class="level">
@@ -441,21 +530,21 @@
 
             <!-- Event Details -->
             <div class="section">
-                <h2>📅 Event Details</h2>
+                <h2>📅 Exclusive Event Details</h2>
                 <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; border-left: 4px solid #1a5f3a;">
                     <p><strong>Date:</strong> Friday, November 7, 2025</p>
                     <p><strong>Time:</strong> Morning shotgun start</p>
-                    <p><strong>Location:</strong> Silverhorn Golf Club of Texas<br>1100 W Bitters Rd, San Antonio, TX 78216</p>
+                    <p><strong>Venue:</strong> Silverhorn Golf Club of Texas<br>1100 W Bitters Rd, San Antonio, TX 78216</p>
                     <p><strong>Format:</strong> 18 holes of championship golf</p>
-                    <p><strong>Expected Attendance:</strong> 150+ participants</p>
+                    <p><strong>Exclusivity:</strong> Limited to 150 select participants</p>
                 </div>
             </div>
 
             <!-- CTA Section -->
             <div class="cta-section">
-                <h2>Ready to Make an Impact?</h2>
-                <p>Join us in supporting San Antonio youth sports and elevating your brand's community presence. Your sponsorship creates lasting impact while building meaningful connections with our community.</p>
-                <a href="https://swingforetheyouth.com/home" class="btn">🤝 Become a Sponsor</a>
+                <h2>Join Our Exclusive Network</h2>
+                <p>Become part of San Antonio's most prestigious business community while making a meaningful impact on local youth sports. Your sponsorship demonstrates your commitment to community leadership and youth development.</p>
+                <a href="https://swingforetheyouth.com/home" class="btn">🏆 Become a Sponsor</a>
                 <a href="https://swingforetheyouth.com/home" class="btn btn-secondary">📋 Learn More</a>
             </div>
         </div>
@@ -463,7 +552,7 @@
         <!-- Footer -->
         <div class="footer">
             <div class="contact-info">
-                <h3>📞 Contact Information</h3>
+                <h3>📞 Act Fast - Contact Us Now</h3>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i> +1 (210) 284-7110
                 </div>
@@ -476,7 +565,7 @@
             </div>
 
             <div class="sponsors">
-                <h3>🏆 Current Sponsors</h3>
+                <h3>🏆 Early Bird Sponsors</h3>
                 <div class="sponsor">Go Play Sports, Inc.</div>
                 <div class="sponsor">Nexgen Electrical Solutions</div>
                 <div class="sponsor">N Zone Sports Centex</div>

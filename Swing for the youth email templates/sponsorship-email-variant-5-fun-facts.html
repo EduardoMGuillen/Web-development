@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsorship Opportunity - Swing Fore The Youth 2025</title>
+    <title>Did You Know? - Swing Fore The Youth 2025</title>
     <style>
         /* Reset styles */
         * {
@@ -33,6 +33,26 @@
             padding: 40px 30px;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "🏌️‍♂️";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .header::after {
+            content: "⚽";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
         }
 
         .header h1 {
@@ -54,6 +74,39 @@
             color: #ffd700;
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        /* Fun fact boxes */
+        .fun-fact {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+            position: relative;
+        }
+
+        .fun-fact::before {
+            content: "💡";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: white;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .fun-fact h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            margin-left: 25px;
+        }
+
+        .fun-fact p {
+            margin-left: 25px;
+            color: #1565c0;
+            font-weight: 500;
         }
 
         /* Main content */
@@ -78,6 +131,29 @@
             margin-bottom: 15px;
             font-size: 1rem;
             line-height: 1.7;
+        }
+
+        /* Quiz section */
+        .quiz-section {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+            color: #7b1fa2;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .quiz-answer {
+            font-size: 1.1rem;
+            color: #4a148c;
+            font-weight: 700;
+            margin-top: 15px;
         }
 
         /* Sponsorship benefits */
@@ -293,7 +369,7 @@
     <div class="email-container">
         <!-- Header -->
         <div class="header">
-            <h1>SPONSORSHIP OPPORTUNITY</h1>
+            <h1>DID YOU KNOW?</h1>
             <div class="subtitle">Swing Fore The Youth Golf Tournament 2025</div>
             <div class="date">Friday, November 7, 2025</div>
         </div>
@@ -301,19 +377,50 @@
         <!-- Main Content -->
         <div class="content">
             <div class="section">
-                <h2>🌟 Join Us in Making a Difference</h2>
-                <p>We're excited to invite you to become a sponsor of the <strong>Swing Fore The Youth 2025</strong> golf tournament – an incredible opportunity to support San Antonio youth while elevating your brand's visibility in our community.</p>
-                <p>This premier golf tournament brings together business leaders, community members, and sports enthusiasts for a day of networking, competition, and philanthropy. Your sponsorship directly supports local youth sports programs, helping kids overcome financial barriers to participate in the sports they love.</p>
+                <h2>🎯 Fun Facts That Will Amaze You!</h2>
+                <p>Hey there, trivia lover! 👋</p>
+                <p>We're putting together the <strong>Swing Fore The Youth 2025</strong> golf tournament, and we thought you'd love some fascinating facts about golf, youth sports, and the incredible impact we're making in San Antonio!</p>
+            </div>
+
+            <!-- Fun Facts -->
+            <div class="fun-fact">
+                <h3>Golf Fact #1</h3>
+                <p>The word "golf" actually stands for "Gentlemen Only, Ladies Forbidden" - but thankfully, we've moved way beyond that! Our tournament welcomes everyone! 🏌️‍♀️🏌️‍♂️</p>
+            </div>
+
+            <div class="fun-fact">
+                <h3>Youth Sports Impact</h3>
+                <p>Kids who participate in organized sports are 40% more likely to graduate from high school and 15% more likely to attend college. That's the power of what we're supporting! 📚</p>
+            </div>
+
+            <div class="fun-fact">
+                <h3>San Antonio Stats</h3>
+                <p>Did you know that San Antonio has over 200 youth sports organizations? Yet, nearly 30% of families struggle to afford registration fees and equipment. That's where we come in! 💪</p>
+            </div>
+
+            <div class="quiz-section">
+                <div class="quiz-question">Quick Quiz: How many dimples are on a regulation golf ball?</div>
+                <div class="quiz-answer">Answer: 336 dimples! (Give or take a few depending on the manufacturer) ⛳</div>
+            </div>
+
+            <div class="fun-fact">
+                <h3>Tournament Trivia</h3>
+                <p>Our tournament has raised over $250,000 for youth sports since 2020, directly impacting more than 500 kids in our community. That's like buying 1,250 soccer balls or 2,500 baseball gloves! ⚽🥎</p>
+            </div>
+
+            <div class="fun-fact">
+                <h3>Golf Course Fun Fact</h3>
+                <p>Silverhorn Golf Club, where our tournament takes place, was designed by renowned golf course architect Jay Morrish and features challenging water hazards on 12 of its 18 holes. Good thing we're not keeping score on fundraising - we're already winning! 🏆</p>
             </div>
 
             <!-- Impact Section -->
             <div class="impact-section">
-                <h2 style="color: white; margin-bottom: 20px;">🎯 Our Impact</h2>
-                <p>Your sponsorship helps us achieve remarkable results in our community:</p>
+                <h2 style="color: white; margin-bottom: 20px;">📊 By The Numbers</h2>
+                <p>Here are the impressive stats that make our tournament special:</p>
                 <div class="impact-stats">
                     <div class="stat">
                         <div class="stat-number">500+</div>
-                        <div class="stat-label">Youth Supported</div>
+                        <div class="stat-label">Kids Helped</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">15</div>
@@ -321,52 +428,52 @@
                     </div>
                     <div class="stat">
                         <div class="stat-number">$250K</div>
-                        <div class="stat-label">Total Impact</div>
+                        <div class="stat-label">Total Raised</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">100%</div>
-                        <div class="stat-label">Local Focus</div>
+                        <div class="stat-label">Local Impact</div>
                     </div>
                 </div>
             </div>
 
             <!-- Benefits Section -->
             <div class="section">
-                <h2>🏆 Sponsorship Benefits</h2>
-                <p>As a sponsor, you'll receive comprehensive brand exposure and networking opportunities:</p>
+                <h2>🎉 Why Sponsoring Is Like Hitting a Hole-in-One</h2>
+                <p>Just like golf, sponsorship is all about strategy, timing, and getting the perfect shot! Here's what makes your sponsorship investment so rewarding:</p>
                 <div class="benefits-grid">
                     <div class="benefit-card">
                         <h3>🎨 Brand Visibility</h3>
-                        <p>Logo placement on tournament materials, signage, and digital platforms</p>
+                        <p>Your logo gets seen by 150+ attendees and thousands more through our social media reach</p>
                     </div>
                     <div class="benefit-card">
                         <h3>🤝 Networking</h3>
-                        <p>Connect with business leaders and community influencers</p>
+                        <p>Connect with fellow business leaders in a fun, relaxed environment</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>📸 Media Coverage</h3>
-                        <p>Featured in event photography and social media campaigns</p>
+                        <h3>📸 Photo Opportunities</h3>
+                        <p>Featured in event photography and social media posts that showcase your community involvement</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>🎁 Recognition</h3>
-                        <p>Public acknowledgment during tournament ceremonies</p>
+                        <h3>🏆 Recognition</h3>
+                        <p>Public acknowledgment during the tournament and ongoing recognition as a youth sports champion</p>
                     </div>
                     <div class="benefit-card">
                         <h3>🌐 Digital Presence</h3>
-                        <p>Featured on our website and social media channels</p>
+                        <p>Featured on our website and social media channels with links back to your business</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>📊 ROI Tracking</h3>
-                        <p>Detailed reporting on brand exposure and engagement</p>
+                        <h3>📊 Impact Tracking</h3>
+                        <p>Receive detailed reports on your brand exposure and the kids you've helped support</p>
                     </div>
                 </div>
             </div>
 
             <!-- Sponsorship Levels -->
             <div class="sponsorship-levels">
-                <h2 style="color: #1a5f3a; margin-bottom: 20px;">💰 Sponsorship Levels</h2>
+                <h2 style="color: #1a5f3a; margin-bottom: 20px;">💰 Sponsorship Levels (Pick Your Par!)</h2>
                 <div class="level">
-                    <div class="level-name">Gold Sponsor</div>
+                    <div class="level-name">Gold Sponsor (Eagle Level!)</div>
                     <div class="level-amount">$5,000</div>
                 </div>
                 <div class="level">
@@ -441,29 +548,29 @@
 
             <!-- Event Details -->
             <div class="section">
-                <h2>📅 Event Details</h2>
+                <h2>📅 Tournament Details</h2>
                 <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; border-left: 4px solid #1a5f3a;">
                     <p><strong>Date:</strong> Friday, November 7, 2025</p>
                     <p><strong>Time:</strong> Morning shotgun start</p>
                     <p><strong>Location:</strong> Silverhorn Golf Club of Texas<br>1100 W Bitters Rd, San Antonio, TX 78216</p>
                     <p><strong>Format:</strong> 18 holes of championship golf</p>
-                    <p><strong>Expected Attendance:</strong> 150+ participants</p>
+                    <p><strong>Fun Factor:</strong> Guaranteed laughs, great networking, and amazing prizes! 🎁</p>
                 </div>
             </div>
 
             <!-- CTA Section -->
             <div class="cta-section">
-                <h2>Ready to Make an Impact?</h2>
-                <p>Join us in supporting San Antonio youth sports and elevating your brand's community presence. Your sponsorship creates lasting impact while building meaningful connections with our community.</p>
-                <a href="https://swingforetheyouth.com/home" class="btn">🤝 Become a Sponsor</a>
-                <a href="https://swingforetheyouth.com/home" class="btn btn-secondary">📋 Learn More</a>
+                <h2>Ready to Be Part of Something Amazing?</h2>
+                <p>Join us for a day filled with fun, facts, and fantastic networking while supporting the youth of San Antonio. Your sponsorship helps us continue making a real difference in our community!</p>
+                <a href="https://swingforetheyouth.com/home" class="btn">🎯 Sign Me Up!</a>
+                <a href="https://swingforetheyouth.com/home" class="btn btn-secondary">📋 More Info Please</a>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
             <div class="contact-info">
-                <h3>📞 Contact Information</h3>
+                <h3>📞 Let's Chat!</h3>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i> +1 (210) 284-7110
                 </div>
@@ -476,7 +583,7 @@
             </div>
 
             <div class="sponsors">
-                <h3>🏆 Current Sponsors</h3>
+                <h3>🏆 Fun-Loving Sponsors</h3>
                 <div class="sponsor">Go Play Sports, Inc.</div>
                 <div class="sponsor">Nexgen Electrical Solutions</div>
                 <div class="sponsor">N Zone Sports Centex</div>

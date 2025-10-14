@@ -571,6 +571,97 @@
             border-color: rgba(102, 126, 234, 0.3);
         }
 
+        /* Partners Carousel Styles */
+        .partners {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partners-carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            padding: 3rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: pan-y;
+            cursor: grab;
+        }
+
+        .partners-carousel-container:active {
+            cursor: grabbing;
+        }
+
+        .partners-carousel-track {
+            display: flex;
+            animation: partnersScroll 25s linear infinite;
+            width: 200%;
+            animation-fill-mode: none;
+            animation-iteration-count: infinite;
+        }
+
+        .partner-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            margin: 0 1rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: auto;
+            width: auto;
+            height: auto;
+            max-height: 100px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            cursor: pointer;
+            will-change: transform;
+            backface-visibility: hidden;
+            overflow: hidden;
+        }
+
+        .partner-logo img {
+            max-width: 180px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0.9) contrast(1.1);
+            display: block;
+        }
+
+        /* PNG images styling - no special background needed since box is white */
+        .partner-logo img[src*=".png"] {
+            border-radius: 15px;
+            padding: 8px;
+        }
+
+        @keyframes partnersScroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Force animation to always run */
+        .partners-carousel-track {
+            animation: partnersScroll 25s linear infinite !important;
+            animation-play-state: running !important;
+        }
+
+        /* Duplicate logos for seamless loop */
+        .partners-logo-set {
+            display: flex;
+            flex: 0 0 50%;
+            gap: 0;
+        }
+
         .pricing-card.featured {
             border-color: #667eea;
             transform: scale(1.02);
@@ -763,6 +854,25 @@
                 grid-template-columns: repeat(3, 1fr);
                 gap: 2rem;
             }
+
+            .partners-carousel-container {
+                padding: 2.5rem 0;
+            }
+
+            .partner-logo {
+                max-height: 90px;
+                padding: 0.4rem;
+                margin: 0 0.8rem;
+            }
+
+            .partner-logo img {
+                max-width: 160px;
+                max-height: 70px;
+            }
+
+            .partners-carousel-track {
+                animation-duration: 27s;
+            }
         }
 
         @media (max-width: 768px) {
@@ -801,6 +911,31 @@
             .footer-section {
                 max-width: 100%;
                 padding: 1.5rem;
+            }
+
+            .partners {
+                padding: 4rem 1rem;
+            }
+
+            .partners-carousel-container {
+                padding: 2rem 0;
+                border-radius: 20px;
+            }
+
+            .partner-logo {
+                max-height: 80px;
+                padding: 0.3rem;
+                margin: 0 0.6rem;
+                border-radius: 15px;
+            }
+
+            .partner-logo img {
+                max-width: 140px;
+                max-height: 60px;
+            }
+
+            .partners-carousel-track {
+                animation-duration: 30s;
             }
         }
 
@@ -893,6 +1028,31 @@
             .faq {
                 padding: 4rem 1rem;
             }
+
+            .partners {
+                padding: 3rem 0.5rem;
+            }
+
+            .partners-carousel-container {
+                padding: 1.5rem 0 2rem 0;
+                border-radius: 15px;
+            }
+
+            .partner-logo {
+                max-height: 70px;
+                padding: 0.2rem;
+                margin: 0 0.4rem;
+                border-radius: 12px;
+            }
+
+            .partner-logo img {
+                max-width: 120px;
+                max-height: 50px;
+            }
+
+            .partners-carousel-track {
+                animation-duration: 32s;
+            }
         }
 
         /* Performance optimization: Reduce animations on mobile */
@@ -930,6 +1090,11 @@
                 opacity: 1;
                 transform: none;
                 margin-top: 1rem;
+            }
+
+            /* Keep partners carousel animation active on mobile */
+            .partners-carousel-track {
+                animation: partnersScroll 30s linear infinite !important;
             }
         }
 
@@ -1104,15 +1269,112 @@
             </div>
         </div>
     </section>
+    <section class="partners">
+        <h2 class="section-title">Trusted by Leading Brands</h2>
+        <div class="partners-carousel-container glass">
+            <div class="partners-carousel-track">
+                <div class="partners-logo-set">
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06d7e20cbcdb0.jpeg" alt="Partner 1" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06dc7adcbcdb2.png" alt="Partner 2" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06d6a52cbcdb1.jpeg" alt="Partner 3" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b671a17638ef3770d1.png" alt="Partner 4" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61d56c36039a6a86a.jpeg" alt="Partner 5" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06d3f3fcbcdba.jpeg" alt="Partner 6" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61d56c34281a6a864.png" alt="Partner 7" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61d56c3db78a6a866.jpeg" alt="Partner 8" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b671a1761dc23770d2.webp" alt="Partner 9" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b6ae13a4a5e92cbdd5.png" alt="Partner 10" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61d56c31e6ba6a865.png" alt="Partner 11" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06d7f5ecbcdb9.webp" alt="Partner 12" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61c4c00a028eec940.png" alt="Partner 13" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b671a1769adc3770d0.png" alt="Partner 14" loading="lazy" />
+                    </div>
+                </div>
+                <!-- Duplicate set for seamless scrolling -->
+                <div class="partners-logo-set">
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06d7e20cbcdb0.jpeg" alt="Partner 1" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06dc7adcbcdb2.png" alt="Partner 2" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06d6a52cbcdb1.jpeg" alt="Partner 3" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b671a17638ef3770d1.png" alt="Partner 4" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61d56c36039a6a86a.jpeg" alt="Partner 5" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06d3f3fcbcdba.jpeg" alt="Partner 6" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61d56c34281a6a864.png" alt="Partner 7" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61d56c3db78a6a866.jpeg" alt="Partner 8" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b671a1761dc23770d2.webp" alt="Partner 9" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b6ae13a4a5e92cbdd5.png" alt="Partner 10" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61d56c31e6ba6a865.png" alt="Partner 11" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b606b06d7f5ecbcdb9.webp" alt="Partner 12" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b61c4c00a028eec940.png" alt="Partner 13" loading="lazy" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/68e5d7b671a1769adc3770d0.png" alt="Partner 14" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="testimonials">
         <h2 class="section-title">What Others Are Saying</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card glass">
-                <p class="testimonial-text">"Partnering with Creative IQ marketing team has been a game changer for my business. Their creativity, strategy, and passion has taken my business to the next level. Truly the best decision I’ve made!"</p>
+                <p class="testimonial-text">"Partnering with Creative IQ marketing team has been a game changer for my business. Their creativity, strategy, and passion has taken my business to the next level. Truly the best decision I've made!"</p>
                 <div class="testimonial-author">- Kassandra Ramirez</div>
             </div>
             <div class="testimonial-card glass">
-                <p class="testimonial-text">"Had an awesome experience working with Vilma! She’s super friendly, easy to work with, and really knows her stuff. The whole process was smooth, and the final recording came out better than I expected. If you’re looking for someone to help with digital marketing, I’d definitely recommend her."</p>
+                <p class="testimonial-text">"Had an awesome experience working with Vilma! She's super friendly, easy to work with, and really knows her stuff. The whole process was smooth, and the final recording came out better than I expected. If you're looking for someone to help with digital marketing, I'd definitely recommend her."</p>
                 <div class="testimonial-author">- Fernando Jesus</div>
             </div>
         </div>
@@ -1349,13 +1611,21 @@
                 
                 if (!enable) {
                     style.textContent = `
-                        * {
+                        *:not(.partners-carousel-track):not(.partners-carousel-track *):not(.partner-logo):not(.partner-logo *):not(.partners-carousel-container):not(.partners-carousel-container *) {
                             animation-duration: 0.01ms !important;
                             animation-iteration-count: 1 !important;
                             transition-duration: 0.01ms !important;
                         }
-                        .glass {
+                        .glass:not(.partners-carousel-container) {
                             backdrop-filter: blur(10px) !important;
+                        }
+                        .partners-carousel-track {
+                            animation: partnersScroll 25s linear infinite !important;
+                            animation-play-state: running !important;
+                        }
+                        .partner-logo img[src*=".png"] {
+                            border-radius: 15px !important;
+                            padding: 8px !important;
                         }
                     `;
                 }
@@ -1379,6 +1649,144 @@
 
         // Initialize performance monitor
         const performanceMonitor = new PerformanceMonitor();
+
+        // Enhanced Partners Carousel with Touch Support
+        class PartnersCarousel {
+            constructor() {
+                this.carousel = document.querySelector('.partners-carousel-track');
+                this.container = document.querySelector('.partners-carousel-container');
+                this.partnerLogos = document.querySelectorAll('.partner-logo');
+                this.isTouch = false;
+                this.startX = 0;
+                this.startY = 0;
+                this.isScrolling = false;
+                
+                if (this.carousel && this.container) {
+                    this.init();
+                }
+            }
+            
+            init() {
+                this.setupImageLoading();
+                this.setupTouchHandling();
+                this.setupKeyboardNavigation();
+                this.setupIntersectionObserver();
+            }
+            
+            setupImageLoading() {
+                const images = document.querySelectorAll('.partner-logo img[loading="lazy"]');
+                
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                this.optimizeImage(img);
+                                imageObserver.unobserve(img);
+                            }
+                        });
+                    }, {
+                        rootMargin: '50px'
+                    });
+                    
+                    images.forEach(img => imageObserver.observe(img));
+                }
+            }
+            
+            optimizeImage(img) {
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.3s ease';
+                
+                const handleLoad = () => {
+                    img.style.opacity = '1';
+                    img.removeEventListener('load', handleLoad);
+                };
+                
+                const handleError = () => {
+                    img.style.opacity = '0.5';
+                    img.alt = 'Partner logo unavailable';
+                    img.removeEventListener('error', handleError);
+                };
+                
+                img.addEventListener('load', handleLoad);
+                img.addEventListener('error', handleError);
+                
+                if (img.complete) {
+                    handleLoad();
+                }
+            }
+            
+            setupTouchHandling() {
+                // Touch handling removed - animation runs continuously
+            }
+            
+            setupKeyboardNavigation() {
+                this.partnerLogos.forEach((logo, index) => {
+                    logo.setAttribute('tabindex', '0');
+                    logo.setAttribute('role', 'button');
+                    logo.setAttribute('aria-label', `Partner ${index + 1}: ${logo.querySelector('img')?.alt || 'Partner logo'}`);
+                    
+                    logo.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            this.handlePartnerClick(logo);
+                        }
+                    });
+                    
+                    logo.addEventListener('click', () => {
+                        this.handlePartnerClick(logo);
+                    });
+                });
+            }
+            
+            handlePartnerClick(logo) {
+                // Analytics tracking
+                if (typeof gtag !== 'undefined') {
+                    const partnerName = logo.querySelector('img')?.alt || 'Unknown Partner';
+                    gtag('event', 'partner_click', {
+                        'partner_name': partnerName,
+                        'event_category': 'engagement'
+                    });
+                }
+            }
+            
+            setupIntersectionObserver() {
+                // Intersection observer removed - animation runs continuously
+            }
+        }
+
+        // Simple carousel initialization - just for analytics
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                // Only initialize for analytics, not animation control
+                const partnerLogos = document.querySelectorAll('.partner-logo');
+                partnerLogos.forEach((logo, index) => {
+                    logo.addEventListener('click', () => {
+                        if (typeof gtag !== 'undefined') {
+                            const partnerName = logo.querySelector('img')?.alt || 'Unknown Partner';
+                            gtag('event', 'partner_click', {
+                                'partner_name': partnerName,
+                                'event_category': 'engagement'
+                            });
+                        }
+                    });
+                });
+            });
+        } else {
+            // Only initialize for analytics, not animation control
+            const partnerLogos = document.querySelectorAll('.partner-logo');
+            partnerLogos.forEach((logo, index) => {
+                logo.addEventListener('click', () => {
+                    if (typeof gtag !== 'undefined') {
+                        const partnerName = logo.querySelector('img')?.alt || 'Unknown Partner';
+                        gtag('event', 'partner_click', {
+                            'partner_name': partnerName,
+                            'event_category': 'engagement'
+                        });
+                    }
+                });
+            });
+        }
 
         // Base particle configuration
         const getParticleConfig = (level = 'high') => {
