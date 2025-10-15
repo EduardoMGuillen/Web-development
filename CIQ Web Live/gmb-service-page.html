@@ -275,6 +275,55 @@
             margin-top: 4rem;
         }
 
+        .pricing-single {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .pricing-single .pricing-card {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pricing-structure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .price-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .price-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-divider {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5rem;
+            font-weight: 300;
+            align-self: center;
+        }
+
         .pricing-card {
             padding: 3rem 2rem;
             text-align: center;
@@ -342,26 +391,30 @@
         .plan-features {
             list-style: none;
             margin-bottom: 2rem;
-            text-align: left;
+            text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            align-items: center;
             padding: 0;
             overflow: hidden;
+            width: 100%;
         }
 
         .plan-features li {
             color: rgba(255, 255, 255, 0.8);
-            padding: 0.7rem 0;
+            padding: 0.7rem 2.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
-            padding-left: 2.5rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             min-height: 2.2rem;
             font-size: 0.95rem;
             line-height: 1.4;
+            text-align: center;
+            width: 100%;
         }
 
         .plan-features li::before {
@@ -534,6 +587,16 @@
                 gap: 2rem;
             }
 
+            .pricing-structure {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .price-divider {
+                font-size: 1.2rem;
+                transform: rotate(90deg);
+            }
+
             .pricing-card {
                 padding: 2rem 1.5rem;
                 height: auto;
@@ -640,47 +703,73 @@
     </section>
 
     <section class="pricing" id="pricing">
-        <h2 class="section-title">🎯 GOOGLE ADS / PAID MEDIA PLANS</h2>
-        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.2rem; line-height: 1.6;">
-            SET UP NO COST - If no results in one month ad is free
+        <h2 class="section-title">Google My Business Services</h2>
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
+            Complete Google My Business optimization and management to boost your local search visibility and attract more customers.
         </p>
-        <div class="pricing-grid">
-            <div class="pricing-card glass">
-                <h3 class="plan-name">STARTER</h3>
-                <div class="plan-price">$333</div>
-                <div class="plan-period">every 2 weeks + ad spend</div>
-                <ul class="plan-features">
-                    <li>Google Search campaign setup</li>
-                    <li>1 Campaign - Ad copywriting (3 ad sets)</li>
-                    <li>Weekly monitoring</li>
-                    <li>Monthly report</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose to Start</a>
-            </div>
+        <div class="pricing-single">
             <div class="pricing-card glass featured">
-                <h3 class="plan-name">GROWTH</h3>
-                <div class="plan-price">$444</div>
-                <div class="plan-period">every 2 weeks + ad spend</div>
+                <h3 class="plan-name">Complete GMB Management</h3>
+                <div class="pricing-structure">
+                    <div class="price-item">
+                        <div class="price-label">Setup Fee</div>
+                        <div class="plan-price">$399</div>
+                        <div class="plan-period">one-time</div>
+                    </div>
+                    <div class="price-divider">+</div>
+                    <div class="price-item">
+                        <div class="price-label">Monthly Maintenance</div>
+                        <div class="plan-price">$399</div>
+                        <div class="plan-period">per month</div>
+                    </div>
+                </div>
                 <ul class="plan-features">
-                    <li>Search + Display campaigns</li>
-                    <li>Conversion tracking setup</li>
-                    <li>A/B landing page tests</li>
-                    <li>Biweekly performance calls</li>
+                    <li>Complete GMB profile optimization</li>
+                    <li>Google Workspace setup & configuration</li>
+                    <li>Google Analytics 4 integration</li>
+                    <li>SEO & Search Console insights</li>
+                    <li>Security audits & automation</li>
+                    <li>Monthly performance reporting</li>
+                    <li>Review management & monitoring</li>
+                    <li>Local citation building</li>
                 </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose Growth</a>
+                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started Today</a>
             </div>
-            <div class="pricing-card glass">
-                <h3 class="plan-name">PRO</h3>
-                <div class="plan-price">$555</div>
-                <div class="plan-period">every 2 weeks</div>
+        </div>
+    </section>
+
+    <section class="pricing" id="local-ads">
+        <h2 class="section-title">Local Service Ads</h2>
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
+            Drive qualified local leads with targeted Local Service Ads that connect you with customers actively searching for your services.
+        </p>
+        <div class="pricing-single">
+            <div class="pricing-card glass featured">
+                <h3 class="plan-name">Local Service Ads Management</h3>
+                <div class="pricing-structure">
+                    <div class="price-item">
+                        <div class="price-label">Setup Fee</div>
+                        <div class="plan-price">$299</div>
+                        <div class="plan-period">one-time</div>
+                    </div>
+                    <div class="price-divider">+</div>
+                    <div class="price-item">
+                        <div class="price-label">Monthly Maintenance</div>
+                        <div class="plan-price">$299</div>
+                        <div class="plan-period">per month</div>
+                    </div>
+                </div>
                 <ul class="plan-features">
-                    <li>Performance Max + Display + YouTube</li>
-                    <li>Full-funnel strategy with retargeting</li>
-                    <li>Ongoing optimization & scaling</li>
-                    <li>Quarterly reporting & analytics review</li>
-                    <li>Ad asset creation (video, banners, etc.)</li>
+                    <li>Local Service Ads campaign setup</li>
+                    <li>Service area optimization</li>
+                    <li>Lead qualification & filtering</li>
+                    <li>Budget management & optimization</li>
+                    <li>Performance tracking & reporting</li>
+                    <li>Competitor analysis & strategy</li>
+                    <li>Monthly performance reviews</li>
+                    <li>Lead response management</li>
                 </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Go Pro</a>
+                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started Today</a>
             </div>
         </div>
     </section>

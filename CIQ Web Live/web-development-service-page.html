@@ -275,6 +275,55 @@
             margin-top: 4rem;
         }
 
+        .pricing-single {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .pricing-single .pricing-card {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pricing-structure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .price-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .price-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-divider {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5rem;
+            font-weight: 300;
+            align-self: center;
+        }
+
         .pricing-card {
             padding: 3rem 2rem;
             text-align: center;
@@ -342,26 +391,30 @@
         .plan-features {
             list-style: none;
             margin-bottom: 2rem;
-            text-align: left;
+            text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            align-items: center;
             padding: 0;
             overflow: hidden;
+            width: 100%;
         }
 
         .plan-features li {
             color: rgba(255, 255, 255, 0.8);
-            padding: 0.7rem 0;
+            padding: 0.7rem 2.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
-            padding-left: 2.5rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             min-height: 2.2rem;
             font-size: 0.95rem;
             line-height: 1.4;
+            text-align: center;
+            width: 100%;
         }
 
         .plan-features li::before {
@@ -534,6 +587,16 @@
                 gap: 2rem;
             }
 
+            .pricing-structure {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .price-divider {
+                font-size: 1.2rem;
+                transform: rotate(90deg);
+            }
+
             .pricing-card {
                 padding: 2rem 1.5rem;
                 height: auto;
@@ -640,60 +703,73 @@
     </section>
 
     <section class="pricing" id="pricing">
-        <h2 class="section-title">🌐 WEBSITE DESIGN & DEVELOPMENT PLANS</h2>
-        <div class="pricing-grid">
-            <div class="pricing-card glass">
-                <h3 class="plan-name">STARTER</h3>
-                <div class="plan-price">$1,200</div>
-                <div class="plan-period">one-time</div>
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.6); margin: 0.5rem 0; font-size: 0.8rem; font-style: italic;">
-                    OR $250/M For 6 months
-                </p>
-                <ul class="plan-features">
-                    <li>1–2 page starter website</li>
-                    <li>Mobile responsive design</li>
-                    <li>SEO-friendly structure</li>
-                    <li>Basic contact form + booking link</li>
-                    <li>3 revision round</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose to Start</a>
-            </div>
+        <h2 class="section-title">Website Design & Development Service</h2>
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
+            Transform your online presence with custom website design and development that converts visitors into customers.
+        </p>
+        <div class="pricing-single">
             <div class="pricing-card glass featured">
-                <h3 class="plan-name">GROWTH</h3>
-                <div class="plan-price">$2,750</div>
-                <div class="plan-period">one-time</div>
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.6); margin: 0.5rem 0; font-size: 0.8rem; font-style: italic;">
-                    OR $250/M For 12 months
-                </p>
+                <h3 class="plan-name">Custom Website Development</h3>
+                <div class="pricing-structure">
+                    <div class="price-item">
+                        <div class="price-label">Starting at</div>
+                        <div class="plan-price">$699</div>
+                        <div class="plan-period">project cost</div>
+                    </div>
+                    <div class="price-divider">+</div>
+                    <div class="price-item">
+                        <div class="price-label">Monthly Maintenance</div>
+                        <div class="plan-price">$199</div>
+                        <div class="plan-period">per month</div>
+                    </div>
+                </div>
                 <ul class="plan-features">
-                    <li>3-5 page custom website</li>
-                    <li>Branded design & layout</li>
-                    <li>Blog integration</li>
-                    <li>Search Engine Optimization basic plan</li>
-                    <li>Google My Business Integration</li>
-                    <li>Chat widget for customer service support</li>
-                    <li>Email | sms & CRM form integration</li>
-                    <li>Conversion-focused design</li>
+                    <li>Custom website design & development</li>
+                    <li>Mobile-responsive design</li>
+                    <li>SEO optimization & structure</li>
+                    <li>Performance optimization</li>
+                    <li>E-commerce integration</li>
+                    <li>Analytics & tracking setup</li>
+                    <li>Content management system</li>
+                    <li>Ongoing maintenance & updates</li>
                 </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose Growth</a>
+                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started Today</a>
             </div>
-            <div class="pricing-card glass">
-                <h3 class="plan-name">PRO</h3>
-                <div class="plan-price">$4,500+</div>
-                <div class="plan-period">one-time</div>
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.6); margin: 0.5rem 0; font-size: 0.8rem; font-style: italic;">
-                    444 bi-weekly for 12 months | $888/month for 6 months
-                </p>
+        </div>
+    </section>
+
+    <section class="pricing" id="maintenance">
+        <h2 class="section-title">Website Maintenance Service</h2>
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
+            We can maintain your current website to keep it running smoothly, secure, and up-to-date.
+        </p>
+        <div class="pricing-single">
+            <div class="pricing-card glass featured">
+                <h3 class="plan-name">Website Maintenance & Support</h3>
+                <div class="pricing-structure">
+                    <div class="price-item">
+                        <div class="price-label">Setup Fee</div>
+                        <div class="plan-price">$199</div>
+                        <div class="plan-period">one-time</div>
+                    </div>
+                    <div class="price-divider">+</div>
+                    <div class="price-item">
+                        <div class="price-label">Monthly Maintenance</div>
+                        <div class="plan-price">$199</div>
+                        <div class="plan-period">per month</div>
+                    </div>
+                </div>
                 <ul class="plan-features">
-                    <li>5+ page full build or redesign</li>
-                    <li>CRM Including</li>
-                    <li>Advanced SEO structure</li>
-                    <li>Funnel integrations, automations, and portals</li>
-                    <li>Copywriting & content optimization</li>
-                    <li>Ongoing optimization + hosting add-on</li>
-                    <li>After 10 pages, it's 800 per page coded</li>
+                    <li>Website security monitoring</li>
+                    <li>Regular backups & updates</li>
+                    <li>Performance optimization</li>
+                    <li>Content updates & changes</li>
+                    <li>Technical support & troubleshooting</li>
+                    <li>Plugin & theme updates</li>
+                    <li>SSL certificate management</li>
+                    <li>Uptime monitoring & reporting</li>
                 </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Go Pro</a>
+                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started Today</a>
             </div>
         </div>
     </section>

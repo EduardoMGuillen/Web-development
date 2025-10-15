@@ -275,6 +275,24 @@
             margin-top: 4rem;
         }
 
+        .pricing-single {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .pricing-single .pricing-card {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         .pricing-card {
             padding: 3rem 2rem;
             text-align: center;
@@ -342,26 +360,30 @@
         .plan-features {
             list-style: none;
             margin-bottom: 2rem;
-            text-align: left;
+            text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            align-items: center;
             padding: 0;
             overflow: hidden;
+            width: 100%;
         }
 
         .plan-features li {
             color: rgba(255, 255, 255, 0.8);
-            padding: 0.7rem 0;
+            padding: 0.7rem 2.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
-            padding-left: 2.5rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             min-height: 2.2rem;
             font-size: 0.95rem;
             line-height: 1.4;
+            text-align: center;
+            width: 100%;
         }
 
         .plan-features li::before {
@@ -640,52 +662,26 @@
     </section>
 
     <section class="pricing" id="pricing">
-        <h2 class="section-title">🔍 SEO & ORGANIC GROWTH PLANS</h2>
+        <h2 class="section-title">SEO & Organic Growth Service</h2>
         <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
-            Choose the perfect SEO plan to boost your search rankings and drive sustainable organic traffic to your website.
+            Boost your search rankings and drive sustainable organic traffic with our comprehensive SEO strategies.
         </p>
-        <div class="pricing-grid">
-            <div class="pricing-card glass">
-                <h3 class="plan-name">STARTER</h3>
-                <div class="plan-price">$199</div>
-                <div class="plan-period">bi-weekly</div>
-                <ul class="plan-features">
-                    <li>1 optimized blog/month</li>
-                    <li>On-page SEO for 5 pages</li>
-                    <li>10-25 keywords</li>
-                    <li>Basic keyword research</li>
-                    <li>Local SEO audit</li>
-                    <li>Google Business Profile (GBP) optimization</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose to Start</a>
-            </div>
+        <div class="pricing-single">
             <div class="pricing-card glass featured">
-                <h3 class="plan-name">GROWTH</h3>
-                <div class="plan-price">$555</div>
-                <div class="plan-period">bi-weekly</div>
+                <h3 class="plan-name">Complete SEO Management</h3>
+                <div class="plan-price">$299</div>
+                <div class="plan-period">begins at</div>
                 <ul class="plan-features">
-                    <li>2–3 SEO blog posts/month</li>
-                    <li>Ongoing keyword targeting & research</li>
-                    <li>25-40 keywords</li>
-                    <li>Citation and backlink management</li>
-                    <li>Monthly reporting & growth insights</li>
-                    <li>GBP content & post updates</li>
+                    <li>Keyword research & strategy development</li>
+                    <li>On-page SEO optimization</li>
+                    <li>Technical SEO improvements</li>
+                    <li>Content strategy & blog optimization</li>
+                    <li>Link building & citation management</li>
+                    <li>Local SEO & Google Business Profile optimization</li>
+                    <li>Monthly reporting & analytics tracking</li>
+                    <li>Search Console & Analytics monitoring</li>
                 </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose Growth</a>
-            </div>
-            <div class="pricing-card glass">
-                <h3 class="plan-name">PRO</h3>
-                <div class="plan-price">$777</div>
-                <div class="plan-period">bi-weekly</div>
-                <ul class="plan-features">
-                    <li>Full SEO strategy + 3–6 month roadmap</li>
-                    <li>4 blogs/month + site content optimization</li>
-                    <li>40+ keywords | updates every week</li>
-                    <li>Authority backlink campaigns</li>
-                    <li>Conversion-focused enhancements (CRO)</li>
-                    <li>Google Analytics & Search Console monitoring</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Go Pro</a>
+                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started Today</a>
             </div>
         </div>
     </section>

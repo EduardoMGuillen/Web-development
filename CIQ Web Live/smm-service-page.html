@@ -275,6 +275,54 @@
             margin-top: 4rem;
         }
 
+        .pricing-single {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .pricing-single .pricing-card {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pricing-structure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .price-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .price-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-divider {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5rem;
+            font-weight: 300;
+            align-self: center;
+        }
+
         .pricing-card {
             padding: 3rem 2rem;
             text-align: center;
@@ -285,6 +333,7 @@
             flex-direction: column;
             min-height: 700px;
             justify-content: space-between;
+            align-items: center;
         }
 
         .pricing-card:hover {
@@ -342,26 +391,30 @@
         .plan-features {
             list-style: none;
             margin-bottom: 2rem;
-            text-align: left;
+            text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            align-items: center;
             padding: 0;
             overflow: hidden;
+            width: 100%;
         }
 
         .plan-features li {
             color: rgba(255, 255, 255, 0.8);
-            padding: 0.7rem 0;
+            padding: 0.7rem 2.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
-            padding-left: 2.5rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             min-height: 2.2rem;
             font-size: 0.95rem;
             line-height: 1.4;
+            text-align: center;
+            width: 100%;
         }
 
         .plan-features li::before {
@@ -534,6 +587,16 @@
                 gap: 2rem;
             }
 
+            .pricing-structure {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .price-divider {
+                font-size: 1.2rem;
+                transform: rotate(90deg);
+            }
+
             .pricing-card {
                 padding: 2rem 1.5rem;
                 height: auto;
@@ -640,50 +703,51 @@
     </section>
 
     <section class="pricing" id="pricing">
-        <h2 class="section-title">Social Media Management Plans</h2>
+        <h2 class="section-title">Social Media Consulting</h2>
         <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
-            Select the perfect plan for your business needs. All plans include professional content creation, strategic scheduling, and dedicated support.
+            We create strategy-driven content, optimizing platforms, run campaigns, and analyze performance to maximize your social media impact.
         </p>
-        <div class="pricing-grid">
-            <div class="pricing-card glass">
-                <h3 class="plan-name">Starter Plan</h3>
-                <div class="plan-price">$444</div>
-                <div class="plan-period">per month</div>
-                <ul class="plan-features">
-                    <li>2–3 custom posts/week (static, carousel, or story)</li>
-                    <li>Captions, hashtags & scheduling included</li>
-                    <li>1 content planning session/month</li>
-                    <li>1 platform (IG or Facebook)</li>
-                    <li>Basic engagement (likes/comments)</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose to Start</a>
-            </div>
+        <div class="pricing-single">
             <div class="pricing-card glass featured">
-                <h3 class="plan-name">Growth Plan</h3>
-                <div class="plan-price">$777</div>
-                <div class="plan-period">bi-weekly</div>
+                <h3 class="plan-name">Social Media Consulting</h3>
+                <div class="plan-price">$199</div>
+                <div class="plan-period">begins at</div>
                 <ul class="plan-features">
-                    <li>4–5 posts/week across 2–3 platforms</li>
-                    <li>4 reels/month + 8 stories/month</li>
+                    <li>Strategy-driven content creation</li>
+                    <li>Platform optimization across all channels</li>
+                    <li>Campaign development & execution</li>
+                    <li>Performance analysis & reporting</li>
                     <li>Brand voice development</li>
-                    <li>Monthly analytics report</li>
-                    <li>2 strategy calls/month</li>
+                    <li>Content calendar planning</li>
+                    <li>Audience engagement strategies</li>
+                    <li>ROI tracking & optimization</li>
                 </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose Growth</a>
+                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started Today</a>
             </div>
-            <div class="pricing-card glass">
-                <h3 class="plan-name">Pro Plan</h3>
-                <div class="plan-price">$997</div>
-                <div class="plan-period">per month</div>
+        </div>
+    </section>
+
+    <section class="pricing" id="content-creation">
+        <h2 class="section-title">Content Creation & Management</h2>
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
+            Professional content creation and management services to keep your social media channels active and engaging.
+        </p>
+        <div class="pricing-single">
+            <div class="pricing-card glass featured">
+                <h3 class="plan-name">Content Creation & Management</h3>
+                <div class="plan-price">$699</div>
+                <div class="plan-period">3 posts per week</div>
                 <ul class="plan-features">
-                    <li>70+ posts/month across 4–5 platforms</li>
-                    <li>2 reels/week + full stories package</li>
-                    <li>End-to-end content planning</li>
-                    <li>Community management & DMs</li>
-                    <li>Competitor tracking & detailed reporting</li>
-                    <li>Includes platform setup/optimization</li>
+                    <li>3 high-quality posts per week</li>
+                    <li>Professional graphic design</li>
+                    <li>Engaging captions & hashtags</li>
+                    <li>Content calendar planning</li>
+                    <li>Platform-specific optimization</li>
+                    <li>Brand voice consistency</li>
+                    <li>Content scheduling & publishing</li>
+                    <li>Performance tracking & reporting</li>
                 </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Go Pro</a>
+                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started Today</a>
             </div>
         </div>
     </section>
