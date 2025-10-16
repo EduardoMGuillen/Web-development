@@ -83,8 +83,8 @@
 
         .tab-btn.active,
         .tab-btn:hover {
-            border-color: #dc3545;
-            background: #dc3545;
+            border-color: #007bff;
+            background: #007bff;
             color: white;
         }
 
@@ -113,13 +113,19 @@
             padding: 1.5rem;
             background: #f8f9fa;
             border-radius: 8px;
-            border-left: 4px solid #dc3545;
+            border-left: 4px solid #007bff;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .menu-item:hover {
             background: #e9ecef;
             transform: translateX(5px);
+        }
+
+        .item-info {
+            flex: 1;
+            margin-right: 1rem;
         }
 
         .item-info h4 {
@@ -146,7 +152,13 @@
         .price {
             font-size: 1.3rem;
             font-weight: 700;
-            color: #dc3545;
+            color: #007bff;
+            flex-shrink: 0;
+            min-width: 140px;
+            text-align: right;
+            align-self: flex-start;
+            margin-top: 0;
+            line-height: 1.2;
         }
 
         .dietary-info {
@@ -194,20 +206,131 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .menu-tabs {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            .tab-btn {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+                min-width: 120px;
+            }
+
+            .menu-item {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1.25rem;
+            }
+
+            .item-info {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .price {
+                text-align: left;
+                margin-top: 0.5rem;
+                min-width: auto;
+                align-self: flex-start;
+                font-size: 1.4rem;
+            }
+
             .dietary-info {
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            section p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
             .menu-tabs {
                 flex-direction: column;
                 align-items: center;
+                gap: 0.5rem;
             }
 
             .tab-btn {
-                width: 200px;
+                width: 100%;
+                max-width: 280px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .menu-item {
+                padding: 1rem;
+                margin: 0 0.5rem;
+            }
+
+            .item-info h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .item-info p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 0.75rem;
+            }
+
+            .price {
+                font-size: 1.3rem;
+                margin-top: 0.75rem;
+                padding-top: 0.5rem;
+                border-top: 1px solid #e9ecef;
+                text-align: center;
+                font-weight: 800;
+            }
+
+            .dietary-tag {
+                font-size: 11px;
+                padding: 3px 10px;
+            }
+
+            .dietary-info {
+                padding: 0 1rem;
+                text-align: center;
+            }
+
+            .dietary-item {
+                justify-content: center;
+                font-size: 13px;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 0.75rem;
+            }
+
+            section p {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+                padding: 0 0.5rem;
+            }
+
+            .menu-content {
+                max-width: 100%;
+            }
+
+            .menu-items {
+                gap: 1rem;
             }
         }
 
@@ -221,118 +344,357 @@
     <!-- Menu Section -->
     <section id="menu" class="menu">
         <div class="container">
-            <h2>Epic Bites Menu</h2>
-            <p>A taste of what we're cooking up - from Texas comfort food to custom sweet treats that'll make you smile</p>
+            <h2>Texas Sugar Daddies Menu</h2>
+            <p>Sweet Treats + Catering - From breakfast boxes to buffet service, we've got your Texas-sized appetite covered</p>
             <div class="menu-tabs">
-                <button class="tab-btn active" data-tab="appetizers">Appetizers</button>
-                <button class="tab-btn" data-tab="main-courses">Main Courses</button>
-                <button class="tab-btn" data-tab="desserts">Desserts</button>
+                <button class="tab-btn active" data-tab="breakfast-boxes">Breakfast Boxes</button>
+                <button class="tab-btn" data-tab="buffet-breakfast">Buffet Breakfast</button>
+                <button class="tab-btn" data-tab="hot-meals">Hot Meals To Go</button>
+                <button class="tab-btn" data-tab="boxed-lunches">Boxed Lunches</button>
+                <button class="tab-btn" data-tab="sweet-treats">Sweet Treats</button>
+                <button class="tab-btn" data-tab="venue-buffet">Venue Buffet</button>
             </div>
             <div class="menu-content">
-                <div class="menu-category active" id="appetizers">
+                <!-- Breakfast Boxes -->
+                <div class="menu-category active" id="breakfast-boxes">
                     <div class="menu-items">
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Texas Pimento Cheese Dip</h4>
-                                <p>Our signature pimento cheese served with house made chips.</p>
-                                <span class="dietary-tag">Vegetarian</span>
+                                <h4>Breakfast Box</h4>
+                                <p>Packaged individually with 3oz of each item: Scrambled Eggs, Refried Beans, Breakfast Potatoes with Two Tortillas. Choice of Bacon, Ham, or County Sausage.</p>
+                                <span class="dietary-tag">Individual Packaging</span>
                             </div>
-                            <span class="price">$8.99</span>
+                            <span class="price">$11.50 per person</span>
                         </div>
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Jalapeño Popper Dip</h4>
-                                <p>Creamy jalapeño and bacon dip with tortilla chips.</p>
+                                <h4>Yogurt + Fruit Breakfast Box</h4>
+                                <p>Packaged individually with Vanilla Yogurt, Granola, Seasonal Fresh Fruit, and a Boiled Egg.</p>
+                                <span class="dietary-tag">Healthy Option</span>
                             </div>
-                            <span class="price">$9.99</span>
+                            <span class="price">$8.75 per person</span>
                         </div>
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>BBQ Burnt End Bites</h4>
-                                <p>Tender brisket burnt ends with our house BBQ sauce.</p>
-                                <span class="dietary-tag">Gluten-Free</span>
+                                <h4>Pastry Box</h4>
+                                <p>Chef's Choice Variety - 2 per person and Seasonal Fresh Fruit. Includes Mini Plates, Serving Tongs, and Napkins.</p>
+                                <span class="dietary-tag">Sweet Start</span>
                             </div>
-                            <span class="price">$12.99</span>
+                            <span class="price">$7.75 per person</span>
                         </div>
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Deviled Egg Board</h4>
-                                <p>Classic and loaded deviled eggs with bacon and chives.</p>
-                                <span class="dietary-tag">Gluten-Free</span>
+                                <h4>Breakfast Taco Box - Individually Wrapped</h4>
+                                <p>Bacon and Egg: $2.75 | Sausage and Egg: $2.75 | Bean and Cheese: $2.50 | Potato and Egg: $2.50</p>
+                                <span class="dietary-tag">A La Carte</span>
                             </div>
-                            <span class="price">$10.99</span>
+                            <span class="price">$2.50+ each</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Drink Service Add-On</h4>
+                                <p>Orange Juice, Coffee, Water, Ice and cups, Creamer, Sweetener, and Stir Sticks.</p>
+                                <span class="dietary-tag">Beverage Service</span>
+                            </div>
+                            <span class="price">+$1.85 per person</span>
                         </div>
                     </div>
                 </div>
-                <div class="menu-category" id="main-courses">
+
+                <!-- Buffet Breakfast -->
+                <div class="menu-category" id="buffet-breakfast">
                     <div class="menu-items">
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Texas BBQ Brisket</h4>
-                                <p>Slow-smoked brisket with our signature BBQ rub and sauce.</p>
+                                <h4>Casserole Buffet Breakfast with Service</h4>
+                                <p>Egg, Cheese and Veggie Casserole with choice of Bacon, Ham, or County Sausage. Includes Breakfast Potatoes, Seasonal Fruit Mix, Variety of Mini Pastries, Orange Juice, Coffee, Water and Ice.</p>
+                                <span class="dietary-tag">Full Service</span>
                             </div>
-                            <span class="price">$18.99</span>
+                            <span class="price">$14.50 per person</span>
                         </div>
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Loaded Mac & Cheese</h4>
-                                <p>Creamy three-cheese mac with bacon and jalapeños.</p>
+                                <h4>Fiesta Breakfast Buffet with Service</h4>
+                                <p>Scrambled Egg Mixed with choice of Bacon, Ham, or County Sausage. Includes Potatoes a La Mexicana, Refried Beans and Chorizo, Two Tortillas, Variety of Mini Pastries, Orange Juice, Coffee, Water and Ice.</p>
+                                <span class="dietary-tag">Tex-Mex Style</span>
                             </div>
-                            <span class="price">$14.99</span>
+                            <span class="price">$13.50 per person</span>
                         </div>
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Grilled Chicken Salad</h4>
-                                <p>Fresh mixed greens with grilled chicken, tomatoes, and ranch.</p>
-                                <span class="dietary-tag">Gluten-Free</span>
+                                <h4>Hot Oatmeal Bar with Service</h4>
+                                <p>Freshly Prepared Oatmeal with Ultimate Toppings: Chocolate Chips, Seasonal Fruit, Brown Sugar, Syrup, Granola, Nuts, Cinnamon, Honey. Includes Variety of Mini Pastries, Orange Juice, Coffee, Water and Ice.</p>
+                                <span class="dietary-tag">Healthy Choice</span>
                             </div>
-                            <span class="price">$16.99</span>
+                            <span class="price">$12.50 per person</span>
                         </div>
                     </div>
                 </div>
-                <div class="menu-category" id="desserts">
+
+                <!-- Hot Meals To Go -->
+                <div class="menu-category" id="hot-meals">
                     <div class="menu-items">
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Texas Sheet Cake</h4>
-                                <p>Rich chocolate cake with fudge frosting and pecans.</p>
+                                <h4>Texas Fiesta Taco Plate</h4>
+                                <p>A flavor explosion with your choice of seasoned ground beef, marinated grilled chicken or pork asada served with 3 mini tortillas fresh salsa, spanish rice and charro beans. Comes with Chef Choice Pastry Tray.</p>
+                                <span class="dietary-tag">Fiesta Style</span>
                             </div>
-                            <span class="price">$6.99</span>
+                            <span class="price">$15.50 per person</span>
                         </div>
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Peach Cobbler</h4>
-                                <p>Warm peach cobbler with vanilla ice cream.</p>
-                                <span class="dietary-tag">Vegetarian</span>
+                                <h4>David's BBQ Shredded Beef on a Bun</h4>
+                                <p>Slow cooked, smokey Texas-style shredded beef, paired with our house made BBQ sauce served on a flour tortilla (comes with 2) and a side of potato salad, onions and pickles. Comes with Chef Choice Pastry Tray.</p>
+                                <span class="dietary-tag">BBQ Special</span>
                             </div>
-                            <span class="price">$7.99</span>
+                            <span class="price">$14.50 per person</span>
                         </div>
                         <div class="menu-item">
                             <div class="item-info">
-                                <h4>Custom Sugar Cookies</h4>
-                                <p>Personalized sugar cookies with custom printing.</p>
+                                <h4>Chris' Texas Roasted Chicken</h4>
+                                <p>Oven roasted seasoned leg quarter chicken accompanied by seasonal flavored vegetables and garlic butter mashed potatoes. Comes with Chef Choice Pastry Tray.</p>
+                                <span class="dietary-tag">Comfort Food</span>
                             </div>
-                            <span class="price">$3.99 each</span>
+                            <span class="price">$13.75 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Arroz con Pollo</h4>
+                                <p>Tender chicken pieces simmered in a savory blend of tomatoes, onions, garlic and spices, served on a bed of Spanish rice. Accompanied with charro beans. Comes with Chef Choice Pastry Tray.</p>
+                                <span class="dietary-tag">Traditional</span>
+                            </div>
+                            <span class="price">$13.00 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Fideo Loco</h4>
+                                <p>So many good flavors...it's crazy! Ground beef, potatoes, beans and fideo in a delicious broth served with 2 flour tortillas. Comes with Chef Choice Pastry Tray.</p>
+                                <span class="dietary-tag">Family Favorite</span>
+                            </div>
+                            <span class="price">$12.50 per person</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boxed Lunches -->
+                <div class="menu-category" id="boxed-lunches">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Boxed Lunches</h4>
+                                <p>Includes Napkins and Utensils if needed. Delivery Fee: $10 inside Loop 410 and $20 outside Loop 410.</p>
+                                <span class="dietary-tag">Complete Meal</span>
+                            </div>
+                            <span class="price">$13.95 per person + tax</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>The Texas Club</h4>
+                                <p>Sliced turkey breast, ham, smoked bacon and American cheese with all the sandwich fixin's (lettuce, tomatoes) between bread. Served with Assorted Chips, a Pickle Spear and a Texas Sugar Daddies Cookie of the Day.</p>
+                                <span class="dietary-tag">Loaded Sandwich</span>
+                            </div>
+                            <span class="price">Included</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Italian Grilled Sandwich</h4>
+                                <p>Ham, salami, cheese with lettuce, tomato and Italian vinaigrette between bread. Served with Assorted Chips, a Pickle Spear and a Texas Sugar Daddies Cookie of the Day.</p>
+                                <span class="dietary-tag">Italian Style</span>
+                            </div>
+                            <span class="price">Included</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Chicken Salad Sandwich</h4>
+                                <p>Shredded chicken, with lettuce, tomato and TSD touch of seasonings between bread. Served with Assorted Chips, a Pickle Spear and a Texas Sugar Daddies Cookie of the Day.</p>
+                                <span class="dietary-tag">Fresh & Light</span>
+                            </div>
+                            <span class="price">Included</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pizza Quesadilla</h4>
+                                <p>3 pieces made with mozzarella cheese and pepperoni and a side of house made marinara sauce. Served with Assorted Chips, a Pickle Spear and a Texas Sugar Daddies Cookie of the Day.</p>
+                                <span class="dietary-tag">Kid Favorite</span>
+                            </div>
+                            <span class="price">Included</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Texas Caesar Bacon Salad</h4>
+                                <p>Grilled Chicken slices, bacon with romaine lettuce, tomatoes parmesan cheese and our house-made Caesar dressing. Served with a Texas Sugar Daddies Cookie of the Day.</p>
+                                <span class="dietary-tag">Salad Option</span>
+                            </div>
+                            <span class="price">Included</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Desserts</h4>
+                                <p>Texan Banana Pudding, Mexican Chocolate Pudding, Sweet Potato Pie Pudding.</p>
+                                <span class="dietary-tag">Sweet Ending</span>
+                            </div>
+                            <span class="price">$4.00 each</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sweet Treats -->
+                <div class="menu-category" id="sweet-treats">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Standard Cupcakes</h4>
+                                <p>Mexican Chocolate, Strawberry, and Mexican Vanilla flavors.</p>
+                                <span class="dietary-tag">Classic Flavors</span>
+                            </div>
+                            <span class="price">$25 per dozen</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Specialty Cupcakes</h4>
+                                <p>Mangonada, Oreo, Hawaiian, Texican Chocolate, Cascarone, Concha, Fresanada, Atole de Arroz, and other customized options.</p>
+                                <span class="dietary-tag">Unique Flavors</span>
+                            </div>
+                            <span class="price">$35 per dozen</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Mini Cupcakes</h4>
+                                <p>One dozen mini cupcakes in various flavors.</p>
+                                <span class="dietary-tag">Bite Size</span>
+                            </div>
+                            <span class="price">$15 per dozen</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Cakes</h4>
+                                <p>Smash Cake (5" round): $35 | Round Cake (10" round): $50 | 1/4 Sheet: $45 | 1/2 Sheet: $75 | 10" Bundt: $45 | Mini Bundts: $36 per dozen. All prices vary by design.</p>
+                                <span class="dietary-tag">Custom Designs</span>
+                            </div>
+                            <span class="price">$35+ starting</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Cookies by Baker's Dozen (13)</h4>
+                                <p>TSD Signature Wedding Cookies, Texas Shaped Pan de Polvo, Chocolate Chip, Snickerdoodle, Peanut Butter, Chocolate Crinkle, Lemon Crinkle, Peanut Butter Temptation. Wide variety of flavors available.</p>
+                                <span class="dietary-tag">Baker's Dozen</span>
+                            </div>
+                            <span class="price">$12 per dozen</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Decorated Sugar Cookies</h4>
+                                <p>Printed and decorated sugar cookies. Price varies by size and design.</p>
+                                <span class="dietary-tag">Custom Decorated</span>
+                            </div>
+                            <span class="price">$4.50 each</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Other Sweet Options</h4>
+                                <p>Cake Pops: $25/dz | Lollipops: $25/dz | Candied Pecans: $15/lb (Texas Pecans coated in sugar and cinnamon). Wide variety of flavors available.</p>
+                                <span class="dietary-tag">Specialty Items</span>
+                            </div>
+                            <span class="price">$15+ each</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pies</h4>
+                                <p>Pecan, Pumpkin, Sweet Potato, Chocolate Silk, Coconut Creme, Banana Pudding, Buttermilk, Lemon Meringue, Cherry, Apple, and many other flavors. 9" Deep Dish: $25 starting | Mini Pies: $30/dz starting.</p>
+                                <span class="dietary-tag">Traditional Pies</span>
+                            </div>
+                            <span class="price">$25+ starting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue Buffet -->
+                <div class="menu-category" id="venue-buffet">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Brisket Buffet</h4>
+                                <p>BBQ Brisket, Sausage, Potato Salad, Rice, Beans, Pickle Slices, Onion, BBQ Sauce, Jalapeños and Sliced Bread.</p>
+                                <span class="dietary-tag">BBQ Feast</span>
+                            </div>
+                            <span class="price">$16.95 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>BBQ Chicken Buffet</h4>
+                                <p>Chicken Leg Quarters and Sausage, Rice, Beans, Pickle Slices, Onion, BBQ Sauce, Jalapeños and Sliced Bread.</p>
+                                <span class="dietary-tag">Chicken Special</span>
+                            </div>
+                            <span class="price">$15.75 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Mini Taco Bar</h4>
+                                <p>3 Mini Tacos of Diced Chicken Fajita, Al Pastor and Carne Asada. Sides include Rice, Charro Beans, Cilantro, Onions, Salsa, Limes and Sour Cream.</p>
+                                <span class="dietary-tag">Taco Variety</span>
+                            </div>
+                            <span class="price">$15.25 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pasta Bar</h4>
+                                <p>Serving of Pasta, Marinara Sauce, Alfredo Sauce, Seasoned Ground Meat, Diced Chicken, Garlic Bread and Salad Bar.</p>
+                                <span class="dietary-tag">Italian Style</span>
+                            </div>
+                            <span class="price">$14.75 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Baked Chicken Buffet</h4>
+                                <p>Leg Quarter with Garlic Mashed Potatoes, Steamed Veggie, and One Bread Slice.</p>
+                                <span class="dietary-tag">Comfort Food</span>
+                            </div>
+                            <span class="price">$13.75 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Discada Buffet</h4>
+                                <p>Saucy Meat Mixed Variety, Tortillas, Salsa, Rice and Beans.</p>
+                                <span class="dietary-tag">Mixed Grill</span>
+                            </div>
+                            <span class="price">$13.75 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Fideo Loco Buffet</h4>
+                                <p>Fideo with Ground Meat, a side of Charro Beans, and 2 Flour Tortillas.</p>
+                                <span class="dietary-tag">Traditional Dish</span>
+                            </div>
+                            <span class="price">$12.75 per person</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Buffet Service Includes</h4>
+                                <p>One Hour Buffet and Beverage Service includes: Iced Tea, Lemonade, Cups, Plates, Napkins, Utensils. We also offer Bakery items including Cake, Cookies, and other Assorted Desserts at additional cost.</p>
+                                <span class="dietary-tag">Full Service</span>
+                            </div>
+                            <span class="price">Included</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="dietary-info">
                 <div class="dietary-item">
-                    <i class="fas fa-leaf"></i>
-                    <span>Vegan Options Available</span>
+                    <i class="fas fa-truck"></i>
+                    <span>Delivery Available</span>
                 </div>
                 <div class="dietary-item">
-                    <i class="fas fa-wheat"></i>
-                    <span>Gluten-Free Menu</span>
+                    <i class="fas fa-utensils"></i>
+                    <span>Full Service Options</span>
                 </div>
                 <div class="dietary-item">
-                    <i class="fas fa-child"></i>
-                    <span>Kid-Friendly</span>
+                    <i class="fas fa-birthday-cake"></i>
+                    <span>Custom Orders Welcome</span>
                 </div>
                 <div class="dietary-item">
-                    <i class="fas fa-info-circle"></i>
-                    <span>Allergen Information</span>
+                    <i class="fas fa-phone"></i>
+                    <span>210-281-1415</span>
                 </div>
             </div>
         </div>
@@ -342,7 +704,7 @@
     <div class="container">
         <div class="demo-content">
             <h1>05 - Menu Section</h1>
-            <p>This section features the "Epic Bites Menu" with tabbed navigation (Appetizers, Main Courses, Desserts), menu items with pricing, dietary tags, and allergen information.</p>
+            <p>This section features the complete Texas Sugar Daddies menu with tabbed navigation covering Breakfast Boxes, Buffet Breakfast, Hot Meals To Go, Boxed Lunches, Sweet Treats, and Venue Buffet options. All items include detailed descriptions, pricing, and service information.</p>
         </div>
     </div>
 

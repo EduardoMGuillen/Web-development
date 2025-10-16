@@ -275,6 +275,95 @@
             margin-top: 4rem;
         }
 
+        .pricing-single {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .pricing-single .pricing-card {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pricing-structure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .price-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .price-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-divider {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5rem;
+            font-weight: 300;
+            align-self: center;
+        }
+
+        .services-breakdown {
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .services-grid-pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .service-name {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .service-price {
+            color: #667eea;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
         .pricing-card {
             padding: 3rem 2rem;
             text-align: center;
@@ -534,6 +623,33 @@
                 gap: 2rem;
             }
 
+            .pricing-structure {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .price-divider {
+                font-size: 1.2rem;
+                transform: rotate(90deg);
+            }
+
+            .services-grid-pricing {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .service-item {
+                padding: 0.75rem 1rem;
+            }
+
+            .service-name {
+                font-size: 0.9rem;
+            }
+
+            .service-price {
+                font-size: 1rem;
+            }
+
             .pricing-card {
                 padding: 2rem 1.5rem;
                 height: auto;
@@ -640,73 +756,65 @@
     </section>
 
     <section class="pricing" id="pricing">
-        <h2 class="section-title">CRM & AUTOMATION PLANS</h2>
+        <h2 class="section-title">CRM & DIY Services</h2>
         <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-bottom: 4rem; font-size: 1.2rem; line-height: 1.6;">
-            Streamline your operations, convert leads faster, and manage your business with ease using our all-in-one CRM powered by Go High Level.
+            Start with our powerful CRM and add the services you need to grow your business with our flexible DIY service packages.
         </p>
-        <div class="pricing-grid">
-            <div class="pricing-card glass">
-                <h3 class="plan-name">STARTER</h3>
-                <div class="plan-price">$222</div>
-                <div class="plan-period">every two weeks</div>
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin: 1rem 0; font-size: 0.9rem; font-style: italic;">
-                    Best for solopreneurs or startups building their first funnel
-                </p>
-                <ul class="plan-features">
-                    <li>Branded CRM setup (1 user)</li>
-                    <li>1 lead generation funnel (landing page, form, thank-you page)</li>
-                    <li>2 automated workflows (e.g., lead follow-up, appointment reminders)</li>
-                    <li>Online calendar booking system (1 service/team member)</li>
-                    <li>Basic contact & pipeline tracking</li>
-                    <li>1 onboarding/training session</li>
-                    <li>Mobile app access</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose to Start</a>
-            </div>
+        <div class="pricing-single">
             <div class="pricing-card glass featured">
-                <h3 class="plan-name">GROWTH</h3>
-                <div class="plan-price">$444</div>
-                <div class="plan-period">every two weeks</div>
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin: 1rem 0; font-size: 0.9rem; font-style: italic;">
-                    Ideal for small teams or growing service providers
+                <h3 class="plan-name">CRM + DIY Services</h3>
+                <div class="pricing-structure">
+                    <div class="price-item">
+                        <div class="price-label">Base CRM</div>
+                        <div class="plan-price">$99</div>
+                        <div class="plan-period">begins at</div>
+                    </div>
+                    <div class="price-divider">+</div>
+                    <div class="price-item">
+                        <div class="price-label">Add-On Services</div>
+                        <div class="plan-price">+</div>
+                        <div class="plan-period">services as needed</div>
+                    </div>
+                </div>
+                <div class="services-breakdown">
+                    <h4 style="color: white; margin-bottom: 1.5rem; text-align: center; font-size: 1.3rem;">Available DIY Services:</h4>
+                    <div class="services-grid-pricing">
+                        <div class="service-item">
+                            <span class="service-name">Social Media Management</span>
+                            <span class="service-price">$99</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Email Services</span>
+                            <span class="service-price">$69</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Website Templates & Design</span>
+                            <span class="service-price">$199</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Calendar/Booking Services</span>
+                            <span class="service-price">$59</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Missed Call Text Back Feature</span>
+                            <span class="service-price">$99</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">WordPress Services</span>
+                            <span class="service-price">$99</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Ad & Campaign Optimization</span>
+                            <span class="service-price">$69</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center; color: rgba(255, 255, 255, 0.7); margin-top: 2rem; font-size: 0.95rem; line-height: 1.5;">
+                    Mix and match services based on your business needs. Pay only for the services you choose. All services include setup, training, and ongoing support.
                 </p>
-                <ul class="plan-features">
-                    <li>Up to 2 custom funnels (lead capture, sales, or upsell)</li>
-                    <li>3+ automations: email/SMS follow-up, review requests, onboarding</li>
-                    <li>Pipeline management with lead scoring & status tracking</li>
-                    <li>Custom branded client portal with your logo + domain</li>
-                    <li>CRM dashboard with reporting widgets</li>
-                    <li>Review request system (Google, FB, etc.)</li>
-                    <li>Calendar system for multiple services or staff</li>
-                    <li>Biweekly strategy call + ongoing optimization support</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Choose Growth</a>
-            </div>
-            <div class="pricing-card glass">
-                <h3 class="plan-name">PRO</h3>
-                <div class="plan-price">$777</div>
-                <div class="plan-period">every two weeks</div>
-                <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin: 1rem 0; font-size: 0.9rem; font-style: italic;">
-                    Built for agencies, multi-location practices, or scaling businesses
-                </p>
-                <ul class="plan-features">
-                    <li>Unlimited funnels, automations, calendars, and forms</li>
-                    <li>Branded white-label CRM platform with team-level access</li>
-                    <li>Sales pipeline system with custom proposal templates</li>
-                    <li>Website integration + lead source tracking</li>
-                    <li>Automated workflows for lead nurturing, appointment no-shows, upsells</li>
-                    <li>Client portal with document sharing, login access & progress tracking</li>
-                    <li>Advanced reporting dashboards (Google Ads, SEO, SMS, email, etc.)</li>
-                    <li>Team training, priority same-day support</li>
-                    <li>Quarterly strategy planning</li>
-                    <li>Includes 1 custom video update/quarter (e.g., for funnel or onboarding)</li>
-                </ul>
-                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Go Pro</a>
+                <a href="https://creativeiq.marketing/contact" class="pricing-cta">Get Started Today</a>
             </div>
         </div>
-        <p style="text-align: center; color: rgba(255, 255, 255, 0.8); margin-top: 3rem; font-size: 1rem; line-height: 1.6;">
-            All plans include mobile access, call tracking, GMB chat integration, and social media messaging consolidation — built to grow your business from lead to conversion.
-        </p>
     </section>
 
     <footer class="footer">

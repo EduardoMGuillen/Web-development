@@ -147,6 +147,19 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
+        /* Service Price Styling */
+        .service-price {
+            color: #667eea;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -880,6 +893,11 @@
                 font-size: 3.5rem;
             }
 
+            .service-price {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
+
             .services-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1174,7 +1192,6 @@
 <body>
     <div id="particles-js"></div>
     
-    <!-- Navigation menu removed as requested -->
 
     <section class="hero" id="home">
         <div class="hero-content">
@@ -1215,35 +1232,41 @@
     <section class="services" id="our-services">
         <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
+            <a href="https://creativeiq.marketing/crm" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">💼</div>
+                <h3>CRM & Automation</h3>
+                <p>Streamline operations with our all-in-one CRM powered by Go High Level. Manage leads, automate workflows, and convert prospects into customers.</p>
+                <div class="service-price">Starting at $99</div>
+            </a>
+            <a href="https://creativeiq.marketing/seo" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">🔍</div>
+                <h3>Search Engine Optimization</h3>
+                <p>Boost your organic visibility and drive qualified traffic with our comprehensive SEO strategies. Get found online and stay ahead of competitors.</p>
+                <div class="service-price">Begins at $299</div>
+            </a>
+            <a href="https://creativeiq.marketing/smm" class="service-card glass" style="text-decoration: none; display: block;">
+                <div class="service-icon">📱</div>
+                <h3>Social Media Management</h3>
+                <p>Build authentic connections with your audience through strategic content creation and community management across all social platforms.</p>
+                <div class="service-price">Starting at $199</div>
+            </a>
             <a href="https://creativeiq.marketing/gmb" class="service-card glass" style="text-decoration: none; display: block;">
                 <div class="service-icon">🎯</div>
                 <h3>Google My Business & Ads</h3>
                 <p>Dominate local search with GMB optimization and strategic Google Ads campaigns. From setup to optimization, we drive local customers to your business.</p>
+                <div class="service-price">Setup $399 + $399/month</div>
             </a>
-            <a href="/crm" class="service-card glass" style="text-decoration: none; display: block;">
-                <div class="service-icon">💼</div>
-                <h3>CRM & Automation</h3>
-                <p>Streamline operations with our all-in-one CRM powered by Go High Level. Manage leads, automate workflows, and convert prospects into customers.</p>
-            </a>
-            <a href="/seo" class="service-card glass" style="text-decoration: none; display: block;">
-                <div class="service-icon">🔍</div>
-                <h3>Search Engine Optimization</h3>
-                <p>Boost your organic visibility and drive qualified traffic with our comprehensive SEO strategies. Get found online and stay ahead of competitors.</p>
-            </a>
-            <a href="/smm" class="service-card glass" style="text-decoration: none; display: block;">
-                <div class="service-icon">📱</div>
-                <h3>Social Media Management</h3>
-                <p>Build authentic connections with your audience through strategic content creation and community management across all social platforms.</p>
-            </a>
-            <a href="/web-development" class="service-card glass" style="text-decoration: none; display: block;">
+            <a href="https://creativeiq.marketing/web-development" class="service-card glass" style="text-decoration: none; display: block;">
                 <div class="service-icon">🌐</div>
                 <h3>Website Development</h3>
                 <p>Create stunning, high-converting websites that represent your brand perfectly. From design to development, we build sites that drive results.</p>
+                <div class="service-price">Starting at $699</div>
             </a>
             <a href="https://creativeiq.marketing/homepage" class="service-card glass" style="text-decoration: none; display: block;">
                 <div class="service-icon">🎬</div>
                 <h3>Video Production & Social Media Strategy</h3>
                 <p>Your brand's story, told visually. Professional interviews, testimonials, short-form reels, and promotional videos. Scriptwriting, filming, editing, and repurposing for all platforms.</p>
+                <div class="service-price">Custom Pricing</div>
             </a>
         </div>
     </section>
