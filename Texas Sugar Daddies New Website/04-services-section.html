@@ -116,7 +116,7 @@
         }
 
         .service-btn {
-            background: #dc3545;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             padding: 12px 24px;
             border-radius: 6px;
@@ -127,34 +127,15 @@
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3);
         }
 
         .service-btn:hover {
-            background: #c82333;
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.4);
         }
 
-        /* Demo Content */
-        .demo-content {
-            padding: 4rem 0;
-            text-align: center;
-            background: white;
-            margin: 2rem 0;
-            border-radius: 12px;
-        }
-
-        .demo-content h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .demo-content p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -185,6 +166,44 @@
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.3s forwards;
         }
+
+        /* Information Box Styles */
+        .info-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem auto 0;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .info-box h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .info-box .schedule {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #e8f4fd;
+        }
+
+        .info-box .pricing {
+            font-size: 1rem;
+            color: #cce7ff;
+            font-weight: 500;
+        }
+
+        .info-box .highlight {
+            color: #ffd700;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -201,7 +220,7 @@
                     <div class="service-content">
                         <h3>The Bakery</h3>
                         <p>From our signature cookies and cupcakes to custom cakes and personalized sugar cookies with custom printing, we create sweet treats that make every occasion special.</p>
-                        <a href="#" class="service-btn">PLACE AN ORDER TODAY</a>
+                        <a href="https://texassugardaddies.com/homepage#section-tZPpksWJXL" class="service-btn">PLACE AN ORDER TODAY</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -211,7 +230,7 @@
                     <div class="service-content">
                         <h3>The Cafe</h3>
                         <p>Join us Monday through Thursday for lunchtime bites, daily specials, and grab-and-go options. Perfect for a quick meal or casual dining experience.</p>
-                        <a href="#" class="service-btn">PLACE AN ORDER TODAY</a>
+                        <a href="https://texassugardaddies.com/homepage#section-tZPpksWJXL" class="service-btn">PLACE AN ORDER TODAY</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -221,7 +240,7 @@
                     <div class="service-content">
                         <h3>The Caterers</h3>
                         <p>Professional onsite and offsite catering services with custom menu development. We bring the restaurant experience to your event location.</p>
-                        <a href="#" class="service-btn">LET US CATER TO YOU</a>
+                        <a href="https://texassugardaddies.com/homepage#section-tZPpksWJXL" class="service-btn">LET US CATER TO YOU</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -231,20 +250,21 @@
                     <div class="service-content">
                         <h3>Venue Rentals</h3>
                         <p>Host your next event at our beautiful venue! Perfect for corporate meetings, birthday parties, and special celebrations. Capacity: 150 people with full amenities.</p>
-                        <a href="#" class="service-btn">HOST YOUR EVENT HERE</a>
+                        <a href="https://texassugardaddies.com/homepage#section-tZPpksWJXL" class="service-btn">HOST YOUR EVENT HERE</a>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Lunch Schedule Information Box -->
+            <div class="info-box">
+                <h3>🍽️ Lunch Schedule</h3>
+                <div class="schedule">Tuesday - Wednesday - Thursday</div>
+                <div class="schedule">11:00 AM - 3:00 PM</div>
+                <div class="pricing">Orders over <span class="highlight">$10</span> get <span class="highlight">FREE delivery</span>!</div>
             </div>
         </div>
     </section>
 
-    <!-- Demo Content -->
-    <div class="container">
-        <div class="demo-content">
-            <h1>04 - Services Section</h1>
-            <p>This section showcases "We Do It All!" with four service cards: The Bakery (sweet treats), The Cafe (weekday lunch), The Caterers (professional catering), and Venue Rentals (event hosting).</p>
-        </div>
-    </div>
 
     <script>
         // Add loading animation to images
