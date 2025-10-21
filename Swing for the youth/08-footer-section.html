@@ -1,10 +1,53 @@
 <!-- Footer Section -->
 <footer class="footer">
     <div class="footer-content">
-        <div class="sponsors">
-            <div class="sponsor">Powered by Go Play Sports, Inc.</div>
-            <div class="sponsor">Nexgen Electrical Solutions</div>
-            <div class="sponsor">N Zone Sports Centex</div>
+        <div class="partners-section">
+            <h3 class="partners-title">Our Partners</h3>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="logo-set">
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68845fd69353ce53f71eb432.png" alt="Partner 1" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/687d6c544d6fb7ed80b90f46.jpeg" alt="Partner 2" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/687d6c4b0b60d23c476b3be2.png" alt="Partner 3" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68f6fb6601d0545661d7ebb5.jpeg" alt="Partner 4" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68f6fbb6924f1e6c121ad187.png" alt="Partner 5" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68f6fdafd91bd182dbb1b729.jpeg" alt="Partner 6" loading="lazy" />
+                        </div>
+                    </div>
+                    <!-- Duplicate set for seamless scrolling -->
+                    <div class="logo-set">
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68845fd69353ce53f71eb432.png" alt="Partner 1" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/687d6c544d6fb7ed80b90f46.jpeg" alt="Partner 2" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/687d6c4b0b60d23c476b3be2.png" alt="Partner 3" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68f6fb6601d0545661d7ebb5.jpeg" alt="Partner 4" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68f6fbb6924f1e6c121ad187.png" alt="Partner 5" loading="lazy" />
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://storage.googleapis.com/msgsndr/GKpmXnTQ5LhB10YrIuSv/media/68f6fdafd91bd182dbb1b729.jpeg" alt="Partner 6" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <p>&copy; 2025 Swing Fore The Youth. All rights reserved.</p>
     </div>
@@ -25,27 +68,367 @@
     padding: 0 2rem;
 }
 
-.sponsors {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+/* Partners Section Styles */
+.partners-section {
     margin-bottom: 2rem;
-    flex-wrap: wrap;
 }
 
-.sponsor {
-    background: white;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    color: #1a5f3a;
+.partners-title {
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: pan-y;
+    cursor: grab;
+}
+
+.carousel-container:active {
+    cursor: grabbing;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 25s linear infinite;
+    width: 200%;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+/* Pause animation when container is touched on mobile */
+.carousel-container:active .carousel-track {
+    animation-play-state: paused;
+}
+
+.partner-logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.8rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    min-width: 180px;
+    height: 80px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    cursor: pointer;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.partner-logo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.partner-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Duplicate logos for seamless loop */
+.logo-set {
+    display: flex;
+    flex: 0 0 50%;
+    gap: 0;
+}
+
+@media (max-width: 968px) {
+    .partners-title {
+        font-size: 1.3rem;
+    }
+    
+    .carousel-container {
+        cursor: default;
+    }
+    
+    .partner-logo {
+        min-width: 160px;
+        height: 70px;
+        padding: 0.6rem 1.2rem;
+        margin: 0 0.6rem;
+    }
+    
+    .carousel-track {
+        animation-duration: 28s;
+    }
 }
 
 @media (max-width: 768px) {
-    .sponsors {
-        flex-direction: column;
-        gap: 1rem;
+    .partners-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .carousel-container {
+        padding: 1rem 0;
+        border-radius: 12px;
+    }
+    
+    .partner-logo {
+        min-width: 140px;
+        height: 60px;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        border-radius: 10px;
+    }
+    
+    .carousel-track {
+        animation-duration: 30s;
+    }
+    
+    /* Add visual hint for mobile scrolling */
+    .carousel-container::after {
+        content: "← Swipe to explore partners →";
+        position: absolute;
+        bottom: 0.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.6rem;
+        color: rgba(255, 255, 255, 0.7);
+        opacity: 0.8;
+        text-align: center;
     }
 }
-</style> 
+
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 0 1rem;
+    }
+    
+    .partners-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .carousel-container {
+        padding: 0.8rem 0 1.5rem 0;
+        border-radius: 10px;
+    }
+    
+    .partner-logo {
+        min-width: 120px;
+        height: 50px;
+        padding: 0.4rem 0.8rem;
+        margin: 0 0.4rem;
+        border-radius: 8px;
+    }
+    
+    .carousel-track {
+        animation-duration: 32s;
+    }
+    
+    .carousel-container::after {
+        bottom: 0.2rem;
+        font-size: 0.55rem;
+    }
+}
+</style>
+
+<script>
+// Enhanced Partners Carousel with Touch Support
+class PartnersCarousel {
+    constructor() {
+        this.carousel = document.querySelector('.carousel-track');
+        this.container = document.querySelector('.carousel-container');
+        this.partnerLogos = document.querySelectorAll('.partner-logo');
+        this.isTouch = false;
+        this.startX = 0;
+        this.startY = 0;
+        this.isScrolling = false;
+        
+        this.init();
+    }
+    
+    init() {
+        this.setupImageLoading();
+        this.setupTouchHandling();
+        this.setupKeyboardNavigation();
+        this.setupIntersectionObserver();
+    }
+    
+    setupImageLoading() {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        this.optimizeImage(img);
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px'
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
+    }
+    
+    optimizeImage(img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+        
+        const handleLoad = () => {
+            img.style.opacity = '1';
+            img.removeEventListener('load', handleLoad);
+        };
+        
+        const handleError = () => {
+            img.style.opacity = '0.5';
+            img.alt = 'Partner logo unavailable';
+            img.removeEventListener('error', handleError);
+        };
+        
+        img.addEventListener('load', handleLoad);
+        img.addEventListener('error', handleError);
+        
+        if (img.complete) {
+            handleLoad();
+        }
+    }
+    
+    setupTouchHandling() {
+        this.container.addEventListener('touchstart', (e) => {
+            this.isTouch = true;
+            this.startX = e.touches[0].clientX;
+            this.startY = e.touches[0].clientY;
+            this.isScrolling = false;
+        }, { passive: true });
+        
+        this.container.addEventListener('touchmove', (e) => {
+            if (!this.isTouch) return;
+            
+            const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
+            const diffX = Math.abs(currentX - this.startX);
+            const diffY = Math.abs(currentY - this.startY);
+            
+            if (!this.isScrolling) {
+                this.isScrolling = diffY > diffX;
+            }
+            
+            // If horizontal swipe, pause animation
+            if (!this.isScrolling && diffX > 10) {
+                this.carousel.style.animationPlayState = 'paused';
+            }
+        }, { passive: true });
+        
+        this.container.addEventListener('touchend', () => {
+            this.isTouch = false;
+            // Resume animation after touch
+            setTimeout(() => {
+                this.carousel.style.animationPlayState = 'running';
+            }, 1000);
+        }, { passive: true });
+    }
+    
+    setupKeyboardNavigation() {
+        this.partnerLogos.forEach((logo, index) => {
+            logo.setAttribute('tabindex', '0');
+            logo.setAttribute('role', 'button');
+            logo.setAttribute('aria-label', `Partner ${index + 1}: ${logo.querySelector('img')?.alt || 'Partner logo'}`);
+            
+            logo.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.handlePartnerClick(logo);
+                }
+            });
+            
+            logo.addEventListener('click', () => {
+                this.handlePartnerClick(logo);
+            });
+        });
+    }
+    
+    handlePartnerClick(logo) {
+        // Pause animation temporarily
+        this.carousel.style.animationPlayState = 'paused';
+        
+        // Add click effect
+        logo.style.transform = 'translateY(-5px) scale(1.05)';
+        logo.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.2)';
+        
+        // Analytics tracking
+        if (typeof gtag !== 'undefined') {
+            const partnerName = logo.querySelector('img')?.alt || 'Unknown Partner';
+            gtag('event', 'partner_click', {
+                'partner_name': partnerName,
+                'event_category': 'engagement'
+            });
+        }
+        
+        // Reset after animation
+        setTimeout(() => {
+            logo.style.transform = '';
+            logo.style.boxShadow = '';
+            this.carousel.style.animationPlayState = 'running';
+        }, 2000);
+    }
+    
+    setupIntersectionObserver() {
+        if ('IntersectionObserver' in window) {
+            const carouselObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.carousel.style.animationPlayState = 'running';
+                    } else {
+                        this.carousel.style.animationPlayState = 'paused';
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+            
+            carouselObserver.observe(this.container);
+        }
+    }
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new PartnersCarousel());
+} else {
+    new PartnersCarousel();
+}
+</script> 

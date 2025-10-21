@@ -118,3 +118,6 @@ YouTube – https://youtube.com/@moralespadialaw
 LinkedIn – https://linkedin.com/company/moralespadialaw
 TikTok – https://tiktok.com/@moralespadialaw
 
+*** Unsubscribe Link
+
+Use this as unsubscribe Link: {{ unsubscribe_url }}

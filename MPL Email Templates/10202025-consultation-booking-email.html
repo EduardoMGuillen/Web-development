@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Your Consultation - Morales Padia Law</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-section h2 {
+            font-size: 32px;
+            color: #0ea5e9;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+        
+        .booking-banner {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 2px solid #0ea5e9;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .booking-banner h3 {
+            color: #0c4a6e;
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .booking-banner p {
+            color: #075985;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        .consultation-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .consultation-card {
+            background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .consultation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0ea5e9, #0284c7);
+        }
+        
+        .consultation-card:hover {
+            transform: translateY(-5px);
+            border-color: #0ea5e9;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
+        }
+        
+        .consultation-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .consultation-card h3 {
+            font-size: 20px;
+            color: #0ea5e9;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .consultation-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .consultation-duration {
+            background: #0ea5e9;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .benefits-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .benefits-section h3 {
+            font-size: 24px;
+            color: #0ea5e9;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .benefit-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #0ea5e9;
+        }
+        
+        .benefit-text {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .cta-section h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0ea5e9;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 0 10px 10px 0;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background: white;
+            color: #0ea5e9;
+        }
+        
+        .testimonial {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #0ea5e9;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #0ea5e9;
+        }
+        
+        .footer {
+            background-color: #0ea5e9;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        .links-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .links-section h5 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .links-grid a {
+            color: #7dd3fc;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 5px 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .links-grid a:hover {
+            border-bottom-color: #7dd3fc;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .hero-section h2 {
+                font-size: 24px;
+            }
+            
+            .consultation-types {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/68475cb88e3621727a031bd8.png" alt="Morales Padia Law" class="logo">
+            <h1>Schedule Your Consultation</h1>
+            <p>Take the First Step Toward Legal Resolution</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <div class="hero-section">
+                <h2>Free Legal Consultation</h2>
+                <p>Don't let legal issues overwhelm you. Schedule a confidential consultation with our experienced attorneys and get the guidance you need to move forward with confidence.</p>
+            </div>
+            
+            <!-- Booking Banner -->
+            <div class="booking-banner">
+                <h3>📅 Ready to Get Started?</h3>
+                <p>Book your free consultation today and take the first step toward resolving your legal matter with experienced, compassionate attorneys.</p>
+            </div>
+            
+            <!-- Consultation Types -->
+            <div class="consultation-types">
+                <div class="consultation-card">
+                    <span class="consultation-icon">💬</span>
+                    <h3>Phone Consultation</h3>
+                    <p>Speak directly with an attorney from the comfort of your home or office.</p>
+                    <span class="consultation-duration">30-45 minutes</span>
+                </div>
+                
+                <div class="consultation-card">
+                    <span class="consultation-icon">🏢</span>
+                    <h3>In-Person Meeting</h3>
+                    <p>Meet face-to-face at our San Antonio office for a comprehensive discussion.</p>
+                    <span class="consultation-duration">45-60 minutes</span>
+                </div>
+                
+                <div class="consultation-card">
+                    <span class="consultation-icon">💻</span>
+                    <h3>Video Conference</h3>
+                    <p>Secure video consultation using your preferred platform for convenience.</p>
+                    <span class="consultation-duration">30-45 minutes</span>
+                </div>
+            </div>
+            
+            <!-- Benefits Section -->
+            <div class="benefits-section">
+                <h3>What to Expect During Your Consultation</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎯</span>
+                        <span class="benefit-text">Detailed case evaluation and legal analysis</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💡</span>
+                        <span class="benefit-text">Clear explanation of your legal options</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📋</span>
+                        <span class="benefit-text">Customized strategy recommendations</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💰</span>
+                        <span class="benefit-text">Transparent pricing and fee structure</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">❓</span>
+                        <span class="benefit-text">Answers to all your legal questions</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🤝</span>
+                        <span class="benefit-text">No pressure - honest advice about your case</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial -->
+            <div class="testimonial">
+                <p>"The consultation with Morales Padia Law was incredibly helpful. They took the time to understand my situation and gave me clear, honest advice about my options. I felt confident moving forward with their representation."</p>
+                <div class="testimonial-author">- Lisa M., Consultation Client</div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3>Ready to Schedule Your Consultation?</h3>
+                <p>Don't wait to get the legal help you need. Book your free consultation today and take the first step toward resolving your legal matter.</p>
+                <a href="https://moralespadialaw.com/schedule/" class="cta-button">Schedule Now</a>
+                <a href="tel:7262044044" class="cta-button secondary">Call: (726) 204-4044</a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <h4>Morales Padia Law</h4>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> (726) 204-4044</p>
+                <p><strong>Address:</strong> 45 NE Interstate 410 Loop Suite 307, San Antonio, TX 78216</p>
+                <p><strong>Email:</strong> info@moralespadialaw.com</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/moralespadialaw">Instagram</a>
+                <a href="https://facebook.com/moralespadialaw">Facebook</a>
+                <a href="https://youtube.com/@moralespadialaw">YouTube</a>
+                <a href="https://linkedin.com/company/moralespadialaw">LinkedIn</a>
+                <a href="https://tiktok.com/@moralespadialaw">TikTok</a>
+            </div>
+            
+            <div class="links-section">
+                <h5>Quick Links</h5>
+                <div class="links-grid">
+                    <a href="https://moralespadialaw.com/schedule/">Schedule Consultation</a>
+                    <a href="https://moralespadialaw.com/family-law/family-attorney/">Family Law</a>
+                    <a href="https://moralespadialaw.com/estate-planning/">Estate Planning</a>
+                    <a href="https://moralespadialaw.com/criminal-law/criminal-defense/">Criminal Defense</a>
+                    <a href="https://moralespadialaw.com/probate-law/">Probate Law</a>
+                    <a href="https://moralespadialaw.com/about-us/">About Us</a>
+                    <a href="https://moralespadialaw.com/testimonials/">Testimonials</a>
+                    <a href="https://moralespadialaw.com/faq/">FAQ</a>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.8;">
+                © 2025 Morales Padia Law. All rights reserved.<br>
+                This email is for informational purposes only and does not constitute legal advice.
+            </p>
+            
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                <a href="{{ unsubscribe_url }}" style="color: #7dd3fc; text-decoration: none; font-size: 12px;">Unsubscribe</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

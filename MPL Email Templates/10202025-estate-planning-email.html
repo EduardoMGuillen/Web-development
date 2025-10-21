@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Planning - Secure Your Legacy - Morales Padia Law</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-section h2 {
+            font-size: 32px;
+            color: #059669;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+        
+        .urgency-banner {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .urgency-banner h3 {
+            color: #92400e;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .urgency-banner p {
+            color: #92400e;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .service-card {
+            background: linear-gradient(145deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #059669);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #10b981;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .service-card h3 {
+            font-size: 20px;
+            color: #059669;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .benefits-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .benefits-section h3 {
+            font-size: 24px;
+            color: #059669;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .benefit-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #10b981;
+        }
+        
+        .benefit-text {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .cta-section h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #059669;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #10b981;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #059669;
+        }
+        
+        .footer {
+            background-color: #059669;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        .links-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .links-section h5 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .links-grid a {
+            color: #86efac;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 5px 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .links-grid a:hover {
+            border-bottom-color: #86efac;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .hero-section h2 {
+                font-size: 24px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/68475cb88e3621727a031bd8.png" alt="Morales Padia Law" class="logo">
+            <h1>Secure Your Legacy Today</h1>
+            <p>Comprehensive Estate Planning for Peace of Mind</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <div class="hero-section">
+                <h2>Estate Planning</h2>
+                <p>Don't leave your family's future to chance. Protect your assets, minimize taxes, and ensure your wishes are carried out with our comprehensive estate planning services.</p>
+            </div>
+            
+            <!-- Urgency Banner -->
+            <div class="urgency-banner">
+                <h3>⚠️ Don't Wait - Plan Today</h3>
+                <p>Without proper estate planning, your assets could be tied up in probate for months or even years, causing unnecessary stress and expense for your loved ones.</p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">📜</span>
+                    <h3>Wills & Trusts</h3>
+                    <p>Comprehensive will and trust creation to ensure your assets are distributed according to your wishes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">⚖️</span>
+                    <h3>Power of Attorney</h3>
+                    <p>Financial and healthcare power of attorney documents to protect you and your family.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🏥</span>
+                    <h3>Advance Directives</h3>
+                    <p>Living wills and healthcare directives to ensure your medical wishes are respected.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🛡️</span>
+                    <h3>Asset Protection</h3>
+                    <p>Strategies to protect your wealth from creditors, lawsuits, and excessive taxation.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">👨‍👩‍👧‍👦</span>
+                    <h3>Guardianship Planning</h3>
+                    <p>Protect your minor children by designating guardians and managing their inheritance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">💰</span>
+                    <h3>Tax Minimization</h3>
+                    <p>Strategies to reduce estate taxes and maximize what you pass on to your heirs.</p>
+                </div>
+            </div>
+            
+            <!-- Benefits Section -->
+            <div class="benefits-section">
+                <h3>Why Estate Planning Matters</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span class="benefit-text">Avoid costly probate proceedings</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span class="benefit-text">Minimize estate taxes</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span class="benefit-text">Protect minor children</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span class="benefit-text">Ensure healthcare wishes are respected</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span class="benefit-text">Provide for family members with special needs</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span class="benefit-text">Maintain family harmony</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial -->
+            <div class="testimonial">
+                <p>"Morales Padia Law helped us create a comprehensive estate plan that gives us peace of mind. They explained everything clearly and made sure we understood all our options. Our family is now protected."</p>
+                <div class="testimonial-author">- Sarah M., Estate Planning Client</div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3>Start Planning Your Legacy Today</h3>
+                <p>Don't wait for tomorrow. Schedule a consultation with our estate planning experts and take the first step toward protecting your family's future.</p>
+                <a href="https://moralespadialaw.com/schedule/" class="cta-button">Schedule Your Consultation</a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <h4>Morales Padia Law</h4>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> (726) 204-4044</p>
+                <p><strong>Address:</strong> 45 NE Interstate 410 Loop Suite 307, San Antonio, TX 78216</p>
+                <p><strong>Email:</strong> info@moralespadialaw.com</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/moralespadialaw">Instagram</a>
+                <a href="https://facebook.com/moralespadialaw">Facebook</a>
+                <a href="https://youtube.com/@moralespadialaw">YouTube</a>
+                <a href="https://linkedin.com/company/moralespadialaw">LinkedIn</a>
+                <a href="https://tiktok.com/@moralespadialaw">TikTok</a>
+            </div>
+            
+            <div class="links-section">
+                <h5>Estate Planning Services</h5>
+                <div class="links-grid">
+                    <a href="https://moralespadialaw.com/estate-planning/">Estate Planning Overview</a>
+                    <a href="https://moralespadialaw.com/estate-planning/power-of-attorney/">Power of Attorney</a>
+                    <a href="https://moralespadialaw.com/estate-planning/advance-directives/">Advance Directives</a>
+                    <a href="https://moralespadialaw.com/estate-planning/asset-protection/">Asset Protection</a>
+                    <a href="https://moralespadialaw.com/estate-planning/trust/">Trust Services</a>
+                    <a href="https://moralespadialaw.com/estate-planning/will/">Will Creation</a>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.8;">
+                © 2025 Morales Padia Law. All rights reserved.<br>
+                This email is for informational purposes only and does not constitute legal advice.
+            </p>
+            
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                <a href="{{ unsubscribe_url }}" style="color: #86efac; text-decoration: none; font-size: 12px;">Unsubscribe</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
