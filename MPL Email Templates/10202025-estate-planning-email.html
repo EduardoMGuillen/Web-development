@@ -26,7 +26,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -77,22 +77,48 @@
             margin-bottom: 40px;
         }
         
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #1e40af;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(30, 64, 175, 0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.5;
+        }
+        
         .hero-section h2 {
             font-size: 32px;
-            color: #059669;
+            color: #1e40af;
             margin-bottom: 15px;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
         
         .hero-section p {
             font-size: 18px;
-            color: #64748b;
+            color: #374151;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
         }
         
         .urgency-banner {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border: 2px solid #f59e0b;
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            border: 2px solid #1e40af;
             border-radius: 15px;
             padding: 20px;
             margin: 30px 0;
@@ -100,13 +126,13 @@
         }
         
         .urgency-banner h3 {
-            color: #92400e;
+            color: #1e40af;
             font-size: 20px;
             margin-bottom: 10px;
         }
         
         .urgency-banner p {
-            color: #92400e;
+            color: #075985;
             font-size: 16px;
             margin: 0;
         }
@@ -119,7 +145,7 @@
         }
         
         .service-card {
-            background: linear-gradient(145deg, #f0fdf4 0%, #dcfce7 100%);
+            background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%);
             padding: 25px;
             border-radius: 15px;
             text-align: center;
@@ -136,13 +162,13 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #10b981, #059669);
+            background: linear-gradient(90deg, #1e40af, #1e3a8a);
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            border-color: #10b981;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+            border-color: #1e40af;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
         }
         
         .service-icon {
@@ -153,7 +179,7 @@
         
         .service-card h3 {
             font-size: 20px;
-            color: #059669;
+            color: #1e40af;
             margin-bottom: 10px;
             font-weight: 600;
         }
@@ -173,7 +199,7 @@
         
         .benefits-section h3 {
             font-size: 24px;
-            color: #059669;
+            color: #1e40af;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -196,7 +222,7 @@
         .benefit-icon {
             font-size: 24px;
             margin-right: 15px;
-            color: #10b981;
+            color: #1e40af;
         }
         
         .benefit-text {
@@ -205,7 +231,7 @@
         }
         
         .cta-section {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
             color: white;
             padding: 40px 30px;
             text-align: center;
@@ -228,7 +254,7 @@
         .cta-button {
             display: inline-block;
             background: white;
-            color: #059669;
+            color: #1e40af;
             padding: 15px 35px;
             text-decoration: none;
             border-radius: 50px;
@@ -244,11 +270,11 @@
         }
         
         .testimonial {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             padding: 30px;
             border-radius: 15px;
             margin: 30px 0;
-            border-left: 5px solid #10b981;
+            border-left: 5px solid #1e40af;
         }
         
         .testimonial p {
@@ -260,11 +286,11 @@
         
         .testimonial-author {
             font-weight: 600;
-            color: #059669;
+            color: #1e40af;
         }
         
         .footer {
-            background-color: #059669;
+            background-color: #1e40af;
             color: white;
             padding: 30px;
             text-align: center;
@@ -314,7 +340,7 @@
         }
         
         .links-grid a {
-            color: #86efac;
+            color: white;
             text-decoration: none;
             font-size: 12px;
             padding: 5px 0;
@@ -323,7 +349,7 @@
         }
         
         .links-grid a:hover {
-            border-bottom-color: #86efac;
+            border-bottom-color: white;
         }
         
         @media (max-width: 600px) {
