@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Estate Planning & Family Law | Morales Padia Law</title>
+    <meta name="description" content="Get answers to common questions about estate planning, wills, trusts, probate, and family law. Expert guidance from Morales Padia Law in San Antonio.">
+    <meta name="keywords" content="estate planning FAQ, will questions, trust FAQ, probate questions, family law FAQ, San Antonio attorney">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #234374;
+            --secondary: #639be3;
+            --accent: #4475b5;
+            --light: #f8fafc;
+            --dark: #4475b5;
+            --white: #fff;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            background: var(--white);
+            color: var(--text-dark);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px 60px;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+        }
+
+        /* Floating particles animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 12s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) {
+            width: 8px; height: 8px;
+            left: 10%; top: 20%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            width: 12px; height: 12px;
+            left: 20%; top: 80%;
+            animation-delay: 3s;
+        }
+
+        .particle:nth-child(3) {
+            width: 6px; height: 6px;
+            left: 80%; top: 30%;
+            animation-delay: 6s;
+        }
+
+        .particle:nth-child(4) {
+            width: 10px; height: 10px;
+            left: 70%; top: 70%;
+            animation-delay: 9s;
+        }
+
+        .particle:nth-child(5) {
+            width: 14px; height: 14px;
+            left: 30%; top: 50%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(6) {
+            width: 4px; height: 4px;
+            left: 60%; top: 15%;
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) scale(1);
+                opacity: 0.1;
+            }
+            25% {
+                transform: translateY(-30px) translateX(20px) scale(1.2);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-60px) translateX(-15px) scale(0.8);
+                opacity: 0.2;
+            }
+            75% {
+                transform: translateY(-40px) translateX(25px) scale(1.1);
+                opacity: 0.25;
+            }
+        }
+
+        .hero-title {
+            font-family: "Playfair Display", serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            color: var(--primary);
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .content-section {
+            padding: 60px 20px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 0;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .faq-item.active {
+            box-shadow: 0 15px 40px rgba(35, 67, 116, 0.2);
+            border-color: var(--accent);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-header {
+            padding: 2rem 3rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-header:hover {
+            background: var(--light);
+        }
+
+        .faq-toggle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            background: var(--primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 3rem;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 2000px;
+            padding: 0 3rem 2rem;
+        }
+
+        .faq-question {
+            font-family: "Playfair Display", serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer p {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-answer ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .highlight-link:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .cta-section {
+            background: var(--light);
+            padding: 80px 20px;
+            text-align: center;
+            margin: 60px 0;
+            border-radius: 20px;
+        }
+
+        .cta-title {
+            font-family: "Playfair Display", serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(35, 67, 116, 0.3);
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(35, 67, 116, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .internal-links {
+            background: var(--white);
+            padding: 60px 20px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .links-title {
+            font-family: "Playfair Display", serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .internal-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            background: var(--white);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .internal-link:hover {
+            background: var(--secondary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 155, 227, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .faq-item {
+                padding: 2rem;
+            }
+            
+            .faq-question {
+                font-size: 1.4rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 60px 0 40px;
+            }
+            
+            .content-section {
+                padding: 40px 0;
+            }
+            
+            .faq-item {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Animated background particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container">
+            <h1 class="hero-title">Frequently Asked Questions</h1>
+            <p class="hero-subtitle">Get answers to common questions about estate planning, family law, and legal services</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">What is a Will?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>A will is a legal document that outlines your wishes regarding the distribution of your assets and the appointment of someone to oversee this process. Individuals named in a will to receive your assets are referred to as heirs or beneficiaries, while the person responsible for executing the instructions in the will is called a personal representative or executor.</p>
+                    
+                    <p>It's essential to understand that wills do not apply to assets with surviving joint owners or living beneficiaries. For instance, assets like retirement accounts and life insurance are directly payable to the designated living beneficiary, regardless of what the will specifies. Therefore, it is crucial to ensure that your will aligns with jointly owned assets and accounts with named beneficiaries to ensure a cohesive and comprehensive estate plan.</p>
+                    
+                    <p>Furthermore, any property passing under a will must undergo <a href="https://moralespadialaw.com/probate-law/" class="highlight-link">probate</a>, a legal process where the will is filed with a probate court, reviewed, and approved. Only after this process can the personal representative act on your behalf, manage your assets, settle outstanding debts, and distribute the remaining assets to your heirs.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">What is an Estate Plan?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>An estate plan is a comprehensive strategy that goes beyond simply determining who inherits what. While asset distribution is a crucial aspect, estate planning also addresses contingencies related to incapacity and disability. This includes outlining who will handle your financial affairs and make medical decisions on your behalf if you become unable to do so.</p>
+                    
+                    <p>Additionally, an estate plan encompasses provisions for guardianship, addressing both short-term emergency care and long-term guardianship for minor children. Whether utilizing a will or trust, an estate plan is designed to cover various facets of your life. It extends from addressing immediate concerns like incapacity to planning for the long-term, such as the management of assets for a minor child until they reach maturity.</p>
+                    
+                    <p>Importantly, estate planning is not solely about legal documents. While well-drafted legal documents are essential, the plan also considers the legacy component. Your family's memories of you are shaped not just by legal papers but by personal artifacts like videos, letters, audio recordings, and photographs.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">Do I Need More Than a Will?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Certainly, having just a will may not be sufficient for comprehensive estate planning. While a will addresses the distribution of assets, there are other crucial aspects to consider:</p>
+                    
+                    <ul>
+                        <li><strong>Incapacity or Disability:</strong> What if you are unable to make decisions for yourself? Estate planning covers scenarios where you might be incapacitated or disabled.</li>
+                        <li><strong>Asset and Medical Decision-Making:</strong> It's essential to designate someone to manage your assets and make medical decisions on your behalf.</li>
+                        <li><strong>Guardianship of Minor Children:</strong> For parents of minors, it's important to plan for short-term emergency situations and long-term guardianship.</li>
+                    </ul>
+                    
+                    <p>To adequately address these concerns, you need more than just a will:</p>
+                    
+                    <ul>
+                        <li><strong><a href="https://moralespadialaw.com/estate-planning/power-of-attorney/" class="highlight-link">Power of Attorney</a>:</strong> Designate someone to handle your financial and medical affairs in case you are unable to do so.</li>
+                        <li><strong><a href="https://moralespadialaw.com/estate-planning/advance-directives/" class="highlight-link">Living Will</a>:</strong> Clearly outline your preferences for end-of-life decisions, especially if you are on life support.</li>
+                        <li><strong>HIPAA Release:</strong> Authorize specific individuals to communicate with your doctors about your medical condition.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">What if You Pass Away Without a Will?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>In the absence of a will, the distribution of your estate is governed by state law, which steps in to address the gaps left by the absence of specific directives. State laws typically follow a predetermined hierarchy in determining heirs and beneficiaries, with a surviving spouse taking precedence, followed by children, parents, and then extended family members such as siblings, nieces, and nephews.</p>
+                    
+                    <p>However, complications can arise, particularly in blended families or situations where there are children from different relationships. The distribution becomes more intricate, and it doesn't necessarily adhere to straightforward equal shares. In cases like these, the default provisions under Texas law may not align with your preferences.</p>
+                    
+                    <p>Moreover, state law does not provide clarity regarding the management of assets left to a minor or an incapacitated beneficiary. While it outlines the family tree, it lacks the specificity needed to ensure that your estate is distributed as you would have intended, potentially at specific ages or in a manner reflecting your wishes.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">What is Probate?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p><a href="https://moralespadialaw.com/probate-law/" class="highlight-link">Probate</a> is a court system integral to the estate planning process, and the common goal often mentioned is to minimize or avoid it. In essence, probate is a state-specific court procedure responsible for appointing an individual to oversee the distribution of an estate when someone passes away. This court system ensures that the assets are transferred to the legally entitled heirs.</p>
+                    
+                    <p>Additionally, probate serves as the legal avenue to designate someone, chosen by a judge, to manage the assets and make medical decisions for a minor child or an incapacitated adult. Essentially, probate court acts as a default plan for those who have not engaged in estate planning to sidestep its proceedings.</p>
+                    
+                    <p>Probate involves a formal court proceeding, assigning a case number to the process. As with any legal proceedings, records are public, and a judge makes decisions throughout the probate process. While probate is not an unavoidable aspect of estate planning, it becomes necessary when planning is inadequate or absent.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">What is a Living Will?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>A <a href="https://moralespadialaw.com/estate-planning/advance-directives/" class="highlight-link">Living Will</a> is distinct from a Last Will, often causing confusion due to their similar names. While a Last Will outlines asset distribution after your passing, a Living Will is relevant while you are still alive. This legal document comes into play when you are terminally and irreversibly ill or injured, unable to communicate, and reliant on life support.</p>
+                    
+                    <p>In essence, a Living Will serves to clarify your preferences regarding the duration of time on life support in such circumstances. You determine, in advance, the specific number of days—whether three, five, seven, or a duration of your choice—after which you wish to be taken off life support if there is no improvement in your condition.</p>
+                    
+                    <p>By documenting your decision in a Living Will, you proactively address a challenging situation for your family. In the event that they find themselves grappling with the decision of when to discontinue life support, your Living Will serves as a clear guide. This preemptive approach helps prevent potential conflicts among family members who may hold different views on what the individual would have wanted.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 7 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">Should I Name My Children as Beneficiaries of My Life Insurance Policy?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>We strongly advise against naming minor children as beneficiaries of any asset, including life insurance policies or retirement accounts. The primary concern is that if you, as the asset owner, were to pass away, and the proceeds are payable to a minor child, legal complexities arise. While the minor child becomes the legal owner, they are unable to manage the asset independently due to their age.</p>
+                    
+                    <p>In such cases, a court intervention becomes necessary, with the court appointing someone to oversee the asset until the child reaches the age of 18 or, in some instances, 21. By allowing the court to decide, you relinquish control over who will be responsible for the asset and the decisions regarding its management.</p>
+                    
+                    <p>However, as part of your <a href="https://moralespadialaw.com/estate-planning/" class="highlight-link">estate plan</a>, you have the opportunity to proactively make this choice in advance, avoiding reliance on a court's decision. By naming a minor child outright as a beneficiary, you leave critical decisions about asset management and fund utilization to chance.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 8 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">Should I Avoid Probate?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>The decision to avoid probate is highly individualized and depends on your specific circumstances. Our approach is not to prescribe avoidance of probate for everyone but rather to provide comprehensive education on what probate entails, how it can be avoided, and empower you, as the client, to make informed decisions.</p>
+                    
+                    <p><a href="https://moralespadialaw.com/probate-law/" class="highlight-link">Probate</a>, being a court proceeding, renders everything filed in court as public record. This means details about your heirs and their inheritances, which were previously private, become publicly accessible after your passing. If maintaining privacy is a priority, this could be a compelling reason to consider avoiding probate.</p>
+                    
+                    <p>Additionally, the court system inherently introduces delays, making the process longer compared to more immediate alternatives. If ensuring that your family can act promptly and efficiently is important to you, steering clear of probate might be a favorable choice.</p>
+                    
+                    <p>Contrary to common belief, having a will does not automatically bypass probate. A will must undergo court filing before it becomes legally effective and someone can act on your or your estate's behalf. If avoiding the public nature and potential delays associated with probate is a priority, incorporating a <a href="https://moralespadialaw.com/estate-planning/trust/" class="highlight-link">living trust</a> into your plan is recommended.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 9 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">How Long Does the Process Take?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>The standard timeframe for the entire estate planning process typically spans six to eight weeks. However, we do offer expedited services, especially if you have imminent international travel plans or are expecting a new addition to your family.</p>
+                    
+                    <p>To commence the process, we recommend attending a complimentary educational estate planning talk where you can gain insights into the key considerations in a group setting, presented in an engaging manner. Following the educational session, your first appointment will be scheduled. During this meeting, you'll have the opportunity to meet with your attorney, ask questions, and engage in a discussion.</p>
+                    
+                    <p>Approximately a month later, you'll return for the signing session, where you'll execute all the legally prepared documents, finalizing your estate plan. The third meeting, known as the legacy meeting, focuses on capturing your insights, values, stories, and experiences.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 10 -->
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question">How Much Does an Estate Plan Cost?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>The cost of an estate plan can vary among attorneys, and it's essential to consider the quality of the service provided. Opting for a do-it-yourself online approach with a minimal investment may result in an estate plan that lacks thoroughness, potentially causing complications for your family in the future.</p>
+                    
+                    <p>It's advisable to seek an attorney capable of crafting excellent legal documents that align with state laws, addressing how your assets are distributed, under what circumstances, and determining who assumes responsibility. Equally crucial is finding an attorney who values an ongoing relationship, staying in touch as life evolves and ensuring your estate plan remains current.</p>
+                    
+                    <p>When seeking an attorney, it's beneficial to choose one who offers a flat fee structure rather than hourly rates. Flat fees agreed upon in advance provide clarity about the costs involved. At <a href="https://moralespadialaw.com/about-us/" class="highlight-link">Morales Padia Law</a>, we believe an estate plan extends beyond legal documents. It involves ensuring that your family is aware of the plan's existence and location.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-text">
+                Have more questions about estate planning, family law, or our legal services? Our experienced attorneys at <a href="https://moralespadialaw.com/team/trisha-morales-padia/" class="highlight-link">Morales Padia Law</a> are here to provide personalized guidance and comprehensive legal solutions.
+            </p>
+            <a href="https://moralespadialaw.com/schedule/" class="cta-button">Schedule a Consultation</a>
+            <a href="https://moralespadialaw.com/contact/" class="cta-button secondary">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Internal Links -->
+    <section class="internal-links">
+        <div class="container">
+            <h3 class="links-title">Related Legal Services</h3>
+            <div class="links-grid">
+                <a href="https://moralespadialaw.com/estate-planning/" class="internal-link">Estate Planning Overview</a>
+                <a href="https://moralespadialaw.com/estate-planning/will/" class="internal-link">Will Services</a>
+                <a href="https://moralespadialaw.com/estate-planning/trust/" class="internal-link">Trust Services</a>
+                <a href="https://moralespadialaw.com/probate-law/" class="internal-link">Probate Law</a>
+                <a href="https://moralespadialaw.com/family-law/family-attorney/" class="internal-link">Family Law Services</a>
+                <a href="https://moralespadialaw.com/criminal-law/criminal-defense/" class="internal-link">Criminal Defense</a>
+                <a href="https://moralespadialaw.com/team/trisha-morales-padia/" class="internal-link">Meet Our Attorney</a>
+                <a href="https://moralespadialaw.com/about-us/" class="internal-link">About Our Firm</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Optional: Close other items when opening a new one
+            // document.querySelectorAll('.faq-item').forEach(item => {
+            //     item.classList.remove('active');
+            // });
+            
+            // Toggle the active state
+            faqItem.classList.toggle('active');
+        }
+
+        // Smooth scroll behavior
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

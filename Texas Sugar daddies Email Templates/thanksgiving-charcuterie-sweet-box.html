@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanksgiving Charcuterie Sweet Box - Texas Sugar Daddies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            background-color: #F5F5DC;
+            color: #333;
+            padding: 20px;
+        }
+
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5F5DC 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Header */
+        .email-header {
+            background: linear-gradient(135deg, #3C3B6E 0%, #B22234 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-header::before {
+            content: '🥧';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            top: -20px;
+            right: -20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .email-header::after {
+            content: '🍂';
+            position: absolute;
+            font-size: 6rem;
+            opacity: 0.1;
+            bottom: -20px;
+            left: -20px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .season-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 30px;
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 10px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(45deg, #FFFFFF, #F5F5DC);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #B22234;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #3C3B6E;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .urgent-banner {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(255,215,0,0.4);
+            text-align: center;
+        }
+
+        .urgent-banner strong {
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Product Details */
+        .product-section {
+            background: white;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 20px;
+            border: 3px solid #B22234;
+            box-shadow: 0 10px 30px rgba(178,34,52,0.1);
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #B22234, #3C3B6E);
+            color: #FFFFFF;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .price-box .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .price-box .price-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        .whats-included {
+            background: linear-gradient(135deg, #F5F5DC, #FFFFFF);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #B22234;
+        }
+
+        .whats-included h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #B22234;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .item {
+            background: #FFFFFF;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #F5F5DC;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .item:hover {
+            border-color: #B22234;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(178,34,52,0.2);
+        }
+
+        .item-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .item-text {
+            font-size: 1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: linear-gradient(135deg, #3C3B6E, #B22234);
+            color: #FFFFFF;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(60,59,110,0.3);
+        }
+
+        .timeline-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #FFD700;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-date {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+
+        .timeline-text {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        /* CTA Buttons */
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #B22234, #3C3B6E);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(178,34,52,0.3);
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(178,34,52,0.4);
+        }
+
+        .secondary-cta {
+            background: linear-gradient(45deg, #3C3B6E, #B22234);
+        }
+
+        /* Contact Info */
+        .contact-section {
+            background: linear-gradient(135deg, #F5F5DC, #FFFFFF);
+            padding: 40px;
+            margin: 20px;
+            border-radius: 20px;
+            text-align: center;
+            border-top: 5px solid #B22234;
+        }
+
+        .contact-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #B22234;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            color: #3C3B6E;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .contact-info a {
+            color: #B22234;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #3C3B6E;
+            text-decoration: underline;
+        }
+
+        /* Social Tags */
+        .social-tags {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: linear-gradient(45deg, #B22234, #3C3B6E);
+            color: #FFFFFF;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin: 5px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .email-footer {
+            background: linear-gradient(135deg, #3C3B6E, #1E3A8A);
+            color: #FFFFFF;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            color: #FFFFFF;
+            opacity: 0.95;
+        }
+
+        .footer-social {
+            margin: 25px 0;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin: 5px;
+            line-height: 45px;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .social-icon:hover {
+            background: #FFFFFF;
+            color: #B22234;
+            transform: scale(1.1);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .price-box .price {
+                font-size: 2.5rem;
+            }
+
+            .email-header {
+                padding: 30px 20px;
+            }
+
+            .logo-text {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <div class="logo-text">Texas Sugar Daddies</div>
+            <div class="season-badge">🍂 Thanksgiving Special 🍂</div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="hero-title">Annual Delectable Thanksgiving Charcuterie Sweet Box</h1>
+            <p class="hero-subtitle">Limited Quantity Available - Order Now!</p>
+            
+            <div class="urgent-banner">
+                <strong>⚡ Hurry - Limited Stock!</strong>
+                <p>Perfect for office parties, Friendsgiving gatherings, luncheons, and your Thanksgiving Day celebration!</p>
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-section">
+            <div class="price-box">
+                <div class="price-label">Only</div>
+                <div class="price">$75</div>
+                <div class="price-label">per box</div>
+            </div>
+
+            <div class="whats-included">
+                <h3>What's Included in Your Sweet Box</h3>
+                <div class="items-grid">
+                    <div class="item">
+                        <span class="item-icon">🥧</span>
+                        <span class="item-text">1 Large Pecan Pie</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍎</span>
+                        <span class="item-text">6 Small Pies (Cherry, Apple, Sweet Potato)</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🥟</span>
+                        <span class="item-text">6 Pumpkin Empanadas</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍰</span>
+                        <span class="item-text">6 Pumpkin Roll Slices</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">⭐</span>
+                        <span class="item-text">6 Texas-Shaped Pan de Polvo Cookies</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍊</span>
+                        <span class="item-text">6 Orange Cranberry Cookies</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🥜</span>
+                        <span class="item-text">6 Oatmeal Peanut Butter Cookies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-section">
+            <h3>📅 Important Dates</h3>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">📢 November 7th</div>
+                <div class="timeline-text">Orders Open - Reserve Your Sweet Box Today!</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">⏰ Monday, November 20th</div>
+                <div class="timeline-text">Last Day to Place Your Order</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">🚚 Tuesday, November 21st</div>
+                <div class="timeline-text">Last Day for Delivery (Additional $10)</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">📍 Wednesday, November 22nd</div>
+                <div class="timeline-text">Final Day for Pickup</div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <a href="mailto:order@texassugardaddies.com?subject=Thanksgiving%20Sweet%20Box%20Order" class="cta-button">📧 Send Us An Email</a>
+            <a href="#" class="cta-button secondary-cta">📱 Send Us A DM</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3>Ready to Order?</h3>
+            <div class="contact-info">
+                📧 <a href="mailto:order@texassugardaddies.com">order@texassugardaddies.com</a>
+            </div>
+            <div class="contact-info">
+                📱 Direct Message Us on Social Media
+            </div>
+            <p style="margin-top: 20px; font-style: italic; color: #666;">
+                "Life is short, eat dessert first!" - Your Sugar Daddies 🍰
+            </p>
+        </div>
+
+        <!-- Social Tags -->
+        <div class="social-tags">
+            <span class="tag">#texassugardaddies</span>
+            <span class="tag">#guyswhobake</span>
+            <span class="tag">#sweettreats</span>
+            <span class="tag">#thanksgivingdesserts</span>
+            <span class="tag">#sanantonio</span>
+            <span class="tag">#homemade</span>
+        </div>
+
+        <!-- Footer -->
+        <div class="email-footer">
+            <div class="footer-quote">
+                "Everything's bigger in Texas, including our desserts!"
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="social-icon">📧</a>
+                <a href="#" class="social-icon">📱</a>
+                <a href="#" class="social-icon">📸</a>
+                <a href="#" class="social-icon">👤</a>
+            </div>
+
+            <div class="footer-text">
+                <p><strong>Texas Sugar Daddies</strong></p>
+                <p>📍 1135 Mission Rd, Building 9, San Antonio, TX, United States, 78210</p>
+                <p>📧 order@texassugardaddies.com | 📱 (210) 281-1415</p>
+                <p>Made with pride in San Antonio, Texas</p>
+                <p>© 2025 Texas Sugar Daddies. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

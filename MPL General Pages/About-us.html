@@ -97,6 +97,10 @@
             line-height: 1.8;
         }
         
+        .about-text {
+            text-align: left;
+        }
+        
         .about-text .highlight {
             color: var(--accent);
             font-weight: 600;
@@ -135,7 +139,7 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
         
@@ -417,7 +421,10 @@
                 font-size: 3rem;
             }
             
-            .services-grid,
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             .team-grid,
             .values-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -437,6 +444,10 @@
                 font-size: 1.1rem;
             }
             
+            .about-text {
+                text-align: center;
+            }
+            
             .about-text h2 {
                 font-size: 2.2rem;
             }
@@ -445,6 +456,10 @@
             .team-section h2,
             .values-section h2 {
                 font-size: 2.4rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
             }
             
             .cta-buttons {
