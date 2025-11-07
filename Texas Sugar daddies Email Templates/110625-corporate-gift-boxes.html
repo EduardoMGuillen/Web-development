@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Gift Boxes - Texas Sugar Daddies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%);
+            color: #333;
+            padding: 20px;
+        }
+
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 50%, #5D6D7E 100%);
+            padding: 55px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-header::before {
+            content: '💼';
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.1;
+            top: -40px;
+            right: -40px;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .email-header::after {
+            content: '🎁';
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.1;
+            bottom: -30px;
+            left: -30px;
+            animation: float 9s ease-in-out infinite reverse;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 18px;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .season-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 14px 35px;
+            border-radius: 40px;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 18px;
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(255,255,255,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            background: linear-gradient(45deg, #FFFFFF, #FAFAFA);
+            padding: 65px 40px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #2C3E50;
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.7rem;
+            color: #34495E;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .corporate-banner {
+            background: linear-gradient(45deg, #34495E, #5D6D7E);
+            color: #FFFFFF;
+            padding: 30px;
+            border-radius: 25px;
+            margin: 40px 0;
+            box-shadow: 0 10px 35px rgba(52,73,94,0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .corporate-banner::before {
+            content: '✨';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.08;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.05; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.15; transform: translate(-50%, -50%) scale(1.3); }
+        }
+
+        .corporate-banner strong {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-section {
+            background: white;
+            padding: 55px 40px;
+            margin: 30px;
+            border-radius: 30px;
+            border: 5px solid #5D6D7E;
+            box-shadow: 0 18px 50px rgba(93,109,126,0.2);
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #2C3E50, #34495E);
+            color: #FFFFFF;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-box::after {
+            content: '💼';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.06;
+            top: -50px;
+            right: -50px;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .price-box .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin: 18px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-box .price-label {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .whats-included {
+            background: linear-gradient(135deg, #FAFAFA, #FFFFFF);
+            padding: 45px;
+            border-radius: 25px;
+            margin: 40px 0;
+            border-left: 7px solid #5D6D7E;
+        }
+
+        .whats-included h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2C3E50;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .item {
+            background: #FFFFFF;
+            padding: 25px;
+            border-radius: 18px;
+            border: 3px solid #FAFAFA;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .item:hover {
+            border-color: #5D6D7E;
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(93,109,126,0.25);
+        }
+
+        .item-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .item-text {
+            font-size: 1.15rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .corporate-benefits {
+            background: linear-gradient(135deg, #2C3E50, #34495E);
+            color: #FFFFFF;
+            padding: 50px;
+            margin: 30px;
+            border-radius: 30px;
+            box-shadow: 0 18px 50px rgba(44,62,80,0.35);
+        }
+
+        .corporate-benefits h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .benefit-item {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 3px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-8px);
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .benefit-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 55px 40px;
+            background: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 22px 50px;
+            background: linear-gradient(45deg, #2C3E50, #34495E);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 12px 35px rgba(44,62,80,0.4);
+            margin: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 20px 50px rgba(44,62,80,0.5);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #FAFAFA, #FFFFFF);
+            padding: 50px;
+            margin: 30px;
+            border-radius: 30px;
+            text-align: center;
+            border-top: 7px solid #5D6D7E;
+        }
+
+        .contact-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #2C3E50;
+            margin-bottom: 35px;
+        }
+
+        .contact-info {
+            font-size: 1.25rem;
+            color: #2C3E50;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .contact-info a {
+            color: #34495E;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #2C3E50;
+            text-decoration: underline;
+        }
+
+        .social-tags {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            margin: 30px;
+            border-radius: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: linear-gradient(45deg, #2C3E50, #34495E);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 35px;
+            font-size: 1.05rem;
+            margin: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: scale(1.12);
+        }
+
+        .email-footer {
+            background: linear-gradient(135deg, #2C3E50, #1A252F);
+            color: #FFFFFF;
+            padding: 55px 30px;
+            text-align: center;
+        }
+
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 35px;
+            color: #FFFFFF;
+            opacity: 0.95;
+        }
+
+        .footer-social {
+            margin: 35px 0;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            margin: 10px;
+            line-height: 55px;
+            font-size: 1.7rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .social-icon:hover {
+            background: #FFFFFF;
+            color: #2C3E50;
+            transform: scale(1.2) rotate(8deg);
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 30px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        @media (max-width: 600px) {
+            .items-grid, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .price-box .price {
+                font-size: 3.2rem;
+            }
+
+            .email-header {
+                padding: 40px 20px;
+            }
+
+            .logo-text {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <div class="logo-text">Texas Sugar Daddies</div>
+            <div class="season-badge">💼 Corporate Gift Boxes 💼</div>
+        </div>
+
+        <div class="hero-section">
+            <h1 class="hero-title">Corporate Gift Boxes</h1>
+            <p class="hero-subtitle">Impress Clients & Delight Employees</p>
+            
+            <div class="corporate-banner">
+                <strong>✨ Professional Quality, Memorable Impact ✨</strong>
+                <p style="position: relative; z-index: 1; font-size: 1.1rem;">Perfect for client appreciation, employee recognition, or corporate events!</p>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="price-box">
+                <div class="price-label">Starting at</div>
+                <div class="price">$95</div>
+                <div class="price-label">per corporate box</div>
+            </div>
+
+            <div class="whats-included">
+                <h3>🎁 What's in Your Corporate Box</h3>
+                <div class="items-grid">
+                    <div class="item">
+                        <span class="item-icon">🍪</span>
+                        <span class="item-text">Premium Cookies</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🧁</span>
+                        <span class="item-text">Gourmet Cupcakes</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍫</span>
+                        <span class="item-text">Artisan Chocolates</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍰</span>
+                        <span class="item-text">Mini Desserts</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">☕</span>
+                        <span class="item-text">Coffee Pairings</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🎀</span>
+                        <span class="item-text">Premium Packaging</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="corporate-benefits">
+            <h3>💼 Corporate Benefits</h3>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏢</div>
+                    <div class="benefit-name">Bulk Orders</div>
+                    <div class="benefit-desc">Special pricing for large quantities</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎨</div>
+                    <div class="benefit-name">Custom Branding</div>
+                    <div class="benefit-desc">Add your company logo</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📦</div>
+                    <div class="benefit-name">Bulk Delivery</div>
+                    <div class="benefit-desc">Convenient delivery options</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📋</div>
+                    <div class="benefit-name">Custom Messages</div>
+                    <div class="benefit-desc">Personalized notes included</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="mailto:order@texassugardaddies.com?subject=Corporate%20Gift%20Boxes%20Order" class="cta-button">💼 Request Quote</a>
+            <a href="#" class="cta-button">📱 Contact Sales</a>
+        </div>
+
+        <div class="contact-section">
+            <h3>Ready to Impress Your Team?</h3>
+            <div class="contact-info">
+                📧 <a href="mailto:order@texassugardaddies.com">order@texassugardaddies.com</a>
+            </div>
+            <div class="contact-info">
+                📱 Direct Message Us on Social Media
+            </div>
+            <p style="margin-top: 30px; font-style: italic; color: #666; font-size: 1.15rem;">
+                "Sweetening business relationships, one box at a time!" - Your Sugar Daddies 💼
+            </p>
+        </div>
+
+        <div class="social-tags">
+            <span class="tag">#texassugardaddies</span>
+            <span class="tag">#corporate</span>
+            <span class="tag">#giftboxes</span>
+            <span class="tag">#business</span>
+            <span class="tag">#sanantonio</span>
+            <span class="tag">#premium</span>
+        </div>
+
+        <div class="email-footer">
+            <div class="footer-quote">
+                "Professional quality, unforgettable taste!"
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="social-icon">📧</a>
+                <a href="#" class="social-icon">📱</a>
+                <a href="#" class="social-icon">📸</a>
+                <a href="#" class="social-icon">👤</a>
+            </div>
+
+            <div class="footer-text">
+                <p><strong>Texas Sugar Daddies</strong></p>
+                <p>📍 1135 Mission Rd, Building 9, San Antonio, TX, United States, 78210</p>
+                <p>📧 order@texassugardaddies.com | 📱 (210) 281-1415</p>
+                <p>Made with pride in San Antonio, Texas</p>
+                <p>© 2025 Texas Sugar Daddies. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

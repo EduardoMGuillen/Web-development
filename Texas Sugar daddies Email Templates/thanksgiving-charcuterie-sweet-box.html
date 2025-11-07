@@ -91,6 +91,20 @@
             text-align: center;
         }
 
+        .hero-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hero-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
         .hero-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
@@ -426,6 +440,10 @@
             .logo-text {
                 font-size: 2rem;
             }
+
+            .hero-images {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -445,6 +463,11 @@
             <div class="urgent-banner">
                 <strong>⚡ Hurry - Limited Stock!</strong>
                 <p>Perfect for office parties, Friendsgiving gatherings, luncheons, and your Thanksgiving Day celebration!</p>
+            </div>
+
+            <div class="hero-images">
+                <img src="https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/690420601e31ec5d513b848c.jpeg" alt="Thanksgiving Charcuterie Sweet Box photo 1" width="100%" style="display:block; border:0; outline:none; text-decoration:none;">
+                <img src="https://storage.googleapis.com/msgsndr/wbJxl77BKvYAB30UNdxZ/media/69042060c3f8cac123a624c5.jpeg" alt="Thanksgiving Charcuterie Sweet Box photo 2" width="100%" style="display:block; border:0; outline:none; text-decoration:none;">
             </div>
         </div>
 

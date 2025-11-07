@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Sweet Hearts Collection - Texas Sugar Daddies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+            color: #333;
+            padding: 20px;
+        }
+
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF8F8 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(220,20,60,0.25);
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #DC143C 0%, #FF69B4 50%, #FF1493 100%);
+            padding: 55px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-header::before {
+            content: '💕';
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.12;
+            top: -40px;
+            right: -40px;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .email-header::after {
+            content: '💖';
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.12;
+            bottom: -30px;
+            left: -30px;
+            animation: float 9s ease-in-out infinite reverse;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 18px;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .season-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            padding: 14px 35px;
+            border-radius: 40px;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 18px;
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(255,255,255,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            background: linear-gradient(45deg, #FFFFFF, #FFF8F8);
+            padding: 65px 40px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #DC143C, #FF69B4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.7rem;
+            color: #DC143C;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .love-banner {
+            background: linear-gradient(45deg, #FF1493, #FF69B4);
+            color: #FFFFFF;
+            padding: 30px;
+            border-radius: 25px;
+            margin: 40px 0;
+            box-shadow: 0 10px 35px rgba(255,20,147,0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-banner::before {
+            content: '💝';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+        }
+
+        .love-banner strong {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-section {
+            background: white;
+            padding: 55px 40px;
+            margin: 30px;
+            border-radius: 30px;
+            border: 5px solid #FF69B4;
+            box-shadow: 0 18px 50px rgba(255,105,180,0.2);
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #DC143C, #FF1493);
+            color: #FFFFFF;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-box::after {
+            content: '💕';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.08;
+            top: -50px;
+            right: -50px;
+            animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .price-box .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin: 18px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-box .price-label {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .whats-included {
+            background: linear-gradient(135deg, #FFF8F8, #FFFFFF);
+            padding: 45px;
+            border-radius: 25px;
+            margin: 40px 0;
+            border-left: 7px solid #FF69B4;
+        }
+
+        .whats-included h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #DC143C;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .item {
+            background: #FFFFFF;
+            padding: 25px;
+            border-radius: 18px;
+            border: 3px solid #FFF8F8;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .item:hover {
+            border-color: #FF69B4;
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(255,105,180,0.3);
+        }
+
+        .item-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .item-text {
+            font-size: 1.15rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .gift-options {
+            background: linear-gradient(135deg, #DC143C, #FF1493);
+            color: #FFFFFF;
+            padding: 50px;
+            margin: 30px;
+            border-radius: 30px;
+            box-shadow: 0 18px 50px rgba(220,20,60,0.35);
+        }
+
+        .gift-options h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gift-item {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 3px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .gift-item:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-8px);
+        }
+
+        .gift-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .gift-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .gift-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 55px 40px;
+            background: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 22px 50px;
+            background: linear-gradient(45deg, #DC143C, #FF69B4);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 12px 35px rgba(220,20,60,0.45);
+            margin: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 20px 50px rgba(220,20,60,0.6);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #FFF8F8, #FFFFFF);
+            padding: 50px;
+            margin: 30px;
+            border-radius: 30px;
+            text-align: center;
+            border-top: 7px solid #FF69B4;
+        }
+
+        .contact-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #DC143C;
+            margin-bottom: 35px;
+        }
+
+        .contact-info {
+            font-size: 1.25rem;
+            color: #DC143C;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .contact-info a {
+            color: #FF69B4;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #DC143C;
+            text-decoration: underline;
+        }
+
+        .social-tags {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            margin: 30px;
+            border-radius: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: linear-gradient(45deg, #DC143C, #FF69B4);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 35px;
+            font-size: 1.05rem;
+            margin: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: scale(1.12);
+        }
+
+        .email-footer {
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            color: #FFFFFF;
+            padding: 55px 30px;
+            text-align: center;
+        }
+
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 35px;
+            color: #FFFFFF;
+            opacity: 0.95;
+        }
+
+        .footer-social {
+            margin: 35px 0;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: 10px;
+            line-height: 55px;
+            font-size: 1.7rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .social-icon:hover {
+            background: #FFFFFF;
+            color: #DC143C;
+            transform: scale(1.2) rotate(8deg);
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 30px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        @media (max-width: 600px) {
+            .items-grid, .gift-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .price-box .price {
+                font-size: 3.2rem;
+            }
+
+            .email-header {
+                padding: 40px 20px;
+            }
+
+            .logo-text {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <div class="logo-text">Texas Sugar Daddies</div>
+            <div class="season-badge">💝 Valentine's Sweet Hearts 💝</div>
+        </div>
+
+        <div class="hero-section">
+            <h1 class="hero-title">Valentine's Sweet Hearts Collection</h1>
+            <p class="hero-subtitle">Show Your Love with Handcrafted Delights</p>
+            
+            <div class="love-banner">
+                <strong>💕 Made with Love, Just for You 💕</strong>
+                <p style="position: relative; z-index: 1; font-size: 1.1rem;">Perfect for expressing your feelings, surprising your sweetheart, or treating yourself!</p>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="price-box">
+                <div class="price-label">Starting at</div>
+                <div class="price">$65</div>
+                <div class="price-label">per romantic box</div>
+            </div>
+
+            <div class="whats-included">
+                <h3>💖 What's in Your Sweet Hearts Box</h3>
+                <div class="items-grid">
+                    <div class="item">
+                        <span class="item-icon">💝</span>
+                        <span class="item-text">Heart-Shaped Sugar Cookies</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍫</span>
+                        <span class="item-text">Chocolate-Dipped Strawberries</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍰</span>
+                        <span class="item-text">Red Velvet Cupcakes</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍪</span>
+                        <span class="item-text">Chocolate Chip Hearts</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🌹</span>
+                        <span class="item-text">Rose-Flavored Macarons</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">💗</span>
+                        <span class="item-text">Love Letter Cookies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gift-options">
+            <h3>🎁 Special Gift Options</h3>
+            <div class="gift-grid">
+                <div class="gift-item">
+                    <div class="gift-icon">💌</div>
+                    <div class="gift-name">Personalized Message</div>
+                    <div class="gift-desc">Add a custom love note with your order</div>
+                </div>
+                <div class="gift-item">
+                    <div class="gift-icon">🎀</div>
+                    <div class="gift-name">Gift Wrapping</div>
+                    <div class="gift-desc">Beautiful presentation for your special someone</div>
+                </div>
+                <div class="gift-item">
+                    <div class="gift-icon">🚚</div>
+                    <div class="gift-name">Surprise Delivery</div>
+                    <div class="gift-desc">We'll deliver directly to their door</div>
+                </div>
+                <div class="gift-item">
+                    <div class="gift-icon">💐</div>
+                    <div class="gift-name">Premium Box</div>
+                    <div class="gift-desc">Extra special treats for the one you love</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="mailto:order@texassugardaddies.com?subject=Valentine's%20Sweet%20Hearts%20Order" class="cta-button">💕 Order Your Sweet Hearts</a>
+            <a href="#" class="cta-button">📱 Send Us A DM</a>
+        </div>
+
+        <div class="contact-section">
+            <h3>Ready to Spread the Love?</h3>
+            <div class="contact-info">
+                📧 <a href="mailto:order@texassugardaddies.com">order@texassugardaddies.com</a>
+            </div>
+            <div class="contact-info">
+                📱 Direct Message Us on Social Media
+            </div>
+            <p style="margin-top: 30px; font-style: italic; color: #666; font-size: 1.15rem;">
+                "Love is sweet, and so are our treats!" - Your Sugar Daddies 💖
+            </p>
+        </div>
+
+        <div class="social-tags">
+            <span class="tag">#texassugardaddies</span>
+            <span class="tag">#valentines</span>
+            <span class="tag">#sweethearts</span>
+            <span class="tag">#lovetreats</span>
+            <span class="tag">#sanantonio</span>
+            <span class="tag">#handcrafted</span>
+        </div>
+
+        <div class="email-footer">
+            <div class="footer-quote">
+                "Because love deserves the sweetest treats!"
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="social-icon">📧</a>
+                <a href="#" class="social-icon">📱</a>
+                <a href="#" class="social-icon">📸</a>
+                <a href="#" class="social-icon">👤</a>
+            </div>
+
+            <div class="footer-text">
+                <p><strong>Texas Sugar Daddies</strong></p>
+                <p>📍 1135 Mission Rd, Building 9, San Antonio, TX, United States, 78210</p>
+                <p>📧 order@texassugardaddies.com | 📱 (210) 281-1415</p>
+                <p>Made with pride in San Antonio, Texas</p>
+                <p>© 2025 Texas Sugar Daddies. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

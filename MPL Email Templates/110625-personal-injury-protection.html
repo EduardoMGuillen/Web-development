@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Injury Protection - Morales Padia Law</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; }
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+        .header { background: white; color: white; padding: 30px 20px; text-align: center; position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); opacity: 0.3; }
+        .logo { max-width: 200px; height: auto; margin-bottom: 20px; position: relative; z-index: 1; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; color: #1e40af; position: relative; z-index: 1; }
+        .header p { font-size: 16px; opacity: 0.9; color: #1e40af; position: relative; z-index: 1; }
+        .content { padding: 40px 30px; }
+        .hero-section { text-align: center; margin-bottom: 40px; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); padding: 40px 30px; border-radius: 15px; position: relative; overflow: hidden; border: 2px solid #1e40af; }
+        .hero-section h2 { font-size: 32px; color: #1e40af; margin-bottom: 15px; font-weight: 700; position: relative; z-index: 1; }
+        .hero-section p { font-size: 18px; color: #374151; margin-bottom: 30px; position: relative; z-index: 1; }
+        .emergency-banner { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border: 3px solid #1e40af; border-radius: 15px; padding: 25px; margin: 30px 0; text-align: center; position: relative; overflow: hidden; }
+        .emergency-banner::before { content: '🚨'; position: absolute; top: 15px; right: 20px; font-size: 24px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .emergency-banner h3 { color: #1e40af; font-size: 24px; margin-bottom: 10px; font-weight: 700; }
+        .emergency-banner p { color: #075985; font-size: 18px; margin: 0; font-weight: 600; }
+        .emergency-phone { display: inline-block; background: #0ea5e9; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-size: 20px; font-weight: 700; margin-top: 15px; transition: all 0.3s ease; }
+        .emergency-phone:hover { background: #0284c7; transform: scale(1.05); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 40px 0; }
+        .service-card { background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #1e40af, #1e3a8a); }
+        .service-card:hover { transform: translateY(-5px); border-color: #1e40af; box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2); }
+        .service-icon { font-size: 48px; margin-bottom: 15px; display: block; }
+        .service-card h3 { font-size: 20px; color: #1e40af; margin-bottom: 10px; font-weight: 600; }
+        .service-card p { color: #64748b; font-size: 14px; line-height: 1.5; }
+        .cta-section { background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); color: white; padding: 40px 30px; text-align: center; border-radius: 15px; margin: 40px 0; }
+        .cta-section h3 { font-size: 24px; margin-bottom: 15px; font-weight: 700; }
+        .cta-section p { font-size: 16px; margin-bottom: 25px; opacity: 0.9; }
+        .cta-button { display: inline-block; background: white; color: #1e40af; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin: 0 10px 10px 0; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); }
+        .cta-button.secondary { background: transparent; color: white; border: 2px solid white; }
+        .cta-button.secondary:hover { background: white; color: #1e40af; }
+        .footer { background-color: #1e40af; color: white; padding: 30px; text-align: center; }
+        .footer h4 { font-size: 20px; margin-bottom: 15px; }
+        .contact-info { margin: 20px 0; }
+        .contact-info p { margin: 5px 0; font-size: 14px; }
+        .social-links { margin: 20px 0; }
+        .social-links a { color: white; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        @media (max-width: 600px) {
+            .email-container { margin: 0; box-shadow: none; }
+            .content { padding: 20px 15px; }
+            .hero-section h2 { font-size: 24px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .cta-button { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://storage.googleapis.com/msgsndr/9hd3RkAwbYkkmnv2N6kf/media/68475cb88e3621727a031bd8.png" alt="Morales Padia Law" class="logo">
+            <h1>Personal Injury Protection</h1>
+            <p>Fighting for Your Rights & Maximum Compensation</p>
+        </div>
+        <div class="content">
+            <div class="hero-section">
+                <h2>Personal Injury Law</h2>
+                <p>If you've been injured due to someone else's negligence, you deserve experienced legal representation that will fight for your rights and help you recover the compensation you deserve.</p>
+            </div>
+            <div class="emergency-banner">
+                <h3>🚨 INJURED? CALL NOW!</h3>
+                <p>Don't wait - time is critical. Our experienced personal injury team is ready to protect your rights and fight for maximum compensation.</p>
+                <a href="tel:7262044044" class="emergency-phone">(726) 204-4044</a>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🚗</span>
+                    <h3>Car Accidents</h3>
+                    <p>Comprehensive representation for all types of vehicle accidents</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🏢</span>
+                    <h3>Slip & Fall</h3>
+                    <p>Premises liability cases for injuries on others' property</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">⚕️</span>
+                    <h3>Medical Malpractice</h3>
+                    <p>Protecting patients harmed by medical negligence</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🏭</span>
+                    <h3>Workplace Injuries</h3>
+                    <p>Workers' compensation and workplace accident claims</p>
+                </div>
+            </div>
+            <div class="cta-section">
+                <h3>Don't Face Your Injury Alone</h3>
+                <p>Your recovery and financial future are too important. Contact our experienced personal injury team immediately for a free consultation.</p>
+                <a href="tel:7262044044" class="cta-button">Call Now: (726) 204-4044</a>
+                <a href="https://moralespadialaw.com/schedule/" class="cta-button secondary">Schedule Consultation</a>
+            </div>
+        </div>
+        <div class="footer">
+            <h4>Morales Padia Law</h4>
+            <div class="contact-info">
+                <p><strong>Emergency Line:</strong> (726) 204-4044</p>
+                <p><strong>Address:</strong> 45 NE Interstate 410 Loop Suite 307, San Antonio, TX 78216</p>
+                <p><strong>Email:</strong> info@moralespadialaw.com</p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/moralespadialaw">Instagram</a>
+                <a href="https://facebook.com/moralespadialaw">Facebook</a>
+                <a href="https://youtube.com/@moralespadialaw">YouTube</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.8;">© 2025 Morales Padia Law. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
+

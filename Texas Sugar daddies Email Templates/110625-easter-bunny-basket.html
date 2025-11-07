@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter Bunny Basket - Texas Sugar Daddies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #E6F3FF 0%, #FFF0F5 50%, #F0FFF0 100%);
+            color: #333;
+            padding: 20px;
+        }
+
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFFEF0 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255,192,203,0.3);
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 50%, #FF1493 100%);
+            padding: 55px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-header::before {
+            content: '🐰';
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.12;
+            top: -40px;
+            right: -40px;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .email-header::after {
+            content: '🥚';
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.12;
+            bottom: -30px;
+            left: -30px;
+            animation: float 9s ease-in-out infinite reverse;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 18px;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .season-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            padding: 14px 35px;
+            border-radius: 40px;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 18px;
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(255,255,255,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            background: linear-gradient(45deg, #FFFFFF, #FFFEF0);
+            padding: 65px 40px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF69B4, #FF1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.7rem;
+            color: #FF69B4;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .easter-banner {
+            background: linear-gradient(45deg, #FF1493, #FF69B4);
+            color: #FFFFFF;
+            padding: 30px;
+            border-radius: 25px;
+            margin: 40px 0;
+            box-shadow: 0 10px 35px rgba(255,20,147,0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .easter-banner::before {
+            content: '🌸';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-20px); }
+        }
+
+        .easter-banner strong {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-section {
+            background: white;
+            padding: 55px 40px;
+            margin: 30px;
+            border-radius: 30px;
+            border: 5px solid #FFB6C1;
+            box-shadow: 0 18px 50px rgba(255,182,193,0.25);
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            color: #FFFFFF;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-box::after {
+            content: '🐰';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.08;
+            top: -50px;
+            right: -50px;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .price-box .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin: 18px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-box .price-label {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .whats-included {
+            background: linear-gradient(135deg, #FFFEF0, #FFFFFF);
+            padding: 45px;
+            border-radius: 25px;
+            margin: 40px 0;
+            border-left: 7px solid #FFB6C1;
+        }
+
+        .whats-included h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #FF1493;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .item {
+            background: #FFFFFF;
+            padding: 25px;
+            border-radius: 18px;
+            border: 3px solid #FFFEF0;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .item:hover {
+            border-color: #FFB6C1;
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(255,182,193,0.3);
+        }
+
+        .item-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .item-text {
+            font-size: 1.15rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .easter-features {
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            color: #FFFFFF;
+            padding: 50px;
+            margin: 30px;
+            border-radius: 30px;
+            box-shadow: 0 18px 50px rgba(255,20,147,0.35);
+        }
+
+        .easter-features h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 3px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 55px 40px;
+            background: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 22px 50px;
+            background: linear-gradient(45deg, #FF1493, #FF69B4);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 12px 35px rgba(255,20,147,0.45);
+            margin: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 20px 50px rgba(255,20,147,0.6);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #FFFEF0, #FFFFFF);
+            padding: 50px;
+            margin: 30px;
+            border-radius: 30px;
+            text-align: center;
+            border-top: 7px solid #FFB6C1;
+        }
+
+        .contact-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #FF1493;
+            margin-bottom: 35px;
+        }
+
+        .contact-info {
+            font-size: 1.25rem;
+            color: #FF1493;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .contact-info a {
+            color: #FF69B4;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #FF1493;
+            text-decoration: underline;
+        }
+
+        .social-tags {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            margin: 30px;
+            border-radius: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF1493, #FF69B4);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 35px;
+            font-size: 1.05rem;
+            margin: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: scale(1.12);
+        }
+
+        .email-footer {
+            background: linear-gradient(135deg, #FF1493, #C71585);
+            color: #FFFFFF;
+            padding: 55px 30px;
+            text-align: center;
+        }
+
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 35px;
+            color: #FFFFFF;
+            opacity: 0.95;
+        }
+
+        .footer-social {
+            margin: 35px 0;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: 10px;
+            line-height: 55px;
+            font-size: 1.7rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .social-icon:hover {
+            background: #FFFFFF;
+            color: #FF1493;
+            transform: scale(1.2) rotate(8deg);
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 30px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        @media (max-width: 600px) {
+            .items-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .price-box .price {
+                font-size: 3.2rem;
+            }
+
+            .email-header {
+                padding: 40px 20px;
+            }
+
+            .logo-text {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <div class="logo-text">Texas Sugar Daddies</div>
+            <div class="season-badge">🐰 Easter Bunny Basket 🐰</div>
+        </div>
+
+        <div class="hero-section">
+            <h1 class="hero-title">Easter Bunny Basket</h1>
+            <p class="hero-subtitle">Hop into Spring with Sweet Delights</p>
+            
+            <div class="easter-banner">
+                <strong>🌸 Perfect for Your Easter Celebration! 🌸</strong>
+                <p style="position: relative; z-index: 1; font-size: 1.1rem;">Fill your Easter with joy, color, and the sweetest treats around!</p>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="price-box">
+                <div class="price-label">Starting at</div>
+                <div class="price">$60</div>
+                <div class="price-label">per Easter basket</div>
+            </div>
+
+            <div class="whats-included">
+                <h3>🥚 What's in Your Easter Basket</h3>
+                <div class="items-grid">
+                    <div class="item">
+                        <span class="item-icon">🐰</span>
+                        <span class="item-text">Bunny-Shaped Cookies</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🥚</span>
+                        <span class="item-text">Easter Egg Cookies</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🌷</span>
+                        <span class="item-text">Flower Cookies</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🧁</span>
+                        <span class="item-text">Pastel Cupcakes</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍫</span>
+                        <span class="item-text">Chocolate Bunnies</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-icon">🍬</span>
+                        <span class="item-text">Easter Candy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="easter-features">
+            <h3>✨ Special Easter Features</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-name">Pastel Colors</div>
+                    <div class="feature-desc">Beautiful spring color palette</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎁</div>
+                    <div class="feature-name">Gift Ready</div>
+                    <div class="feature-desc">Perfect for gifting</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👶</div>
+                    <div class="feature-name">Kid Friendly</div>
+                    <div class="feature-desc">Safe and delicious for all ages</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌱</div>
+                    <div class="feature-name">Spring Theme</div>
+                    <div class="feature-desc">Celebrate the season</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="mailto:order@texassugardaddies.com?subject=Easter%20Bunny%20Basket%20Order" class="cta-button">🐰 Order Easter Basket</a>
+            <a href="#" class="cta-button">📱 Send Us A DM</a>
+        </div>
+
+        <div class="contact-section">
+            <h3>Ready to Hop into Easter?</h3>
+            <div class="contact-info">
+                📧 <a href="mailto:order@texassugardaddies.com">order@texassugardaddies.com</a>
+            </div>
+            <div class="contact-info">
+                📱 Direct Message Us on Social Media
+            </div>
+            <p style="margin-top: 30px; font-style: italic; color: #666; font-size: 1.15rem;">
+                "Making Easter sweeter, one basket at a time!" - Your Sugar Daddies 🐰
+            </p>
+        </div>
+
+        <div class="social-tags">
+            <span class="tag">#texassugardaddies</span>
+            <span class="tag">#easter</span>
+            <span class="tag">#easterbasket</span>
+            <span class="tag">#springtreats</span>
+            <span class="tag">#sanantonio</span>
+            <span class="tag">#handcrafted</span>
+        </div>
+
+        <div class="email-footer">
+            <div class="footer-quote">
+                "Hoppy Easter from your Sugar Daddies!"
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="social-icon">📧</a>
+                <a href="#" class="social-icon">📱</a>
+                <a href="#" class="social-icon">📸</a>
+                <a href="#" class="social-icon">👤</a>
+            </div>
+
+            <div class="footer-text">
+                <p><strong>Texas Sugar Daddies</strong></p>
+                <p>📍 1135 Mission Rd, Building 9, San Antonio, TX, United States, 78210</p>
+                <p>📧 order@texassugardaddies.com | 📱 (210) 281-1415</p>
+                <p>Made with pride in San Antonio, Texas</p>
+                <p>© 2025 Texas Sugar Daddies. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
