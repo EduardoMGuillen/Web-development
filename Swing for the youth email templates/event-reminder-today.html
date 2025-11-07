@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Today! - Swing Fore The Youth Golf Tournament</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Email container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4a 100%);
+            padding: 50px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '⛳';
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.1;
+            top: -30px;
+            right: -30px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .header::after {
+            content: '🏌️';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            bottom: -30px;
+            left: -30px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+
+        .header .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+        }
+
+        .header .date {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Urgent Banner */
+        .urgent-banner {
+            background: linear-gradient(45deg, #ffd700, #ffed4a, #ffd700);
+            background-size: 200% 200%;
+            animation: shimmer 3s ease infinite;
+            color: #1a5f3a;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 5px solid #1a5f3a;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .urgent-banner .countdown {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .urgent-banner .message {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Main content */
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #1a5f3a;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Event details */
+        .event-details {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 30px 0;
+            border: 4px solid #1a5f3a;
+            box-shadow: 0 10px 30px rgba(26, 95, 58, 0.2);
+        }
+
+        .event-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            border-left: 5px solid #ffd700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .event-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .event-detail-icon {
+            font-size: 2.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .event-detail-content {
+            flex: 1;
+        }
+
+        .event-detail-label {
+            font-size: 0.95rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .event-detail-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #1a5f3a;
+        }
+
+        /* Critical notice */
+        .critical-notice {
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4a 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(26, 95, 58, 0.3);
+            border: 3px solid #ffd700;
+        }
+
+        .critical-notice h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .critical-notice p {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin: 0;
+        }
+
+        .critical-notice .highlight {
+            color: #ffd700;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        /* What to expect */
+        .expect-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .expect-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid #1a5f3a;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .expect-item:hover {
+            border-color: #ffd700;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(26, 95, 58, 0.3);
+        }
+
+        .expect-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .expect-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a5f3a;
+        }
+
+        /* CTA buttons */
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 20px;
+            border: 3px solid #ffd700;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 20px 45px;
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 35px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(26, 95, 58, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(26, 95, 58, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+            color: #1a5f3a;
+            border: 3px solid #1a5f3a;
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #ffed4a 0%, #ffd700 100%);
+        }
+
+        /* Final message */
+        .final-message {
+            text-align: center;
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4a 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 3px solid #ffd700;
+            color: white;
+            margin: 30px 0;
+        }
+
+        .final-message h2 {
+            color: #ffd700;
+            border: none;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .final-message p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a5f3a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            color: #ffd700;
+            font-size: 1.3rem;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #ffd700;
+        }
+
+        .sponsors {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sponsor {
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .urgent-banner .countdown {
+                font-size: 1.8rem;
+            }
+
+            .urgent-banner .message {
+                font-size: 1.1rem;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .event-details {
+                padding: 25px;
+            }
+
+            .event-detail {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .event-detail-icon {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+
+            .event-detail-value {
+                font-size: 1.2rem;
+            }
+
+            .expect-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                display: block;
+                margin: 15px 0;
+                font-size: 1.1rem;
+                padding: 18px 35px;
+            }
+
+            .critical-notice h3 {
+                font-size: 1.5rem;
+            }
+
+            .critical-notice p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>IT'S TODAY!</h1>
+            <div class="subtitle">Swing Fore The Youth Golf Tournament</div>
+            <div class="date">Friday, November 7, 2025</div>
+        </div>
+
+        <!-- Urgent Banner -->
+        <div class="urgent-banner">
+            <div class="countdown">⏰ REGISTRATION: 7:00 AM</div>
+            <div class="message">🏌️ SHOTGUN START: 8:00 AM - SEE YOU THERE!</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="section">
+                <h2>🎉 The Day Has Arrived!</h2>
+                <p style="font-size: 1.2rem; font-weight: 600; text-align: center; color: #1a5f3a;">
+                    <strong>Today is the day!</strong> The Swing Fore The Youth 2025 golf tournament is happening <strong>RIGHT NOW</strong>, and we're thrilled to have you join us!
+                </p>
+                <p>
+                    We've been preparing for months, and everything is set for an incredible day of golf, networking, and making a real difference in the lives of San Antonio youth. With $60,000 in prizes, amazing networking opportunities, and the chance to support local youth sports programs – this is going to be unforgettable!
+                </p>
+            </div>
+
+            <!-- Event Details -->
+            <div class="event-details">
+                <h2 style="color: #1a5f3a; margin-bottom: 30px; text-align: center; font-size: 2rem;">📅 TODAY'S SCHEDULE</h2>
+                
+                <div class="event-detail">
+                    <div class="event-detail-icon">📅</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Date</div>
+                        <div class="event-detail-value">Friday, November 7, 2025</div>
+                    </div>
+                </div>
+
+                <div class="event-detail">
+                    <div class="event-detail-icon">⏰</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Registration Opens</div>
+                        <div class="event-detail-value">7:00 AM</div>
+                    </div>
+                </div>
+
+                <div class="event-detail">
+                    <div class="event-detail-icon">🏌️</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Shotgun Start</div>
+                        <div class="event-detail-value">8:00 AM</div>
+                    </div>
+                </div>
+
+                <div class="event-detail">
+                    <div class="event-detail-icon">📍</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Location</div>
+                        <div class="event-detail-value">Silverhorn Golf Club of Texas<br>1100 W Bitters Rd, San Antonio, TX 78216</div>
+                    </div>
+                </div>
+
+                <div class="event-detail">
+                    <div class="event-detail-icon">⛳</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Format</div>
+                        <div class="event-detail-value">18 holes of championship golf</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Critical Notice -->
+            <div class="critical-notice">
+                <h3>🚨 LAST-MINUTE REMINDERS</h3>
+                <p>
+                    <span class="highlight">• ARRIVE EARLY:</span> Registration opens at <strong>7:00 AM</strong>. Please arrive on time to check in and get ready!<br><br>
+                    <span class="highlight">• BRING YOUR CLUBS:</span> Make sure you have everything you need for a great round!<br><br>
+                    <span class="highlight">• WEATHER:</span> Dress appropriately for the weather and bring sunscreen!<br><br>
+                    <span class="highlight">• PARKING:</span> Available on-site at Silverhorn Golf Club.<br><br>
+                    <span class="highlight">• QUESTIONS?</span> Call us if you need any assistance!
+                </p>
+            </div>
+
+            <!-- What to Expect -->
+            <div class="section">
+                <h2>🌟 What's Waiting for You Today</h2>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">
+                    Get ready for an amazing day filled with:
+                </p>
+                <div class="expect-grid">
+                    <div class="expect-item">
+                        <div class="expect-icon">🏆</div>
+                        <div class="expect-text">$60,000 Prize Pool</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">🚗</div>
+                        <div class="expect-text">Hole-in-One Luxury Car</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">🤝</div>
+                        <div class="expect-text">Networking Opportunities</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">🎁</div>
+                        <div class="expect-text">Raffle Prizes Throughout</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">🍽️</div>
+                        <div class="expect-text">Delicious Meals & Drinks</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">❤️</div>
+                        <div class="expect-text">Supporting Local Youth</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2 style="color: #1a5f3a; margin-bottom: 20px; font-size: 2rem;">SEE YOU ON THE COURSE!</h2>
+                <p style="margin-bottom: 30px; font-size: 1.2rem; font-weight: 600;">
+                    We're so excited to spend this incredible day with you. Let's make some memories and make a real difference together!
+                </p>
+                <a href="https://swingforetheyouth.com/home" class="btn">📋 Event Details</a>
+                <a href="tel:+12102847110" class="btn btn-secondary">📞 Call Us Now</a>
+            </div>
+
+            <!-- Final Message -->
+            <div class="final-message">
+                <h2>🎯 Today We Make a Difference</h2>
+                <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 15px;">
+                    "Opening Doors for Kids in Sports"
+                </p>
+                <p>
+                    Every swing you take today, every putt you make, and every moment you spend on the course contributes to our mission of helping San Antonio youth overcome financial barriers to play the sports they love.
+                </p>
+                <p style="margin-top: 20px; font-size: 1.1rem; opacity: 0.95;">
+                    <strong>Thank you for being here today!</strong> Your participation means the world to us and to the kids we're supporting. Let's have an amazing day! ⛳
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="contact-info">
+                <h3>📞 Need Help? Contact Us Now</h3>
+                <div class="contact-item">
+                    📞 <a href="tel:+12102847110">+1 (210) 284-7110</a>
+                </div>
+                <div class="contact-item">
+                    📞 <a href="tel:+12109622933">+1 (210) 962-2933</a>
+                </div>
+                <div class="contact-item">
+                    🌐 <a href="https://swingforetheyouth.com/home">swingforetheyouth.com</a>
+                </div>
+            </div>
+
+            <div class="sponsors">
+                <h3>🏆 Powered By</h3>
+                <div class="sponsor">Go Play Sports, Inc.</div>
+                <div class="sponsor">Nexgen Electrical Solutions</div>
+                <div class="sponsor">N Zone Sports Centex</div>
+            </div>
+
+            <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9rem;">
+                © 2025 Swing Fore The Youth. All rights reserved.
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <a href="https://creativeiq.marketing/" style="color: white; font-weight: bold; text-decoration: none;">Marketing by CreativeIQ</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

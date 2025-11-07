@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Reminder - Swing Fore The Youth This Friday!</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Email container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4a 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '⛳';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            top: -20px;
+            right: -20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .date {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Urgent Banner */
+        .urgent-banner {
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #1a5f3a;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 4px solid #1a5f3a;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .urgent-banner .countdown {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .urgent-banner .message {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Main content */
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #1a5f3a;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 8px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Event details */
+        .event-details {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 3px solid #1a5f3a;
+            box-shadow: 0 8px 25px rgba(26, 95, 58, 0.15);
+        }
+
+        .event-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .event-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .event-detail-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .event-detail-content {
+            flex: 1;
+        }
+
+        .event-detail-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .event-detail-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a5f3a;
+        }
+
+        /* Important notice */
+        .important-notice {
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4a 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(26, 95, 58, 0.3);
+        }
+
+        .important-notice h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .important-notice p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* What to expect */
+        .expect-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .expect-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .expect-item:hover {
+            border-color: #1a5f3a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 95, 58, 0.2);
+        }
+
+        .expect-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .expect-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a5f3a;
+        }
+
+        /* CTA buttons */
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #1a5f3a 0%, #2d7a4a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(26, 95, 58, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 95, 58, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1a5f3a;
+            border: 3px solid #1a5f3a;
+        }
+
+        .btn-secondary:hover {
+            background: #1a5f3a;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a5f3a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #ffd700;
+        }
+
+        .sponsors {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sponsor {
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .urgent-banner .countdown {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .event-details {
+                padding: 20px;
+            }
+
+            .event-detail {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .event-detail-icon {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+
+            .expect-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>⏰ FINAL REMINDER</h1>
+            <div class="subtitle">Swing Fore The Youth Golf Tournament</div>
+            <div class="date">This Friday, November 7, 2025</div>
+        </div>
+
+        <!-- Urgent Banner -->
+        <div class="urgent-banner">
+            <div class="countdown">⏰ Registration Opens at 7:00 AM</div>
+            <div class="message">Shotgun Start at 8:00 AM - Don't Miss Out!</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="section">
+                <h2>🎯 We Can't Wait to See You!</h2>
+                <p>This is it! The <strong>Swing Fore The Youth 2025</strong> golf tournament is happening <strong>this Friday, November 7th</strong>, and we're so excited to have you join us for this incredible day of golf, networking, and community impact.</p>
+                <p>We've been preparing for an amazing tournament with $60,000 in prizes, incredible networking opportunities, and most importantly – the chance to make a real difference in the lives of San Antonio youth.</p>
+            </div>
+
+            <!-- Event Details -->
+            <div class="event-details">
+                <h2 style="color: #1a5f3a; margin-bottom: 25px; text-align: center; font-size: 1.8rem;">📅 Event Schedule</h2>
+                
+                <div class="event-detail">
+                    <div class="event-detail-icon">📅</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Date</div>
+                        <div class="event-detail-value">Friday, November 7, 2025</div>
+                    </div>
+                </div>
+
+                <div class="event-detail">
+                    <div class="event-detail-icon">⏰</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Registration</div>
+                        <div class="event-detail-value">7:00 AM</div>
+                    </div>
+                </div>
+
+                <div class="event-detail">
+                    <div class="event-detail-icon">🏌️</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Shotgun Start</div>
+                        <div class="event-detail-value">8:00 AM</div>
+                    </div>
+                </div>
+
+                <div class="event-detail">
+                    <div class="event-detail-icon">📍</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Location</div>
+                        <div class="event-detail-value">Silverhorn Golf Club of Texas<br>1100 W Bitters Rd, San Antonio, TX 78216</div>
+                    </div>
+                </div>
+
+                <div class="event-detail">
+                    <div class="event-detail-icon">⛳</div>
+                    <div class="event-detail-content">
+                        <div class="event-detail-label">Format</div>
+                        <div class="event-detail-value">18 holes of championship golf</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="important-notice">
+                <h3>🚨 Important Reminders</h3>
+                <p>
+                    • <strong>Arrive Early:</strong> Registration opens at 7:00 AM. Please arrive on time to check in and get ready for the shotgun start at 8:00 AM.<br><br>
+                    • <strong>What to Bring:</strong> Your clubs, comfortable golf attire, and enthusiasm!<br><br>
+                    • <strong>Parking:</strong> Available on-site at Silverhorn Golf Club.<br><br>
+                    • <strong>Weather:</strong> The forecast looks great, but we'll be in touch if there are any changes.
+                </p>
+            </div>
+
+            <!-- What to Expect -->
+            <div class="section">
+                <h2>🌟 What to Expect</h2>
+                <p>Get ready for an unforgettable day filled with:</p>
+                <div class="expect-grid">
+                    <div class="expect-item">
+                        <div class="expect-icon">🏆</div>
+                        <div class="expect-text">$60,000 Prize Pool</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">🚗</div>
+                        <div class="expect-text">Hole-in-One Luxury Car Prize</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">🤝</div>
+                        <div class="expect-text">Networking Opportunities</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">🎁</div>
+                        <div class="expect-text">Raffle Prizes Throughout</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">🍽️</div>
+                        <div class="expect-text">Delicious Meals & Refreshments</div>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-icon">❤️</div>
+                        <div class="expect-text">Supporting Local Youth Sports</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2 style="color: #1a5f3a; margin-bottom: 15px;">See You on the Course!</h2>
+                <p style="margin-bottom: 25px; font-size: 1.1rem;">
+                    We're counting down the hours until we tee off together. If you have any last-minute questions or need assistance, don't hesitate to reach out to us.
+                </p>
+                <a href="https://swingforetheyouth.com/home" class="btn">📋 View Event Details</a>
+                <a href="mailto:info@swingforetheyouth.com" class="btn btn-secondary">📧 Contact Us</a>
+            </div>
+
+            <!-- Final Message -->
+            <div class="section" style="text-align: center; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 30px; border-radius: 15px; border: 2px solid #ffd700;">
+                <h2 style="color: #1a5f3a; border: none; margin-bottom: 15px;">🎯 Our Mission</h2>
+                <p style="font-size: 1.1rem; font-style: italic; color: #1a5f3a;">
+                    "Opening Doors for Kids in Sports"<br>
+                    Helping San Antonio youth overcome financial barriers to play the sports they love.
+                </p>
+                <p style="margin-top: 20px; font-size: 0.95rem; color: #666;">
+                    Every swing, every putt, and every moment on the course contributes to our mission. Thank you for being part of this incredible cause!
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="contact-info">
+                <h3>📞 Need Help? Contact Us</h3>
+                <div class="contact-item">
+                    📞 +1 (210) 284-7110
+                </div>
+                <div class="contact-item">
+                    📞 +1 (210) 962-2933
+                </div>
+                <div class="contact-item">
+                    🌐 <a href="https://swingforetheyouth.com/home">swingforetheyouth.com</a>
+                </div>
+            </div>
+
+            <div class="sponsors">
+                <h3>🏆 Powered By</h3>
+                <div class="sponsor">Go Play Sports, Inc.</div>
+                <div class="sponsor">Nexgen Electrical Solutions</div>
+                <div class="sponsor">N Zone Sports Centex</div>
+            </div>
+
+            <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9rem;">
+                © 2025 Swing Fore The Youth. All rights reserved.
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <a href="https://creativeiq.marketing/" style="color: white; font-weight: bold; text-decoration: none;">Marketing by CreativeIQ</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
