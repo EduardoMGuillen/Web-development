@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilma & Lance | Baby Shower RSVP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.14);
+            --glass-border: rgba(255, 255, 255, 0.35);
+            --pink: #f7b6d7;
+            --blue: #9fd2ff;
+            --lavender: #b6a2ff;
+            --deep-blue: #1F2D3D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            color: #1F1F1F;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 235, 244, 0.7) 0%, transparent 45%),
+                        radial-gradient(circle at 80% 30%, rgba(201, 219, 255, 0.65) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(255, 210, 235, 0.6) 0%, transparent 55%),
+                        linear-gradient(135deg, #fef6ff 0%, #f6fbff 50%, #fef8ff 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            left: -10%;
+            width: 120vw;
+            height: 120vh;
+            background: conic-gradient(from 90deg, rgba(255, 207, 235, 0.18), rgba(186, 215, 255, 0.18), rgba(255, 207, 235, 0.18));
+            filter: blur(80px);
+            z-index: -2;
+            animation: aurora 18s ease-in-out infinite;
+        }
+
+        body::after {
+            animation-duration: 24s;
+            animation-direction: reverse;
+            opacity: 0.7;
+        }
+
+        @keyframes aurora {
+            0% { transform: translateY(-5%) rotate(0deg); }
+            50% { transform: translateY(5%) rotate(15deg); }
+            100% { transform: translateY(-5%) rotate(0deg); }
+        }
+
+        .floating-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(0px);
+            opacity: 0.55;
+            z-index: -1;
+            mix-blend-mode: screen;
+            animation: drift 22s ease-in-out infinite;
+        }
+
+        .floating-orb:nth-child(1) {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(255, 194, 220, 0.6) 0%, transparent 65%);
+            top: 8%;
+            right: 12%;
+        }
+
+        .floating-orb:nth-child(2) {
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(170, 203, 255, 0.55) 0%, transparent 70%);
+            bottom: 5%;
+            left: 10%;
+            animation-delay: 4s;
+        }
+
+        .floating-orb:nth-child(3) {
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(205, 178, 255, 0.5) 0%, transparent 70%);
+            bottom: 18%;
+            right: 22%;
+            animation-delay: 8s;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(20px, -30px, 0) scale(1.05); }
+        }
+
+        .page-wrapper {
+            width: min(1200px, 92vw);
+            margin: 0 auto;
+            padding: 120px 0 120px;
+        }
+
+        header.hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            gap: 12px;
+            align-items: center;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            padding: 12px 24px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #6f42c1;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 40px rgba(111, 66, 193, 0.35);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 4vw, 4rem);
+            margin-bottom: 20px;
+            color: var(--deep-blue);
+            text-shadow: 0 12px 35px rgba(104, 95, 204, 0.22);
+            letter-spacing: 0.04em;
+        }
+
+        .hero p.lead {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: rgba(31, 45, 61, 0.7);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .envelope-stage {
+            display: flex;
+            justify-content: center;
+            margin: 80px 0 120px;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            width: min(420px, 90vw);
+            cursor: pointer;
+            perspective: 1600px;
+        }
+
+        .envelope-shadow {
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.45), transparent 70%);
+            filter: blur(18px);
+            z-index: -2;
+        }
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 290px;
+            transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-origin: center bottom;
+        }
+
+        .envelope .pocket {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 233, 243, 0.9), rgba(207, 224, 255, 0.9));
+            border-radius: 26px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 25px 45px rgba(172, 143, 227, 0.35);
+        }
+
+        .envelope .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 55%;
+            background: linear-gradient(135deg, rgba(245, 199, 225, 0.9), rgba(189, 215, 255, 0.9));
+            border-radius: 26px 26px 18px 18px;
+            transform-origin: top center;
+            transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .envelope .letter {
+            position: absolute;
+            inset: 12px 12px 70px;
+            background: rgba(255, 255, 255, 0.94);
+            border-radius: 18px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            transform: translateY(120px);
+            transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .letter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--deep-blue);
+        }
+
+        .letter p {
+            color: rgba(31, 45, 61, 0.7);
+            font-size: 1rem;
+        }
+
+        .letter span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.75rem;
+            color: #6f42c1;
+            margin-top: 12px;
+        }
+
+        .envelope-wrapper.open .flap {
+            transform: rotateX(-180deg);
+        }
+
+        .envelope-wrapper.open .letter {
+            transform: translateY(-40px);
+        }
+
+        .envelope-wrapper.open .envelope {
+            transform: translateY(-20px) scale(1.02);
+        }
+
+        .open-instruction {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 0.95rem;
+            color: rgba(31, 45, 61, 0.6);
+            letter-spacing: 0.08em;
+        }
+
+        .details-section {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(70px);
+            transition: opacity 0.8s ease, transform 0.9s ease;
+        }
+
+        body.invitation-open .details-section {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 32px;
+            backdrop-filter: blur(18px);
+            box-shadow: 0 22px 55px rgba(111, 66, 193, 0.18);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            inset: -120px -120px auto auto;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(255,255,255,0.45), transparent 65%);
+            opacity: 0.7;
+            transform: rotate(25deg);
+        }
+
+        .glass-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--deep-blue);
+            margin-bottom: 20px;
+        }
+
+        .event-meta {
+            display: grid;
+            gap: 18px;
+            margin-top: 12px;
+        }
+
+        .event-meta div {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .event-meta div span.icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6f42c1;
+            font-size: 1.1rem;
+            box-shadow: inset 0 0 0 1px rgba(111,66,193,0.2);
+        }
+
+        .event-meta div p {
+            font-size: 0.98rem;
+            color: rgba(31, 45, 61, 0.78);
+            line-height: 1.6;
+        }
+
+        .map-card iframe {
+            width: 100%;
+            height: 320px;
+            border: 0;
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(111, 66, 193, 0.22);
+        }
+
+        form.rsvp {
+            display: grid;
+            gap: 18px;
+            margin-top: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            font-size: 0.92rem;
+            color: rgba(31, 45, 61, 0.75);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 14px 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.78);
+            font-size: 0.95rem;
+            color: rgba(31, 45, 61, 0.85);
+            box-shadow: 0 14px 28px rgba(111, 66, 193, 0.08);
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6f42c1;
+            box-shadow: 0 18px 30px rgba(111, 66, 193, 0.18);
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            justify-self: start;
+            padding: 14px 28px;
+            border-radius: 999px;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: linear-gradient(120deg, #fea9d6, #92c5ff);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 18px 45px rgba(254, 169, 214, 0.35);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 60px rgba(146, 197, 255, 0.32);
+        }
+
+        .registry-card {
+            text-align: center;
+        }
+
+        .registry-card img {
+            width: min(260px, 60vw);
+            border-radius: 20px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 18px 45px rgba(111, 66, 193, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .registry-card p {
+            margin-top: 18px;
+            font-size: 0.95rem;
+            color: rgba(31, 45, 61, 0.7);
+        }
+
+        footer {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(31, 45, 61, 0.55);
+            letter-spacing: 0.15em;
+        }
+
+        @media (max-width: 768px) {
+            .envelope {
+                height: 260px;
+            }
+
+            .envelope .letter {
+                padding: 24px;
+                inset: 10px 10px 60px;
+            }
+
+            .open-instruction {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-orb"></div>
+    <div class="floating-orb"></div>
+    <div class="floating-orb"></div>
+
+    <div class="page-wrapper">
+        <header class="hero">
+            <div class="hero-badge">
+                <span>Lavish Celebration</span>
+                •
+                <span>Baby Shower</span>
+            </div>
+            <h1>Vilma &amp; Lance</h1>
+            <p class="lead">Join us for an unforgettable celebration as we shower Vilma &amp; Lance with love while awaiting the arrival of their little one.</p>
+        </header>
+
+        <section class="envelope-stage">
+            <div class="envelope-wrapper" id="envelopeWrapper" aria-label="Open invitation envelope" role="button" tabindex="0">
+                <div class="envelope-shadow"></div>
+                <div class="envelope">
+                    <div class="flap"></div>
+                    <div class="pocket"></div>
+                    <div class="letter">
+                        <h2>You're Invited</h2>
+                        <p>A treasured gathering awaits. Tap to unveil the details.</p>
+                        <span>Open Envelope</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p class="open-instruction">Click or tap the envelope to reveal the celebration details.</p>
+
+        <section class="details-section" id="detailsSection">
+            <div class="details-grid">
+                <article class="glass-card">
+                    <h3>Celebration Details</h3>
+                    <div class="event-meta">
+                        <div>
+                            <span class="icon">📅</span>
+                            <p><strong>Date:</strong> Friday, November 29, 2024<br><small>Festivities begin at 6:00 PM</small></p>
+                        </div>
+                        <div>
+                            <span class="icon">📍</span>
+                            <p><strong>Location:</strong> 3685 Culebra Rd,<br>San Antonio, TX 78228, United States</p>
+                        </div>
+                        <div>
+                            <span class="icon">🎉</span>
+                            <p>Cocktail attire with a pastel twist encouraged. Delightful bites, signature mocktails, and moments to remember await.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="glass-card map-card">
+                    <h3>Find Your Way</h3>
+                    <iframe title="Google Map showing 3685 Culebra Rd San Antonio" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.286724017935!2d-98.55853362388335!3d29.449868575210774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865cf6ad58c7eb2f%3A0x7263fa46a53a0b07!2s3685%20Culebra%20Rd%2C%20San%20Antonio%2C%20TX%2078228!5e0!3m2!1sen!2sus!4v1731159876000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </article>
+
+                <article class="glass-card">
+                    <h3>Kindly RSVP</h3>
+                    <form class="rsvp" action="https://formspree.io/f/mwpkzrgq" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="attendance">Will you join us?</label>
+                            <select id="attendance" name="attendance" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="joyfully attending">Joyfully attending</option>
+                                <option value="celebrating from afar">Celebrating from afar</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" max="6" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Leave a loving note</label>
+                            <textarea id="message" name="message" placeholder="Share your wishes or dietary preferences"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send RSVP</button>
+                    </form>
+                </article>
+
+                <article class="glass-card registry-card">
+                    <h3>Registry</h3>
+                    <img src="Babyshower Amazon.png" alt="Amazon Baby Shower Registry QR Code for Vilma &amp; Lance">
+                    <p>Scan to explore the Amazon registry curated with love for Baby Rivera.</p>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            With love, Vilma &amp; Lance • Let’s celebrate a new beginning
+        </footer>
+    </div>
+
+    <script>
+        const envelopeWrapper = document.getElementById('envelopeWrapper');
+        const detailsSection = document.getElementById('detailsSection');
+
+        function openInvitation() {
+            envelopeWrapper.classList.add('open');
+            document.body.classList.add('invitation-open');
+        }
+
+        envelopeWrapper.addEventListener('click', openInvitation);
+        envelopeWrapper.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                openInvitation();
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
