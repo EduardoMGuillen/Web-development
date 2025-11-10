@@ -27,23 +27,32 @@
             min-height: 100vh;
             font-family: 'Poppins', sans-serif;
             color: #1F1F1F;
-            background: radial-gradient(circle at 20% 20%, rgba(255, 235, 244, 0.7) 0%, transparent 45%),
-                        radial-gradient(circle at 80% 30%, rgba(201, 219, 255, 0.65) 0%, transparent 50%),
-                        radial-gradient(circle at 50% 80%, rgba(255, 210, 235, 0.6) 0%, transparent 55%),
-                        linear-gradient(135deg, #fef6ff 0%, #f6fbff 50%, #fef8ff 100%);
+            background: transparent;
             overflow-x: hidden;
             position: relative;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            z-index: -3;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
         body::before,
         body::after {
             content: "";
             position: fixed;
-            left: -10%;
-            width: 120vw;
-            height: 120vh;
-            background: conic-gradient(from 90deg, rgba(255, 207, 235, 0.18), rgba(186, 215, 255, 0.18), rgba(255, 207, 235, 0.18));
-            filter: blur(80px);
+            left: -22%;
+            width: 145vw;
+            height: 145vh;
+            background: transparent;
+            filter: blur(85px);
             z-index: -2;
             animation: aurora 18s ease-in-out infinite;
         }
@@ -64,47 +73,226 @@
             position: fixed;
             border-radius: 50%;
             filter: blur(0px);
-            opacity: 0.55;
+            opacity: 0.68;
             z-index: -1;
             mix-blend-mode: screen;
-            animation: drift 22s ease-in-out infinite;
+            animation: drift 15s ease-in-out infinite;
         }
 
         .floating-orb:nth-child(1) {
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(255, 194, 220, 0.6) 0%, transparent 65%);
-            top: 8%;
-            right: 12%;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(255, 210, 229, 0.72) 0%, rgba(255, 210, 229, 0));
+            top: 6%;
+            right: 10%;
         }
 
         .floating-orb:nth-child(2) {
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, rgba(170, 203, 255, 0.55) 0%, transparent 70%);
-            bottom: 5%;
-            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 235, 206, 0.58) 0%, rgba(255, 235, 206, 0));
+            bottom: 6%;
+            left: 12%;
             animation-delay: 4s;
         }
 
         .floating-orb:nth-child(3) {
-            width: 320px;
-            height: 320px;
-            background: radial-gradient(circle, rgba(205, 178, 255, 0.5) 0%, transparent 70%);
-            bottom: 18%;
-            right: 22%;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(210, 221, 255, 0.52) 0%, rgba(210, 221, 255, 0));
+            bottom: 20%;
+            right: 20%;
             animation-delay: 8s;
         }
 
         @keyframes drift {
             0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-            50% { transform: translate3d(20px, -30px, 0) scale(1.05); }
+            50% { transform: translate3d(26px, -34px, 0) scale(1.07); }
         }
 
         .page-wrapper {
             width: min(1200px, 92vw);
             margin: 0 auto;
-            padding: 120px 0 120px;
+            padding: 120px 0 220px;
+            position: relative;
+            background: transparent;
+            border-radius: 42px;
+            box-shadow: transparent;
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 215, 238, 0.75) 40%, rgba(255, 255, 255, 0));
+            box-shadow: 0 0 20px rgba(255, 184, 226, 0.75);
+            mix-blend-mode: screen;
+            opacity: 0.9;
+            z-index: -1;
+            animation: sparkleFloat 11s ease-in-out infinite, sparkleGlow 3.5s ease-in-out infinite;
+        }
+
+        .sparkle:nth-of-type(9) { top: 26%; left: 42%; animation-delay: -2s, 0s; }
+        .sparkle:nth-of-type(10) { top: 72%; left: 18%; width: 26px; height: 26px; animation-delay: -6s, -1s; }
+        .sparkle:nth-of-type(11) { top: 12%; right: 28%; animation-delay: -9s, -2.5s; }
+        .sparkle:nth-of-type(12) { bottom: 18%; right: 12%; width: 24px; height: 24px; animation-delay: -12s, -1.5s; }
+        .sparkle:nth-of-type(13) { bottom: 30%; left: 38%; animation-delay: -15s, -0.5s; width: 24px; height: 24px; }
+
+        @keyframes sparkleFloat {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            40% { transform: translate3d(14px, -20px, 0) scale(1.18); }
+            70% { transform: translate3d(-18px, 16px, 0) scale(0.93); }
+        }
+
+        @keyframes sparkleGlow {
+            0%, 100% { opacity: 0.6; filter: blur(0.3px); }
+            50% { opacity: 1; filter: blur(1.8px); }
+        }
+
+        .pearl {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 1) 0%, rgba(255, 210, 233, 0.75) 42%, rgba(240, 206, 172, 0.6) 68%, rgba(240, 206, 172, 0));
+            box-shadow: 0 28px 70px rgba(204, 172, 200, 0.35);
+            mix-blend-mode: screen;
+            z-index: -1;
+            opacity: 0.8;
+            animation: floatPearls 18s ease-in-out infinite;
+        }
+
+        .pearl::after {
+            content: "";
+            position: absolute;
+            inset: 12%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+        }
+
+        .pearl:nth-of-type(4) {
+            width: 240px;
+            height: 240px;
+            top: 18%;
+            left: 8%;
+            animation-delay: -4s;
+        }
+
+        .pearl:nth-of-type(5) {
+            width: 180px;
+            height: 180px;
+            top: 70%;
+            left: 20%;
+            animation-delay: -8s;
+        }
+
+        .pearl:nth-of-type(6) {
+            width: 340px;
+            height: 340px;
+            top: 58%;
+            right: 12%;
+            animation-delay: -12s;
+        }
+
+        .pearl:nth-of-type(7) {
+            width: 160px;
+            height: 160px;
+            top: 35%;
+            right: 28%;
+            animation-delay: -18s;
+        }
+
+        .pearl:nth-of-type(8) {
+            width: 280px;
+            height: 280px;
+            bottom: 12%;
+            right: 45%;
+            animation-delay: -22s;
+        }
+
+        @keyframes floatPearls {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            40% { transform: translate3d(18px, -28px, 0) scale(1.06); }
+            70% { transform: translate3d(-24px, 22px, 0) scale(0.97); }
+        }
+
+        .shell {
+            position: fixed;
+            width: 340px;
+            height: auto;
+            z-index: -2;
+            opacity: 0.58;
+            pointer-events: none;
+            filter: drop-shadow(0 18px 48px rgba(206, 176, 156, 0.28));
+            --shell-offset-x: 0px;
+            --shell-offset-y: 0px;
+            --shell-rotate: 0deg;
+            --shell-scale: 1;
+            --shell-drift-x: 18px;
+            --shell-drift-y: -18px;
+            --shell-duration: 32s;
+            transform: translate(var(--shell-offset-x), var(--shell-offset-y)) rotate(var(--shell-rotate)) scale(var(--shell-scale));
+            animation: shellFloat var(--shell-duration) ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        .shell-large { width: 360px; }
+        .shell-medium { width: 280px; }
+        .shell-small { width: 220px; }
+
+        .shell-anchor {
+            bottom: -2%;
+            left: -6%;
+            --shell-rotate: -6deg;
+            --shell-scale: 1.02;
+            --shell-drift-x: 26px;
+            --shell-drift-y: -22px;
+            --shell-duration: 38s;
+        }
+
+        .shell-overlay {
+            bottom: 12%;
+            left: 6%;
+            --shell-rotate: 9deg;
+            --shell-scale: 0.78;
+            --shell-drift-x: 18px;
+            --shell-drift-y: -18px;
+            --shell-duration: 34s;
+        }
+
+        .shell-right {
+            bottom: 14%;
+            right: -4%;
+            --shell-rotate: 16deg;
+            --shell-scale: 0.74;
+            --shell-drift-x: -22px;
+            --shell-drift-y: -16px;
+            --shell-duration: 36s;
+        }
+
+        .shell g[data-speckles] circle {
+            animation: shimmer 7s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.55; transform: translate(0, 0) scale(1); }
+            50% { opacity: 0.9; transform: translate(4px, -6px) scale(1.06); }
+        }
+
+        @keyframes shellFloat {
+            0% {
+                transform: translate(var(--shell-offset-x), var(--shell-offset-y))
+                           rotate(var(--shell-rotate)) scale(var(--shell-scale));
+            }
+            50% {
+                transform: translate(calc(var(--shell-offset-x) + var(--shell-drift-x)),
+                                     calc(var(--shell-offset-y) + var(--shell-drift-y)))
+                           rotate(var(--shell-rotate)) scale(var(--shell-scale));
+            }
+            100% {
+                transform: translate(var(--shell-offset-x), var(--shell-offset-y))
+                           rotate(var(--shell-rotate)) scale(var(--shell-scale));
+            }
         }
 
         header.hero {
@@ -148,12 +336,13 @@
         .envelope-stage {
             display: flex;
             justify-content: center;
-            margin: 80px 0 120px;
+            margin: 80px 0 60px;
+            padding-bottom: 40px;
         }
 
         .envelope-wrapper {
             position: relative;
-            width: min(420px, 90vw);
+            width: min(460px, 92vw);
             cursor: pointer;
             perspective: 1600px;
         }
@@ -161,16 +350,16 @@
         .envelope-shadow {
             position: absolute;
             inset: 0;
-            border-radius: 24px;
+            border-radius: 28px;
             background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.45), transparent 70%);
-            filter: blur(18px);
+            filter: blur(20px);
             z-index: -2;
         }
 
         .envelope {
             position: relative;
             width: 100%;
-            height: 290px;
+            height: 300px;
             transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
             transform-origin: center bottom;
         }
@@ -178,53 +367,90 @@
         .envelope .pocket {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(255, 233, 243, 0.9), rgba(207, 224, 255, 0.9));
+            background: linear-gradient(145deg, rgba(255, 236, 243, 0.98), rgba(210, 222, 255, 0.95));
             border-radius: 26px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             box-shadow: 0 25px 45px rgba(172, 143, 227, 0.35);
+            overflow: hidden;
+        }
+
+        .envelope .pocket::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(247, 219, 233, 0.15) 60%, rgba(247, 219, 233, 0) 100%);
+        }
+
+        .envelope .pocket::after {
+            content: "";
+            position: absolute;
+            inset: 10px 10px 35px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: linear-gradient(140deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
         }
 
         .envelope .flap {
             position: absolute;
-            top: 0;
+            top: -1px;
             left: 0;
             right: 0;
-            height: 55%;
-            background: linear-gradient(135deg, rgba(245, 199, 225, 0.9), rgba(189, 215, 255, 0.9));
-            border-radius: 26px 26px 18px 18px;
+            height: 54%;
             transform-origin: top center;
             transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            perspective: 1200px;
         }
 
-        .envelope .letter {
+        .envelope .flap::before {
+            content: "";
             position: absolute;
-            inset: 12px 12px 70px;
-            background: rgba(255, 255, 255, 0.94);
-            border-radius: 18px;
-            padding: 32px;
+            inset: 0;
+            background: linear-gradient(145deg, rgba(245, 205, 226, 0.98), rgba(189, 215, 255, 0.94));
+            clip-path: polygon(0% 0%, 50% 90%, 100% 0%, 100% 100%, 0% 100%);
+            border-radius: 26px 26px 18px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .letter {
+            position: absolute;
+            left: 50%;
+            top: 16px;
+            width: calc(100% - 40px);
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 22px;
+            padding: 32px 32px 40px;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-            transform: translateY(120px);
-            transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
+            transform: translate(-50%, 120px);
+            transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1),
+                        box-shadow 0.6s ease,
+                        padding 0.6s ease,
+                        margin-top 0.6s ease;
+            overflow: hidden;
+            max-height: 220px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 12px;
+            gap: 18px;
+            z-index: 4;
         }
 
-        .letter h2 {
+        .letter-preview {
+            transition: opacity 0.4s ease;
+        }
+
+        .letter-preview h2 {
             font-family: 'Playfair Display', serif;
             font-size: 1.9rem;
             color: var(--deep-blue);
         }
 
-        .letter p {
+        .letter-preview p {
             color: rgba(31, 45, 61, 0.7);
             font-size: 1rem;
         }
 
-        .letter span {
+        .letter-preview span {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -236,176 +462,79 @@
             margin-top: 12px;
         }
 
-        .envelope-wrapper.open .flap {
-            transform: rotateX(-180deg);
-        }
-
-        .envelope-wrapper.open .letter {
-            transform: translateY(-40px);
-        }
-
-        .envelope-wrapper.open .envelope {
-            transform: translateY(-20px) scale(1.02);
-        }
-
-        .open-instruction {
-            text-align: center;
-            margin-top: 18px;
-            font-size: 0.95rem;
-            color: rgba(31, 45, 61, 0.6);
-            letter-spacing: 0.08em;
-        }
-
-        .details-section {
+        .letter-content {
+            text-align: left;
+            display: grid;
+            gap: 28px;
             opacity: 0;
             pointer-events: none;
-            transform: translateY(70px);
-            transition: opacity 0.8s ease, transform 0.9s ease;
+            transition: opacity 0.6s ease 0.2s;
         }
 
-        body.invitation-open .details-section {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
-        }
-
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .glass-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 32px;
-            backdrop-filter: blur(18px);
-            box-shadow: 0 22px 55px rgba(111, 66, 193, 0.18);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-card::before {
-            content: "";
-            position: absolute;
-            inset: -120px -120px auto auto;
-            width: 240px;
-            height: 240px;
-            background: radial-gradient(circle, rgba(255,255,255,0.45), transparent 65%);
-            opacity: 0.7;
-            transform: rotate(25deg);
-        }
-
-        .glass-card h3 {
+        .letter-section h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: var(--deep-blue);
-            margin-bottom: 20px;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .letter-section p,
+        .letter-section span {
+            color: rgba(31, 45, 61, 0.75);
+            font-size: 0.96rem;
+            line-height: 1.7;
         }
 
         .event-meta {
             display: grid;
-            gap: 18px;
-            margin-top: 12px;
+            gap: 16px;
         }
 
-        .event-meta div {
+        .event-item {
             display: flex;
             gap: 14px;
             align-items: flex-start;
         }
 
-        .event-meta div span.icon {
+        .event-item span.icon {
             width: 42px;
             height: 42px;
             border-radius: 14px;
-            background: rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.75);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #6f42c1;
             font-size: 1.1rem;
-            box-shadow: inset 0 0 0 1px rgba(111,66,193,0.2);
+            box-shadow: inset 0 0 0 1px rgba(111, 66, 193, 0.18);
         }
 
-        .event-meta div p {
-            font-size: 0.98rem;
-            color: rgba(31, 45, 61, 0.78);
-            line-height: 1.6;
+        .event-item p {
+            font-size: 0.96rem;
         }
 
-        .map-card iframe {
+        .map-frame {
             width: 100%;
-            height: 320px;
+            height: 280px;
             border: 0;
-            border-radius: 18px;
-            box-shadow: 0 20px 45px rgba(111, 66, 193, 0.22);
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(111, 66, 193, 0.22);
         }
 
-        form.rsvp {
-            display: grid;
-            gap: 18px;
-            margin-top: 12px;
+        .form-embed-wrapper {
+            background: rgba(255, 255, 255, 0.82);
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .form-group label {
-            font-weight: 500;
-            font-size: 0.92rem;
-            color: rgba(31, 45, 61, 0.75);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 14px 16px;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.78);
-            font-size: 0.95rem;
-            color: rgba(31, 45, 61, 0.85);
-            box-shadow: 0 14px 28px rgba(111, 66, 193, 0.08);
-            transition: border 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #6f42c1;
-            box-shadow: 0 18px 30px rgba(111, 66, 193, 0.18);
-        }
-
-        .form-group textarea {
-            min-height: 110px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            justify-self: start;
-            padding: 14px 28px;
-            border-radius: 999px;
+        .form-embed-wrapper iframe {
+            width: 100%;
+            min-height: 565px;
+            border-radius: 16px;
             border: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            background: linear-gradient(120deg, #fea9d6, #92c5ff);
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 18px 45px rgba(254, 169, 214, 0.35);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 22px 60px rgba(146, 197, 255, 0.32);
+            box-shadow: 0 16px 40px rgba(111, 66, 193, 0.18);
         }
 
         .registry-card {
@@ -413,58 +542,573 @@
         }
 
         .registry-card img {
-            width: min(260px, 60vw);
-            border-radius: 20px;
-            padding: 18px;
-            background: rgba(255, 255, 255, 0.72);
+            width: min(240px, 60vw);
+            border-radius: 18px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.78);
             box-shadow: 0 18px 45px rgba(111, 66, 193, 0.18);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .registry-card p {
-            margin-top: 18px;
-            font-size: 0.95rem;
+            margin-top: 12px;
+            font-size: 0.92rem;
             color: rgba(31, 45, 61, 0.7);
         }
 
+        .open-instruction {
+            text-align: center;
+            margin-top: 24px;
+            margin-bottom: 40px;
+            font-size: 0.92rem;
+            color: rgba(31, 45, 61, 0.58);
+            letter-spacing: 0.08em;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
         footer {
-            margin-top: 100px;
+            margin-top: 140px;
             text-align: center;
             font-size: 0.85rem;
             color: rgba(31, 45, 61, 0.55);
             letter-spacing: 0.15em;
+            padding-bottom: 80px;
+        }
+
+        body.invitation-open .open-instruction {
+            opacity: 0;
+            transform: translateY(-10px);
+            visibility: hidden;
+            height: 0;
+            margin: 0;
+        }
+
+        .envelope-wrapper.open .flap {
+            transform: rotateX(-190deg);
+            box-shadow: 0 20px 45px rgba(111, 66, 193, 0.32);
+        }
+
+        .envelope-wrapper.open .envelope {
+            transform: translateY(-12px) scale(1.01);
+        }
+
+        body.invitation-open .letter {
+            position: relative;
+            top: auto;
+            left: 50%;
+            width: min(720px, 94vw);
+            transform: translate(-50%, -80px) scale(1.02);
+            box-shadow: 0 35px 85px rgba(83, 63, 126, 0.25);
+            padding: 44px 42px 48px;
+            max-height: 82vh;
+            overflow-y: auto;
+            margin-top: 80px;
+            margin-bottom: 120px;
+        }
+
+        body.invitation-open .letter-preview {
+            opacity: 0;
+            height: 0;
+            margin: 0;
+            pointer-events: none;
+        }
+
+        body.invitation-open .letter-content {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        body.invitation-open .letter::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body.invitation-open .letter::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #fbb8da, #9fc9ff);
+            border-radius: 999px;
+        }
+
+        body.invitation-open .envelope .pocket,
+        body.invitation-open .envelope .flap {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.45s ease 0.2s;
+        }
+
+        body.invitation-open .envelope .front,
+        body.invitation-open .envelope .side-fold {
+            opacity: 0;
+            transition: opacity 0.35s ease 0.2s;
+        }
+
+        .envelope .side-fold {
+            position: absolute;
+            top: 50%;
+            width: 60%;
+            height: 52%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 223, 236, 0.2));
+            transform-origin: center;
+            opacity: 0.8;
+        }
+
+        .envelope .side-fold.left {
+            left: -1px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 70%);
+        }
+
+        .envelope .side-fold.right {
+            right: -1px;
+            clip-path: polygon(0 0, 100% 0, 0% 70%, 100% 100%);
+        }
+
+        .envelope .front {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(160deg, rgba(255, 244, 249, 0.95), rgba(218, 226, 255, 0.9));
+            border-radius: 0 0 24px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-top: none;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+            z-index: 3;
+        }
+
+        .envelope .front::before {
+            content: "";
+            position: absolute;
+            top: -62%;
+            left: 0;
+            right: 0;
+            height: 130%;
+            background: linear-gradient(145deg, rgba(255, 236, 243, 0.85), rgba(203, 214, 255, 0.82));
+            clip-path: polygon(0% 60%, 50% 5%, 100% 60%, 100% 100%, 0% 100%);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-bottom: none;
+            border-radius: 18px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+            opacity: 0.88;
+        }
+
+        .envelope .front::after {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border-radius: 18px;
+            background: linear-gradient(155deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
+            opacity: 0.6;
+        }
+
+        .letter {
+            position: absolute;
+            left: 50%;
+            top: 16px;
+            width: calc(100% - 40px);
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 22px;
+            padding: 32px 32px 40px;
+            text-align: center;
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
+            transform: translate(-50%, 120px);
+            transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1),
+                        box-shadow 0.6s ease,
+                        padding 0.6s ease,
+                        margin-top 0.6s ease;
+            overflow: hidden;
+            max-height: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            z-index: 5;
+        }
+
+        .letter-preview {
+            transition: opacity 0.4s ease;
+        }
+
+        .letter-preview h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--deep-blue);
+        }
+
+        .letter-preview p {
+            color: rgba(31, 45, 61, 0.7);
+            font-size: 1rem;
+        }
+
+        .letter-preview span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.75rem;
+            color: #6f42c1;
+            margin-top: 12px;
+        }
+
+        .letter-content {
+            text-align: left;
+            display: grid;
+            gap: 28px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease 0.2s;
+        }
+
+        .letter-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--deep-blue);
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .letter-section p,
+        .letter-section span {
+            color: rgba(31, 45, 61, 0.75);
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
+        .event-meta {
+            display: grid;
+            gap: 16px;
+        }
+
+        .event-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .event-item span.icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6f42c1;
+            font-size: 1.1rem;
+            box-shadow: inset 0 0 0 1px rgba(111, 66, 193, 0.18);
+        }
+
+        .event-item p {
+            font-size: 0.96rem;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 280px;
+            border: 0;
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(111, 66, 193, 0.22);
+        }
+
+        .form-embed-wrapper {
+            background: rgba(255, 255, 255, 0.82);
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+        }
+
+        .form-embed-wrapper iframe {
+            width: 100%;
+            min-height: 565px;
+            border-radius: 16px;
+            border: none;
+            box-shadow: 0 16px 40px rgba(111, 66, 193, 0.18);
+        }
+
+        .registry-card {
+            text-align: center;
+        }
+
+        .registry-card img {
+            width: min(240px, 60vw);
+            border-radius: 18px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 0 18px 45px rgba(111, 66, 193, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .registry-card p {
+            margin-top: 12px;
+            font-size: 0.92rem;
+            color: rgba(31, 45, 61, 0.7);
+        }
+
+        .open-instruction {
+            text-align: center;
+            margin-top: 24px;
+            margin-bottom: 40px;
+            font-size: 0.92rem;
+            color: rgba(31, 45, 61, 0.58);
+            letter-spacing: 0.08em;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        footer {
+            margin-top: 140px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(31, 45, 61, 0.55);
+            letter-spacing: 0.15em;
+            padding-bottom: 80px;
+        }
+
+        body.invitation-open .open-instruction {
+            opacity: 0;
+            transform: translateY(-10px);
+            visibility: hidden;
+            height: 0;
+            margin: 0;
+        }
+
+        .envelope-wrapper.open .flap {
+            transform: rotateX(-190deg);
+            box-shadow: 0 20px 45px rgba(111, 66, 193, 0.32);
+        }
+
+        .envelope-wrapper.open .envelope {
+            transform: translateY(-12px) scale(1.01);
+        }
+
+        body.invitation-open .letter {
+            position: relative;
+            top: auto;
+            left: 50%;
+            width: min(720px, 94vw);
+            transform: translate(-50%, -80px) scale(1.02);
+            box-shadow: 0 35px 85px rgba(83, 63, 126, 0.25);
+            padding: 44px 42px 48px;
+            max-height: 82vh;
+            overflow-y: auto;
+            margin-top: 80px;
+            margin-bottom: 120px;
+        }
+
+        body.invitation-open .letter-preview {
+            opacity: 0;
+            height: 0;
+            margin: 0;
+            pointer-events: none;
+        }
+
+        body.invitation-open .letter-content {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        body.invitation-open .letter::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body.invitation-open .letter::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #fbb8da, #9fc9ff);
+            border-radius: 999px;
+        }
+
+        body.invitation-open .envelope .pocket,
+        body.invitation-open .envelope .flap {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.45s ease 0.2s;
         }
 
         @media (max-width: 768px) {
             .envelope {
-                height: 260px;
+                height: 270px;
             }
 
-            .envelope .letter {
-                padding: 24px;
-                inset: 10px 10px 60px;
+            .letter {
+                padding: 26px 24px 32px;
+                max-height: 200px;
+            }
+
+            body.invitation-open .letter {
+                padding: 34px 28px 40px;
+                transform: translate(-50%, -40px) scale(1.02);
+                margin-top: 70px;
+                margin-bottom: 100px;
+            }
+
+            .envelope-stage {
+                padding-bottom: 70px;
             }
 
             .open-instruction {
-                font-size: 0.85rem;
+                margin-top: 50px;
+                margin-bottom: 32px;
+            }
+
+            header.hero {
+                padding: 0 18px;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+                line-height: 1.15;
+                word-break: normal;
+            }
+
+            .hero p {
+                padding: 0 6px;
+                font-size: 1rem;
+                line-height: 1.55;
+            }
+
+            .shell {
+                opacity: 0.42;
+                filter: drop-shadow(0 14px 34px rgba(206, 176, 156, 0.22));
+            }
+
+            .shell-anchor {
+                left: -26%;
+                bottom: -10%;
+                --shell-scale: 0.72;
+                --shell-rotate: -4deg;
+                --shell-drift-x: 18px;
+                --shell-drift-y: -14px;
+                --shell-duration: 40s;
+            }
+
+            .shell-overlay {
+                left: -6%;
+                bottom: 14%;
+                --shell-scale: 0.6;
+                --shell-rotate: 6deg;
+                --shell-drift-x: 14px;
+                --shell-drift-y: -12px;
+                --shell-duration: 36s;
+            }
+
+            .shell-right {
+                right: -16%;
+                bottom: 10%;
+                --shell-scale: 0.58;
+                --shell-rotate: 14deg;
+                --shell-drift-x: -16px;
+                --shell-drift-y: -10px;
+                --shell-duration: 38s;
+            }
+
+            .letter-section h3 {
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="floating-orb"></div>
     <div class="floating-orb"></div>
     <div class="floating-orb"></div>
+    <div class="pearl"></div>
+    <div class="pearl"></div>
+    <div class="pearl"></div>
+    <div class="pearl"></div>
+    <div class="pearl"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
+    <svg class="shell shell-large shell-anchor" viewBox="0 0 300 220" role="presentation" aria-hidden="true" focusable="false">
+        <defs>
+            <linearGradient id="shellGradientAnchor" x1="0.5" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stop-color="#fff5ef" />
+                <stop offset="55%" stop-color="#f2d4c3" />
+                <stop offset="100%" stop-color="#dcbda7" />
+            </linearGradient>
+            <radialGradient id="shellHighlightAnchor" cx="0.36" cy="0.22" r="0.65">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.82" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+            </radialGradient>
+        </defs>
+        <path fill="url(#shellGradientAnchor)"
+            d="M20 208 C 42 128 80 40 150 28 C 220 40 258 128 280 208 Z" />
+        <path fill="url(#shellHighlightAnchor)"
+            d="M60 112 C 92 56 130 40 150 38 C 170 40 208 56 240 112 C 220 92 180 72 150 72 C 120 72 80 92 60 112 Z" />
+        <g fill="none" stroke="#ffffff" stroke-linecap="round">
+            <path opacity="0.45" stroke-width="8" d="M150 46 C 150 46 152 140 150 204" />
+            <path opacity="0.35" stroke-width="6" d="M120 58 C 128 124 128 164 126 204" />
+            <path opacity="0.35" stroke-width="6" d="M180 58 C 172 124 172 164 174 204" />
+            <path opacity="0.2" stroke-width="10" d="M92 82 C 110 122 114 164 112 204" />
+            <path opacity="0.2" stroke-width="10" d="M208 82 C 190 122 186 164 188 204" />
+        </g>
+        <g data-speckles fill="#f4d9c5">
+            <circle cx="82" cy="176" r="6" />
+            <circle cx="206" cy="188" r="5" />
+            <circle cx="132" cy="196" r="4" />
+        </g>
+    </svg>
+
+    <svg class="shell shell-medium shell-overlay" viewBox="0 0 300 220" role="presentation" aria-hidden="true" focusable="false">
+        <defs>
+            <linearGradient id="shellGradientOverlay" x1="0.5" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stop-color="#fff0f7" />
+                <stop offset="55%" stop-color="#f6cadc" />
+                <stop offset="100%" stop-color="#e3b9c7" />
+            </linearGradient>
+            <radialGradient id="shellHighlightOverlay" cx="0.4" cy="0.24" r="0.62">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+            </radialGradient>
+        </defs>
+        <path fill="url(#shellGradientOverlay)"
+            d="M24 206 C 46 126 86 46 150 34 C 214 46 254 126 276 206 Z" />
+        <path fill="url(#shellHighlightOverlay)"
+            d="M66 114 C 94 64 130 44 150 42 C 170 44 206 64 234 114 C 212 94 178 76 150 76 C 122 76 88 94 66 114 Z" />
+        <g fill="none" stroke="#ffffff" stroke-linecap="round">
+            <path opacity="0.5" stroke-width="7" d="M150 48 C 152 110 152 158 150 202" />
+            <path opacity="0.32" stroke-width="5" d="M118 60 C 126 122 126 162 124 202" />
+            <path opacity="0.32" stroke-width="5" d="M182 60 C 174 122 174 162 176 202" />
+        </g>
+        <g data-speckles fill="#f4dbe3">
+            <circle cx="104" cy="190" r="5" />
+            <circle cx="186" cy="178" r="4" />
+        </g>
+    </svg>
+
+    <svg class="shell shell-small shell-right" viewBox="0 0 300 220" role="presentation" aria-hidden="true" focusable="false">
+        <defs>
+            <linearGradient id="shellGradientRight" x1="0.5" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stop-color="#fff7f1" />
+                <stop offset="55%" stop-color="#f1e1ce" />
+                <stop offset="100%" stop-color="#d7c9b5" />
+            </linearGradient>
+            <radialGradient id="shellHighlightRight" cx="0.38" cy="0.22" r="0.64">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.78" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+            </radialGradient>
+        </defs>
+        <path fill="url(#shellGradientRight)"
+            d="M26 206 C 50 128 90 44 150 34 C 210 44 250 128 274 206 Z" />
+        <path fill="url(#shellHighlightRight)"
+            d="M68 112 C 96 60 132 44 150 42 C 168 44 204 60 232 112 C 210 92 178 74 150 74 C 122 74 90 92 68 112 Z" />
+        <g fill="none" stroke="#ffffff" stroke-linecap="round">
+            <path opacity="0.4" stroke-width="6" d="M150 48 C 150 110 150 158 148 200" />
+            <path opacity="0.28" stroke-width="4" d="M122 60 C 128 118 128 158 126 198" />
+            <path opacity="0.28" stroke-width="4" d="M178 60 C 172 118 172 158 174 198" />
+        </g>
+        <g data-speckles fill="#eedfcf">
+            <circle cx="130" cy="194" r="4" />
+            <circle cx="196" cy="184" r="4" />
+        </g>
+    </svg>
 
     <div class="page-wrapper">
         <header class="hero">
-            <div class="hero-badge">
-                <span>Lavish Celebration</span>
-                •
-                <span>Baby Shower</span>
-            </div>
-            <h1>Vilma &amp; Lance</h1>
-            <p class="lead">Join us for an unforgettable celebration as we shower Vilma &amp; Lance with love while awaiting the arrival of their little one.</p>
+            <h1>Welcome to a Celebration of Love & New Beginnings</h1>
+            <p class="lead">Please join us for a special baby shower honoring Vilma & Lance,
+                as they prepare to welcome their precious baby girl into the world.🥳</p>
         </header>
 
         <section class="envelope-stage">
@@ -473,92 +1117,91 @@
                 <div class="envelope">
                     <div class="flap"></div>
                     <div class="pocket"></div>
-                    <div class="letter">
-                        <h2>You're Invited</h2>
-                        <p>A treasured gathering awaits. Tap to unveil the details.</p>
-                        <span>Open Envelope</span>
+                    <div class="side-fold left"></div>
+                    <div class="side-fold right"></div>
+                    <div class="front"></div>
+                    <div class="letter" id="letter">
+                        <div class="letter-preview">
+                            <h2>You're Invited</h2>
+                            <p>Bring your smiles, your warm wishes, and get ready to celebrate a day full of laughter, games, and memories!</p>
+                            <span>Open Envelope</span>
+                        </div>
+
+                        <div class="letter-content">
+                            <div class="letter-section">
+                                <h3>Celebration Details</h3>
+                                <div class="event-meta">
+                                    <div class="event-item">
+                                        <span class="icon">📅</span>
+                                        <p><strong>Date:</strong> Friday, November 29, 2024<br><small>Festivities begin at 6:00 PM</small></p>
+                                    </div>
+                                    <div class="event-item">
+                                        <span class="icon">📍</span>
+                                        <p><strong>Location:</strong> 3685 Culebra Rd,<br>San Antonio, TX 78228, United States</p>
+                                    </div>
+                                    <div class="event-item">
+                                        <span class="icon">🎉</span>
+                                        <p>Cocktail attire with a pastel twist encouraged. Expect curated bites, signature mocktails, and moments crafted to remember.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="letter-section">
+                                <h3>Kindly RSVP</h3>
+                                <div class="form-embed-wrapper">
+                                    <iframe
+                                        src="https://link.creativeiq.marketing/widget/form/yYZkueq9cfgmzG2SU2lt"
+                                        style="width:100%;height:100%;border:none;border-radius:3px"
+                                        id="inline-yYZkueq9cfgmzG2SU2lt"
+                                        data-layout="{'id':'INLINE'}"
+                                        data-trigger-type="alwaysShow"
+                                        data-trigger-value=""
+                                        data-activation-type="alwaysActivated"
+                                        data-activation-value=""
+                                        data-deactivation-type="neverDeactivate"
+                                        data-deactivation-value=""
+                                        data-form-name="Baby Shower"
+                                        data-height="565"
+                                        data-layout-iframe-id="inline-yYZkueq9cfgmzG2SU2lt"
+                                        data-form-id="yYZkueq9cfgmzG2SU2lt"
+                                        title="Baby Shower"></iframe>
+                                </div>
+                            </div>
+
+                            <div class="letter-section registry-card">
+                                <h3>Registry</h3>
+                                <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/690eb3ec8264e36c697acc2c.png" alt="Amazon Baby Shower Registry QR Code for Vilma &amp; Lance">
+                                <p>Scan to explore the Amazon registry curated with love.</p>
+                            </div>
+
+                            <div class="letter-section">
+                                <h3>Find Your Way</h3>
+                                <iframe class="map-frame" title="Google Map showing 3685 Culebra Rd San Antonio" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.286724017935!2d-98.55853362388335!3d29.449868575210774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865cf6ad58c7eb2f%3A0x7263fa46a53a0b07!2s3685%20Culebra%20Rd%2C%20San%20Antonio%2C%20TX%2078228!5e0!3m2!1sen!2sus!4v1731159876000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <p class="open-instruction">Click or tap the envelope to reveal the celebration details.</p>
 
-        <section class="details-section" id="detailsSection">
-            <div class="details-grid">
-                <article class="glass-card">
-                    <h3>Celebration Details</h3>
-                    <div class="event-meta">
-                        <div>
-                            <span class="icon">📅</span>
-                            <p><strong>Date:</strong> Friday, November 29, 2024<br><small>Festivities begin at 6:00 PM</small></p>
-                        </div>
-                        <div>
-                            <span class="icon">📍</span>
-                            <p><strong>Location:</strong> 3685 Culebra Rd,<br>San Antonio, TX 78228, United States</p>
-                        </div>
-                        <div>
-                            <span class="icon">🎉</span>
-                            <p>Cocktail attire with a pastel twist encouraged. Delightful bites, signature mocktails, and moments to remember await.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="glass-card map-card">
-                    <h3>Find Your Way</h3>
-                    <iframe title="Google Map showing 3685 Culebra Rd San Antonio" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.286724017935!2d-98.55853362388335!3d29.449868575210774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865cf6ad58c7eb2f%3A0x7263fa46a53a0b07!2s3685%20Culebra%20Rd%2C%20San%20Antonio%2C%20TX%2078228!5e0!3m2!1sen!2sus!4v1731159876000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </article>
-
-                <article class="glass-card">
-                    <h3>Kindly RSVP</h3>
-                    <form class="rsvp" action="https://formspree.io/f/mwpkzrgq" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="attendance">Will you join us?</label>
-                            <select id="attendance" name="attendance" required>
-                                <option value="" disabled selected>Select an option</option>
-                                <option value="joyfully attending">Joyfully attending</option>
-                                <option value="celebrating from afar">Celebrating from afar</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="guests">Number of Guests</label>
-                            <input type="number" id="guests" name="guests" min="1" max="6" value="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Leave a loving note</label>
-                            <textarea id="message" name="message" placeholder="Share your wishes or dietary preferences"></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send RSVP</button>
-                    </form>
-                </article>
-
-                <article class="glass-card registry-card">
-                    <h3>Registry</h3>
-                    <img src="Babyshower Amazon.png" alt="Amazon Baby Shower Registry QR Code for Vilma &amp; Lance">
-                    <p>Scan to explore the Amazon registry curated with love for Baby Rivera.</p>
-                </article>
-            </div>
-        </section>
-
         <footer>
             With love, Vilma &amp; Lance • Let’s celebrate a new beginning
         </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         const envelopeWrapper = document.getElementById('envelopeWrapper');
-        const detailsSection = document.getElementById('detailsSection');
 
         function openInvitation() {
-            envelopeWrapper.classList.add('open');
-            document.body.classList.add('invitation-open');
+            if (!document.body.classList.contains('invitation-open')) {
+                envelopeWrapper.classList.add('open');
+                document.body.classList.add('invitation-open');
+                requestAnimationFrame(() => {
+                    document.getElementById('letter').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
         }
 
         envelopeWrapper.addEventListener('click', openInvitation);
@@ -567,6 +1210,61 @@
                 openInvitation();
                 event.preventDefault();
             }
+        });
+    </script>
+    <script src="https://link.creativeiq.marketing/js/form_embed.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 45,
+                    density: { enable: true, value_area: 900 }
+                },
+                color: { value: ['#ffffff', '#ffd7ea', '#f4ddba', '#d4dcff'] },
+                shape: {
+                    type: 'circle',
+                    stroke: { width: 0, color: '#000000' }
+                },
+                opacity: {
+                    value: 0.35,
+                    random: true,
+                    anim: { enable: false }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: { enable: false }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 120,
+                    color: '#ffffff',
+                    opacity: 0.18,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2.2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    repulse: { distance: 120, duration: 0.4 },
+                    push: { particles_nb: 3 }
+                }
+            },
+            retina_detect: false
         });
     </script>
 </body>
