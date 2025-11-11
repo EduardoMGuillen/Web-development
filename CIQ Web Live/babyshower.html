@@ -550,6 +550,35 @@
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
+        .registry-card a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 12px 28px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #1F2D3D;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #f7b6d7, #9fd2ff);
+            box-shadow: 0 18px 40px rgba(111, 66, 193, 0.22);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .registry-card a:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 48px rgba(111, 66, 193, 0.28);
+        }
+
+        .registry-card a:focus {
+            outline: 2px solid rgba(111, 66, 193, 0.45);
+            outline-offset: 4px;
+        }
+
         .registry-card p {
             margin-top: 12px;
             font-size: 0.92rem;
@@ -1171,6 +1200,7 @@
                             <div class="letter-section registry-card">
                                 <h3>Registry</h3>
                                 <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/690eb3ec8264e36c697acc2c.png" alt="Amazon Baby Shower Registry QR Code for Vilma &amp; Lance">
+                                <a class="registry-link" href="https://www.amazon.com/baby-reg/vilma-tovar-march-2026-sanantonio/2BQSW9R997SYM?ref_=cm_sw_r_apin_dp_89KW47SSR4R5QVHC37V0&amp;language=en-US" target="_blank" rel="noopener noreferrer">Click here for registry</a>
                                 <p>Scan to explore the Amazon registry curated with love.</p>
                             </div>
 
