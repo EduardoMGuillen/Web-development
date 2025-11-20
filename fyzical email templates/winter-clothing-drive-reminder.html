@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder: Winter Clothing Drive Ends Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            max-width: 180px;
+            height: auto;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .urgent-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .content h2 {
+            color: #0066cc;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .deadline-box {
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .deadline-box h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .deadline-box p {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .event-details {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #0066cc;
+        }
+        
+        .event-details h3 {
+            color: #0066cc;
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .detail-item strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+        
+        .locations {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 2px solid #0066cc;
+        }
+        
+        .locations p {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .locations-list {
+            color: #555;
+            font-size: 15px;
+            line-height: 2;
+        }
+        
+        .impact-message {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .impact-message h4 {
+            color: #856404;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .impact-message p {
+            color: #856404;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .divider {
+            height: 3px;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            margin: 20px 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/685710d73df5ba258ade0172.png" alt="FYZICAL Logo" class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/DjmsEtveEmsMg9wmEmvX/media/691e694a5e13ecf5bb159e5a.png" alt="Haven for Hope Logo" class="logo" style="max-width: 120px;">
+            </div>
+            <h1>⏰ Last Chance to Donate!</h1>
+            <div class="subtitle">Winter Clothing Drive - Final Reminder</div>
+            <div class="urgent-badge">Collecting through November</div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <h2>Time is Running Out</h2>
+            <div class="divider"></div>
+            
+            <p>This is your final reminder that our <strong>Winter Clothing Drive</strong> is coming to an end soon. We're collecting donations through <strong>November</strong>, and every item counts!</p>
+            
+            <div class="deadline-box">
+                <h3>📅 Donation Deadline</h3>
+                <p><strong>Collecting through November</strong></p>
+                <p style="font-size: 16px; margin-top: 10px;">Don't miss this opportunity to make a difference!</p>
+            </div>
+            
+            <!-- Event Details -->
+            <div class="event-details">
+                <h3>📍 Drop-off Locations</h3>
+                <div class="detail-item">
+                    <strong>Drop off at any FYZICAL San Antonio Region Clinic</strong>
+                </div>
+                <div class="locations">
+                    <p>Available Locations:</p>
+                    <div class="locations-list">
+                        Boerne | DeZavala | South San Antonio | Stone Oak | Shavano Park
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Impact Message -->
+            <div class="impact-message">
+                <h4>💝 Your Impact</h4>
+                <p>Every coat, sweater, or pair of gloves you donate will help someone in our community stay warm this winter.</p>
+                <p style="margin-top: 10px;"><strong>Together, we can make a difference!</strong></p>
+            </div>
+            
+            <p style="font-size: 18px; color: #0066cc; font-weight: 600;">Please drop off your donations this week to ensure they reach those in need before winter arrives.</p>
+            
+            <a href="https://www.fyzical.com/Locations" class="cta-button">Find Your Nearest Drop-off Location</a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 FYZICAL Therapy & Balance Centers. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+                In partnership with Haven for Hope - Where Homelessness Ends and Healing Begins
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
