@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBS - Concept 1: Data-Driven Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #0B5F3C;
+            --light-green: #2E8B57;
+            --accent-blue: #1E3A5F;
+            --dark-gray: #1A1A1A;
+            --medium-gray: #4A4A4A;
+            --light-gray: #F5F7FA;
+            --white: #FFFFFF;
+            --data-blue: #2563EB;
+            --data-orange: #F59E0B;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--medium-gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        .header-cta {
+            background: var(--primary-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .header-cta:hover {
+            background: var(--light-green);
+        }
+
+        /* Hero Section - Dashboard Style */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-blue) 100%);
+            color: white;
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><path d="M0,400 Q300,200 600,400 T1200,400 L1200,800 L0,800 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat;
+            background-size: cover;
+            opacity: 0.5;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-box .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .hero-visual {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .dashboard-preview {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .dashboard-title {
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+
+        .dashboard-tabs {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .chart-container {
+            height: 200px;
+            background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            gap: 0.5rem;
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: var(--data-blue);
+            border-radius: 4px 4px 0 0;
+            min-height: 40px;
+            position: relative;
+        }
+
+        .chart-bar:nth-child(2) { height: 60%; }
+        .chart-bar:nth-child(3) { height: 80%; }
+        .chart-bar:nth-child(4) { height: 45%; }
+        .chart-bar:nth-child(5) { height: 90%; }
+        .chart-bar:nth-child(6) { height: 70%; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .metric-card {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--medium-gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+        }
+
+        .metric-change {
+            font-size: 0.75rem;
+            color: var(--light-green);
+            margin-top: 0.25rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header .badge {
+            display: inline-block;
+            background: var(--primary-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-gray);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-metrics {
+            display: flex;
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .service-metric {
+            flex: 1;
+        }
+
+        .service-metric .value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .service-metric .label {
+            font-size: 0.75rem;
+            color: var(--medium-gray);
+            margin-top: 0.25rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .step-content p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+
+        .process-visual {
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .flow-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .flow-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-green);
+            position: relative;
+        }
+
+        .flow-item::after {
+            content: '↓';
+            position: absolute;
+            bottom: -1.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary-green);
+            font-size: 1.5rem;
+        }
+
+        .flow-item:last-child::after {
+            display: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-blue) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-green);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            border: 2px solid white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container,
+            .process-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">DEBS</div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="header-cta">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Data-Driven Employee Benefits That Protect Your Bottom Line</h1>
+                <p>For over 50 years, DEBS has leveraged advanced analytics and carrier competition to deliver optimal benefit solutions. See the numbers that matter.</p>
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <span class="number">50+</span>
+                        <span class="label">Years Experience</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">250%</span>
+                        <span class="label">Avg. ROI Increase</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">98%</span>
+                        <span class="label">Client Retention</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">Benefit Plan Analytics</div>
+                        <div class="dashboard-tabs">
+                            <div class="tab active">Q1 2024</div>
+                            <div class="tab">Annual</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-bar"></div>
+                        <div class="chart-bar"></div>
+                        <div class="chart-bar"></div>
+                        <div class="chart-bar"></div>
+                        <div class="chart-bar"></div>
+                        <div class="chart-bar"></div>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">Cost Savings</div>
+                            <div class="metric-value">$2.4M</div>
+                            <div class="metric-change">↗ +18% YoY</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Employee Satisfaction</div>
+                            <div class="metric-value">94%</div>
+                            <div class="metric-change">↗ +5% YoY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="badge">OUR SERVICES</span>
+            <h2>Comprehensive Benefit Solutions</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏥</div>
+                <h3>Group Medical</h3>
+                <p>Comprehensive healthcare packages with competitive carrier options for small, medium, and large employers.</p>
+                <div class="service-metrics">
+                    <div class="service-metric">
+                        <div class="value">$1.2M</div>
+                        <div class="label">Avg. Savings</div>
+                    </div>
+                    <div class="service-metric">
+                        <div class="value">94%</div>
+                        <div class="label">Coverage</div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>MERP 105(c,h)</h3>
+                <p>Medical Expense Reimbursement Plans that maximize employee savings and optimize premium management.</p>
+                <div class="service-metrics">
+                    <div class="service-metric">
+                        <div class="value">30%</div>
+                        <div class="label">Cost Reduction</div>
+                    </div>
+                    <div class="service-metric">
+                        <div class="value">$850</div>
+                        <div class="label">Avg. Benefit</div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🦷</div>
+                <h3>Group Dental</h3>
+                <p>Comprehensive dental coverage including DHMO and PPO options for routine and essential treatments.</p>
+                <div class="service-metrics">
+                    <div class="service-metric">
+                        <div class="value">85%</div>
+                        <div class="label">Preventive Care</div>
+                    </div>
+                    <div class="service-metric">
+                        <div class="value">24/7</div>
+                        <div class="label">Support</div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👁️</div>
+                <h3>Group Vision</h3>
+                <p>PPO vision and reimbursement plans that keep your employees seeing clearly and costs transparent.</p>
+                <div class="service-metrics">
+                    <div class="service-metric">
+                        <div class="value">$120</div>
+                        <div class="label">Annual Benefit</div>
+                    </div>
+                    <div class="service-metric">
+                        <div class="value">1000+</div>
+                        <div class="label">Providers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Group Life & Disability</h3>
+                <p>Financial protection through basic and buy-up life insurance plus short and long-term disability coverage.</p>
+                <div class="service-metrics">
+                    <div class="service-metric">
+                        <div class="value">2x</div>
+                        <div class="label">Salary Coverage</div>
+                    </div>
+                    <div class="service-metric">
+                        <div class="value">60%</div>
+                        <div class="label">Income Replacement</div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏋️</div>
+                <h3>Diagnosed Wellness™</h3>
+                <p>Our exclusive wellness program that incentivizes health exams and promotes healthier employee populations.</p>
+                <div class="service-metrics">
+                    <div class="service-metric">
+                        <div class="value">$100</div>
+                        <div class="label">Wellness Reward</div>
+                    </div>
+                    <div class="service-metric">
+                        <div class="value">72%</div>
+                        <div class="label">Participation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="process-steps">
+                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                    <span class="badge">OUR METHOD</span>
+                    <h2 style="text-align: left; margin-bottom: 1rem;">Analytical Approach to Benefits</h2>
+                    <p style="text-align: left; color: var(--medium-gray);">Every decision is backed by data. Every recommendation is optimized for your bottom line.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Data Collection & Analysis</h4>
+                        <p>We analyze your current benefits spend, employee demographics, and utilization patterns to identify optimization opportunities.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Carrier Competition Design</h4>
+                        <p>We create competitive bidding scenarios between multiple carriers, leveraging market data to secure optimal pricing.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Implementation & Enrollment</h4>
+                        <p>Our team handles seamless plan implementation and employee enrollment, minimizing disruption to your operations.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Ongoing Analytics & Optimization</h4>
+                        <p>We provide continuous monitoring, reporting, and optimization to ensure your benefits program delivers maximum value.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="process-visual">
+                <div class="flow-diagram">
+                    <div class="flow-item">
+                        <strong>Current State Analysis</strong><br>
+                        <small>Baseline metrics & cost structure</small>
+                    </div>
+                    <div class="flow-item">
+                        <strong>Optimization Modeling</strong><br>
+                        <small>Predictive analytics & scenario planning</small>
+                    </div>
+                    <div class="flow-item">
+                        <strong>Carrier Negotiation</strong><br>
+                        <small>Competitive bidding & contract optimization</small>
+                    </div>
+                    <div class="flow-item">
+                        <strong>Performance Monitoring</strong><br>
+                        <small>Real-time dashboards & reporting</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Optimize Your Benefits Program?</h2>
+            <p>Join hundreds of companies that trust DEBS to deliver data-driven benefit solutions that protect their bottom line.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">Request Analytics Report</a>
+                <a href="#contact" class="btn-secondary">Schedule Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>DEBS</h3>
+                <p>For over 50 years, DEBS has been the leader in data-driven employee benefit solutions. We protect your bottom line through designed competition and analytical excellence.</p>
+                <p>2135 NW Military Hwy<br>San Antonio, TX 78213<br>(210) 558-3377</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Group Medical</a></li>
+                    <li><a href="#">MERP</a></li>
+                    <li><a href="#">Group Dental</a></li>
+                    <li><a href="#">Group Vision</a></li>
+                    <li><a href="#">Life & Disability</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Process</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Whitepapers</a></li>
+                    <li><a href="#">Calculators</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Diversified Employee Benefit Services. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

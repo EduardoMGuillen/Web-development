@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBS - Concept 2: Bold Modern Minimalist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #00D47E;
+            --dark-green: #008F56;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray: #8B8B8B;
+            --light-bg: #F7F7F7;
+            --accent-purple: #7C3AED;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;900&display=swap');
+
+        /* Header - Minimalist */
+        header {
+            background: var(--white);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        header.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--black);
+            letter-spacing: -0.5px;
+        }
+
+        .menu-toggle {
+            width: 40px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            display: none;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--black);
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero - Bold Typography */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary-green) 0%, transparent 70%);
+            opacity: 0.1;
+            transform: rotate(45deg);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(45deg) translate(0, 0); }
+            50% { transform: rotate(45deg) translate(30px, 30px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -3px;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-green);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            background: var(--primary-green);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: 300;
+            color: var(--gray);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.25rem 3rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--black);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,212,126,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 3px solid var(--black);
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* Services - Bold Cards */
+        .services {
+            padding: 8rem 2rem;
+            background: var(--black);
+            color: var(--white);
+            position: relative;
+        }
+
+        .services::before {
+            content: 'SERVICES';
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 12rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.03);
+            letter-spacing: -5px;
+            z-index: 0;
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-header {
+            margin-bottom: 5rem;
+        }
+
+        .services-header .section-number {
+            font-size: 8rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .services-header h2 {
+            font-size: clamp(2rem, 5vw, 5rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .services-header p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            color: var(--black);
+            padding: 3rem;
+            position: relative;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, var(--primary-green), var(--accent-purple));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translate(-5px, -5px);
+        }
+
+        .service-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--black);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .service-link:hover {
+            gap: 1rem;
+        }
+
+        /* About - Split Screen */
+        .about {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--white);
+        }
+
+        .about-content {
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-content .tag {
+            display: inline-block;
+            background: var(--primary-green);
+            color: var(--black);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            width: fit-content;
+        }
+
+        .about-content h2 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+
+        .about-content p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: var(--light-bg);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+        }
+
+        .about-visual {
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-visual::before {
+            content: '50+';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            z-index: 1;
+        }
+
+        .about-visual-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            color: var(--white);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-size: 2rem;
+        }
+
+        /* Process - Vertical Timeline */
+        .process {
+            padding: 8rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .process-header h2 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-green);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            padding-left: 4rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-green);
+            border: 4px solid var(--light-bg);
+            border-radius: 50%;
+        }
+
+        .timeline-number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            opacity: 0.2;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* CTA - Full Width */
+        .cta-section {
+            padding: 8rem 2rem;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary-green) 0%, transparent 50%);
+            opacity: 0.1;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .cta-content p {
+            font-size: 1.5rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
+
+        /* Footer - Minimal */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact {
+            color: var(--gray);
+            line-height: 2;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">DEBS</div>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-tag">Since 1974</div>
+            <h1>
+                WHO DO YOU<br>
+                TRUST WITH<br>
+                <span class="highlight">YOUR MONEY?</span>
+            </h1>
+            <p class="hero-subtitle">The carriers... or yourself? We design competition between carriers to protect your bottom line and deliver personalized benefit solutions.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <div class="section-number">01</div>
+                <h2>WHAT WE OFFER</h2>
+                <p>Comprehensive benefit solutions designed through carrier competition to maximize your savings and employee satisfaction.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>Group Medical</h3>
+                    <p>Healthcare packages for companies of all sizes with competitive carrier options and custom classing.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>MERP 105(c,h)</h3>
+                    <p>Medical Expense Reimbursement Plans that maximize employee savings and optimize premium costs.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>Group Dental</h3>
+                    <p>DHMO and PPO dental plans for routine check-ups, preventative care, and essential treatments.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>Group Vision</h3>
+                    <p>PPO vision and reimbursement plans with comprehensive coverage and transparent pricing.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <h3>Life & Disability</h3>
+                    <p>Financial protection through basic and buy-up life insurance plus short and long-term disability.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <h3>Diagnosed Wellness™</h3>
+                    <p>Our exclusive wellness program that incentivizes health exams and promotes healthier employees.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="tag">About DEBS</div>
+            <h2>PROTECTING YOUR BOTTOM LINE</h2>
+            <p>For over 50 years, we've been designing competition between carriers to ensure your money is invested wisely. We don't let carriers decide where YOUR money goes.</p>
+            <p>Every plan is customized. Every decision is optimized. Every dollar is protected.</p>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Focused</div>
+                </div>
+            </div>
+        </div>
+        <div class="about-visual">
+            <div class="about-visual-content">
+                <ul class="feature-list">
+                    <li>Protect Your Money</li>
+                    <li>Customize Your Plan</li>
+                    <li>Smart Guidance</li>
+                    <li>Competition Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="process-header">
+                <h2>OUR PROCESS</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <h3>Benefit Planning</h3>
+                    <p>We analyze your current situation and design competitive scenarios between carriers to find the optimal solution for your organization.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <h3>Implementation</h3>
+                    <p>After selecting the best benefits program, we seamlessly enroll your employees and ensure a smooth transition with zero disruption.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <h3>Plan Management</h3>
+                    <p>We handle all the complex parts of managing your company's benefits, from claims processing to employee support.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">04</div>
+                    <h3>Renewal & Optimization</h3>
+                    <p>We streamline renewals, monitor claims, and continuously optimize your plan to keep costs in check and maximize value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>ENHANCE YOUR BENEFIT PLAN</h2>
+            <p>It's time to revitalize your approach to employee benefits. Connect with our agents to find the perfect plan for your business.</p>
+            <a href="#contact" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>DEBS</h3>
+                <p>Diversified Employee Benefit Services designs, implements, and services employee benefits through designed competition between carriers.</p>
+                <div class="footer-contact">
+                    2135 NW Military Hwy<br>
+                    San Antonio, TX 78213<br>
+                    (210) 558-3377
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Group Medical</a></li>
+                    <li><a href="#">MERP</a></li>
+                    <li><a href="#">Dental</a></li>
+                    <li><a href="#">Vision</a></li>
+                    <li><a href="#">Wellness</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Process</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DEBS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
+
