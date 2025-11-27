@@ -24,9 +24,11 @@ Tags: business, marketing, agency, one-column, custom-header, custom-menu, featu
 }
 
 :root {
-    --primary-color: #8B5CF6;
-    --primary-light: #A78BFA;
-    --primary-dark: #7C3AED;
+        --primary-color: #2563EB;
+        --primary-light: #3B82F6;
+        --primary-dark: #1E40AF;
+        --accent-blue: #2563EB;
+        --accent-black: #1F2937;
     --text-dark: #1F2937;
     --text-gray: #6B7280;
     --bg-white: #FFFFFF;
@@ -66,11 +68,13 @@ ul {
    ============================================ */
 header {
     background: var(--bg-white);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
 }
 
 .header-container {
@@ -93,7 +97,7 @@ header {
 .logo-icon {
     width: 48px;
     height: 48px;
-    background: var(--primary-color);
+    background: var(--accent-black);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -226,15 +230,15 @@ header {
 }
 
 .badge {
-    display: inline-block;
-    background: var(--primary-color);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
+            display: inline-block;
+            background: var(--bg-gray);
+            color: var(--text-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
 
 .hero h1 {
     font-size: 3.5rem;
@@ -321,12 +325,12 @@ header {
 .stat-icon {
     width: 48px;
     height: 48px;
-    background: var(--primary-color);
+    background: var(--bg-light);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--primary-color);
     font-size: 1.5rem;
 }
 
@@ -370,12 +374,12 @@ header {
 
 .section-badge {
     display: inline-block;
-    background: var(--primary-color);
-    color: white;
+    background: var(--bg-gray);
+    color: var(--text-gray);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 
