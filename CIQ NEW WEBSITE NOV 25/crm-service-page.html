@@ -337,19 +337,50 @@
             background: transparent;
         }
 
+        .pricing-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
         .pricing-single {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .pricing-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--border-color);
             border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
+            padding: 2.5rem;
+            text-align: left;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
         }
 
         .plan-name {
@@ -457,6 +488,54 @@
             color: var(--primary-color);
             font-weight: bold;
             font-size: 1.2rem;
+        }
+
+        .plan-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .addons-section {
+            margin-top: 4rem;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .addon-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .addon-name {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .addon-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
         /* Footer */
@@ -585,12 +664,18 @@
                 grid-template-columns: 1fr;
             }
 
-            .services-grid-pricing {
+            .services-grid-pricing,
+            .pricing-grid,
+            .addons-grid {
                 grid-template-columns: 1fr;
             }
 
             .pricing-structure {
                 flex-direction: column;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
             }
 
             .footer-container {
@@ -696,62 +781,100 @@
         <!-- Pricing Section -->
         <section class="pricing">
             <div class="section-header">
-                <h2 class="section-title">CRM & DIY Services</h2>
-                <p class="section-description">Start with our powerful CRM and add the services you need to grow your business with our flexible DIY service packages.</p>
+                <h2 class="section-title">CRM Pricing Plans</h2>
+                <p class="section-description">Choose the perfect CRM solution for your business. Start with our Starter plan or go all-in with Unlimited CRM.</p>
             </div>
-            <div class="pricing-single">
+            <div class="pricing-grid">
+                <!-- Starter CRM System -->
                 <div class="pricing-card">
-                    <h3 class="plan-name">CRM + DIY Services</h3>
-                    <div class="pricing-structure">
-                        <div class="price-item">
-                            <div class="price-label">Base CRM</div>
-                            <div class="plan-price">$99</div>
-                            <div class="plan-period">begins at</div>
+                    <div class="plan-badge">Starter CRM System [DIY]</div>
+                    <div class="plan-name">Starter CRM System</div>
+                    <div class="plan-price">$97<span style="font-size: 1.2rem; font-weight: 400;">/month</span></div>
+                    <p class="plan-description">Essential tools for capturing, nurturing, and converting leads — perfect for startups or small teams.</p>
+                    <ul class="plan-features">
+                        <li>Full access to CreativeIQ CRM Dashboard</li>
+                        <li>Monthly Strategy Meeting</li>
+                        <li>Newsletter templates</li>
+                        <li>Unlimited contacts & users — grow without limits</li>
+                        <li>Lead capture forms & landing page templates</li>
+                        <li>Contact tagging & segmentation</li>
+                        <li>Two-way SMS, email, and call tracking</li>
+                        <li>Built-in calendar & appointment booking system</li>
+                        <li>Automated reminders and follow-ups</li>
+                        <li>Basic reporting dashboard</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">✨ Ideal for entrepreneurs and small businesses ready to organize their marketing and start automating communication.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+
+                <!-- Unlimited CRM System -->
+                <div class="pricing-card featured">
+                    <div class="plan-badge" style="background: var(--primary-dark);">🚀 Unlimited CRM System</div>
+                    <div class="plan-name">Unlimited CRM System</div>
+                    <div class="plan-price">$297<span style="font-size: 1.2rem; font-weight: 400;">/month</span></div>
+                    <p class="plan-description">The all-inclusive automation suite designed for established businesses that want a branded, data-driven ecosystem.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes Everything in Starter, Plus:</p>
+                    <ul class="plan-features">
+                        <li>Custom Sales Pipeline – track leads from inquiry to sale</li>
+                        <li>Smart Calendar Integration – sync appointments, reminders, and staff availability</li>
+                        <li>Automation Workflow – pre-built or custom sequences to nurture leads and close faster</li>
+                        <li>Branded Intake Form & Lead Capture Funnel – built and integrated for your business</li>
+                        <li>Client Portal – personalized with your logo, company info, and brand assets</li>
+                        <li>Email/SMS Campaign Automation – one complete campaign (e.g., welcome series, review requests, or reactivation)</li>
+                        <li>Performance Dashboard – monthly analytics & KPI insights for marketing and operations</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">💼 Perfect for scaling businesses ready to connect their marketing, sales, and operations in one powerful platform.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+
+                <!-- CRM Maintenance & Optimization -->
+                <div class="pricing-card">
+                    <div class="plan-badge" style="background: #10B981;">🧩 CRM Maintenance</div>
+                    <div class="plan-name">CRM Maintenance & Optimization</div>
+                    <div class="plan-price">$199<span style="font-size: 1.2rem; font-weight: 400;">/month</span></div>
+                    <p class="plan-description">Keep your system running at peak performance with monthly optimization and support.</p>
+                    <ul class="plan-features">
+                        <li>Monthly review and optimization of automations & pipelines</li>
+                        <li>Contact cleanup and tagging accuracy check</li>
+                        <li>Email/SMS deliverability and workflow testing</li>
+                        <li>Dashboard updates and new metric tracking</li>
+                        <li>Priority troubleshooting and tech support</li>
+                        <li>Up to 2 automation or funnel edits per month</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">✨ Recommended for all active accounts to maintain system performance and ensure consistent lead flow.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Optional Enhancements -->
+            <div class="addons-section">
+                <div class="section-header">
+                    <h3 class="section-subtitle">Optional Enhancements (Add-Ons)</h3>
+                    <p class="section-description">Enhance your CRM with these powerful add-on services.</p>
+                </div>
+                <div class="pricing-single">
+                    <div class="addons-grid">
+                        <div class="addon-item">
+                            <span class="addon-name">Additional Custom Pipelines</span>
+                            <span class="addon-price">+$149 each</span>
                         </div>
-                        <div class="price-divider">+</div>
-                        <div class="price-item">
-                            <div class="price-label">Add-On Services</div>
-                            <div class="plan-price">+</div>
-                            <div class="plan-period">services as needed</div>
+                        <div class="addon-item">
+                            <span class="addon-name">Review Request Automation</span>
+                            <span class="addon-price">+$99 setup</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Multi-Step Workflow Build (advanced triggers & logic)</span>
+                            <span class="addon-price">+$299 setup</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Custom Dashboard Build (Google Data Studio or GHL)</span>
+                            <span class="addon-price">+$199 one-time</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Team Training & System Onboarding</span>
+                            <span class="addon-price">+$149</span>
                         </div>
                     </div>
-                    <div class="services-breakdown">
-                        <h4>Available DIY Services:</h4>
-                        <div class="services-grid-pricing">
-                            <div class="service-item">
-                                <span class="service-name">Social Media Management</span>
-                                <span class="service-price">$99</span>
-                            </div>
-                            <div class="service-item">
-                                <span class="service-name">Email Services</span>
-                                <span class="service-price">$69</span>
-                            </div>
-                            <div class="service-item">
-                                <span class="service-name">Website Templates & Design</span>
-                                <span class="service-price">$199</span>
-                            </div>
-                            <div class="service-item">
-                                <span class="service-name">Calendar/Booking Services</span>
-                                <span class="service-price">$59</span>
-                            </div>
-                            <div class="service-item">
-                                <span class="service-name">Missed Call Text Back Feature</span>
-                                <span class="service-price">$99</span>
-                            </div>
-                            <div class="service-item">
-                                <span class="service-name">WordPress Services</span>
-                                <span class="service-price">$99</span>
-                            </div>
-                            <div class="service-item">
-                                <span class="service-name">Ad & Campaign Optimization</span>
-                                <span class="service-price">$69</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p style="text-align: center; color: var(--text-gray); margin-top: 2rem; font-size: 0.95rem;">
-                        Mix and match services based on your business needs. Pay only for the services you choose. All services include setup, training, and ongoing support.
-                    </p>
-                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started Today</a>
                 </div>
             </div>
         </section>

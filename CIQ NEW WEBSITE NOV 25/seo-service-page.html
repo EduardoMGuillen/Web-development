@@ -337,19 +337,98 @@
             background: transparent;
         }
 
+        .pricing-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
         .pricing-single {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .pricing-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--border-color);
             border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
+            padding: 2.5rem;
+            text-align: left;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .plan-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .addons-section {
+            margin-top: 4rem;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .addon-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .addon-name {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .addon-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
         .plan-name {
@@ -360,15 +439,15 @@
         }
 
         .plan-price {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .plan-period {
             color: var(--text-gray);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .plan-features {
@@ -520,8 +599,14 @@
             }
 
             .services-grid,
-            .stats-grid {
+            .stats-grid,
+            .pricing-grid,
+            .addons-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
             }
 
             .footer-container {
@@ -627,25 +712,89 @@
         <!-- Pricing Section -->
         <section class="pricing">
             <div class="section-header">
-                <h2 class="section-title">SEO & Organic Growth Service</h2>
-                <p class="section-description">Boost your search rankings and drive sustainable organic traffic with our comprehensive SEO strategies.</p>
+                <h2 class="section-title">🔍 CreativeIQ Search Engine Optimization (SEO)</h2>
+                <p class="section-description">Be found where it matters most — on Google, Maps, and beyond. Choose the perfect SEO solution for your business.</p>
             </div>
-            <div class="pricing-single">
+            <div class="pricing-grid">
+                <!-- Foundational SEO System -->
                 <div class="pricing-card">
-                    <h3 class="plan-name">Complete SEO Management</h3>
-                    <div class="plan-price">$299</div>
-                    <div class="plan-period">begins at</div>
+                    <div class="plan-badge">🚀 Foundational SEO System</div>
+                    <div class="plan-name">Starting at $299/month</div>
+                    <p class="plan-description">Perfect for businesses that want to increase online visibility and drive local traffic through search.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes:</p>
                     <ul class="plan-features">
-                        <li>Keyword research & strategy development</li>
-                        <li>On-page SEO optimization</li>
-                        <li>Technical SEO improvements</li>
-                        <li>Content strategy & blog optimization</li>
-                        <li>Link building & citation management</li>
-                        <li>Local SEO & Google Business Profile optimization</li>
-                        <li>Monthly reporting & analytics tracking</li>
-                        <li>Search Console & Analytics monitoring</li>
+                        <li>Google Business Profile Optimization (photos, descriptions, services, hours)</li>
+                        <li>Local keyword research & competitor analysis</li>
+                        <li>On-page optimization for your top website pages</li>
+                        <li>SEO audit and site performance review</li>
+                        <li>Citation setup (local directory listings)</li>
+                        <li>Monthly keyword tracking report</li>
                     </ul>
-                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%;">Get Started Today</a>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">✨ Ideal for service-based and local businesses ready to start ranking higher on Google Maps and search results.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+
+                <!-- Growth SEO Strategy -->
+                <div class="pricing-card featured">
+                    <div class="plan-badge" style="background: var(--primary-dark);">📈 Growth SEO Strategy</div>
+                    <div class="plan-name">Starting at $599/month</div>
+                    <p class="plan-description">Designed for growing brands ready to dominate search rankings and convert organic visitors into clients.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes Everything in Foundational, Plus:</p>
+                    <ul class="plan-features">
+                        <li>2–4 Optimized Blog Posts per Month (SEO copywriting & internal linking)</li>
+                        <li>Advanced backlink building & authority outreach</li>
+                        <li>Conversion Rate Optimization (CRO) recommendations</li>
+                        <li>Quarterly keyword performance & ranking report</li>
+                        <li>Meta tags, image alt-text, and schema markup updates</li>
+                        <li>Page speed and technical SEO review</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">💼 Perfect for established businesses wanting consistent traffic growth and measurable ROI.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+
+                <!-- SEO Maintenance & Reporting -->
+                <div class="pricing-card">
+                    <div class="plan-badge" style="background: #10B981;">🔧 SEO Maintenance</div>
+                    <div class="plan-name">$199/month</div>
+                    <p class="plan-description">Ensure your SEO performance remains strong month after month.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes:</p>
+                    <ul class="plan-features">
+                        <li>Monthly health checks (broken links, index status, errors)</li>
+                        <li>Content refresh & keyword updates</li>
+                        <li>Google Business Profile monitoring and updates</li>
+                        <li>Monthly performance report with next-step recommendations</li>
+                        <li>Priority support for technical adjustments</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">✨ Recommended for ongoing clients or sites with frequent content updates.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Optional Add-Ons -->
+            <div class="addons-section">
+                <div class="section-header">
+                    <h3 class="section-subtitle">⚡ Optional Add-Ons</h3>
+                    <p class="section-description">Enhance your SEO strategy with these powerful add-on services.</p>
+                </div>
+                <div class="pricing-single">
+                    <div class="addons-grid">
+                        <div class="addon-item">
+                            <span class="addon-name">Keyword Expansion Report</span>
+                            <span class="addon-price">+$99</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Landing Page SEO Optimization</span>
+                            <span class="addon-price">+$199/page</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Backlink Audit & Cleanup</span>
+                            <span class="addon-price">+$149</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Multi-Location SEO Setup</span>
+                            <span class="addon-price">+$249/location</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -500,6 +500,130 @@
             color: var(--primary-color);
         }
 
+        /* Catalog Section Styling */
+        .catalog-section {
+            margin: 4rem 0;
+        }
+
+        .catalog-category {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .catalog-category-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .catalog-plan {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .catalog-plan:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .catalog-plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .catalog-plan-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .catalog-plan-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+
+        .catalog-plan-description {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .catalog-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .catalog-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .catalog-features li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .catalog-highlight {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .catalog-table th,
+        .catalog-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .catalog-table th {
+            background: rgba(37, 99, 235, 0.1);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .catalog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .catalog-table .price-cell {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .services-grid {
@@ -542,6 +666,44 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .catalog-table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .catalog-table thead,
+            .catalog-table tbody,
+            .catalog-table tr,
+            .catalog-table th,
+            .catalog-table td {
+                display: block;
+            }
+
+            .catalog-table thead {
+                display: none;
+            }
+
+            .catalog-table tr {
+                margin-bottom: 1rem;
+                border: 1px solid var(--border-color);
+                border-radius: 8px;
+                padding: 1rem;
+            }
+
+            .catalog-table td {
+                border: none;
+                padding: 0.5rem 0;
+            }
+
+            .catalog-table td:before {
+                content: attr(data-label);
+                font-weight: 600;
+                display: block;
+                margin-bottom: 0.25rem;
+                color: var(--text-dark);
             }
 
             .footer-container {
@@ -662,6 +824,135 @@
                     </ul>
                     <a href="https://creativeiq.marketing/web-development" class="service-link">Learn More →</a>
                 </div>
+                <div class="service-card">
+                    <div class="service-icon">💌</div>
+                    <h3>Email Campaigns</h3>
+                    <p>Turn every email into an opportunity with professional campaigns and newsletters that drive engagement and conversions.</p>
+                    <ul class="service-features">
+                        <li>Email Design & Copywriting</li>
+                        <li>Newsletter Creation</li>
+                        <li>Email Automation</li>
+                        <li>Performance Analytics</li>
+                    </ul>
+                    <a href="https://creativeiq.marketing/email-campaigns" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Growth Systems Catalog -->
+        <section class="services" style="padding-top: 2rem;">
+            <div class="section-header">
+                <span class="section-badge">Growth Systems Catalog</span>
+                <h2 class="section-title">Building Visibility, Credibility, and Automation</h2>
+                <p class="section-description">Comprehensive service catalog designed for modern businesses. Mix and match services to create your perfect growth system.</p>
+            </div>
+            <!-- Bundles Table -->
+            <div class="catalog-section">
+                <div class="catalog-category">
+                    <h3 class="catalog-category-title">⚡ CreativeIQ Growth Bundles</h3>
+                    <table class="catalog-table">
+                        <thead>
+                            <tr>
+                                <th>Plan</th>
+                                <th>Includes</th>
+                                <th class="price-cell">Monthly Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Starter Growth Plan</strong></td>
+                                <td>Website Base ($699) + CRM Starter ($97) + SEO Foundational ($299)</td>
+                                <td class="price-cell">$1,095/month</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Business Pro Plan</strong></td>
+                                <td>Website Maintenance ($199) + CRM Unlimited ($297) + Social Growth ($699) + Email Essentials ($199)</td>
+                                <td class="price-cell">$1,394/month</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elite Scale System</strong></td>
+                                <td>Website Pro ($999) + CRM Unlimited ($297) + SEO Growth ($599) + Elite Social ($1,299) + Weekly Newsletters ($399)</td>
+                                <td class="price-cell">$3,593/month</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="text-align: center; color: var(--text-gray); margin-top: 1.5rem; font-size: 0.95rem;">
+                        ✨ All plans include onboarding, analytics dashboards, and CreativeIQ support.
+                    </p>
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large">Get Started with Growth Systems Bundles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Generation Suite Bundles -->
+            <div class="catalog-section">
+                <div class="catalog-category">
+                    <h3 class="catalog-category-title">🚀 CreativeIQ Lead Generation Suite</h3>
+                    <p class="catalog-plan-description" style="margin-bottom: 2rem; text-align: center;">
+                        From search to sale — turn local visibility into measurable growth. Integrated systems for LSA, SEO, CRM, and paid ads designed to attract, track, and convert leads automatically.
+                    </p>
+                    <table class="catalog-table">
+                        <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>What's Included</th>
+                                <th class="price-cell">Monthly Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Starter Lead System</strong></td>
+                                <td>LSA Essentials + SEO Foundational + CRM Starter</td>
+                                <td class="price-cell">$895/month</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Growth Lead System</strong></td>
+                                <td>LSA Growth + SEO Growth + CRM Unlimited + Ad Setup</td>
+                                <td class="price-cell">$1,694/month</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pro Lead System</strong></td>
+                                <td>LSA Pro Conversion + SEO Growth + CRM Unlimited + Retargeting + Monthly Ads Management</td>
+                                <td class="price-cell">$2,294/month</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="background: rgba(37, 99, 235, 0.1); border-radius: 12px; padding: 1.5rem; margin-top: 2rem;">
+                        <h4 style="color: var(--text-dark); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600;">💡 Why the Lead Generation Suite Works:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div>
+                                <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">✅ Integrated Ecosystem</p>
+                                <p style="color: var(--text-gray); font-size: 0.9rem;">SEO, LSA, Ads, and CRM all work together</p>
+                            </div>
+                            <div>
+                                <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">✅ Automation-Driven</p>
+                                <p style="color: var(--text-gray); font-size: 0.9rem;">Follow-ups, reviews, and reports run automatically</p>
+                            </div>
+                            <div>
+                                <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">✅ Data Transparency</p>
+                                <p style="color: var(--text-gray); font-size: 0.9rem;">Dashboards show real-time conversions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="text-align: center; color: var(--text-gray); margin-top: 1.5rem; font-size: 0.95rem;">
+                        ✨ All plans include onboarding, performance dashboards, and automation integration through CreativeIQ CRM.
+                    </p>
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large">Get Started with Lead Generation Suite</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why CreativeIQ Section -->
+        <section class="services" style="padding-top: 2rem; padding-bottom: 4rem;">
+            <div class="section-header">
+                <h3 class="section-title" style="font-size: 2rem;">💼 Why CreativeIQ?</h3>
+                <p class="section-description" style="max-width: 900px;">
+                    CreativeIQ Digital Marketing helps businesses, nonprofits, and professionals build a digital ecosystem that works together — from visibility (SEO & social) to automation (CRM & email).<br><br>
+                    Each system is modular, scalable, and data-driven — designed to grow with your business and create real impact in the community.
+                </p>
             </div>
             <div class="custom-solution">
                 <p>Need a custom solution? We create tailored strategies for your unique business needs.</p>

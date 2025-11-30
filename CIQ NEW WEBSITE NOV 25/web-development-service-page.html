@@ -337,20 +337,98 @@
             background: transparent;
         }
 
+        .pricing-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
         .pricing-single {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .pricing-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--border-color);
             border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
+            padding: 2.5rem;
+            text-align: left;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            margin-bottom: 4rem;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .plan-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .addons-section {
+            margin-top: 4rem;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .addon-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .addon-name {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .addon-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
         .plan-name {
@@ -402,12 +480,18 @@
             text-align: center;
         }
 
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
         .plan-features li {
-            padding: 0.75rem 2.5rem;
+            padding: 0.75rem 0;
             color: var(--text-dark);
             position: relative;
+            padding-left: 2rem;
             border-bottom: 1px solid var(--border-color);
-            text-align: center;
         }
 
         .plan-features li:last-child {
@@ -417,7 +501,7 @@
         .plan-features li::before {
             content: '✓';
             position: absolute;
-            left: 0.5rem;
+            left: 0;
             color: var(--primary-color);
             font-weight: bold;
             font-size: 1.2rem;
@@ -545,12 +629,18 @@
             }
 
             .services-grid,
-            .stats-grid {
+            .stats-grid,
+            .pricing-grid,
+            .addons-grid {
                 grid-template-columns: 1fr;
             }
 
             .pricing-structure {
                 flex-direction: column;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
             }
 
             .footer-container {
@@ -653,76 +743,94 @@
             </div>
         </section>
 
-        <!-- Pricing Section - Web Development -->
+        <!-- Pricing Section -->
         <section class="pricing">
             <div class="section-header">
-                <h2 class="section-title">Website Design & Development Service</h2>
-                <p class="section-description">Transform your online presence with custom website design and development that converts visitors into customers.</p>
+                <h2 class="section-title">💻 CreativeIQ Website Development & Maintenance</h2>
+                <p class="section-description">Choose the perfect website solution for your business. From simple one-page sites to advanced e-commerce platforms.</p>
             </div>
-            <div class="pricing-single">
+            <div class="pricing-grid">
+                <!-- BASE WEBSITE PACKAGE -->
                 <div class="pricing-card">
-                    <h3 class="plan-name">Custom Website Development</h3>
-                    <div class="pricing-structure">
-                        <div class="price-item">
-                            <div class="price-label">Starting at</div>
-                            <div class="plan-price">$699</div>
-                            <div class="plan-period">project cost</div>
-                        </div>
-                        <div class="price-divider">+</div>
-                        <div class="price-item">
-                            <div class="price-label">Monthly Maintenance</div>
-                            <div class="plan-price">$199</div>
-                            <div class="plan-period">per month</div>
-                        </div>
-                    </div>
+                    <div class="plan-badge">BASE WEBSITE PACKAGE</div>
+                    <div class="plan-name">Starting at $699</div>
+                    <div style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1.5rem;">[One Page]</div>
+                    <p class="plan-description">Perfect for businesses ready to launch a high-performing, branded website that converts.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes:</p>
                     <ul class="plan-features">
-                        <li>Custom website design & development</li>
-                        <li>Mobile-responsive design</li>
-                        <li>SEO optimization & structure</li>
-                        <li>Performance optimization</li>
-                        <li>E-commerce integration</li>
-                        <li>Analytics & tracking setup</li>
-                        <li>Content management system</li>
-                        <li>Ongoing maintenance & updates</li>
+                        <li>1-page custom website (home, services overview, or landing page)</li>
+                        <li>Mobile-optimized & responsive design</li>
+                        <li>Integrated contact form or booking link</li>
+                        <li>SEO-friendly copy setup (titles, meta, alt-text, sitemap)</li>
+                        <li>Connection to Google Analytics & CRM (optional)</li>
+                        <li>Fast, secure hosting setup [platform of your choice]</li>
                     </ul>
-                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%;">Get Started Today</a>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 0.5rem;">🧩 Additional Pages:</p>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Each additional custom-coded page — <strong style="color: var(--primary-color);">$1,000 per page</strong></p>
+                    </div>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+
+                <!-- ADVANCED & E-COMMERCE SITES -->
+                <div class="pricing-card featured">
+                    <div class="plan-badge" style="background: var(--primary-dark);">ADVANCED & E-COMMERCE SITES</div>
+                    <div class="plan-name">Starting at $999</div>
+                    <div style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1.5rem;">[One-Time Setup]</div>
+                    <p class="plan-description">Designed for businesses ready to scale with more functionality.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes:</p>
+                    <ul class="plan-features">
+                        <li>Multi-page site (up to 2 pages)</li>
+                        <li>E-commerce setup or product catalog integration</li>
+                        <li>Custom funnels or appointment booking systems</li>
+                        <li>Analytics dashboard with monthly insights</li>
+                        <li>Optional CRM and automation integration</li>
+                    </ul>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+
+                <!-- ONGOING WEBSITE MAINTENANCE -->
+                <div class="pricing-card">
+                    <div class="plan-badge" style="background: #10B981;">🧩 ONGOING MAINTENANCE</div>
+                    <div class="plan-name">$199/month</div>
+                    <p class="plan-description">Keep your website running smoothly, updated, and optimized.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes:</p>
+                    <ul class="plan-features">
+                        <li>Monthly backups, plugin & security updates</li>
+                        <li>On-page SEO adjustments & content refreshes</li>
+                        <li>Performance monitoring (speed, uptime, and analytics)</li>
+                        <li>Minor text/image edits (up to 2 changes per month)</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">💡 Already have a website? We can maintain or improve your current site — no rebuild required.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
                 </div>
             </div>
-        </section>
 
-        <!-- Pricing Section - Maintenance -->
-        <section class="pricing">
-            <div class="section-header">
-                <h2 class="section-title">Website Maintenance Service</h2>
-                <p class="section-description">We can maintain your current website to keep it running smoothly, secure, and up-to-date.</p>
-            </div>
-            <div class="pricing-single">
-                <div class="pricing-card">
-                    <h3 class="plan-name">Website Maintenance & Support</h3>
-                    <div class="pricing-structure">
-                        <div class="price-item">
-                            <div class="price-label">Setup Fee</div>
-                            <div class="plan-price">$199</div>
-                            <div class="plan-period">one-time</div>
+            <!-- Optional Enhancements -->
+            <div class="addons-section">
+                <div class="section-header">
+                    <h3 class="section-subtitle">Optional Enhancements</h3>
+                    <p class="section-description">Enhance your website with these powerful add-on services.</p>
+                </div>
+                <div class="pricing-single">
+                    <div class="addons-grid">
+                        <div class="addon-item">
+                            <span class="addon-name">Blog Integration</span>
+                            <span class="addon-price">+$299 setup</span>
                         </div>
-                        <div class="price-divider">+</div>
-                        <div class="price-item">
-                            <div class="price-label">Monthly Maintenance</div>
-                            <div class="plan-price">$199</div>
-                            <div class="plan-period">per month</div>
+                        <div class="addon-item">
+                            <span class="addon-name">Landing Page Funnel Add-On</span>
+                            <span class="addon-price">+$499</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">ADA Accessibility & Compliance Setup</span>
+                            <span class="addon-price">+$249</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Video Embed / Gallery Integration</span>
+                            <span class="addon-price">+$199</span>
                         </div>
                     </div>
-                    <ul class="plan-features">
-                        <li>Website security monitoring</li>
-                        <li>Regular backups & updates</li>
-                        <li>Performance optimization</li>
-                        <li>Content updates & changes</li>
-                        <li>Technical support & troubleshooting</li>
-                        <li>Plugin & theme updates</li>
-                        <li>SSL certificate management</li>
-                        <li>Uptime monitoring & reporting</li>
-                    </ul>
-                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%;">Get Started Today</a>
                 </div>
             </div>
         </section>

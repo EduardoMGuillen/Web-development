@@ -337,20 +337,98 @@
             background: transparent;
         }
 
+        .pricing-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
         .pricing-single {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .pricing-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--border-color);
             border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
+            padding: 2.5rem;
+            text-align: left;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            margin-bottom: 4rem;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .plan-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .addons-section {
+            margin-top: 4rem;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .addon-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .addon-name {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .addon-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
         .plan-name {
@@ -399,15 +477,15 @@
         .plan-features {
             list-style: none;
             margin: 2rem 0;
-            text-align: center;
+            text-align: left;
         }
 
         .plan-features li {
-            padding: 0.75rem 2.5rem;
+            padding: 0.75rem 0;
             color: var(--text-dark);
             position: relative;
+            padding-left: 2rem;
             border-bottom: 1px solid var(--border-color);
-            text-align: center;
         }
 
         .plan-features li:last-child {
@@ -417,7 +495,7 @@
         .plan-features li::before {
             content: '✓';
             position: absolute;
-            left: 0.5rem;
+            left: 0;
             color: var(--primary-color);
             font-weight: bold;
             font-size: 1.2rem;
@@ -545,12 +623,18 @@
             }
 
             .services-grid,
-            .stats-grid {
+            .stats-grid,
+            .pricing-grid,
+            .addons-grid {
                 grid-template-columns: 1fr;
             }
 
             .pricing-structure {
                 flex-direction: column;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
             }
 
             .footer-container {
@@ -693,36 +777,115 @@
         <!-- Pricing Section - Local Service Ads -->
         <section class="pricing">
             <div class="section-header">
-                <h2 class="section-title">Local Service Ads</h2>
-                <p class="section-description">Drive qualified local leads with targeted Local Service Ads that connect you with customers actively searching for your services.</p>
+                <h2 class="section-title">Local Service Ads (LSA) Systems</h2>
+                <p class="section-description">Get found first. Get verified. Get more leads. CreativeIQ's Local Service Ads management is designed for service-based businesses that want guaranteed leads directly from Google — without wasting ad spend.</p>
             </div>
-            <div class="pricing-single">
+            <div class="pricing-grid">
+                <!-- Tier 1: LSA Essentials -->
                 <div class="pricing-card">
-                    <h3 class="plan-name">Local Service Ads Management</h3>
-                    <div class="pricing-structure">
-                        <div class="price-item">
-                            <div class="price-label">Setup Fee</div>
-                            <div class="plan-price">$299</div>
-                            <div class="plan-period">one-time</div>
+                    <div class="plan-badge">🔹 Tier 1: LSA Essentials</div>
+                    <div class="plan-name">Setup $299 | Maintenance $299/month</div>
+                    <p class="plan-description">Perfect for businesses ready to appear at the top of Google for their services.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes:</p>
+                    <ul class="plan-features">
+                        <li>Google Local Service Ads Setup (account creation & verification assistance)</li>
+                        <li>Category & service selection tailored to your industry</li>
+                        <li>Business profile optimization (bio, service areas, hours, and details)</li>
+                        <li>Photo uploads, logo integration, and description optimization</li>
+                        <li>Connection to your CRM for lead tracking (optional)</li>
+                        <li>Budget guidance and ad spend setup</li>
+                        <li>Monthly ad performance summary</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">✨ Ideal for local service providers (law firms, medspas, therapists, contractors) starting with LSA visibility.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+
+                <!-- Tier 2: LSA Growth Optimization -->
+                <div class="pricing-card featured">
+                    <div class="plan-badge" style="background: var(--primary-dark);">⚙️ Tier 2: LSA Growth Optimization</div>
+                    <div class="plan-name">$499/month</div>
+                    <p class="plan-description">For growing businesses that want measurable results and steady inbound leads.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes Everything in Essentials, Plus:</p>
+                    <ul class="plan-features">
+                        <li>Advanced Ad Optimization: bidding strategy, keyword targeting, and scheduling</li>
+                        <li>Weekly lead monitoring & quality check-ins</li>
+                        <li>Reputation Boost: Review management integration to improve ranking & trust score</li>
+                        <li>Competitor comparison & geographic targeting refinement</li>
+                        <li>Monthly campaign performance report with insights</li>
+                        <li>Integration with CreativeIQ CRM for automatic lead capture</li>
+                        <li>Call tracking setup (via GHL or CallRail)</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">💡 Perfect for businesses seeking consistent, high-quality leads while improving return on ad spend (ROAS).</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+
+                <!-- Tier 3: LSA Pro Conversion System -->
+                <div class="pricing-card">
+                    <div class="plan-badge" style="background: #10B981;">🚀 Tier 3: LSA Pro Conversion System</div>
+                    <div class="plan-name">$799/month</div>
+                    <p class="plan-description">A full-scale LSA management system built for established businesses looking to dominate their category and automate follow-ups.</p>
+                    <p style="color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Includes Everything in Growth, Plus:</p>
+                    <ul class="plan-features">
+                        <li>Dynamic Optimization & A/B Testing (ad copy, service filters, and regions)</li>
+                        <li>Review Generation Automation: automatically request reviews post-lead via CRM</li>
+                        <li>Lead Nurturing Sequence Setup: SMS/email automation for missed calls or form fills</li>
+                        <li>Retargeting Integration: Google Display or Meta Ads alignment for cross-platform exposure</li>
+                        <li>Conversion Dashboard: real-time reporting through CreativeIQ CRM</li>
+                        <li>Quarterly strategy consultation to adjust budgets, copy, and targeting</li>
+                        <li>Priority Support for ad approvals, suspensions, or verification updates</li>
+                    </ul>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-top: 1rem; font-weight: 500;">✨ Best for multi-location or high-volume service brands ready to scale lead generation and automate follow-up.</p>
+                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Optional Add-Ons -->
+            <div class="addons-section">
+                <div class="section-header">
+                    <h3 class="section-subtitle">⚡ Add-Ons & Enhancements</h3>
+                    <p class="section-description">Enhance your LSA campaigns with these powerful add-on services.</p>
+                </div>
+                <div class="pricing-single">
+                    <div class="addons-grid">
+                        <div class="addon-item">
+                            <span class="addon-name">Additional Market/Location Setup</span>
+                            <span class="addon-price">+$99/location</span>
                         </div>
-                        <div class="price-divider">+</div>
-                        <div class="price-item">
-                            <div class="price-label">Monthly Maintenance</div>
-                            <div class="plan-price">$299</div>
-                            <div class="plan-period">per month</div>
+                        <div class="addon-item">
+                            <span class="addon-name">Ad Copywriting & Creative Refresh</span>
+                            <span class="addon-price">+$149/month</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Review Campaign Setup (via GHL)</span>
+                            <span class="addon-price">+$199 one-time</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Call Recording Analysis & Lead Scoring</span>
+                            <span class="addon-price">+$249/month</span>
+                        </div>
+                        <div class="addon-item">
+                            <span class="addon-name">Custom Conversion Dashboard (Google Data Studio)</span>
+                            <span class="addon-price">+$199 setup</span>
                         </div>
                     </div>
-                    <ul class="plan-features">
-                        <li>Local Service Ads campaign setup</li>
-                        <li>Service area optimization</li>
-                        <li>Lead qualification & filtering</li>
-                        <li>Budget management & optimization</li>
-                        <li>Performance tracking & reporting</li>
-                        <li>Competitor analysis & strategy</li>
-                        <li>Monthly performance reviews</li>
-                        <li>Lead response management</li>
-                    </ul>
-                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%;">Get Started Today</a>
+                </div>
+            </div>
+
+            <!-- Why CreativeIQ Section -->
+            <div class="addons-section">
+                <div class="section-header">
+                    <h3 class="section-subtitle">💼 Why CreativeIQ Local Service Ad Systems?</h3>
+                    <p class="section-description">CreativeIQ takes the complexity out of Google's LSA platform — integrating it directly into your business ecosystem. Every lead is tracked, nurtured, and measured for performance through your CRM and reporting dashboards.</p>
+                </div>
+                <div class="pricing-single">
+                    <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 16px; padding: 3rem; max-width: 800px; margin: 0 auto;">
+                        <ul class="plan-features" style="list-style: none; margin: 0; padding: 0;">
+                            <li style="padding: 1rem 0; padding-left: 2.5rem; border-bottom: 1px solid var(--border-color);">✅ Verified Google LSA setup for instant visibility</li>
+                            <li style="padding: 1rem 0; padding-left: 2.5rem; border-bottom: 1px solid var(--border-color);">✅ Consistent lead management and tracking</li>
+                            <li style="padding: 1rem 0; padding-left: 2.5rem; border-bottom: 1px solid var(--border-color);">✅ Automated follow-up & review requests</li>
+                            <li style="padding: 1rem 0; padding-left: 2.5rem; border-bottom: none;">✅ Full analytics transparency and consulting support</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
