@@ -7,10 +7,10 @@
     <meta name="msapplication-TileColor" content="#2563EB">
     
     <!-- Primary Meta Tags -->
-    <title>SEO Services | Search Engine Optimization | CreativeIQ Digital Marketing</title>
-    <meta name="title" content="SEO Services | Search Engine Optimization | CreativeIQ Digital Marketing">
-    <meta name="description" content="Boost your search rankings and drive sustainable organic traffic with our comprehensive SEO strategies. Keyword research, on-page optimization, link building, and more.">
-    <meta name="keywords" content="SEO services, search engine optimization, keyword research, on-page SEO, link building, technical SEO, local SEO, organic traffic, search rankings">
+    <title>Services | Complete Digital Marketing Solutions | CreativeIQ</title>
+    <meta name="title" content="Services | Complete Digital Marketing Solutions | CreativeIQ">
+    <meta name="description" content="Comprehensive digital marketing services including SEO, social media marketing, CRM automation, web development, and Google My Business management. Drive real business growth with CreativeIQ.">
+    <meta name="keywords" content="digital marketing services, SEO services, social media marketing, CRM automation, web development, Google My Business, PPC advertising, content marketing, Dallas marketing agency">
     <meta name="author" content="CreativeIQ Digital Marketing">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="English">
@@ -19,7 +19,7 @@
     <meta name="geo.placename" content="Dallas">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://creativeiq.marketing/seo">
+    <link rel="canonical" href="https://creativeiq.marketing/Services">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/6741ff04bac6c2fa2a8ba663.png">
@@ -27,9 +27,9 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://creativeiq.marketing/seo">
-    <meta property="og:title" content="SEO Services | Search Engine Optimization | CreativeIQ Digital Marketing">
-    <meta property="og:description" content="Boost your search rankings and drive sustainable organic traffic with our comprehensive SEO strategies.">
+    <meta property="og:url" content="https://creativeiq.marketing/Services">
+    <meta property="og:title" content="Services | Complete Digital Marketing Solutions | CreativeIQ">
+    <meta property="og:description" content="Comprehensive digital marketing services including SEO, social media marketing, CRM automation, web development, and Google My Business management.">
     <meta property="og:image" content="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/6741ff04bac6c2fa2a8ba663.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -38,26 +38,10 @@
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://creativeiq.marketing/seo">
-    <meta name="twitter:title" content="SEO Services | Search Engine Optimization | CreativeIQ Digital Marketing">
-    <meta name="twitter:description" content="Boost your search rankings and drive sustainable organic traffic with our comprehensive SEO strategies.">
+    <meta name="twitter:url" content="https://creativeiq.marketing/Services">
+    <meta name="twitter:title" content="Services | Complete Digital Marketing Solutions | CreativeIQ">
+    <meta name="twitter:description" content="Comprehensive digital marketing services including SEO, social media marketing, CRM automation, web development, and Google My Business management.">
     <meta name="twitter:image" content="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/6741ff04bac6c2fa2a8ba663.png">
-    
-    <!-- Structured Data - Service -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Search Engine Optimization",
-        "provider": {
-            "@type": "Organization",
-            "name": "CreativeIQ Digital Marketing",
-            "url": "https://creativeiq.marketing"
-        },
-        "areaServed": "US",
-        "description": "Comprehensive SEO services including keyword research, on-page optimization, link building, and technical SEO to boost search rankings and drive organic traffic."
-    }
-    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -204,13 +188,26 @@
         /* Hero Section */
         .hero {
             background: transparent;
-            padding: 6rem 2rem 4rem;
+            padding: 4rem 2rem 2rem;
             text-align: center;
         }
 
         .hero-container {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: var(--text-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
         }
 
         .hero h1 {
@@ -222,7 +219,7 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             color: var(--text-gray);
             margin-bottom: 2rem;
             line-height: 1.7;
@@ -230,7 +227,7 @@
 
         /* Services Section */
         .services {
-            padding: 6rem 2rem;
+            padding: 4rem 2rem 6rem;
             background: transparent;
         }
 
@@ -238,6 +235,19 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: var(--text-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
         }
 
         .section-title {
@@ -278,9 +288,16 @@
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
+            width: 64px;
+            height: 64px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            color: var(--primary-color);
         }
 
         .service-card h3 {
@@ -292,116 +309,72 @@
 
         .service-card p {
             color: var(--text-gray);
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
-        /* Stats Section */
-        .stats {
-            padding: 6rem 2rem;
-            background: transparent;
-        }
-
-        .stats-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .stat-item {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-gray);
-            font-size: 1rem;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 6rem 2rem;
-            background: transparent;
-        }
-
-        .pricing-single {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 2px solid var(--primary-color);
-            border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .plan-name {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .plan-price {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .plan-period {
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-        }
-
-        .plan-features {
+        .service-features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin: 0 auto 1.5rem;
             text-align: left;
+            display: inline-block;
+            width: 100%;
+            max-width: 250px;
         }
 
-        .plan-features li {
-            padding: 0.75rem 0;
-            color: var(--text-dark);
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
             position: relative;
-            padding-left: 2rem;
-            border-bottom: 1px solid var(--border-color);
+            padding-left: 1.5rem;
         }
 
-        .plan-features li:last-child {
-            border-bottom: none;
-        }
-
-        .plan-features li::before {
-            content: '✓';
+        .service-features li:before {
+            content: "•";
             position: absolute;
             left: 0;
             color: var(--primary-color);
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .service-link:hover {
+            gap: 0.75rem;
+        }
+
+        .custom-solution {
+            max-width: 1280px;
+            margin: 3rem auto 0;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .custom-solution p {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
         }
 
         /* Footer */
         footer {
             background: transparent;
-            border-top: 1px solid var(--border-color);
+            color: var(--text-dark);
             padding: 4rem 2rem 2rem;
             margin-top: 4rem;
         }
@@ -412,22 +385,74 @@
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 3rem;
+            margin-bottom: 2rem;
         }
 
         .footer-brand img {
-            height: 50px;
+            height: 40px;
+            width: auto;
             margin-bottom: 1rem;
+            display: block;
+            max-width: 180px;
         }
 
         .footer-brand p {
             color: var(--text-gray);
             margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .footer-contact p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contact a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact a:hover {
+            color: var(--primary-dark);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .social-icon:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
         }
 
         .footer-column h4 {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
+            font-size: 1.125rem;
             font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
         }
 
         .footer-column ul {
@@ -435,7 +460,7 @@
         }
 
         .footer-column ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .footer-column ul li a {
@@ -449,24 +474,20 @@
         }
 
         .footer-bottom {
-            max-width: 1280px;
-            margin: 2rem auto 0;
-            padding-top: 2rem;
             border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-bottom p {
             color: var(--text-gray);
+            font-size: 0.875rem;
+            max-width: 1280px;
+            margin: 0 auto;
         }
 
         .footer-links {
             display: flex;
             gap: 2rem;
-            flex-wrap: wrap;
         }
 
         .footer-links a {
@@ -479,36 +500,36 @@
             color: var(--primary-color);
         }
 
-        .social-icons {
-            display: flex;
-            gap: 1rem;
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             header {
                 position: relative;
+                top: auto;
+            }
+
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                padding-top: 1rem;
             }
 
             .hero h1 {
@@ -519,8 +540,7 @@
                 font-size: 2rem;
             }
 
-            .services-grid,
-            .stats-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -530,6 +550,7 @@
 
             .footer-bottom {
                 flex-direction: column;
+                gap: 1rem;
                 text-align: center;
             }
         }
@@ -540,7 +561,7 @@
     <header>
         <div class="header-container">
             <a href="https://creativeiq.marketing" class="logo">
-                <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/6741ff04bac6c2fa2a8ba663.png" alt="CreativeIQ Digital Marketing Agency Logo">
+                <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/6741ff04bac6c2fa2a8ba663.png" alt="CreativeIQ Digital Marketing Agency Logo - SEO, Social Media, CRM, and Web Development Services">
             </a>
             <nav>
                 <a href="https://creativeiq.marketing">Home</a>
@@ -560,93 +581,91 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-container">
-                <h1>Rank Higher. <span style="color: var(--primary-color);">Grow Smarter.</span></h1>
-                <p>Unlock your brand's full potential with SEO strategies that deliver real results. Get found by the right customers at the right time.</p>
-                <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large">Get a Free SEO Audit</a>
+                <span class="badge">Our Services</span>
+                <h1>Complete Digital Marketing Solutions</h1>
+                <p>From strategy to execution, we provide comprehensive digital marketing services that drive real business growth and measurable results.</p>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section class="services">
-            <div class="section-header">
-                <h2 class="section-title">What's Included in Our SEO Services</h2>
-                <p class="section-description">Comprehensive SEO strategies designed to boost your search rankings and drive sustainable organic traffic.</p>
-            </div>
+        <section class="services" id="services">
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🔍</div>
-                    <h3>Keyword Research & Strategy</h3>
-                    <p>We identify the best keywords to target based on your audience and market, ensuring maximum visibility for your business.</p>
+                    <h3>Search Engine Optimization</h3>
+                    <p>Boost your organic visibility and drive qualified traffic with our comprehensive SEO strategies.</p>
+                    <ul class="service-features">
+                        <li>Keyword Research</li>
+                        <li>On-Page Optimization</li>
+                        <li>Link Building</li>
+                        <li>Technical SEO</li>
+                    </ul>
+                    <a href="https://creativeiq.marketing/seo" class="service-link">Learn More →</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🛠️</div>
-                    <h3>On-Page SEO Optimization</h3>
-                    <p>We optimize title tags, meta descriptions, structure, and internal links for maximum ranking power and user experience.</p>
+                    <div class="service-icon">🖱️</div>
+                    <h3>Pay-Per-Click Advertising</h3>
+                    <p>Maximize your ROI with strategic PPC campaigns that drive targeted traffic and conversions.</p>
+                    <ul class="service-features">
+                        <li>Campaign Setup</li>
+                        <li>Ad Creation</li>
+                        <li>Bid Management</li>
+                        <li>Performance Tracking</li>
+                    </ul>
+                    <a href="https://creativeiq.marketing/seo" class="service-link">Learn More →</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🔗</div>
-                    <h3>Link Building</h3>
-                    <p>High-quality backlinks from credible sources to boost domain authority and improve search engine rankings.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Technical SEO</h3>
-                    <p>We improve crawlability, site speed, mobile usability, and fix index issues for better search engine performance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3>SEO Content Strategy</h3>
-                    <p>Blog topics and landing pages that drive long-term organic traffic and engage your target audience.</p>
+                    <div class="service-icon">💬</div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Build authentic connections with your audience through strategic content creation and community management.</p>
+                    <ul class="service-features">
+                        <li>Content Strategy</li>
+                        <li>Community Management</li>
+                        <li>Paid Social</li>
+                        <li>Influencer Marketing</li>
+                    </ul>
+                    <a href="https://creativeiq.marketing/smm" class="service-link">Learn More →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📊</div>
-                    <h3>Performance Analytics</h3>
-                    <p>Transparent monthly reports with rankings, traffic, and conversion metrics to track your SEO success.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">93%</div>
-                    <div class="stat-label">Online experiences start with a search engine</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">75%</div>
-                    <div class="stat-label">Users click on the first 3 search results</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">81%</div>
-                    <div class="stat-label">Credibility boost from strong organic presence</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section class="pricing">
-            <div class="section-header">
-                <h2 class="section-title">SEO & Organic Growth Service</h2>
-                <p class="section-description">Boost your search rankings and drive sustainable organic traffic with our comprehensive SEO strategies.</p>
-            </div>
-            <div class="pricing-single">
-                <div class="pricing-card">
-                    <h3 class="plan-name">Complete SEO Management</h3>
-                    <div class="plan-price">$299</div>
-                    <div class="plan-period">begins at</div>
-                    <ul class="plan-features">
-                        <li>Keyword research & strategy development</li>
-                        <li>On-page SEO optimization</li>
-                        <li>Technical SEO improvements</li>
-                        <li>Content strategy & blog optimization</li>
-                        <li>Link building & citation management</li>
-                        <li>Local SEO & Google Business Profile optimization</li>
-                        <li>Monthly reporting & analytics tracking</li>
-                        <li>Search Console & Analytics monitoring</li>
+                    <h3>CRM & Automation</h3>
+                    <p>Streamline your sales and marketing processes with powerful CRM systems and marketing automation.</p>
+                    <ul class="service-features">
+                        <li>CRM Setup & Training</li>
+                        <li>Lead Nurturing</li>
+                        <li>Email Automation</li>
+                        <li>Pipeline Management</li>
                     </ul>
-                    <a href="https://creativeiq.marketing/contact" class="btn btn-primary btn-large" style="width: 100%;">Get Started Today</a>
+                    <a href="https://creativeiq.marketing/crm" class="service-link">Learn More →</a>
                 </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Google My Business</h3>
+                    <p>Optimize your local presence and get found by customers searching in your area with GMB management.</p>
+                    <ul class="service-features">
+                        <li>Profile Optimization</li>
+                        <li>Review Management</li>
+                        <li>Local SEO</li>
+                        <li>Post Management</li>
+                    </ul>
+                    <a href="https://creativeiq.marketing/gmb" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Create beautiful, high-performing websites that convert visitors into customers and grow your business.</p>
+                    <ul class="service-features">
+                        <li>Custom Website Design</li>
+                        <li>Responsive Development</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <a href="https://creativeiq.marketing/web-development" class="service-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="custom-solution">
+                <p>Need a custom solution? We create tailored strategies for your unique business needs.</p>
+                <a href="https://creativeiq.marketing/contact" class="btn btn-primary">Get Custom Strategy →</a>
             </div>
         </section>
     </main>
@@ -655,17 +674,17 @@
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/6741ff04bac6c2fa2a8ba663.png" alt="CreativeIQ Digital Marketing Agency Logo">
+                <img src="https://storage.googleapis.com/msgsndr/5f7iztRPELugzDENTIXd/media/6741ff04bac6c2fa2a8ba663.png" alt="CreativeIQ Digital Marketing Agency Logo - SEO, Social Media, CRM, and Web Development Services">
                 <p>Full-service digital marketing agency built for modern businesses. We engineer growth through strategy, creativity, and systems that work.</p>
-                <div style="margin-top: 1rem; color: var(--text-gray);">
+                <div class="footer-contact">
                     <p>📍 Dallas, Texas, USA</p>
                     <p>📞 (804) 651-2531</p>
-                    <p>✉️ <a href="mailto:CiQ@creativeiq.marketing" style="color: var(--primary-color);">CiQ@creativeiq.marketing</a></p>
+                    <p>✉️ <a href="mailto:CiQ@creativeiq.marketing">CiQ@creativeiq.marketing</a></p>
                 </div>
-                <div class="social-icons" style="margin-top: 1rem;">
-                    <a href="https://www.facebook.com/CreativeIQDigitalmarketing" target="_blank" rel="noopener noreferrer" class="social-icon">f</a>
-                    <a href="https://www.instagram.com/creativeiq.digitalmarketing" target="_blank" rel="noopener noreferrer" class="social-icon">ig</a>
-                    <a href="https://www.youtube.com/@CreativeIQdigitalmarketing" target="_blank" rel="noopener noreferrer" class="social-icon">yt</a>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/CreativeIQDigitalmarketing" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/creativeiq.digitalmarketing" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">ig</a>
+                    <a href="https://www.youtube.com/@CreativeIQdigitalmarketing" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">yt</a>
                 </div>
             </div>
             <div class="footer-column">
@@ -677,6 +696,7 @@
                     <li><a href="https://creativeiq.marketing/crm">CRM & Automation</a></li>
                     <li><a href="https://creativeiq.marketing/web-development">Web Development</a></li>
                     <li><a href="https://creativeiq.marketing/gmb">Google My Business</a></li>
+                    <li><a href="https://creativeiq.marketing/smm">Video Production</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -685,6 +705,7 @@
                     <li><a href="https://creativeiq.marketing/about">About Us</a></li>
                     <li><a href="https://creativeiq.marketing">Our Team</a></li>
                     <li><a href="https://creativeiq.marketing">Case Studies</a></li>
+                    <li><a href="https://creativeiq.marketing">Careers</a></li>
                     <li><a href="https://creativeiq.marketing/blogs">Blog</a></li>
                 </ul>
             </div>
@@ -693,6 +714,8 @@
                 <ul>
                     <li><a href="https://creativeiq.marketing/contact">Free Audit</a></li>
                     <li><a href="https://creativeiq.marketing/blogs">Marketing Guide</a></li>
+                    <li><a href="https://creativeiq.marketing/blogs">Industry Reports</a></li>
+                    <li><a href="https://creativeiq.marketing">Tools</a></li>
                     <li><a href="https://creativeiq.marketing/contact">Support</a></li>
                 </ul>
             </div>
@@ -706,6 +729,30 @@
             </div>
         </div>
     </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
